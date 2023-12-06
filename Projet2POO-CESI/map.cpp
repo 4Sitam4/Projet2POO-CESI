@@ -198,6 +198,155 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 
 
 
+//modifier
+System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, System::String^ new_prenom, System::String^ new_superieur, System::String^ new_adresse, System::DateTime^ new_date_embauche)
+{
+	int init = 0;
+	System::String^ cdt1;
+	System::String^ cdt2;
+	System::String^ cdt3;
+	System::String^ cdt4;
+	//System::String^ cdt6;
+	System::String^ cdtf;
+
+	/*
+	if (this->id != "") {
+		cdt6 = "WHERE id = ";
+		init++;
+	}
+	else {
+		cdt6 = "";
+	}
+	*/
+	if (this->nom != "") {
+		/*if (init > 0) {
+			cdt1 = " AND nom = '";
+			init++;
+		}
+		else {*/
+		cdt1 = "WHERE nom = '";
+		init++;
+		//}
+	}
+	else {
+		cdt1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (init > 0) {
+			cdt2 = "' AND prenom = '";
+			init++;
+		}
+		else {
+			cdt2 = "WHERE prenom = '";
+			init++;
+		}
+	}
+	else {
+		cdt2 = "";
+	}
+	if (this->superieur != "") {
+		if (init > 0) {
+			cdt3 = "' AND superieur = '";
+			init++;
+		}
+		else {
+			cdt3 = "WHERE superieur = '";
+			init++;
+		}
+	}
+	else {
+		cdt3 = "";
+	}
+
+	if (this->adresse != "") {
+		if (init > 0) {
+			cdt4 = "' AND adresse = '";
+			init++;
+		}
+		else {
+			cdt4 = "WHERE adresse = '";
+			init++;
+		}
+	}
+	else {
+		cdt4 = "";
+	}
+	if (init > 0) {
+		cdtf = "'";
+	}
+	else {
+		cdtf = "";
+	}
+
+	//Nouvelles valeurs 
+	int i = 0;
+	System::String^ n_v1;
+	System::String^ n_v2;
+	System::String^ n_v3;
+	System::String^ n_v4;
+	System::String^ n_vf;
+	if (new_nom != "") {
+		n_v1 = " nom = '";
+		i++;
+	}
+	else {
+		n_v1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (i > 0) {
+			n_v2 = "', prenom = '";
+			init++;
+		}
+		else {
+			n_v2 = " prenom = '";
+			i++;
+		}
+	}
+	else {
+		n_v2 = "";
+	}
+	if (this->superieur != "") {
+		if (i > 0) {
+			n_v3 = "', superieur = '";
+			i++;
+		}
+		else {
+			n_v3 = " superieur = '";
+			i++;
+		}
+	}
+	else {
+		n_v3 = "";
+	}
+
+	if (this->adresse != "") {
+		if (i > 0) {
+			n_v4 = "', adresse = '";
+			i++;
+		}
+		else {
+			n_v4 = " adresse = '";
+			i++;
+		}
+	}
+	else {
+		n_v4 = "";
+	}
+	if (i > 0) {
+		n_vf = "'";
+	}
+	else {
+		n_vf = "";
+	}
+
+	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+}
+
+
+
+
 
 
 
