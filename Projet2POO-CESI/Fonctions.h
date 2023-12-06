@@ -11,8 +11,5 @@ namespace NS_Comp_Fonctions
 		Fonctions();
 		Fonctions()
 
-		void setSuperieur(System::String^);
-		void setAdresse(System::String^);
-		void setDateEmbauche(System::String^);
 	};
 }
