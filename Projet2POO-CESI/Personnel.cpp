@@ -1,12 +1,15 @@
 #include "Personnel.h"
-
+#include "PCH.h"
 NS_Comp_Personnel::Personnel::Personnel() {
 }
 
-NS_Comp_Personnel::Personnel::Personnel(System::String^ superieur, System::String^ adresse, System::String^ date_embauche) : NS_Comp_NomPrenom::NomPrenom::NomPrenom(System::String^ nom, System::String^ prenom){
+NS_Comp_Personnel::Personnel::Personnel(System::String^ superieur, System::String^ adresse, System::String^ date_embauche, System::String^ nom, System::String^ prenom){
 	this->setSuperieur(superieur);
 	this->setAdresse(adresse);
 	this->setDateEmbauche(date_embauche);
+	this->setNom(nom);
+	this->setPrenom(prenom);
+
 }
 
 System::String^ NS_Comp_Personnel::Personnel::getSuperieur() {

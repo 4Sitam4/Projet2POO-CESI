@@ -1,5 +1,4 @@
 #include "NomPrenom.h"
-#include "PCH.h"
 
 
 namespace NS_Comp_Personnel
@@ -13,7 +12,7 @@ namespace NS_Comp_Personnel
 
 	public:
 		Personnel();
-		Personnel(System::String^, System::String^, System::String^);
+		Personnel(System::String^, System::String^, System::String^, System::String^, System::String^);
 		System::String^ getSuperieur();
 		System::String^ getAdresse();
 		System::String^ getDateEmbauche();
