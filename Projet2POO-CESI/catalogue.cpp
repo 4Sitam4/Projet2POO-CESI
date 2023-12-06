@@ -1,4 +1,4 @@
-#include "Catalogue.h"
+/*#include "Catalogue.h"
 
 NS_Comp_Catalogue::Catalogue::Catalogue() {
 
@@ -33,3 +33,4 @@ void setDesignation(System::String^);
 void setStock(int);
 void setReapprovisionnement(int);
 void setTVA(float);
+*/

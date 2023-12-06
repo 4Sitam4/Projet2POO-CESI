@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 namespace NS_Comp_Fonctions
 {
 	ref class Fonctions
@@ -12,4 +12,4 @@ namespace NS_Comp_Fonctions
 		Fonctions()
 
 	};
-}
+}*/

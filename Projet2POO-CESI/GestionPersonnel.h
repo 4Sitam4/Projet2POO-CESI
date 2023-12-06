@@ -1,4 +1,5 @@
 #pragma once
+#include "Personnel.h"
 
 namespace Projet2POOCESI {
 
@@ -36,6 +37,14 @@ namespace Projet2POOCESI {
 				delete components;
 			}
 		}
+	/// <summary>
+	/// 
+	/// </summary>
+	private: NS_Comp_Personnel::Personnel^ oPers;
+	private: System::Data::DataSet^ oDs;
+	/// <summary>
+	/// 
+	/// </summary>
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
 	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
@@ -57,7 +66,7 @@ namespace Projet2POOCESI {
 
 
 	private: System::Windows::Forms::GroupBox^ groupBox2;
-	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ buttonAfficher;
 
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -75,7 +84,9 @@ namespace Projet2POOCESI {
 
 
 
-
+	private: System::Windows::Forms::DataGridView^ dgv_enr;
+	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::Button^ buttonRetour;
 
 
 	private:
@@ -108,7 +119,7 @@ namespace Projet2POOCESI {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->buttonAfficher = (gcnew System::Windows::Forms::Button());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -118,8 +129,13 @@ namespace Projet2POOCESI {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->dgv_enr = (gcnew System::Windows::Forms::DataGridView());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonRetour = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
+			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -137,9 +153,9 @@ namespace Projet2POOCESI {
 			this->groupBox1->Controls->Add(this->labelPersoNom);
 			this->groupBox1->Controls->Add(this->textBoxPersoNom);
 			this->groupBox1->Location = System::Drawing::Point(16, 15);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(312, 276);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
@@ -160,7 +176,7 @@ namespace Projet2POOCESI {
 			// textBoxSuperieur
 			// 
 			this->textBoxSuperieur->Location = System::Drawing::Point(8, 142);
-			this->textBoxSuperieur->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxSuperieur->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxSuperieur->Name = L"textBoxSuperieur";
 			this->textBoxSuperieur->Size = System::Drawing::Size(291, 22);
 			this->textBoxSuperieur->TabIndex = 9;
@@ -168,7 +184,7 @@ namespace Projet2POOCESI {
 			// buttonEmbaucher
 			// 
 			this->buttonEmbaucher->Location = System::Drawing::Point(99, 240);
-			this->buttonEmbaucher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonEmbaucher->Margin = System::Windows::Forms::Padding(4);
 			this->buttonEmbaucher->Name = L"buttonEmbaucher";
 			this->buttonEmbaucher->Size = System::Drawing::Size(100, 28);
 			this->buttonEmbaucher->TabIndex = 8;
@@ -190,7 +206,7 @@ namespace Projet2POOCESI {
 			// dateTimePickerDateEmbauche
 			// 
 			this->dateTimePickerDateEmbauche->Location = System::Drawing::Point(8, 201);
-			this->dateTimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePickerDateEmbauche->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->dateTimePickerDateEmbauche->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
 			this->dateTimePickerDateEmbauche->Name = L"dateTimePickerDateEmbauche";
@@ -210,7 +226,7 @@ namespace Projet2POOCESI {
 			// textBoxPersoAdresse
 			// 
 			this->textBoxPersoAdresse->Location = System::Drawing::Point(8, 92);
-			this->textBoxPersoAdresse->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoAdresse->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoAdresse->Name = L"textBoxPersoAdresse";
 			this->textBoxPersoAdresse->Size = System::Drawing::Size(291, 22);
 			this->textBoxPersoAdresse->TabIndex = 4;
@@ -229,7 +245,7 @@ namespace Projet2POOCESI {
 			// textBoxPersoPrenom
 			// 
 			this->textBoxPersoPrenom->Location = System::Drawing::Point(167, 42);
-			this->textBoxPersoPrenom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoPrenom->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoPrenom->Name = L"textBoxPersoPrenom";
 			this->textBoxPersoPrenom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoPrenom->TabIndex = 2;
@@ -249,7 +265,7 @@ namespace Projet2POOCESI {
 			// textBoxPersoNom
 			// 
 			this->textBoxPersoNom->Location = System::Drawing::Point(8, 42);
-			this->textBoxPersoNom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoNom->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoNom->Name = L"textBoxPersoNom";
 			this->textBoxPersoNom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoNom->TabIndex = 0;
@@ -260,7 +276,7 @@ namespace Projet2POOCESI {
 			this->groupBox2->Controls->Add(this->textBox5);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->dateTimePicker1);
-			this->groupBox2->Controls->Add(this->button5);
+			this->groupBox2->Controls->Add(this->buttonAfficher);
 			this->groupBox2->Controls->Add(this->label5);
 			this->groupBox2->Controls->Add(this->textBox4);
 			this->groupBox2->Controls->Add(this->label4);
@@ -301,23 +317,23 @@ namespace Projet2POOCESI {
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->Location = System::Drawing::Point(7, 295);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->dateTimePicker1->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(291, 22);
 			this->dateTimePicker1->TabIndex = 11;
 			// 
-			// button5
+			// buttonAfficher
 			// 
-			this->button5->Location = System::Drawing::Point(89, 337);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(100, 28);
-			this->button5->TabIndex = 11;
-			this->button5->Text = L"Afficher";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &GestionPersonnel::button5_Click);
+			this->buttonAfficher->Location = System::Drawing::Point(89, 337);
+			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAfficher->Name = L"button5";
+			this->buttonAfficher->Size = System::Drawing::Size(100, 28);
+			this->buttonAfficher->TabIndex = 11;
+			this->buttonAfficher->Text = L"Afficher";
+			this->buttonAfficher->UseVisualStyleBackColor = true;
+			this->buttonAfficher->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonAfficher_Click);
 			// 
 			// label5
 			// 
@@ -398,24 +414,67 @@ namespace Projet2POOCESI {
 			this->textBox1->Size = System::Drawing::Size(133, 22);
 			this->textBox1->TabIndex = 0;
 			// 
+			// dgv_enr
+			// 
+			this->dgv_enr->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dgv_enr->Location = System::Drawing::Point(6, 56);
+			this->dgv_enr->Name = L"dgv_enr";
+			this->dgv_enr->RowHeadersWidth = 51;
+			this->dgv_enr->Size = System::Drawing::Size(707, 398);
+			this->dgv_enr->TabIndex = 0;
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->buttonRetour);
+			this->groupBox3->Controls->Add(this->dgv_enr);
+			this->groupBox3->Location = System::Drawing::Point(12, 15);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(719, 460);
+			this->groupBox3->TabIndex = 6;
+			this->groupBox3->TabStop = false;
+			this->textBox3->Visible = false;
+			this->groupBox3->Text = L"affichage";
+			// 
+			// buttonRetour
+			// 
+			this->buttonRetour->Location = System::Drawing::Point(638, 19);
+			this->buttonRetour->Name = L"button1";
+			this->buttonRetour->Size = System::Drawing::Size(75, 23);
+			this->buttonRetour->TabIndex = 1;
+			this->buttonRetour->Text = L"button1";
+			this->buttonRetour->UseVisualStyleBackColor = true;
+			this->buttonRetour->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonRetour_Click);
+			// 
 			// GestionPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(743, 487);
+			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"Gestion du Personnel";
+			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->EndInit();
+			this->groupBox3->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void GestionPersonnel_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oPers = gcnew NS_Comp_Personnel::Personnel();
+		this->groupBox3->Visible = false;
+	}
+
+
+
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -439,28 +498,46 @@ private: System::Void textBox4_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void buttonEmbaucher_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ persoNom = this->textBoxPersoNom->Text;
-	String^ persoPrenom = this->textBoxPersoPrenom->Text;
-	String^ persoAdresse = this->textBoxPersoAdresse->Text;
-	String^ persoSuperieur = this->textBoxSuperieur->Text;
-	DateTime^ persoDate = this->dateTimePickerDateEmbauche->Value;
+	private: System::Void buttonEmbaucher_Click(System::Object^ sender, System::EventArgs^ e) {
+		/*
+		String^ persoNom = this->textBoxPersoNom->Text;
+		String^ persoPrenom = this->textBoxPersoPrenom->Text;
+		String^ persoAdresse = this->textBoxPersoAdresse->Text;
+		String^ persoSuperieur = this->textBoxSuperieur->Text;
+		DateTime^ persoDate = this->dateTimePickerDateEmbauche->Value;
 
-	if (persoNom->Length == 0 || persoPrenom->Length == 0 || persoAdresse->Length == 0 || persoSuperieur->Length == 0) {
-		MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
-		return;
+		if (persoNom->Length == 0 || persoPrenom->Length == 0 || persoAdresse->Length == 0 || persoSuperieur->Length == 0) {
+			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
+			return;
+		}
+		else {
+			String^ connString = "Data Source=VIVOBOOK-QUENTI\\MSSQLSERVER01;Initial Catalog=projetPOO;Integrated Security=True;Encrypt=False";
+			SqlConnection sqlConn(connString);
+			sqlConn.Open();
+
+			String^ sqlQuery = "INSERT INTO Personnel (nom, prenom, adresse, superieur, date_embauche) VALUES ('"+persoNom+"','"+persoPrenom+"','"+persoAdresse+"','"+persoSuperieur+"','"+persoDate+"')";
+			SqlCommand command(sqlQuery, % sqlConn);
+
+			SqlDataReader^ reader = command.ExecuteReader();
+		}
+		*/
+
+		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0 || this->textBoxSuperieur->Text->Length == 0) {
+			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
+		}
+		else {
+			this->oPers->creerPersonnel(this->textBoxPersoNom->Text, this->textBoxPersoPrenom->Text, this->textBoxSuperieur->Text, this->textBoxPersoAdresse->Text, this->dateTimePickerDateEmbauche->Value);
+		}
 	}
-	else {
-		String^ connString = "Data Source=VIVOBOOK-QUENTI\\MSSQLSERVER01;Initial Catalog=projetPOO;Integrated Security=True;Encrypt=False";
-		SqlConnection sqlConn(connString);
-		sqlConn.Open();
 
-		String^ sqlQuery = "INSERT INTO Personnel (nom, prenom, adresse, superieur, date_embauche) VALUES ('"+persoNom+"','"+persoPrenom+"','"+persoAdresse+"','"+persoSuperieur+"','"+persoDate+"')";
-		SqlCommand command(sqlQuery, % sqlConn);
+private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+	groupBox3->Visible = true;
+	this->dgv_enr->DataSource = this->oDs;
+	this->dgv_enr->DataMember = "Rsl";
+}
 
-		SqlDataReader^ reader = command.ExecuteReader();
-	}
-	
+private: System::Void buttonRetour_Click(System::Object^ sender, System::EventArgs^ e) {
+	groupBox3->Visible = false;
 }
 };
 }

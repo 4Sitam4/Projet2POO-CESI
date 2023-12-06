@@ -9,8 +9,7 @@ namespace NS_Comp_NomPrenom
 		System::String^ prenom;
 	public:
 		NomPrenom();
-		~NomPrenom();
-		NomPrenom(System::String^ nom, System::String^ prenom);
+		//NomPrenom(System::String^ nom, System::String^ prenom);
 		System::String^ getNom();
 		System::String^ getPrenom();
 		void setNom(System::String^ nom);

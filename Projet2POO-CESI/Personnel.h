@@ -1,4 +1,6 @@
 #include "NomPrenom.h"
+#include "map.h"
+#include "cad.h"
 
 
 namespace NS_Comp_Personnel
@@ -9,17 +11,22 @@ namespace NS_Comp_Personnel
 		const System::String^ table = "Personnel";
 		System::String^ superieur;
 		System::String^ adresse;
-		System::String^ date_embauche;
+		System::DateTime^ date_embauche;
+	private:
+		NS_Comp_Data::cad^ oCad;
+		NS_Comp_Mappage::map^ oMappTB;
 
 	public:
 		Personnel();
-		Personnel(System::String^, System::String^, System::String^, System::String^, System::String^);
+		//Personnel();
 		System::String^ getSuperieur();
 		System::String^ getAdresse();
-		System::String^ getDateEmbauche();
+		System::DateTime^ getDateEmbauche();
+
+		void creerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
 
 		void setSuperieur(System::String^);
 		void setAdresse(System::String^);
-		void setDateEmbauche(System::String^);
+		void setDateEmbauche(System::DateTime^);
 	};
 }

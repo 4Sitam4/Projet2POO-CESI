@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 namespace NS_Comp_Catalogue
 {
 	ref class Catalogue
@@ -31,4 +31,4 @@ namespace NS_Comp_Catalogue
 
 	};
 }
-
+*/
