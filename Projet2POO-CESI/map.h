@@ -9,6 +9,7 @@ namespace NS_Comp_Mappage
 		System::String^ nom ="";
 		System::String^ prenom ="";
 		//pour personnel
+		System::String^ id;
 		System::String^ superieur ="";
 		System::String^ adresse ="";
 		System::DateTime^ date_embauche;

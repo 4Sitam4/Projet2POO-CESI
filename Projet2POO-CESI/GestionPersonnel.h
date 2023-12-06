@@ -76,19 +76,33 @@ namespace Projet2POOCESI {
 
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ buttonAfficher;
+	private: System::Windows::Forms::Label^ labelDateAfficher;
 
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Label^ label6;
+
+	private: System::Windows::Forms::TextBox^ textBoxSuperieurAfficher;
+	private: System::Windows::Forms::Label^ labelSuperieurAfficher;
+	private: System::Windows::Forms::TextBox^ textBoxAdresseAfficher;
+
+
+
+	private: System::Windows::Forms::Label^ labelAdresseAfficher;
+
+	private: System::Windows::Forms::Label^ labelPrenomAfficher;
+
+	private: System::Windows::Forms::TextBox^ textBoxPrenomAfficher;
+	private: System::Windows::Forms::Label^ labelNomAfficher;
+
+
+	private: System::Windows::Forms::TextBox^ textBoxNomAfficher;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateAfficher;
+	private: System::Windows::Forms::TextBox^ textBoxIDAfficher;
+
+
+
+	private: System::Windows::Forms::Label^ labelDAfficher;
+
+
+	private: System::Windows::Forms::GroupBox^ groupBox3;
 
 
 
@@ -126,19 +140,20 @@ namespace Projet2POOCESI {
 			this->textBoxPersoNom = (gcnew System::Windows::Forms::TextBox());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->textBoxIDAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->labelDAfficher = (gcnew System::Windows::Forms::Label());
+			this->dateTimePickerDateAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->buttonAfficher = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->labelDateAfficher = (gcnew System::Windows::Forms::Label());
+			this->textBoxSuperieurAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->labelSuperieurAfficher = (gcnew System::Windows::Forms::Label());
+			this->textBoxAdresseAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->labelAdresseAfficher = (gcnew System::Windows::Forms::Label());
+			this->labelPrenomAfficher = (gcnew System::Windows::Forms::Label());
+			this->textBoxPrenomAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->labelNomAfficher = (gcnew System::Windows::Forms::Label());
+			this->textBoxNomAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -175,7 +190,6 @@ namespace Projet2POOCESI {
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Ajout membre du personnel";
-			this->groupBox1->Enter += gcnew System::EventHandler(this, &GestionPersonnel::groupBox1_Enter);
 			// 
 			// labelSuperieur
 			// 
@@ -186,7 +200,6 @@ namespace Projet2POOCESI {
 			this->labelSuperieur->Size = System::Drawing::Size(65, 16);
 			this->labelSuperieur->TabIndex = 10;
 			this->labelSuperieur->Text = L"Supérieur";
-			this->labelSuperieur->Click += gcnew System::EventHandler(this, &GestionPersonnel::label1_Click_3);
 			// 
 			// textBoxSuperieur
 			// 
@@ -216,7 +229,6 @@ namespace Projet2POOCESI {
 			this->labelDateEmbauche->Size = System::Drawing::Size(114, 16);
 			this->labelDateEmbauche->TabIndex = 7;
 			this->labelDateEmbauche->Text = L"Date d\'embauche";
-			this->labelDateEmbauche->Click += gcnew System::EventHandler(this, &GestionPersonnel::label1_Click_2);
 			// 
 			// dateTimePickerDateEmbauche
 			// 
@@ -255,7 +267,6 @@ namespace Projet2POOCESI {
 			this->labelPersoPrenom->Size = System::Drawing::Size(54, 16);
 			this->labelPersoPrenom->TabIndex = 3;
 			this->labelPersoPrenom->Text = L"Prénom";
-			this->labelPersoPrenom->Click += gcnew System::EventHandler(this, &GestionPersonnel::label1_Click_1);
 			// 
 			// textBoxPersoPrenom
 			// 
@@ -264,7 +275,6 @@ namespace Projet2POOCESI {
 			this->textBoxPersoPrenom->Name = L"textBoxPersoPrenom";
 			this->textBoxPersoPrenom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoPrenom->TabIndex = 2;
-			this->textBoxPersoPrenom->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox1_TextChanged);
 			// 
 			// labelPersoNom
 			// 
@@ -275,7 +285,6 @@ namespace Projet2POOCESI {
 			this->labelPersoNom->Size = System::Drawing::Size(36, 16);
 			this->labelPersoNom->TabIndex = 1;
 			this->labelPersoNom->Text = L"Nom";
-			this->labelPersoNom->Click += gcnew System::EventHandler(this, &GestionPersonnel::label1_Click);
 			// 
 			// textBoxPersoNom
 			// 
@@ -288,20 +297,20 @@ namespace Projet2POOCESI {
 			// groupBox2
 			// 
 			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->groupBox2->Controls->Add(this->textBox5);
-			this->groupBox2->Controls->Add(this->label6);
+			this->groupBox2->Controls->Add(this->textBoxIDAfficher);
+			this->groupBox2->Controls->Add(this->labelDAfficher);
 			this->groupBox2->Controls->Add(this->dgv_enr);
-			this->groupBox2->Controls->Add(this->dateTimePicker1);
+			this->groupBox2->Controls->Add(this->dateTimePickerDateAfficher);
 			this->groupBox2->Controls->Add(this->buttonAfficher);
-			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Controls->Add(this->textBox4);
-			this->groupBox2->Controls->Add(this->label4);
-			this->groupBox2->Controls->Add(this->textBox3);
-			this->groupBox2->Controls->Add(this->label3);
-			this->groupBox2->Controls->Add(this->label2);
-			this->groupBox2->Controls->Add(this->textBox2);
-			this->groupBox2->Controls->Add(this->label1);
-			this->groupBox2->Controls->Add(this->textBox1);
+			this->groupBox2->Controls->Add(this->labelDateAfficher);
+			this->groupBox2->Controls->Add(this->textBoxSuperieurAfficher);
+			this->groupBox2->Controls->Add(this->labelSuperieurAfficher);
+			this->groupBox2->Controls->Add(this->textBoxAdresseAfficher);
+			this->groupBox2->Controls->Add(this->labelAdresseAfficher);
+			this->groupBox2->Controls->Add(this->labelPrenomAfficher);
+			this->groupBox2->Controls->Add(this->textBoxPrenomAfficher);
+			this->groupBox2->Controls->Add(this->labelNomAfficher);
+			this->groupBox2->Controls->Add(this->textBoxNomAfficher);
 			this->groupBox2->Location = System::Drawing::Point(363, 14);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
@@ -310,35 +319,33 @@ namespace Projet2POOCESI {
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher membre du personnel";
-			this->groupBox2->Enter += gcnew System::EventHandler(this, &GestionPersonnel::groupBox2_Enter);
 			// 
-			// textBox5
+			// textBoxIDAfficher
 			// 
-			this->textBox5->Location = System::Drawing::Point(9, 71);
-			this->textBox5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(133, 22);
-			this->textBox5->TabIndex = 13;
+			this->textBoxIDAfficher->Location = System::Drawing::Point(9, 71);
+			this->textBoxIDAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxIDAfficher->Name = L"textBoxIDAfficher";
+			this->textBoxIDAfficher->Size = System::Drawing::Size(133, 22);
+			this->textBoxIDAfficher->TabIndex = 13;
 			// 
-			// label6
+			// labelDAfficher
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(6, 53);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(44, 16);
-			this->label6->TabIndex = 12;
-			this->label6->Text = L"label6";
-			this->label6->Click += gcnew System::EventHandler(this, &GestionPersonnel::label6_Click);
+			this->labelDAfficher->AutoSize = true;
+			this->labelDAfficher->Location = System::Drawing::Point(6, 53);
+			this->labelDAfficher->Name = L"labelDAfficher";
+			this->labelDAfficher->Size = System::Drawing::Size(20, 16);
+			this->labelDAfficher->TabIndex = 12;
+			this->labelDAfficher->Text = L"ID";
 			// 
-			// dateTimePicker1
+			// dateTimePickerDateAfficher
 			// 
-			this->dateTimePicker1->Location = System::Drawing::Point(422, 143);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
-			this->dateTimePicker1->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePicker1->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(291, 22);
-			this->dateTimePicker1->TabIndex = 11;
+			this->dateTimePickerDateAfficher->Location = System::Drawing::Point(422, 143);
+			this->dateTimePickerDateAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePickerDateAfficher->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->dateTimePickerDateAfficher->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
+			this->dateTimePickerDateAfficher->Name = L"dateTimePickerDateAfficher";
+			this->dateTimePickerDateAfficher->Size = System::Drawing::Size(291, 22);
+			this->dateTimePickerDateAfficher->TabIndex = 11;
 			// 
 			// buttonAfficher
 			// 
@@ -351,91 +358,100 @@ namespace Projet2POOCESI {
 			this->buttonAfficher->UseVisualStyleBackColor = true;
 			this->buttonAfficher->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonAfficher_Click);
 			// 
-			// label5
+			// labelDateAfficher
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(419, 123);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(114, 16);
-			this->label5->TabIndex = 8;
-			this->label5->Text = L"Date d\'embauche";
+			this->labelDateAfficher->AutoSize = true;
+			this->labelDateAfficher->Location = System::Drawing::Point(419, 123);
+			this->labelDateAfficher->Name = L"labelDateAfficher";
+			this->labelDateAfficher->Size = System::Drawing::Size(114, 16);
+			this->labelDateAfficher->TabIndex = 8;
+			this->labelDateAfficher->Text = L"Date d\'embauche";
 			// 
-			// textBox4
+			// textBoxSuperieurAfficher
 			// 
-			this->textBox4->Location = System::Drawing::Point(506, 71);
-			this->textBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(207, 22);
-			this->textBox4->TabIndex = 7;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &GestionPersonnel::textBox4_TextChanged);
+			this->textBoxSuperieurAfficher->Location = System::Drawing::Point(506, 71);
+			this->textBoxSuperieurAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxSuperieurAfficher->Name = L"textBoxSuperieurAfficher";
+			this->textBoxSuperieurAfficher->Size = System::Drawing::Size(207, 22);
+			this->textBoxSuperieurAfficher->TabIndex = 7;
 			// 
-			// label4
+			// labelSuperieurAfficher
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(503, 53);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(65, 16);
-			this->label4->TabIndex = 6;
-			this->label4->Text = L"Supérieur";
-			this->label4->Click += gcnew System::EventHandler(this, &GestionPersonnel::label4_Click);
+			this->labelSuperieurAfficher->AutoSize = true;
+			this->labelSuperieurAfficher->Location = System::Drawing::Point(503, 53);
+			this->labelSuperieurAfficher->Name = L"labelSuperieurAfficher";
+			this->labelSuperieurAfficher->Size = System::Drawing::Size(65, 16);
+			this->labelSuperieurAfficher->TabIndex = 6;
+			this->labelSuperieurAfficher->Text = L"Supérieur";
 			// 
-			// textBox3
+			// textBoxAdresseAfficher
 			// 
-			this->textBox3->Location = System::Drawing::Point(9, 143);
-			this->textBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(252, 22);
-			this->textBox3->TabIndex = 5;
-			this->textBox3->Visible = false;
+			this->textBoxAdresseAfficher->Location = System::Drawing::Point(9, 143);
+			this->textBoxAdresseAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxAdresseAfficher->Name = L"textBoxAdresseAfficher";
+			this->textBoxAdresseAfficher->Size = System::Drawing::Size(252, 22);
+			this->textBoxAdresseAfficher->TabIndex = 5;
+			this->textBoxAdresseAfficher->Visible = false;
 			// 
-			// label3
+			// labelAdresseAfficher
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(6, 123);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(58, 16);
-			this->label3->TabIndex = 4;
-			this->label3->Text = L"Adresse";
+			this->labelAdresseAfficher->AutoSize = true;
+			this->labelAdresseAfficher->Location = System::Drawing::Point(6, 123);
+			this->labelAdresseAfficher->Name = L"labelAdresseAfficher";
+			this->labelAdresseAfficher->Size = System::Drawing::Size(58, 16);
+			this->labelAdresseAfficher->TabIndex = 4;
+			this->labelAdresseAfficher->Text = L"Adresse";
 			// 
-			// label2
+			// labelPrenomAfficher
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(326, 53);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(44, 16);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"label2";
+			this->labelPrenomAfficher->AutoSize = true;
+			this->labelPrenomAfficher->Location = System::Drawing::Point(326, 53);
+			this->labelPrenomAfficher->Name = L"labelPrenomAfficher";
+			this->labelPrenomAfficher->Size = System::Drawing::Size(54, 16);
+			this->labelPrenomAfficher->TabIndex = 3;
+			this->labelPrenomAfficher->Text = L"Prenom";
 			// 
-			// textBox2
+			// textBoxPrenomAfficher
 			// 
-			this->textBox2->Location = System::Drawing::Point(329, 71);
-			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(132, 22);
-			this->textBox2->TabIndex = 2;
+			this->textBoxPrenomAfficher->Location = System::Drawing::Point(329, 71);
+			this->textBoxPrenomAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxPrenomAfficher->Name = L"textBoxPrenomAfficher";
+			this->textBoxPrenomAfficher->Size = System::Drawing::Size(132, 22);
+			this->textBoxPrenomAfficher->TabIndex = 2;
 			// 
-			// label1
+			// labelNomAfficher
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(163, 53);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(44, 16);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"label1";
+			this->labelNomAfficher->AutoSize = true;
+			this->labelNomAfficher->Location = System::Drawing::Point(163, 53);
+			this->labelNomAfficher->Name = L"labelNomAfficher";
+			this->labelNomAfficher->Size = System::Drawing::Size(36, 16);
+			this->labelNomAfficher->TabIndex = 1;
+			this->labelNomAfficher->Text = L"Nom";
 			// 
-			// textBox1
+			// textBoxNomAfficher
 			// 
-			this->textBox1->Location = System::Drawing::Point(166, 71);
-			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(133, 22);
-			this->textBox1->TabIndex = 0;
+			this->textBoxNomAfficher->Location = System::Drawing::Point(166, 71);
+			this->textBoxNomAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxNomAfficher->Name = L"textBoxNomAfficher";
+			this->textBoxNomAfficher->Size = System::Drawing::Size(133, 22);
+			this->textBoxNomAfficher->TabIndex = 0;
+			// 
+			// groupBox3
+			// 
+			this->groupBox3->BackColor = System::Drawing::SystemColors::Window;
+			this->groupBox3->Location = System::Drawing::Point(1123, 15);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(548, 447);
+			this->groupBox3->TabIndex = 6;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Supprimer membre du personnel";
 			// 
 			// GestionPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1314, 546);
+			this->ClientSize = System::Drawing::Size(1858, 546);
+			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
 			this->Margin = System::Windows::Forms::Padding(4);
@@ -456,31 +472,6 @@ namespace Projet2POOCESI {
 		this->oPers = gcnew NS_Comp_Personnel::Personnel();
 	}
 
-
-
-	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
-private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click_3(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 	private: System::Void buttonEmbaucher_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0 || this->textBoxSuperieur->Text->Length == 0) {
@@ -493,13 +484,11 @@ private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e)
 
 private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->dgv_enr->Refresh();
-	this->oDs = this->oPers->afficherPersonnel(this->textBoxPersoNom->Text, this->textBoxPersoPrenom->Text, this->textBoxSuperieur->Text, this->textBoxPersoAdresse->Text, this->dateTimePickerDateEmbauche->Value,"Rsl");
+	this->oDs = this->oPers->afficherPersonnel( this->textBoxNomAfficher->Text, this->textBoxPrenomAfficher->Text, this->textBoxSuperieurAfficher->Text, this->textBoxAdresseAfficher->Text, this->dateTimePickerDateAfficher->Value,"Rsl");
 	this->dgv_enr->DataSource = this->oDs;
 	this->dgv_enr->DataMember = "Rsl";
 }
 
-private: System::Void buttonRetour_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-}
+
 };
 }

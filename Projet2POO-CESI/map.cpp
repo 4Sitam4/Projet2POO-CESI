@@ -9,12 +9,27 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	//System::String^ cdt5;
+	//System::String^ cdt6;
 	System::String^ cdtf;
 
+	/*
+	if (this->id != "") {
+		cdt6 = "WHERE id = ";
+		init++;
+	}
+	else {
+		cdt6 = "";
+	}
+	*/
 	if (this->nom != "") {
+		/*if (init > 0) {
+			cdt1 = " AND nom = '";
+			init++;
+		}
+		else {*/
 		cdt1 = "WHERE nom = '";
 		init++;
+		//}
 	}
 	else {
 		cdt1 = "";
