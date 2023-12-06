@@ -1,3 +1,4 @@
+/*
 #pragma once
 namespace NS_Comp_NomPrenom
 {
@@ -16,3 +17,4 @@ namespace NS_Comp_NomPrenom
 	};
 }
 
+*/
