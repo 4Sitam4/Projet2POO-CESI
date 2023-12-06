@@ -1,8 +1,7 @@
-/*
 #pragma once
 ref class NomPrenom
 {
-private:
+protected:
 	System::String^ nom;
 	System::String^ prenom;
 public:
@@ -12,6 +11,5 @@ public:
 	System::String^ getPrenom();
 	void setNom(System::String^ nom);
 	void setPrenom(System::String^ prenom);
+	~NomPrenom();
 };
-
-*/
