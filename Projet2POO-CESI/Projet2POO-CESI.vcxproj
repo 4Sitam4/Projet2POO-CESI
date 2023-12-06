@@ -124,14 +124,17 @@
   <ItemGroup>
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="NomPrenom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PCH.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="NomPrenom.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GestionPersonnel.resx">
