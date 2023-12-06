@@ -1,4 +1,4 @@
-/*
+
 #pragma once
 namespace NS_Comp_NomPrenom
 {
@@ -9,6 +9,7 @@ namespace NS_Comp_NomPrenom
 		System::String^ prenom;
 	public:
 		NomPrenom();
+		~NomPrenom();
 		NomPrenom(System::String^ nom, System::String^ prenom);
 		System::String^ getNom();
 		System::String^ getPrenom();
@@ -16,5 +17,3 @@ namespace NS_Comp_NomPrenom
 		void setPrenom(System::String^ prenom);
 	};
 }
-
-*/
