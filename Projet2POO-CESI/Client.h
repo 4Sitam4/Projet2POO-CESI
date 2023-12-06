@@ -37,6 +37,6 @@ namespace NS_Comp_Client
 
 		~Client();
 
-	}
-};
+	};
+}
 

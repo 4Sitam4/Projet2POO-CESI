@@ -24,6 +24,7 @@ namespace NS_Comp_Personnel
 		System::DateTime^ getDateEmbauche();
 
 		void creerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
+		System::Data::DataSet^ afficherPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^);
 
 		void setSuperieur(System::String^);
 		void setAdresse(System::String^);

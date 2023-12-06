@@ -16,6 +16,8 @@ NS_Comp_Data::cad::cad(void)
 
 	this->oCmd->CommandType = System::Data::CommandType::Text;
 }
+
+
 System::Data::DataSet^ NS_Comp_Data::cad::getRows(System::String^ sSql, System::String^ sDataTableName)
 {
 	this->oDs->Clear();
@@ -26,6 +28,8 @@ System::Data::DataSet^ NS_Comp_Data::cad::getRows(System::String^ sSql, System::
 
 	return this->oDs;
 }
+
+
 void NS_Comp_Data::cad::actionRows(System::String^ sSql)
 {
 	this->sSql = sSql;

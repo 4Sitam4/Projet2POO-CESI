@@ -4,12 +4,13 @@ namespace NS_Comp_Mappage
 	{
 	private:
 		System::String^ sSql;
+
 		//pour personnel et client
-		System::String^ nom;
-		System::String^ prenom;
+		System::String^ nom ="";
+		System::String^ prenom ="";
 		//pour personnel
-		System::String^ superieur;
-		System::String^ adresse;
+		System::String^ superieur ="";
+		System::String^ adresse ="";
 		System::DateTime^ date_embauche;
 		//pour client
 		System::String^ adresse_facturation;
@@ -19,7 +20,7 @@ namespace NS_Comp_Mappage
 
 
 	public:
-		//System::String^ SelectPersonnel(void);
+		System::String^ SelectPersonnel(void);
 		System::String^ InsertPersonnel(void);
 		//System::String^ DeletePersonnel(void);
 		//System::String^ UpdatePersonnel(void);

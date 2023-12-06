@@ -12,6 +12,7 @@ namespace NS_Comp_Data
 	public:
 		cad(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
+		//System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
 
 	};

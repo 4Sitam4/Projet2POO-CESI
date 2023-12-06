@@ -1,16 +1,98 @@
 #include "PCH.h"
 #include "map.h"
 
-/*
+//afficher
 System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 {
-	return "SELECT [id], [nom], [prenom] FROM [prosit6].[dbo].[table_prosit6]";
+	int init = 0;
+	System::String^ cdt1;
+	System::String^ cdt2;
+	System::String^ cdt3;
+	System::String^ cdt4;
+	//System::String^ cdt5;
+	System::String^ cdtf;
+
+	if (this->nom != "") {
+		cdt1 = "WHERE nom = '";
+		init++;
+	}
+	else {
+		cdt1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (init > 0) {
+			cdt2 = "' AND prenom = '";
+			init++;
+		}
+		else {
+			cdt2 = "WHERE prenom = '";
+			init++;
+		}
+	}
+	else{
+		cdt2 = "";
+	}
+	if (this->superieur != "") {
+		if (init > 0) {
+			cdt3 = "' AND superieur = '";
+			init++;
+		}
+		else {
+			cdt3 = "WHERE superieur = '";
+			init++;
+		}
+	}
+	else{
+		cdt3 = "";
+	}
+
+	if (this->adresse != "") {
+		if (init > 0) {
+			cdt4 = "' AND adresse = '";
+			init++;
+		}
+		else {
+			cdt4 = "WHERE adresse = '";
+			init++;
+		}
+	}
+	else {
+		cdt4 = "";
+	}
+	/*
+	if (this->date_embauche) {
+		if (init > 0) {
+			cdt5 = "' AND date_embauche = '";
+			init++;
+		}
+		else {
+			cdt5 = "WHERE date_embauche = '";
+			init++;
+		}
+	}
+	else {
+		cdt5 = "";
+	}*/
+	if (init > 0) {
+		cdtf = "'";
+	}
+	else {
+		cdtf = "";
+	}
+
+
+	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
-*/
+
+//creer
 System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 {
 	return "INSERT INTO Personnel (nom, prenom, adresse, superieur, date_embauche) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->adresse + "','" + this->superieur + "','" + this->date_embauche + "')";
 }
+
+
+
 /*
 System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 {
