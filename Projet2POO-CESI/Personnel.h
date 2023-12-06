@@ -6,6 +6,7 @@ namespace NS_Comp_Personnel
 	ref class Personnel : public NS_Comp_NomPrenom::NomPrenom
 	{
 	private :
+		const System::String^ table = "Personnel";
 		System::String^ superieur;
 		System::String^ adresse;
 		System::String^ date_embauche;
