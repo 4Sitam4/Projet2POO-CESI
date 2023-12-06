@@ -96,13 +96,41 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::TextBox^ textBoxNomAfficher;
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateAfficher;
 	private: System::Windows::Forms::TextBox^ textBoxIDAfficher;
+	private: System::Windows::Forms::Label^ labelIDAfficher;
 
 
 
-	private: System::Windows::Forms::Label^ labelDAfficher;
+
 
 
 	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::TextBox^ textBoxSuperieurSupprimer;
+	private: System::Windows::Forms::Label^ labelSuperieurSupprimer;
+
+
+	private: System::Windows::Forms::TextBox^ textBoxPrenomSupprimer;
+
+
+	private: System::Windows::Forms::Label^ labelPrenomSupprimer;
+
+	private: System::Windows::Forms::TextBox^ textBoxNomSupprimer;
+	private: System::Windows::Forms::Label^ labelNomSupprimer;
+
+
+	private: System::Windows::Forms::TextBox^ textBoxIDSupprimer;
+	private: System::Windows::Forms::Label^ labelIDSupprimer;
+private: System::Windows::Forms::Label^ labelDateSupprimer;
+private: System::Windows::Forms::DateTimePicker^ TimePickerDateSupprimer;
+
+
+
+private: System::Windows::Forms::Button^ buttonSupprimer;
+private: System::Windows::Forms::TextBox^ textBoxAdresseSupprimer;
+
+private: System::Windows::Forms::Label^ labelAdresseSupprimer;
+
+
+
 
 
 
@@ -141,7 +169,7 @@ namespace Projet2POOCESI {
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBoxIDAfficher = (gcnew System::Windows::Forms::TextBox());
-			this->labelDAfficher = (gcnew System::Windows::Forms::Label());
+			this->labelIDAfficher = (gcnew System::Windows::Forms::Label());
 			this->dateTimePickerDateAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->buttonAfficher = (gcnew System::Windows::Forms::Button());
 			this->labelDateAfficher = (gcnew System::Windows::Forms::Label());
@@ -154,9 +182,23 @@ namespace Projet2POOCESI {
 			this->labelNomAfficher = (gcnew System::Windows::Forms::Label());
 			this->textBoxNomAfficher = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelDateSupprimer = (gcnew System::Windows::Forms::Label());
+			this->TimePickerDateSupprimer = (gcnew System::Windows::Forms::DateTimePicker());
+			this->buttonSupprimer = (gcnew System::Windows::Forms::Button());
+			this->textBoxAdresseSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelAdresseSupprimer = (gcnew System::Windows::Forms::Label());
+			this->textBoxSuperieurSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelSuperieurSupprimer = (gcnew System::Windows::Forms::Label());
+			this->textBoxPrenomSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelPrenomSupprimer = (gcnew System::Windows::Forms::Label());
+			this->textBoxNomSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelNomSupprimer = (gcnew System::Windows::Forms::Label());
+			this->textBoxIDSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelIDSupprimer = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// dgv_enr
@@ -298,7 +340,7 @@ namespace Projet2POOCESI {
 			// 
 			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->groupBox2->Controls->Add(this->textBoxIDAfficher);
-			this->groupBox2->Controls->Add(this->labelDAfficher);
+			this->groupBox2->Controls->Add(this->labelIDAfficher);
 			this->groupBox2->Controls->Add(this->dgv_enr);
 			this->groupBox2->Controls->Add(this->dateTimePickerDateAfficher);
 			this->groupBox2->Controls->Add(this->buttonAfficher);
@@ -328,14 +370,14 @@ namespace Projet2POOCESI {
 			this->textBoxIDAfficher->Size = System::Drawing::Size(133, 22);
 			this->textBoxIDAfficher->TabIndex = 13;
 			// 
-			// labelDAfficher
+			// labelIDAfficher
 			// 
-			this->labelDAfficher->AutoSize = true;
-			this->labelDAfficher->Location = System::Drawing::Point(6, 53);
-			this->labelDAfficher->Name = L"labelDAfficher";
-			this->labelDAfficher->Size = System::Drawing::Size(20, 16);
-			this->labelDAfficher->TabIndex = 12;
-			this->labelDAfficher->Text = L"ID";
+			this->labelIDAfficher->AutoSize = true;
+			this->labelIDAfficher->Location = System::Drawing::Point(6, 53);
+			this->labelIDAfficher->Name = L"labelIDAfficher";
+			this->labelIDAfficher->Size = System::Drawing::Size(20, 16);
+			this->labelIDAfficher->TabIndex = 12;
+			this->labelIDAfficher->Text = L"ID";
 			// 
 			// dateTimePickerDateAfficher
 			// 
@@ -439,18 +481,147 @@ namespace Projet2POOCESI {
 			// groupBox3
 			// 
 			this->groupBox3->BackColor = System::Drawing::SystemColors::Window;
+			this->groupBox3->Controls->Add(this->labelDateSupprimer);
+			this->groupBox3->Controls->Add(this->TimePickerDateSupprimer);
+			this->groupBox3->Controls->Add(this->buttonSupprimer);
+			this->groupBox3->Controls->Add(this->textBoxAdresseSupprimer);
+			this->groupBox3->Controls->Add(this->labelAdresseSupprimer);
+			this->groupBox3->Controls->Add(this->textBoxSuperieurSupprimer);
+			this->groupBox3->Controls->Add(this->labelSuperieurSupprimer);
+			this->groupBox3->Controls->Add(this->textBoxPrenomSupprimer);
+			this->groupBox3->Controls->Add(this->labelPrenomSupprimer);
+			this->groupBox3->Controls->Add(this->textBoxNomSupprimer);
+			this->groupBox3->Controls->Add(this->labelNomSupprimer);
+			this->groupBox3->Controls->Add(this->textBoxIDSupprimer);
+			this->groupBox3->Controls->Add(this->labelIDSupprimer);
 			this->groupBox3->Location = System::Drawing::Point(1123, 15);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(548, 447);
+			this->groupBox3->Size = System::Drawing::Size(311, 447);
 			this->groupBox3->TabIndex = 6;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Supprimer membre du personnel";
+			// 
+			// labelDateSupprimer
+			// 
+			this->labelDateSupprimer->AutoSize = true;
+			this->labelDateSupprimer->Location = System::Drawing::Point(6, 299);
+			this->labelDateSupprimer->Name = L"labelDateSupprimer";
+			this->labelDateSupprimer->Size = System::Drawing::Size(114, 16);
+			this->labelDateSupprimer->TabIndex = 14;
+			this->labelDateSupprimer->Text = L"Date d\'embauche";
+			// 
+			// TimePickerDateSupprimer
+			// 
+			this->TimePickerDateSupprimer->Location = System::Drawing::Point(9, 319);
+			this->TimePickerDateSupprimer->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateSupprimer->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateSupprimer->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
+			this->TimePickerDateSupprimer->Name = L"TimePickerDateSupprimer";
+			this->TimePickerDateSupprimer->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateSupprimer->TabIndex = 14;
+			// 
+			// buttonSupprimer
+			// 
+			this->buttonSupprimer->Location = System::Drawing::Point(101, 377);
+			this->buttonSupprimer->Margin = System::Windows::Forms::Padding(4);
+			this->buttonSupprimer->Name = L"buttonSupprimer";
+			this->buttonSupprimer->Size = System::Drawing::Size(96, 28);
+			this->buttonSupprimer->TabIndex = 14;
+			this->buttonSupprimer->Text = L"Supprimer";
+			this->buttonSupprimer->UseVisualStyleBackColor = true;
+			this->buttonSupprimer->Click += gcnew System::EventHandler(this, &GestionPersonnel::buttonSupprimer_Click);
+			// 
+			// textBoxAdresseSupprimer
+			// 
+			this->textBoxAdresseSupprimer->Location = System::Drawing::Point(6, 203);
+			this->textBoxAdresseSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxAdresseSupprimer->Name = L"textBoxAdresseSupprimer";
+			this->textBoxAdresseSupprimer->Size = System::Drawing::Size(252, 22);
+			this->textBoxAdresseSupprimer->TabIndex = 14;
+			this->textBoxAdresseSupprimer->Visible = false;
+			// 
+			// labelAdresseSupprimer
+			// 
+			this->labelAdresseSupprimer->AutoSize = true;
+			this->labelAdresseSupprimer->Location = System::Drawing::Point(6, 181);
+			this->labelAdresseSupprimer->Name = L"labelAdresseSupprimer";
+			this->labelAdresseSupprimer->Size = System::Drawing::Size(58, 16);
+			this->labelAdresseSupprimer->TabIndex = 14;
+			this->labelAdresseSupprimer->Text = L"Adresse";
+			// 
+			// textBoxSuperieurSupprimer
+			// 
+			this->textBoxSuperieurSupprimer->Location = System::Drawing::Point(6, 258);
+			this->textBoxSuperieurSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxSuperieurSupprimer->Name = L"textBoxSuperieurSupprimer";
+			this->textBoxSuperieurSupprimer->Size = System::Drawing::Size(207, 22);
+			this->textBoxSuperieurSupprimer->TabIndex = 14;
+			// 
+			// labelSuperieurSupprimer
+			// 
+			this->labelSuperieurSupprimer->AutoSize = true;
+			this->labelSuperieurSupprimer->Location = System::Drawing::Point(6, 240);
+			this->labelSuperieurSupprimer->Name = L"labelSuperieurSupprimer";
+			this->labelSuperieurSupprimer->Size = System::Drawing::Size(65, 16);
+			this->labelSuperieurSupprimer->TabIndex = 14;
+			this->labelSuperieurSupprimer->Text = L"Supérieur";
+			// 
+			// textBoxPrenomSupprimer
+			// 
+			this->textBoxPrenomSupprimer->Location = System::Drawing::Point(6, 142);
+			this->textBoxPrenomSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxPrenomSupprimer->Name = L"textBoxPrenomSupprimer";
+			this->textBoxPrenomSupprimer->Size = System::Drawing::Size(132, 22);
+			this->textBoxPrenomSupprimer->TabIndex = 14;
+			// 
+			// labelPrenomSupprimer
+			// 
+			this->labelPrenomSupprimer->AutoSize = true;
+			this->labelPrenomSupprimer->Location = System::Drawing::Point(6, 122);
+			this->labelPrenomSupprimer->Name = L"labelPrenomSupprimer";
+			this->labelPrenomSupprimer->Size = System::Drawing::Size(54, 16);
+			this->labelPrenomSupprimer->TabIndex = 14;
+			this->labelPrenomSupprimer->Text = L"Prenom";
+			// 
+			// textBoxNomSupprimer
+			// 
+			this->textBoxNomSupprimer->Location = System::Drawing::Point(6, 92);
+			this->textBoxNomSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxNomSupprimer->Name = L"textBoxNomSupprimer";
+			this->textBoxNomSupprimer->Size = System::Drawing::Size(133, 22);
+			this->textBoxNomSupprimer->TabIndex = 14;
+			// 
+			// labelNomSupprimer
+			// 
+			this->labelNomSupprimer->AutoSize = true;
+			this->labelNomSupprimer->Location = System::Drawing::Point(6, 73);
+			this->labelNomSupprimer->Name = L"labelNomSupprimer";
+			this->labelNomSupprimer->Size = System::Drawing::Size(36, 16);
+			this->labelNomSupprimer->TabIndex = 14;
+			this->labelNomSupprimer->Text = L"Nom";
+			// 
+			// textBoxIDSupprimer
+			// 
+			this->textBoxIDSupprimer->Location = System::Drawing::Point(6, 42);
+			this->textBoxIDSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxIDSupprimer->Name = L"textBoxIDSupprimer";
+			this->textBoxIDSupprimer->Size = System::Drawing::Size(55, 22);
+			this->textBoxIDSupprimer->TabIndex = 14;
+			// 
+			// labelIDSupprimer
+			// 
+			this->labelIDSupprimer->AutoSize = true;
+			this->labelIDSupprimer->Location = System::Drawing::Point(6, 22);
+			this->labelIDSupprimer->Name = L"labelIDSupprimer";
+			this->labelIDSupprimer->Size = System::Drawing::Size(20, 16);
+			this->labelIDSupprimer->TabIndex = 14;
+			this->labelIDSupprimer->Text = L"ID";
 			// 
 			// GestionPersonnel
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1858, 546);
+			this->ClientSize = System::Drawing::Size(1924, 546);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
@@ -463,6 +634,8 @@ namespace Projet2POOCESI {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -490,5 +663,9 @@ private: System::Void buttonAfficher_Click(System::Object^ sender, System::Event
 }
 
 
+private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Les données de toute personne correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomSupprimer->Text + "\n\t" + this->textBoxPrenomSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->textBoxSuperieurSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->TimePickerDateSupprimer->Value);
+	this->oPers->supprimerPersonnel(this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateSupprimer->Value);
+}
 };
 }

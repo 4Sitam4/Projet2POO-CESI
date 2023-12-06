@@ -23,7 +23,7 @@ namespace NS_Comp_Mappage
 	public:
 		System::String^ SelectPersonnel(void);
 		System::String^ InsertPersonnel(void);
-		//System::String^ DeletePersonnel(void);
+		System::String^ DeletePersonnel(void);
 		//System::String^ UpdatePersonnel(void);
 		/*
 		System::String^ SelectClient(void);

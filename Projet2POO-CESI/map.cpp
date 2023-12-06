@@ -108,6 +108,99 @@ System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 
 
 
+//supprimer
+System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
+{
+	int init = 0;
+	System::String^ cdt1;
+	System::String^ cdt2;
+	System::String^ cdt3;
+	System::String^ cdt4;
+	//System::String^ cdt6;
+	System::String^ cdtf;
+
+	/*
+	if (this->id != "") {
+		cdt6 = "WHERE id = ";
+		init++;
+	}
+	else {
+		cdt6 = "";
+	}
+	*/
+	if (this->nom != "") {
+		/*if (init > 0) {
+			cdt1 = " AND nom = '";
+			init++;
+		}
+		else {*/
+		cdt1 = "WHERE nom = '";
+		init++;
+		//}
+	}
+	else {
+		cdt1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (init > 0) {
+			cdt2 = "' AND prenom = '";
+			init++;
+		}
+		else {
+			cdt2 = "WHERE prenom = '";
+			init++;
+		}
+	}
+	else {
+		cdt2 = "";
+	}
+	if (this->superieur != "") {
+		if (init > 0) {
+			cdt3 = "' AND superieur = '";
+			init++;
+		}
+		else {
+			cdt3 = "WHERE superieur = '";
+			init++;
+		}
+	}
+	else {
+		cdt3 = "";
+	}
+
+	if (this->adresse != "") {
+		if (init > 0) {
+			cdt4 = "' AND adresse = '";
+			init++;
+		}
+		else {
+			cdt4 = "WHERE adresse = '";
+			init++;
+		}
+	}
+	else {
+		cdt4 = "";
+	}
+	if (init > 0) {
+		cdtf = "'";
+	}
+	else {
+		cdtf = "";
+	}
+
+
+	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+}
+
+
+
+
+
+
+
+
+
 /*
 System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 {
@@ -119,6 +212,18 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(void)
 	return "UPDATE [table_prosit6] SET nom = " + this->nom + ", " + "prenom = " + this->prenom + "WHERE id = " + this->Id + ";";
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //pour personnel et client

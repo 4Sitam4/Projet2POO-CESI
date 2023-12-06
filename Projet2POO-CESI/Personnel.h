@@ -25,6 +25,7 @@ namespace NS_Comp_Personnel
 
 		void creerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
 		System::Data::DataSet^ afficherPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^);
+		void supprimerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
 
 		void setSuperieur(System::String^);
 		void setAdresse(System::String^);

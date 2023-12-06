@@ -58,7 +58,20 @@ System::Data::DataSet^ NS_Comp_Personnel::Personnel::afficherPersonnel(System::S
 	this->oMappTB->setDateEmbauche(date_embauche);
 	sql = this->oMappTB->SelectPersonnel();
 
-	this->oCad->actionRows(sql);
-
 	return this->oCad->getRows(sql, dataTableName);
+}
+
+
+void NS_Comp_Personnel::Personnel::supprimerPersonnel(System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche) {
+
+	System::String^ sql;
+
+	this->oMappTB->setNom(nom);
+	this->oMappTB->setPrenom(prenom);
+	this->oMappTB->setSuperieur(superieur);
+	this->oMappTB->setAdresse(adresse);
+	this->oMappTB->setDateEmbauche(date_embauche);
+	sql = this->oMappTB->DeletePersonnel();
+
+	this->oCad->actionRows(sql);
 }
