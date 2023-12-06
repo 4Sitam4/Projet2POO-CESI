@@ -1,3 +1,4 @@
+/*
 #pragma once
 ref class NomPrenom
 {
@@ -13,3 +14,4 @@ public:
 	void setPrenom(System::String^ prenom);
 };
 
+*/
