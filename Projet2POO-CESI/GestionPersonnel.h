@@ -51,10 +51,10 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Button^ buttonEmbaucher;
 	private: System::Windows::Forms::Label^ labelSuperieur;
 	private: System::Windows::Forms::TextBox^ textBoxSuperieur;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
+
+
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ button5;
 
@@ -103,10 +103,6 @@ namespace Projet2POOCESI {
 			this->labelPersoNom = (gcnew System::Windows::Forms::Label());
 			this->textBoxPersoNom = (gcnew System::Windows::Forms::TextBox());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -139,7 +135,7 @@ namespace Projet2POOCESI {
 			this->groupBox1->Controls->Add(this->textBoxPersoPrenom);
 			this->groupBox1->Controls->Add(this->labelPersoNom);
 			this->groupBox1->Controls->Add(this->textBoxPersoNom);
-			this->groupBox1->Location = System::Drawing::Point(12, 13);
+			this->groupBox1->Location = System::Drawing::Point(13, 13);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
@@ -147,7 +143,6 @@ namespace Projet2POOCESI {
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Ajout membre du personnel";
-			this->groupBox1->Visible = false;
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &GestionPersonnel::groupBox1_Enter);
 			// 
 			// labelSuperieur
@@ -257,43 +252,6 @@ namespace Projet2POOCESI {
 			this->textBoxPersoNom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoNom->TabIndex = 0;
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(12, 12);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(97, 32);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"Créer";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &GestionPersonnel::button1_Click);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(115, 12);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(100, 32);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Afficher";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(12, 50);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(97, 34);
-			this->button3->TabIndex = 3;
-			this->button3->Text = L"Modifier";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(115, 50);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(100, 34);
-			this->button4->TabIndex = 4;
-			this->button4->Text = L"Supprimer";
-			this->button4->UseVisualStyleBackColor = true;
-			// 
 			// groupBox2
 			// 
 			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -316,7 +274,6 @@ namespace Projet2POOCESI {
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher membre du personnel";
-			this->groupBox2->Visible = false;
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &GestionPersonnel::groupBox2_Enter);
 			// 
 			// textBox5
@@ -439,10 +396,6 @@ namespace Projet2POOCESI {
 			this->ClientSize = System::Drawing::Size(743, 488);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"Gestion du Personnel";
@@ -465,26 +418,6 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void label1_Click_2(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label1_Click_3(System::Object^ sender, System::EventArgs^ e) {
-}
-
-
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->groupBox1->Visible = true;
-	this->ClientSize = System::Drawing::Size(991, 716);
-	this->button1->Visible = false;
-	this->button2->Visible = false;
-	this->button3->Visible = false;
-	this->button4->Visible = false;
-}
-
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->groupBox2->Visible = true;
-}
-
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
 private: System::Void groupBox2_Enter(System::Object^ sender, System::EventArgs^ e) {
