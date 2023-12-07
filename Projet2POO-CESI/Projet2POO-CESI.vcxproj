@@ -127,6 +127,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="catalogue.cpp" />
     <ClCompile Include="Commande.cpp" />
+    <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -139,6 +140,10 @@
     <ClInclude Include="cad.h" />
     <ClInclude Include="Catalogue.h" />
     <ClInclude Include="Commande.h" />
+    <ClInclude Include="Fonctions.h" />
+    <ClInclude Include="GestionClient.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -151,6 +156,9 @@
     <ClInclude Include="Personnel.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GestionClient.resx">
+      <DependentUpon>GestionClient.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionPersonnel.resx">
       <DependentUpon>GestionPersonnel.h</DependentUpon>
     </EmbeddedResource>

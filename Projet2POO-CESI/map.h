@@ -1,7 +1,9 @@
+#ifndef MAP_H
+#define MAP_H
+
 namespace NS_Comp_Mappage
 {
-	ref class map
-	{
+	ref class map {
 	private:
 		System::String^ sSql;
 
@@ -25,9 +27,10 @@ namespace NS_Comp_Mappage
 		System::String^ InsertPersonnel(void);
 		System::String^ DeletePersonnel(void);
 		System::String^ UpdatePersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
-		/*
-		System::String^ SelectClient(void);
+		
+		//System::String^ SelectClient(void);
 		System::String^ InsertClient(void);
+		/*
 		System::String^ DeleteClient(void);
 		System::String^ UpdateClient(void);
 		*/
@@ -72,3 +75,8 @@ namespace NS_Comp_Mappage
 		//Catalogue ...
 	};
 }
+
+
+
+
+#endif MAP_H
