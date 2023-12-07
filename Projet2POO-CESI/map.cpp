@@ -106,6 +106,10 @@ System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 	return "INSERT INTO Personnel (nom, prenom, adresse, superieur, date_embauche) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->adresse + "','" + this->superieur + "','" + this->date_embauche + "')";
 }
 
+System::String^ NS_Comp_Mappage::map::InsertClient(void) {
+	return "INSERT INTO tableClient (nom, prenom, adresse_facturation, date_naissance, date_premier_achat) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->adresse_facturation + "','" + this->date_naissance + "','" + this->date_premier_achat + "')";
+}
+
 
 
 //supprimer

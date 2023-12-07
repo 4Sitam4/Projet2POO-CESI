@@ -5,7 +5,7 @@
 
 NS_Comp_Data::cad::cad(void)
 {
-	this->sCnx = "Data Source=LAPTOP-LS53501I;Initial Catalog=projetPOO;Integrated Security=True";
+	this->sCnx = "Data Source=VIVOBOOK-QUENTI\\MSSQLSERVER01;Initial Catalog=projetPOO;Integrated Security=True";
 
 	this->sSql = "Rien";
 

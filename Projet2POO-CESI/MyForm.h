@@ -1,5 +1,6 @@
 #pragma once
 #include "GestionPersonnel.h"
+#include "GestionClient.h"
 
 
 namespace Projet2POOCESI {
@@ -77,31 +78,34 @@ namespace Projet2POOCESI {
             // 
             // buttonPersonnel
             // 
-            this->buttonPersonnel->Location = System::Drawing::Point(18, 12);
+            this->buttonPersonnel->Location = System::Drawing::Point(24, 15);
+            this->buttonPersonnel->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->buttonPersonnel->Name = L"buttonPersonnel";
-            this->buttonPersonnel->Size = System::Drawing::Size(145, 23);
+            this->buttonPersonnel->Size = System::Drawing::Size(193, 28);
             this->buttonPersonnel->TabIndex = 0;
             this->buttonPersonnel->Text = L"Gestion du Personnel";
             this->buttonPersonnel->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonPersonnel->UseVisualStyleBackColor = true;
             this->buttonPersonnel->Click += gcnew System::EventHandler(this, &MyForm::buttonPersonnel_Click);
-
             // 
             // buttonClients
             // 
-            this->buttonClients->Location = System::Drawing::Point(169, 12);
+            this->buttonClients->Location = System::Drawing::Point(225, 15);
+            this->buttonClients->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->buttonClients->Name = L"buttonClients";
-            this->buttonClients->Size = System::Drawing::Size(145, 23);
+            this->buttonClients->Size = System::Drawing::Size(193, 28);
             this->buttonClients->TabIndex = 1;
             this->buttonClients->Text = L"Gestion des Clients";
             this->buttonClients->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonClients->UseVisualStyleBackColor = true;
+            this->buttonClients->Click += gcnew System::EventHandler(this, &MyForm::buttonClients_Click);
             // 
             // buttonCommandes
             // 
-            this->buttonCommandes->Location = System::Drawing::Point(18, 41);
+            this->buttonCommandes->Location = System::Drawing::Point(24, 50);
+            this->buttonCommandes->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->buttonCommandes->Name = L"buttonCommandes";
-            this->buttonCommandes->Size = System::Drawing::Size(145, 23);
+            this->buttonCommandes->Size = System::Drawing::Size(193, 28);
             this->buttonCommandes->TabIndex = 2;
             this->buttonCommandes->Text = L"Gestion des Commandes";
             this->buttonCommandes->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -109,9 +113,10 @@ namespace Projet2POOCESI {
             // 
             // buttonStock
             // 
-            this->buttonStock->Location = System::Drawing::Point(169, 41);
+            this->buttonStock->Location = System::Drawing::Point(225, 50);
+            this->buttonStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->buttonStock->Name = L"buttonStock";
-            this->buttonStock->Size = System::Drawing::Size(145, 23);
+            this->buttonStock->Size = System::Drawing::Size(193, 28);
             this->buttonStock->TabIndex = 3;
             this->buttonStock->Text = L"Gestion du Stock";
             this->buttonStock->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -119,9 +124,10 @@ namespace Projet2POOCESI {
             // 
             // buttonStatistiques
             // 
-            this->buttonStatistiques->Location = System::Drawing::Point(18, 70);
+            this->buttonStatistiques->Location = System::Drawing::Point(24, 86);
+            this->buttonStatistiques->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->buttonStatistiques->Name = L"buttonStatistiques";
-            this->buttonStatistiques->Size = System::Drawing::Size(145, 23);
+            this->buttonStatistiques->Size = System::Drawing::Size(193, 28);
             this->buttonStatistiques->TabIndex = 4;
             this->buttonStatistiques->Text = L"Gestion des Statistiques";
             this->buttonStatistiques->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
@@ -130,14 +136,15 @@ namespace Projet2POOCESI {
             // 
             // MyForm
             // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+            this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-            this->ClientSize = System::Drawing::Size(329, 107);
+            this->ClientSize = System::Drawing::Size(439, 132);
             this->Controls->Add(this->buttonStatistiques);
             this->Controls->Add(this->buttonStock);
             this->Controls->Add(this->buttonCommandes);
             this->Controls->Add(this->buttonClients);
             this->Controls->Add(this->buttonPersonnel);
+            this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
             this->Name = L"MyForm";
             this->Text = L"Accueil";
             this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -152,10 +159,18 @@ namespace Projet2POOCESI {
         gestionPersonnel->ShowDialog(); // ou utilisez Show pour une fenêtre non-modale
     }
 
+    private: System::Void buttonClients_Click(System::Object^ sender, System::EventArgs^ e) {
+        GestionClient^ gestionClient = gcnew GestionClient();
+        gestionClient->ShowDialog();
+    }
+
+
+
 
 private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 };
 }
