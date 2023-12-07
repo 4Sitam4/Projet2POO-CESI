@@ -122,9 +122,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Article.cpp" />
     <ClCompile Include="cad.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="catalogue.cpp" />
+    <ClCompile Include="Commande.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
     <ClCompile Include="map.cpp" />
@@ -133,9 +135,11 @@
     <ClCompile Include="Personnel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Article.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="cad.h" />
     <ClInclude Include="Catalogue.h" />
+    <ClInclude Include="Commande.h" />
     <ClInclude Include="Fonctions.h" />
     <ClInclude Include="GestionClient.h">
       <FileType>CppForm</FileType>
