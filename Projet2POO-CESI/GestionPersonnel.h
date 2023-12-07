@@ -160,8 +160,8 @@ private: System::Windows::Forms::TextBox^ textBoxIDCritSelectModif;
 	private: System::Windows::Forms::Label^ labelIDModifier;
 private: System::Windows::Forms::GroupBox^ groupBoxCritères;
 private: System::Windows::Forms::GroupBox^ groupBoxCritSelect;
-private: System::Windows::Forms::Label^ label1;
-private: System::Windows::Forms::TextBox^ textBoxIDNewModif;
+
+
 
 
 private: System::Windows::Forms::Label^ label3;
@@ -276,8 +276,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->textBoxPrenomNewModif = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBoxNomNewModif = (gcnew System::Windows::Forms::TextBox());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBoxIDNewModif = (gcnew System::Windows::Forms::TextBox());
 			this->buttonModifier = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -294,7 +292,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->dgv_enr->Location = System::Drawing::Point(247, 196);
 			this->dgv_enr->Name = L"dgv_enr";
 			this->dgv_enr->RowHeadersWidth = 51;
-			this->dgv_enr->Size = System::Drawing::Size(851, 234);
+			this->dgv_enr->Size = System::Drawing::Size(851, 246);
 			this->dgv_enr->TabIndex = 0;
 			// 
 			// groupBox1
@@ -440,11 +438,11 @@ private: System::Windows::Forms::Label^ label5;
 			this->groupBox2->Controls->Add(this->textBoxPrenomAfficher);
 			this->groupBox2->Controls->Add(this->labelNomAfficher);
 			this->groupBox2->Controls->Add(this->textBoxNomAfficher);
-			this->groupBox2->Location = System::Drawing::Point(63, 539);
+			this->groupBox2->Location = System::Drawing::Point(63, 523);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(1375, 448);
+			this->groupBox2->Size = System::Drawing::Size(1375, 479);
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher membre du personnel";
@@ -520,7 +518,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->textBoxAdresseAfficher->Name = L"textBoxAdresseAfficher";
 			this->textBoxAdresseAfficher->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseAfficher->TabIndex = 5;
-			this->textBoxAdresseAfficher->Visible = false;
 			// 
 			// labelAdresseAfficher
 			// 
@@ -581,7 +578,7 @@ private: System::Windows::Forms::Label^ label5;
 			this->groupBox3->Controls->Add(this->labelNomSupprimer);
 			this->groupBox3->Controls->Add(this->textBoxIDSupprimer);
 			this->groupBox3->Controls->Add(this->labelIDSupprimer);
-			this->groupBox3->Location = System::Drawing::Point(1499, 15);
+			this->groupBox3->Location = System::Drawing::Point(1392, 15);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(311, 447);
 			this->groupBox3->TabIndex = 6;
@@ -857,8 +854,6 @@ private: System::Windows::Forms::Label^ label5;
 			this->groupBoxCritères->Controls->Add(this->textBoxPrenomNewModif);
 			this->groupBoxCritères->Controls->Add(this->label2);
 			this->groupBoxCritères->Controls->Add(this->textBoxNomNewModif);
-			this->groupBoxCritères->Controls->Add(this->label1);
-			this->groupBoxCritères->Controls->Add(this->textBoxIDNewModif);
 			this->groupBoxCritères->Location = System::Drawing::Point(425, 42);
 			this->groupBoxCritères->Name = L"groupBoxCritères";
 			this->groupBoxCritères->Size = System::Drawing::Size(331, 363);
@@ -887,7 +882,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// textBoxSuperieurNewModif
 			// 
-			this->textBoxSuperieurNewModif->Location = System::Drawing::Point(9, 266);
+			this->textBoxSuperieurNewModif->Location = System::Drawing::Point(6, 251);
 			this->textBoxSuperieurNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxSuperieurNewModif->Name = L"textBoxSuperieurNewModif";
 			this->textBoxSuperieurNewModif->Size = System::Drawing::Size(207, 22);
@@ -896,7 +891,7 @@ private: System::Windows::Forms::Label^ label5;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(6, 248);
+			this->label5->Location = System::Drawing::Point(6, 233);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(65, 16);
 			this->label5->TabIndex = 15;
@@ -904,7 +899,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// textBoxAdresseNewModif
 			// 
-			this->textBoxAdresseNewModif->Location = System::Drawing::Point(9, 212);
+			this->textBoxAdresseNewModif->Location = System::Drawing::Point(6, 185);
 			this->textBoxAdresseNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAdresseNewModif->Name = L"textBoxAdresseNewModif";
 			this->textBoxAdresseNewModif->Size = System::Drawing::Size(252, 22);
@@ -914,7 +909,7 @@ private: System::Windows::Forms::Label^ label5;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(6, 194);
+			this->label4->Location = System::Drawing::Point(6, 167);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(58, 16);
 			this->label4->TabIndex = 15;
@@ -923,7 +918,7 @@ private: System::Windows::Forms::Label^ label5;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(6, 139);
+			this->label3->Location = System::Drawing::Point(6, 103);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(54, 16);
 			this->label3->TabIndex = 15;
@@ -931,7 +926,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// textBoxPrenomNewModif
 			// 
-			this->textBoxPrenomNewModif->Location = System::Drawing::Point(9, 161);
+			this->textBoxPrenomNewModif->Location = System::Drawing::Point(9, 121);
 			this->textBoxPrenomNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomNewModif->Name = L"textBoxPrenomNewModif";
 			this->textBoxPrenomNewModif->Size = System::Drawing::Size(132, 22);
@@ -940,7 +935,7 @@ private: System::Windows::Forms::Label^ label5;
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(6, 82);
+			this->label2->Location = System::Drawing::Point(6, 32);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(36, 16);
 			this->label2->TabIndex = 15;
@@ -948,28 +943,11 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			// textBoxNomNewModif
 			// 
-			this->textBoxNomNewModif->Location = System::Drawing::Point(9, 100);
+			this->textBoxNomNewModif->Location = System::Drawing::Point(9, 50);
 			this->textBoxNomNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomNewModif->Name = L"textBoxNomNewModif";
 			this->textBoxNomNewModif->Size = System::Drawing::Size(133, 22);
 			this->textBoxNomNewModif->TabIndex = 15;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(6, 32);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(20, 16);
-			this->label1->TabIndex = 15;
-			this->label1->Text = L"ID";
-			// 
-			// textBoxIDNewModif
-			// 
-			this->textBoxIDNewModif->Location = System::Drawing::Point(9, 50);
-			this->textBoxIDNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBoxIDNewModif->Name = L"textBoxIDNewModif";
-			this->textBoxIDNewModif->Size = System::Drawing::Size(55, 22);
-			this->textBoxIDNewModif->TabIndex = 15;
 			// 
 			// buttonModifier
 			// 
@@ -1029,7 +1007,7 @@ private: System::Windows::Forms::Label^ label5;
 
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
-		this->oDs = this->oPers->afficherPersonnel(this->textBoxNomAfficher->Text, this->textBoxPrenomAfficher->Text, this->textBoxSuperieurAfficher->Text, this->textBoxAdresseAfficher->Text, this->dateTimePickerDateAfficher->Value, "Rsl");
+		this->oDs = this->oPers->afficherPersonnel(this->textBoxIDAfficher->Text, this->textBoxNomAfficher->Text, this->textBoxPrenomAfficher->Text, this->textBoxSuperieurAfficher->Text, this->textBoxAdresseAfficher->Text,this->dateTimePickerDateAfficher->Value, "Rsl");
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "Rsl";
 	}
@@ -1037,13 +1015,19 @@ private: System::Windows::Forms::Label^ label5;
 
 	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
 		MessageBox::Show("Les données de toute personne correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomSupprimer->Text + "\n\t" + this->textBoxPrenomSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->textBoxSuperieurSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->TimePickerDateSupprimer->Value);
-		this->oPers->supprimerPersonnel(this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateSupprimer->Value);
+		this->oPers->supprimerPersonnel(this->textBoxIDSupprimer->Text, this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateSupprimer->Value);
 	}
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oPers->modifierPersonnel(this->textBoxNomCritSelectModif->Text, this->textBoxPrenomCritSelectModif->Text, this->textBoxSuperieurCritSelectModif->Text, this->textBoxAdresseCritSelectModif->Text, this->TimePickerDateCritSelectModif->Value, this->textBoxNomNewModif->Text, this->textBoxPrenomNewModif->Text, this->textBoxSuperieurNewModif->Text, this->textBoxAdresseNewModif->Text, this->TimePickerDateNewModif->Value);
-		MessageBox::Show("Informations relatives au personnel modifiées");
+		if (this->textBoxNomNewModif->Text->Length == 0 && this->textBoxPrenomNewModif->Text->Length == 0 && this->textBoxAdresseNewModif->Text->Length == 0 && this->textBoxSuperieurNewModif->Text->Length == 0) {
+			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moin une nouvelle valeur pour effectuer l'opération.");
+		}
+		else {
+			this->oPers->modifierPersonnel(this->textBoxIDCritSelectModif->Text, this->textBoxNomCritSelectModif->Text, this->textBoxPrenomCritSelectModif->Text, this->textBoxSuperieurCritSelectModif->Text, this->textBoxAdresseCritSelectModif->Text, this->TimePickerDateCritSelectModif->Value, this->textBoxNomNewModif->Text, this->textBoxPrenomNewModif->Text, this->textBoxSuperieurNewModif->Text, this->textBoxAdresseNewModif->Text, this->TimePickerDateNewModif->Value);
+			MessageBox::Show("Informations relatives au personnel modifiées");
+		}
 	}
+
 
 };
 }

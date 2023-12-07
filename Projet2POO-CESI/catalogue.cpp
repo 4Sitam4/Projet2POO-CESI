@@ -1,36 +1,37 @@
-/*#include "Catalogue.h"
+#include "Catalogue.h"
 
 NS_Comp_Catalogue::Catalogue::Catalogue() {
-
-}
-NS_Comp_Catalogue::Catalogue::Catalogue(int Ref, System::String^ designation, float prix, float TVA, int stock, int reapprovisionnement) {
-	setRef(Ref);
-	setDesignation(designation);
-	setPrix(prix);
-	setTVA(TVA);
-	setStock(stock);
-	setReapprovisionnement(reapprovisionnement);
+	this->oCad = gcnew NS_Comp_Data::cad();
+	this->oMappTB = gcnew NS_Comp_Mappage::map();
+	this->oMappTB1 = gcnew NS_Comp_Mappage::map();
 }
 
-float NS_Comp_Catalogue::Catalogue::getPrix(void) {
+void NS_Comp_Catalogue::Catalogue::creerProduit(System::String^ designation, System::String^ stock, System::String^ reapprovisionnement, System::String^ prix, System::String^ TVA) {
 
+	System::String^ sql;
+	
+	this->oMappTB->setDesignation(designation);
+	this->oMappTB->setStock(stock);
+	this->oMappTB->setReapprovisionnement(reapprovisionnement);
+	this->oMappTB->setPrix(prix);
+	this->oMappTB->setTVA(TVA);
+
+	sql = this->oMappTB->InsertCatalogue();
+
+	this->oCad->actionRows(sql);
 }
-int NS_Comp_Catalogue::Catalogue::getRef(void) {
 
+System::Data::DataSet^ NS_Comp_Catalogue::Catalogue::afficherProduits(bool reappro_nec, System::String^ ref, System::String^ designation, System::String^ stock, System::String^ reapprovisionnement, System::String^ prix, System::String^ TVA, System::String^ dataTableName){
+	System::String^ sql;
+	this->oMappTB->setReapproNec(reappro_nec);
+	this->oMappTB->setRef(ref);
+	this->oMappTB->setDesignation(designation);
+	this->oMappTB->setStock(stock);
+	this->oMappTB->setReapprovisionnement(reapprovisionnement);
+	this->oMappTB->setPrix(prix);
+	this->oMappTB->setTVA(TVA);
+	sql = this->oMappTB->SelectCatalogue();
+
+	return this->oCad->getRows(sql, dataTableName);
 }
-System::String^ NS_Comp_Catalogue::Catalogue::getDesignation(void) {
 
-}
-int NS_Comp_Catalogue::Catalogue::getStock(void) {
-
-}
-int NS_Comp_Catalogue::Catalogue::reapprovisionnement(void) { return this->reapprovisionnement;}
-float NS_Comp_Catalogue::Catalogue::getTVA(void) { return this->TVA;}
-
-void setPrix(float);
-void setRef(int);
-void setDesignation(System::String^);
-void setStock(int);
-void setReapprovisionnement(int);
-void setTVA(float);
-*/

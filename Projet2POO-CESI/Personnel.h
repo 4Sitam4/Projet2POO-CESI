@@ -17,8 +17,8 @@ namespace NS_Comp_Personnel
 		//Personnel();
 
 		void creerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
-		System::Data::DataSet^ afficherPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^);
-		void supprimerPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
-		void modifierPersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, System::DateTime^);
+		System::Data::DataSet^ afficherPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^);
+		void supprimerPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^);
+		void modifierPersonnel(System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::String^, System::String^, System::String^, System::String^, System::DateTime^);
 	};
 }

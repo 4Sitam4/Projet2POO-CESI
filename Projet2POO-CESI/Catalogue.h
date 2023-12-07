@@ -1,34 +1,27 @@
 #pragma once
-/*
+#include "map.h"
+#include "cad.h"
+
+#ifndef CAT_H
+#define CAT_H
+
 namespace NS_Comp_Catalogue
 {
 	ref class Catalogue
 	{
 	private:
-		float prix;
-		int ref;
-		System::String^ designation;
-		int stock;
-		int reapprovisionnement;
-		float TVA;
+		NS_Comp_Data::cad^ oCad;
+		NS_Comp_Mappage::map^ oMappTB;
+		NS_Comp_Mappage::map^ oMappTB1;
 
 	public:
 		Catalogue();
-		Catalogue(int, System::String^, float, float, int, int);
-		float getPrix(void);
-		int getRef(void);
-		System::String^ getDesignation(void);
-		int getStock(void);
-		int reapprovisionnement(void);
-		float getTVA(void);
+		void creerProduit(System::String^, System::String^, System::String^, System::String^, System::String^);
+		System::Data::DataSet^ afficherProduits(bool, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
-		void setPrix(float);
-		void setRef(int);
-		void setDesignation(System::String^);
-		void setStock(int);
-		void setReapprovisionnement(int);
-		void setTVA(float);
 
 	};
 }
-*/
+
+#endif CAT_H
+
