@@ -198,6 +198,11 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 }
 
 
+System::String^ NS_Comp_Mappage::map::DeleteClient(System::String^ id) {
+	return "DELETE FROM [projetPOO].[dbo].[tableClient] WHERE num = "+ System::Convert::ToInt32(this->getId()) + ";";
+}
+
+
 
 
 
@@ -348,6 +353,93 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
+System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_naissance, System::DateTime^ nouv_date_achat) {
+	
+	int i = 0;
+	System::String^ n_v1;
+	System::String^ n_v2;
+	System::String^ n_v3;
+	System::String^ n_v4;
+	System::String^ n_v5;
+
+	System::String^ n_vf;
+
+	if (nouv_nom != "") {
+		n_v1 = " nom = '";
+		i++;
+	}
+	else {
+		n_v1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (i > 0) {
+			n_v2 = "', prenom = '";
+			i++;
+		}
+		else {
+			n_v2 = " prenom = '";
+			i++;
+		}
+	}
+	else {
+		n_v2 = "";
+	}
+
+	if (this->adresse_facturation != "") {
+		if (i > 0) {
+			n_v3 = "', adresse_facturation = '";
+			i++;
+		}
+		else {
+			n_v3 = " adresse_facturation = '";
+			i++;
+		}
+	}
+	else {
+		n_v3 = "";
+	}
+
+	if (System::Convert::ToString(this->date_naissance) != "") {
+		if (i > 0) {
+			n_v4 = "', date_naissance = '";
+			i++;
+		}
+		else {
+			n_v4 = " date_naissance = '";
+			i++;
+		}
+	}
+	else {
+		n_v4 = "";
+	}
+
+
+	if (System::Convert::ToString(this->date_premier_achat) != "") {
+		if (i > 0) {
+			n_v5 = "', date_premier_achat = '";
+			i++;
+		}
+		else {
+			n_v5 = " date_premier_achat = '";
+			i++;
+		}
+	}
+	else {
+		n_v5 = "";
+	}
+
+	if (i > 0) {
+		n_vf = "'";
+	}
+	else {
+		n_vf = "";
+	}
+
+	return "UPDATE [projetPOO].[dbo].[tableClient] SET" + n_v1 + nouv_nom + n_v2 + nouv_prenom + n_v3 + nouv_adresse + n_v4 + nouv_naissance + n_v5 + nouv_date_achat + n_vf + "WHERE num = " + System::Convert::ToInt32(this->id);
+
+}
+
 
 
 
@@ -380,6 +472,9 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(void)
 
 
 //pour personnel et client
+void NS_Comp_Mappage::map::setId(System::String^ Id) {
+	this->id = Id;
+}
 void NS_Comp_Mappage::map::setNom(System::String^ nom) {
 	this->nom = nom;
 }
@@ -410,6 +505,7 @@ void NS_Comp_Mappage::map::setDatePremierAchat(System::DateTime^ date_premier_ac
 
 
 		//pour personnel et client
+System::String^ NS_Comp_Mappage::map::getId(void) { return this->id; }
 System::String^ NS_Comp_Mappage::map::getNom(void) { return this->nom; }
 System::String^ NS_Comp_Mappage::map::getPrenom(void) { return this->prenom; }
 //pour personnel
