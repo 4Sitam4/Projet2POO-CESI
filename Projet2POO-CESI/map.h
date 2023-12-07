@@ -1,3 +1,6 @@
+#ifndef MAP_H
+#define MAP_H
+
 namespace NS_Comp_Mappage
 {
 	ref class map {
@@ -72,3 +75,8 @@ namespace NS_Comp_Mappage
 		//Catalogue ...
 	};
 }
+
+
+
+
+#endif MAP_H

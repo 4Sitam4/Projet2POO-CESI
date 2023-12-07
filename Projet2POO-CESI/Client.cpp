@@ -6,7 +6,7 @@ using namespace System::Data::SqlClient;
 
 
 NS_Comp_Client::Client::Client() {
-    this->oCad1 = gcnew NS_Comp_Data::cad();
+    this->oCad = gcnew NS_Comp_Data::cad();
     //this->oMappTB = gcnew NS_Comp_Mappage::map();
     this->oMapTB2 = gcnew NS_Comp_Mappage::map();
 }
@@ -21,8 +21,8 @@ void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ pr
     this->oMapTB2->setDateNaissance(date_naissance);
     this->oMapTB2->setDatePremierAchat(date_premier_achat);
 
-    sql = this->oMapTB2->InsertPersonnel();
+    sql = this->oMapTB2->InsertClient();
 
-    this->oCad1->actionRows(sql);
+    this->oCad->actionRows(sql);
 }
 

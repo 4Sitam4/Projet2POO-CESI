@@ -1,3 +1,8 @@
+#ifndef CAD_H
+#define CAD_H
+
+
+
 namespace NS_Comp_Data
 {
 	ref class cad
@@ -17,3 +22,5 @@ namespace NS_Comp_Data
 
 	};
 }
+
+#endif CAD_H

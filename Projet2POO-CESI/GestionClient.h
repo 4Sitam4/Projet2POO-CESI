@@ -222,16 +222,23 @@ namespace Projet2POOCESI {
 			this->groupBoxCreerClient->ResumeLayout(false);
 			this->groupBoxCreerClient->PerformLayout();
 			this->ResumeLayout(false);
+			this->Load += gcnew System::EventHandler(this, &GestionClient::GestionClient_Load);
 
 		}
 #pragma endregion
+
+	private: System::Void GestionClient_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oCli = gcnew NS_Comp_Client::Client();
+	}
+
 	private: System::Void buttonCreerClient_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->textBoxClientNom->Text->Length == 0 || this->textBoxClientPrenom->Text->Length == 0 || this->textBoxAdresseFacturation->Text->Length == 0) {
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
 			this->oCli->creerClient(this->textBoxClientNom->Text, this->textBoxClientPrenom->Text, this->textBoxAdresseFacturation->Text, this->dateTimePickerDateNaissance->Value, this->dateTimePickerDatePremierAchat->Value);
-			MessageBox::Show("Personnel insérer dans la base de donnée");
+			MessageBox::Show("Client insérer dans la base de donnée");
 		}
 	}
 };
