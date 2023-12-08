@@ -572,6 +572,21 @@ void NS_Comp_Mappage::map::setDateEmbauche(System::DateTime^ date_embauche) {
 void NS_Comp_Mappage::map::setAdresseFacturation(System::String^ adresse_facturation) {
 	this->adresse_facturation = adresse_facturation;
 }
+void NS_Comp_Mappage::map::setVilleFacturation(System::String^ ville_facturation) {
+	this->ville_facturation = ville_facturation;
+}
+void NS_Comp_Mappage::map::setCPFacturation(System::String^ cp_facturation) {
+	this->cp_facturation = cp_facturation;
+}
+void NS_Comp_Mappage::map::setAdresseLivraison(System::String^ adresse_livraison) {
+	this->adresse_livraison = adresse_livraison;
+}
+void NS_Comp_Mappage::map::setVilleLivraison(System::String^ ville_livraison) {
+	this->ville_livraison = ville_livraison;
+}
+void NS_Comp_Mappage::map::setCPLivraison(System::String^ cp_livraison) {
+	this->cp_livraison = cp_livraison;
+}
 void NS_Comp_Mappage::map::setDateNaissance(System::DateTime^ date_naissance) {
 	this->date_naissance = date_naissance;
 }
@@ -591,6 +606,12 @@ System::String^ NS_Comp_Mappage::map::getAdresse(void) { return this->adresse; }
 System::DateTime^ NS_Comp_Mappage::map::getDateEmbauche(void) { return this->date_embauche; }
 //pour client
 System::String^ NS_Comp_Mappage::map::getAdresseFacturation(void) { return this->adresse_facturation; }
+System::String^ NS_Comp_Mappage::map::getVilleFacturation(void) { return this->ville_facturation; }
+System::String^ NS_Comp_Mappage::map::getCPFacturation(void) { return this->cp_facturation; }
+System::String^ NS_Comp_Mappage::map::getAdresseLivraison(void) { return this->adresse_livraison; }
+System::String^ NS_Comp_Mappage::map::getVilleLivraison(void) { return this->ville_livraison; }
+System::String^ NS_Comp_Mappage::map::getCPLivraison(void) { return this->cp_livraison; }
+
 System::DateTime^ NS_Comp_Mappage::map::getDateNaissance(void) { return this->date_naissance; }
 System::DateTime^ NS_Comp_Mappage::map::getDatePremierAchat(void) { return this->date_premier_achat; }
 

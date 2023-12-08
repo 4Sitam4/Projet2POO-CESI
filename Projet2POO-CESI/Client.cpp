@@ -13,7 +13,7 @@ NS_Comp_Client::Client::Client() {
 }
 
 
-void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ prenom, System::String^ adresse_facturation, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat) {
+void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ prenom, System::String^ adresse_facturation, System::String^ ville_facturation, System::String^ cp_facturation, System::String^ adresse_livraison, System::String^ ville_livraison, System::String^ cp_livraison, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat) {
     System::String^ sql;
 
     this->oMapTB2->setNom(nom);
@@ -27,13 +27,13 @@ void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ pr
     this->oCad->actionRows(sql);
 }
 
-void NS_Comp_Client::Client::modifierClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_date_naissance, System::DateTime^ nouv_date_achat) {
+void NS_Comp_Client::Client::modifierClient(System::String^ id, System::String^ new_nom, System::String^ new_prenom, System::String^ new_adresse_facturation, System::String^ new_ville_facturation, System::String^ new_cp_facturation, System::String^ new_adresse_livraison, System::String^ new_ville_livraison, System::String^ new_cp_livraison, System::DateTime^ nouv_date_naissance, System::DateTime^ nouv_date_achat) {
     System::String^ sql;
 
     this->oMapTB2->setId(id);
-    this->oMapTB3->setNom(nouv_nom);
-    this->oMapTB3->setPrenom(nouv_prenom);
-    this->oMapTB3->setAdresseFacturation(nouv_adresse);
+    this->oMapTB3->setNom(new_nom);
+    this->oMapTB3->setPrenom(new_prenom);
+    this->oMapTB3->setAdresseFacturation(new_adresse_facturation);
     this->oMapTB3->setDateNaissance(nouv_date_naissance);
     this->oMapTB3->setDatePremierAchat(nouv_date_achat);
 
@@ -56,7 +56,7 @@ void NS_Comp_Client::Client::supprimerClient(System::String^ id) {
 }
 
 
-System::Data::DataSet^ NS_Comp_Client::Client::afficherClient(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ adresse, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat, System::String^ dataTableName) {
+System::Data::DataSet^ NS_Comp_Client::Client::afficherClient(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ adresse_facturation, System::String^ ville_facturation, System::String^ cp_facturation, System::String^ adresse_livraison, System::String^ ville_livraison, System::String^ cp_livraison, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat, System::String^ dataTableName) {
     
     System::String^ sql;
     this->oMapTB2->setId(id);
