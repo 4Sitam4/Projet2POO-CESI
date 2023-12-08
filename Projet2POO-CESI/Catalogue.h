@@ -18,8 +18,8 @@ namespace NS_Comp_Catalogue
 		Catalogue();
 		void creerProduit(System::String^, System::String^, System::String^, System::String^, System::String^);
 		System::Data::DataSet^ afficherProduits(bool, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-
-
+		void modifierProduit(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void supprimerProduit(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 	};
 }
 

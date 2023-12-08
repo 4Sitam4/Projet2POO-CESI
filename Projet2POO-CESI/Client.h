@@ -9,11 +9,14 @@ namespace NS_Comp_Client
 	private:
 		NS_Comp_Data::cad^ oCad;
 		NS_Comp_Mappage::map^ oMapTB2;
+		NS_Comp_Mappage::map^ oMapTB3;
 
 	public:
 		Client();
 
 		void creerClient(System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
+		void modifierClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
+		void supprimerClient(System::String^);
 
 
 	};

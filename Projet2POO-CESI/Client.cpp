@@ -9,6 +9,7 @@ NS_Comp_Client::Client::Client() {
     this->oCad = gcnew NS_Comp_Data::cad();
     //this->oMappTB = gcnew NS_Comp_Mappage::map();
     this->oMapTB2 = gcnew NS_Comp_Mappage::map();
+    this->oMapTB3 = gcnew NS_Comp_Mappage::map();
 }
 
 
@@ -21,8 +22,35 @@ void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ pr
     this->oMapTB2->setDateNaissance(date_naissance);
     this->oMapTB2->setDatePremierAchat(date_premier_achat);
 
-    sql = this->oMapTB2->InsertPersonnel();
+    sql = this->oMapTB2->InsertClient();
 
     this->oCad->actionRows(sql);
 }
 
+void NS_Comp_Client::Client::modifierClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_date_naissance, System::DateTime^ nouv_date_achat) {
+    System::String^ sql;
+
+    this->oMapTB2->setId(id);
+    this->oMapTB3->setNom(nouv_nom);
+    this->oMapTB3->setPrenom(nouv_prenom);
+    this->oMapTB3->setAdresseFacturation(nouv_adresse);
+    this->oMapTB3->setDateNaissance(nouv_date_naissance);
+    this->oMapTB3->setDatePremierAchat(nouv_date_achat);
+
+
+    sql = this->oMapTB2->UpdateClient(this->oMapTB2->getId(), this->oMapTB3->getNom(), this->oMapTB3->getPrenom(), this->oMapTB3->getAdresseFacturation(), this->oMapTB3->getDateNaissance(), this->oMapTB3->getDatePremierAchat());
+
+    this->oCad->actionRows(sql);
+}
+
+
+void NS_Comp_Client::Client::supprimerClient(System::String^ id) {
+    System::String^ sql;
+
+    this->oMapTB2->setId(id);
+
+    sql = this->oMapTB2->DeleteClient(this->oMapTB2->getId());
+    this->oCad->actionRows(sql);
+
+
+}

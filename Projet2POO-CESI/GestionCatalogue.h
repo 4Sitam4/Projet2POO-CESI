@@ -470,5 +470,22 @@ namespace Projet2POOCESI {
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "ResultatCatalogue";
 	}
+
+	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->textBoxNomProduitNewModif->Text->Length == 0 && this->textBoxStockNewModif->Text->Length == 0 && this->textBoxReapproNewModif->Text->Length == 0 && this->textBoxPrixNewModif->Text->Length == 0 && this->textBoxTVANewModif->Text->Length == 0) {
+			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
+		}
+		else {
+			this->oCat->modifierProduit(this->textBoxIDCritSelectModif->Text, this->textBoxNomProduitCritSelectModif->Text, this->textBoxStockCritSelectModif->Text, this->textBoxReapproCritSelectModif->Text, this->textBoxPrixCritSelectModif->Text, this->textBoxTVACritSelectModif->Text, this->textBoxNomProduitNewModif->Text, this->textBoxStockNewModif->Text, this->textBoxReapproNewModif->Text, this->textBoxPrixNewModif->Text, this->textBoxTVANewModif->Text);
+			MessageBox::Show("Informations relatives au personnel modifiées");
+		}
+	}
+
+	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("Les données de tout produit correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomProduitSupprimer->Text + "\n\t" + this->textBoxStockSupprimer->Text + "\n\t" + this->textBoxReapprovisionnementSupprimer->Text + "\n\t" + this->textBoxPrixSupprimer->Text + "\n\t" + this->textBoxTVASupprimer->Text + "\n");
+		this->oCat->supprimerProduit(this->textBoxNomProduitSupprimer->Text, this->textBoxStockSupprimer->Text, this->textBoxReapprovisionnementSupprimer->Text, this->textBoxPrixSupprimer->Text, this->textBoxTVASupprimer->Text);
+	}
+
+
 	};
 }

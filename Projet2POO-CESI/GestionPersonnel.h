@@ -1020,7 +1020,7 @@ private: System::Windows::Forms::Label^ label5;
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->textBoxNomNewModif->Text->Length == 0 && this->textBoxPrenomNewModif->Text->Length == 0 && this->textBoxAdresseNewModif->Text->Length == 0 && this->textBoxSuperieurNewModif->Text->Length == 0) {
-			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moin une nouvelle valeur pour effectuer l'opération.");
+			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
 		}
 		else {
 			this->oPers->modifierPersonnel(this->textBoxIDCritSelectModif->Text, this->textBoxNomCritSelectModif->Text, this->textBoxPrenomCritSelectModif->Text, this->textBoxSuperieurCritSelectModif->Text, this->textBoxAdresseCritSelectModif->Text, this->TimePickerDateCritSelectModif->Value, this->textBoxNomNewModif->Text, this->textBoxPrenomNewModif->Text, this->textBoxSuperieurNewModif->Text, this->textBoxAdresseNewModif->Text, this->TimePickerDateNewModif->Value);
