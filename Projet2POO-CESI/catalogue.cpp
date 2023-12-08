@@ -36,8 +36,8 @@ System::Data::DataSet^ NS_Comp_Catalogue::Catalogue::afficherProduits(bool reapp
 }
 
 
-void NS_Comp_Catalogue::Catalogue::modifierProduit(System::String^ ref, System::String^ designation, System::String^ stock, System::Sting^ reapprovisionnement, System::String^ prix, System::String^ TVA, System::String^ new_designation, System::String^ new_stock, System::String^ new_reapprovisionnement, System::String^ new_prix, System::String^ new_TVA) {
-	
+void NS_Comp_Catalogue::Catalogue::modifierProduit(System::String^ ref, System::String^ designation, System::String^ stock, System::String^ reapprovisionnement, System::String^ prix, System::String^ TVA, System::String^ new_designation, System::String^ new_stock, System::String^ new_reapprovisionnement, System::String^ new_prix, System::String^ new_TVA) {
+
 	System::String^ sql;
 
 	this->oMappTB->setRef(ref);
@@ -53,7 +53,7 @@ void NS_Comp_Catalogue::Catalogue::modifierProduit(System::String^ ref, System::
 	this->oMappTB1->setPrix(new_prix);
 	this->oMappTB1->setTVA(new_TVA);
 
-	sql = this->oMappTB->UpdateCatalogue();
+	sql = this->oMappTB->UpdateCatalogue(new_designation, new_stock, new_prix, new_reapprovisionnement, new_TVA);
 
 	this->oCad->actionRows(sql);
 }
