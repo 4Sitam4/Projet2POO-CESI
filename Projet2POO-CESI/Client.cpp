@@ -40,6 +40,8 @@ void NS_Comp_Client::Client::modifierClient(System::String^ id, System::String^ 
 
     sql = this->oMapTB2->UpdateClient(this->oMapTB2->getId(), this->oMapTB3->getNom(), this->oMapTB3->getPrenom(), this->oMapTB3->getAdresseFacturation(), this->oMapTB3->getDateNaissance(), this->oMapTB3->getDatePremierAchat());
 
+    System::Windows::Forms::MessageBox::Show(sql);
+
     this->oCad->actionRows(sql);
 }
 
@@ -53,4 +55,21 @@ void NS_Comp_Client::Client::supprimerClient(System::String^ id) {
     this->oCad->actionRows(sql);
 
 
+}
+
+
+System::Data::DataSet^ NS_Comp_Client::Client::afficherClient(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ adresse, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat, System::String^ dataTableName) {
+    
+    System::String^ sql;
+    this->oMapTB2->setId(id);
+    this->oMapTB2->setNom(nom);
+    this->oMapTB2->setPrenom(prenom);
+    this->oMapTB2->setAdresseFacturation(adresse);
+    this->oMapTB2->setDateNaissance(date_naissance);
+    this->oMapTB2->setDatePremierAchat(date_premier_achat);
+    sql = this->oMapTB2->SelectClient();
+
+    System::Windows::Forms::MessageBox::Show(sql);
+
+    return this->oCad->getRows(sql, dataTableName);
 }

@@ -28,7 +28,7 @@ namespace NS_Comp_Mappage
 		System::String^ DeletePersonnel(void);
 		System::String^ UpdatePersonnel(System::String^, System::String^, System::String^, System::String^, System::DateTime^);
 		
-		//System::String^ SelectClient(void);
+		System::String^ SelectClient(void);
 		System::String^ InsertClient(void);
 		
 		System::String^ DeleteClient(System::String^);
