@@ -19,8 +19,15 @@ namespace NS_Comp_Mappage
 		System::String^ adresse_facturation;
 		System::DateTime^ date_naissance;
 		System::DateTime^ date_premier_achat;
-		//Catalogue ...
-
+		//Catalogue
+		bool reappro_nec;
+		System::String^ prix ="";
+		System::String^ ref;
+		System::String^ designation ="";
+		System::String^ stock ="";
+		System::String^ reapprovisionnement ="";
+		System::String^ TVA ="";
+		//...
 
 	public:
 		System::String^ SelectPersonnel(void);
@@ -30,16 +37,17 @@ namespace NS_Comp_Mappage
 		
 		//System::String^ SelectClient(void);
 		System::String^ InsertClient(void);
-		/*
-		System::String^ DeleteClient(void);
-		System::String^ UpdateClient(void);
-		*/
+		
+		System::String^ DeleteClient(System::String^);
+		
+		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
+		
 		/*
 		System::String^ SelectCatalogue(void);
 		System::String^ InsertCatalogue(void);
-		System::String^ DeleteCatalogue(void);
-		System::String^ UpdateCatalogue(void);
-		*/
+		//System::String^ DeleteCatalogue(void);
+		//System::String^ UpdateCatalogue(void);
+
 		/*
 		System::String^ SelectCommande(void);
 		System::String^ InsertCommande(void);
@@ -48,9 +56,11 @@ namespace NS_Comp_Mappage
 		*/
 
 		//pour personnel et client
+		void setId(System::String^);
 		void setNom(System::String^);
 		void setPrenom(System::String^);
 		//pour personnel
+		void setId(System::String^);
 		void setSuperieur(System::String^);
 		void setAdresse(System::String^);
 		void setDateEmbauche(System::DateTime^);
@@ -62,9 +72,11 @@ namespace NS_Comp_Mappage
 
 
 				//pour personnel et client
+		System::String^ getId(void);
 		System::String^ getNom(void);
 		System::String^ getPrenom(void);
 		//pour personnel
+		System::String^ getId(void);
 		System::String^ getSuperieur(void);
 		System::String^ getAdresse(void);
 		System::DateTime^ getDateEmbauche(void);
@@ -72,7 +84,25 @@ namespace NS_Comp_Mappage
 		System::String^ getAdresseFacturation(void);
 		System::DateTime^ getDateNaissance(void);
 		System::DateTime^ getDatePremierAchat(void);
-		//Catalogue ...
+		
+			//Catalogue 
+		bool getReapproNec(void);
+		System::String^ getPrix(void);
+		System::String^ getRef(void);
+		System::String^ getDesignation(void);
+		System::String^ getStock(void);
+		System::String^ getReapprovisionnement(void);
+		System::String^ getTVA(void);
+		//
+		void setReapproNec(bool);
+		void setPrix(System::String^);
+		void setRef(System::String^);
+		void setDesignation(System::String^);
+		void setStock(System::String^);
+		void setReapprovisionnement(System::String^);
+		void setTVA(System::String^);
+
+		//...
 	};
 }
 

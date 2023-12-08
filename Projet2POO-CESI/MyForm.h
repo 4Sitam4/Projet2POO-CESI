@@ -1,6 +1,7 @@
 #pragma once
 #include "GestionPersonnel.h"
 #include "GestionClient.h"
+#include "GestionCatalogue.h"
 
 
 namespace Projet2POOCESI {
@@ -79,7 +80,7 @@ namespace Projet2POOCESI {
             // buttonPersonnel
             // 
             this->buttonPersonnel->Location = System::Drawing::Point(24, 15);
-            this->buttonPersonnel->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->buttonPersonnel->Margin = System::Windows::Forms::Padding(4);
             this->buttonPersonnel->Name = L"buttonPersonnel";
             this->buttonPersonnel->Size = System::Drawing::Size(193, 28);
             this->buttonPersonnel->TabIndex = 0;
@@ -91,7 +92,7 @@ namespace Projet2POOCESI {
             // buttonClients
             // 
             this->buttonClients->Location = System::Drawing::Point(225, 15);
-            this->buttonClients->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->buttonClients->Margin = System::Windows::Forms::Padding(4);
             this->buttonClients->Name = L"buttonClients";
             this->buttonClients->Size = System::Drawing::Size(193, 28);
             this->buttonClients->TabIndex = 1;
@@ -103,7 +104,7 @@ namespace Projet2POOCESI {
             // buttonCommandes
             // 
             this->buttonCommandes->Location = System::Drawing::Point(24, 50);
-            this->buttonCommandes->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->buttonCommandes->Margin = System::Windows::Forms::Padding(4);
             this->buttonCommandes->Name = L"buttonCommandes";
             this->buttonCommandes->Size = System::Drawing::Size(193, 28);
             this->buttonCommandes->TabIndex = 2;
@@ -114,18 +115,19 @@ namespace Projet2POOCESI {
             // buttonStock
             // 
             this->buttonStock->Location = System::Drawing::Point(225, 50);
-            this->buttonStock->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->buttonStock->Margin = System::Windows::Forms::Padding(4);
             this->buttonStock->Name = L"buttonStock";
             this->buttonStock->Size = System::Drawing::Size(193, 28);
             this->buttonStock->TabIndex = 3;
             this->buttonStock->Text = L"Gestion du Stock";
             this->buttonStock->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonStock->UseVisualStyleBackColor = true;
+            this->buttonStock->Click += gcnew System::EventHandler(this, &MyForm::buttonStock_Click);
             // 
             // buttonStatistiques
             // 
             this->buttonStatistiques->Location = System::Drawing::Point(24, 86);
-            this->buttonStatistiques->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->buttonStatistiques->Margin = System::Windows::Forms::Padding(4);
             this->buttonStatistiques->Name = L"buttonStatistiques";
             this->buttonStatistiques->Size = System::Drawing::Size(193, 28);
             this->buttonStatistiques->TabIndex = 4;
@@ -144,7 +146,7 @@ namespace Projet2POOCESI {
             this->Controls->Add(this->buttonCommandes);
             this->Controls->Add(this->buttonClients);
             this->Controls->Add(this->buttonPersonnel);
-            this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+            this->Margin = System::Windows::Forms::Padding(4);
             this->Name = L"MyForm";
             this->Text = L"Accueil";
             this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
@@ -172,5 +174,9 @@ private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) 
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void buttonStock_Click(System::Object^ sender, System::EventArgs^ e) {
+    GestionCatalogue^ gestionCatalogue = gcnew GestionCatalogue();
+    gestionCatalogue->ShowDialog();
+}
 };
 }

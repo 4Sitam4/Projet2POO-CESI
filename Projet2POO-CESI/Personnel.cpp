@@ -25,9 +25,10 @@ void NS_Comp_Personnel::Personnel::creerPersonnel(System::String^ nom, System::S
 
 }
 //			  DataSet^
-System::Data::DataSet^ NS_Comp_Personnel::Personnel::afficherPersonnel(System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche, System::String^ dataTableName)
+System::Data::DataSet^ NS_Comp_Personnel::Personnel::afficherPersonnel(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche, System::String^ dataTableName)
 {
 	System::String^ sql;
+	this->oMappTB->setId(id);
 	this->oMappTB->setNom(nom);
 	this->oMappTB->setPrenom(prenom);
 	this->oMappTB->setSuperieur(superieur);
@@ -39,10 +40,10 @@ System::Data::DataSet^ NS_Comp_Personnel::Personnel::afficherPersonnel(System::S
 }
 
 
-void NS_Comp_Personnel::Personnel::supprimerPersonnel(System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche) {
+void NS_Comp_Personnel::Personnel::supprimerPersonnel(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche) {
 
 	System::String^ sql;
-
+	this->oMappTB->setId(id);
 	this->oMappTB->setNom(nom);
 	this->oMappTB->setPrenom(prenom);
 	this->oMappTB->setSuperieur(superieur);
@@ -54,10 +55,10 @@ void NS_Comp_Personnel::Personnel::supprimerPersonnel(System::String^ nom, Syste
 }
 
 
-void NS_Comp_Personnel::Personnel::modifierPersonnel(System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche, System::String^ new_nom, System::String^ new_prenom, System::String^ new_superieur, System::String^ new_adresse, System::DateTime^ new_date_embauche) {
+void NS_Comp_Personnel::Personnel::modifierPersonnel(System::String^ id, System::String^ nom, System::String^ prenom, System::String^ superieur, System::String^ adresse, System::DateTime^ date_embauche, System::String^ new_nom, System::String^ new_prenom, System::String^ new_superieur, System::String^ new_adresse, System::DateTime^ new_date_embauche) {
 
 	System::String^ sql;
-
+	this->oMappTB->setId(id);
 	this->oMappTB->setNom(nom);
 	this->oMappTB->setPrenom(prenom);
 	this->oMappTB->setSuperieur(superieur);

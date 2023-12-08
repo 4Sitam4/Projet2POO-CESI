@@ -21,7 +21,7 @@ void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ pr
     this->oMapTB2->setDateNaissance(date_naissance);
     this->oMapTB2->setDatePremierAchat(date_premier_achat);
 
-    sql = this->oMapTB2->InsertClient();
+    sql = this->oMapTB2->InsertPersonnel();
 
     this->oCad->actionRows(sql);
 }
