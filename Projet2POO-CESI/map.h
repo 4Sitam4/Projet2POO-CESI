@@ -45,7 +45,7 @@ namespace NS_Comp_Mappage
 		
 		System::String^ DeleteClient(System::String^);
 		
-		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
+		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
 		
 		
 		System::String^ SelectCatalogue(void);

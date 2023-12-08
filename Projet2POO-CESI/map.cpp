@@ -9,7 +9,7 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	//System::String^ cdt5;
+	System::String^ cdt5;
 	System::String^ cdt6;
 	System::String^ cdtf;
 
@@ -92,21 +92,26 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	}
 	else {
 		cdt4 = "";
-	}/*
-	if (this->date_embauche == "") {
-		cdt5 = "";
 	}
-	else {
+	if (this->date_embauche->ToShortDateString() != "01/01/1753") {
 		if (init > 0) {
-			cdt5 = "' AND date_embauche = '";
-			init++;
+			if (this->adresse == "" && this->nom == "" && this->prenom == "" && this->superieur == "" && this->id != "") {
+				cdt5 = " AND date_embauche = '" + this->date_embauche->ToShortDateString();
+				init++;
+			} 
+			else {
+				cdt5 = "' AND date_embauche = '" + this->date_embauche->ToShortDateString();
+			}
 		}
 		else {
-			cdt5 = "WHERE date_embauche = '";
+			cdt5 = "WHERE date_embauche = '" + this->date_embauche->ToShortDateString();
 			init++;
 		}
-	}*/
-	if (this->nom != "" || this->prenom != "" || this->superieur != "") {
+	}
+	else {
+		cdt5 = "";
+	}
+	if (this->date_embauche->ToShortDateString() != "01/01/1753" || this->nom != "" || this->prenom != "" || this->superieur != "") {
 		cdtf = "'";
 	}
 	else {
@@ -114,7 +119,7 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	}
 
 
-	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdt5 + cdtf + ";";
 }
 
 
@@ -127,74 +132,132 @@ System::String^ NS_Comp_Mappage::map::SelectClient(void) {
 	System::String^ cdt4 = "";
 	System::String^ cdt5 = "";
 	System::String^ cdt6 = "";
-	System::String^ cdtf = "";
+	System::String^ cdt7 = "";
+	System::String^ cdt8 = "";
+	System::String^ cdt9 = "";
+	System::String^ cdt10 = "";
+	System::String^ cdt11 = "";
+
 
 	if (this->id != "") {
-		cdt1 = "WHERE num = '";
+		cdt1 = "WHERE num = " + this->id;
 		init++;
 	}
 
 	if (this->nom != "") {
 		if (init > 0) {
-			cdt2 = "' AND nom = '";
+			cdt2 = " AND nom = '" + this->nom + "'";
 			init++;
 		}
 		else {
-			cdt2 = "WHERE nom = '";
+			cdt2 = "WHERE nom = '" + this->nom + "'";
 			init++;
 		}
 	}
 	
 	if (this->prenom != "") {
 		if (init > 0) {
-			cdt3 = "' AND prenom = '";
+			cdt3 = " AND prenom = '" + this->prenom + "'";
 			init++;
 		}
 		else {
-			cdt3 = "WHERE prenom = '";
+			cdt3 = "WHERE prenom = '" + this->prenom + "'";
 			init++;
 		}
 	}
+
+	if (this->date_naissance->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			cdt4 = " AND date_naissance = '" + this->date_naissance->ToShortDateString() + "'";
+			init++;
+		}
+		else {
+			cdt4 = " WHERE date_naissance = '" + this->date_naissance->ToShortDateString() + "'";
+			init++;
+		}
+	}
+
+	if (this->date_premier_achat->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			cdt5 = " AND date_premier_achat = '" + this->date_premier_achat->ToShortDateString() + "'";
+			init++;
+		}
+		else {
+			cdt5 = " WHERE date_premier_achat = '" + this->date_premier_achat->ToShortDateString() + "'";
+			init++;
+		}
+	}
+
 
 	if (this->adresse_facturation != "") {
 		if (init > 0) {
-			cdt4 = "' AND adresse_facturation = '";
+			cdt6 = " AND adresse_facturation = '" + this->adresse_facturation + "'";
 			init++;
 		}
 		else {
-			cdt4 = "WHERE adresse_facturation = '";
+			cdt6 = "WHERE adresse_facturation = '" + this->adresse_facturation + "'";
 			init++;
 		}
 	}
 
-	if (System::Convert::ToString(this->date_naissance) != "1/1/1753 12:00:00 AM") {
+	if (this->ville_facturation != "") {
 		if (init > 0) {
-			cdt5 = "' AND date_naissance = '" + this->date_naissance;
+			cdt7 = " AND adr_facturation_ville = '" + this->ville_facturation + "'";
 			init++;
 		}
 		else {
-			cdt5 = " WHERE date_naissance = '" + this->date_naissance;
+			cdt7 = "WHERE adr_facturation_ville = '" + this->ville_facturation + "'";
 			init++;
 		}
 	}
 
-	if (System::Convert::ToString(this->date_premier_achat) != "1/1/1753 12:00:00 AM") {
+
+	if (this->cp_facturation != "") {
 		if (init > 0) {
-			cdt6 = "' AND date_premier_achat = '" + this->date_premier_achat;
+			cdt8 = " AND adr_facturation_code_postal = " + this->cp_facturation;
+				init++;
+		}
+		else {
+			cdt8 = "WHERE adr_facturation_code_postal = " + this->cp_facturation;
+			init++;
+		}
+	}
+
+	if (this->adresse_livraison != "") {
+		if (init > 0) {
+			cdt9 = " AND adresse_livraison = '" + this->adresse_livraison + "'";
 			init++;
 		}
 		else {
-			cdt6 = " WHERE date_premier_achat = '" + this->date_premier_achat;
+			cdt9 = "WHERE adresse_livraison = '" + this->adresse_livraison + "'";
 			init++;
 		}
 	}
 
-	if (init > 0) {
-		cdtf = "'";
+
+	if (this->ville_livraison != "") {
+		if (init > 0) {
+			cdt10 = " AND adr_livraison_ville = '" + this->ville_livraison + "'";
+			init++;
+		}
+		else {
+			cdt10 = "WHERE adr_livraison_ville = '" + this->ville_livraison + "'";
+			init++;
+		}
 	}
 
+	if (this->cp_livraison != "") {
+		if (init > 0) {
+			cdt11 = " AND adr_livraison_code_postal = " + this->cp_livraison;
+			init++;
+		}
+		else {
+			cdt11 = "WHERE adr_livraison_code_postal = " + this->cp_livraison;
+			init++;
+		}
+	}	
 
-	return "SELECT [num], [nom], [prenom], [adresse_facturation], [date_naissance], [date_premier_achat] FROM [projetPOO].[dbo].[tableClient] " + cdt1 + this->id + cdt2 + this->nom + cdt3 + this->prenom + cdt4 + this->adresse_facturation + cdt5 + cdt6 + cdtf;
+	return "SELECT * FROM [projetPOO].[dbo].[Client] " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + cdt7 + cdt8 + cdt9 + cdt10 + cdt11 + ";";
 }
 
 //creer
@@ -204,12 +267,13 @@ System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 }
 
 System::String^ NS_Comp_Mappage::map::InsertClient(void) {
-	return "INSERT INTO tableClient (nom, prenom, adresse_facturation, date_naissance, date_premier_achat) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->adresse_facturation + "','" + this->date_naissance + "','" + this->date_premier_achat + "')";
+	return "INSERT INTO Client (nom, prenom, date_naissance, date_premier_achat, adresse_facturation, adr_facturation_ville, adr_facturation_code_postal, adresse_livraison, adr_livraison_ville, adr_livraison_code_postal) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->date_naissance + "','" + this->date_premier_achat + "','" + this->adresse_facturation + "','" + this->ville_facturation + "', " + this->cp_facturation + " , '" + this->adresse_livraison + "','" + this->ville_livraison + "', " + this->cp_livraison + " );";
 }
 
 
 
-//supprimer
+//DELETE Personnel 
+
 System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 {
 	int init = 0;
@@ -306,8 +370,10 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 }
 
 
+// DELETE Client ---------------------------------------------------------------------------------------------------------------
+
 System::String^ NS_Comp_Mappage::map::DeleteClient(System::String^ id) {
-	return "DELETE FROM [projetPOO].[dbo].[tableClient] WHERE num = "+ System::Convert::ToInt32(this->getId()) + ";";
+	return "DELETE FROM [projetPOO].[dbo].[Client] WHERE num = "+ System::Convert::ToInt32(this->getId()) + ";";
 }
 
 
@@ -315,7 +381,8 @@ System::String^ NS_Comp_Mappage::map::DeleteClient(System::String^ id) {
 
 
 
-//modifier
+// UPDATE Personnel -----------------------------------------------------------------------------------------------------------------------------------------
+
 System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, System::String^ new_prenom, System::String^ new_superieur, System::String^ new_adresse, System::DateTime^ new_date_embauche)
 {
 	int init = 0;
@@ -476,70 +543,134 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
-System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_naissance, System::DateTime^ nouv_date_achat) {
+
+
+// UPDATE Client
+
+
+System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ new_nom, System::String^ new_prenom, System::String^ new_adresse_facturation, System::String^ new_ville_facturation, System::String^ new_cp_facturation, System::String^ new_adresse_livraison, System::String^ new_ville_livraison, System::String^ new_cp_livraison, System::DateTime^ new_date_naissance, System::DateTime^ new_date_achat) {
 	
 	int i = 0;
+	int init = 0;
 	System::String^ n_v1 = "";
 	System::String^ n_v2 = "";
 	System::String^ n_v3 = "";
 	System::String^ n_v4 = "";
 	System::String^ n_v5 = "";
-	System::String^ n_vf = "";
+	System::String^ n_v6 = "";
+	System::String^ n_v7 = "";
+	System::String^ n_v8 = "";
+	System::String^ n_v9 = "";
+	System::String^ n_v10 = "";
 
-	if (nouv_nom != "") {
-		n_v1 = "nom = '";
-		i++;
+	if (new_nom != "") {
+			n_v1 = " nom = '" + new_nom + "'";
+			init++;
 	}
 
-	if (nouv_prenom != "") {
-		if (i > 0) {
-			n_v2 = "', prenom = '";
+	if (new_prenom != "") {
+		if (init > 0) {
+			n_v2 = ", prenom = '" + new_prenom + "'";
+			init++;
 		}
 		else {
-			n_v2 = "prenom = '";
-			i++;
+			n_v2 = " prenom = '" + new_prenom + "'";
+			init++;
 		}
 	}
 
-	if (nouv_adresse != "") {
-		if (i > 0) {
-			n_v3 = "', adresse_facturation = '";
+	if (new_date_naissance->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			n_v3 = ", date_naissance = '" + new_date_naissance->ToShortDateString() + "'";
+			init++;
 		}
 		else {
-			n_v3 = "adresse_facturation = '";
-			i++;
+			n_v3 = " date_naissance = '" + new_date_naissance->ToShortDateString() + "'";
+			init++;
 		}
 	}
 
-
-	if (System::Convert::ToString(nouv_naissance) != "1/1/1753 12:00:00 AM") {
-		if (i > 0) {
-			n_v4 = "', date_naissance = '" + nouv_naissance;
+	if (new_date_achat->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			n_v4 = ", date_premier_achat = '" + new_date_achat->ToShortDateString() + "'";
+			init++;
 		}
 		else {
-			n_v4 = "date_naissance = '" + nouv_naissance;
-			i++;
+			n_v4 = " date_premier_achat = '" + new_date_achat->ToShortDateString() + "'";
+			init++;
 		}
 	}
 
-	if (System::Convert::ToString(nouv_date_achat) != "1/1/1753 12:00:00 AM") {
-		if (i > 0) {
-			n_v5 = "', date_premier_achat = '" + nouv_date_achat;
+
+	if (new_adresse_facturation != "") {
+		if (init > 0) {
+			n_v5 = ", adresse_facturation = '" + new_adresse_facturation + "'";
+			init++;
 		}
 		else {
-			n_v5 = "date_premier_achat = '" + nouv_date_achat;
-			i++;
+			n_v5 = " adresse_facturation = '" + new_adresse_facturation + "'";
+			init++;
 		}
 	}
 
-	if (i > 0) {
-		n_vf = "'";
+	if (new_ville_facturation != "") {
+		if (init > 0) {
+			n_v6 = ", adr_facturation_ville = '" + new_ville_facturation + "'";
+			init++;
+		}
+		else {
+			n_v6 = " adr_facturation_ville = '" + new_ville_facturation + "'";
+			init++;
+		}
 	}
 
 
+	if (new_cp_facturation != "") {
+		if (init > 0) {
+			n_v7 = ", adr_facturation_code_postal = " + new_cp_facturation;
+			init++;
+		}
+		else {
+			n_v7 = " adr_facturation_code_postal = " + new_cp_facturation;
+			init++;
+		}
+	}
+
+	if (new_adresse_livraison != "") {
+		if (init > 0) {
+			n_v8 = ", adresse_livraison = '" + new_adresse_livraison + "'";
+			init++;
+		}
+		else {
+			n_v8 = " adresse_livraison = '" + new_adresse_livraison + "'";
+			init++;
+		}
+	}
 
 
-	return "UPDATE [projetPOO].[dbo].[tableClient] SET " + n_v1 + nouv_nom + n_v2 + nouv_prenom + n_v3 + nouv_adresse + n_v4 + n_v5 + n_vf + " WHERE num = " + System::Convert::ToInt32(this->id);
+	if (this->ville_livraison != "") {
+		if (init > 0) {
+			n_v9 = ", adr_livraison_ville = '" + new_ville_livraison + "'";
+			init++;
+		}
+		else {
+			n_v9 = " adr_livraison_ville = '" + new_ville_livraison + "'";
+			init++;
+		}
+	}
+
+	if (this->cp_livraison != "") {
+		if (init > 0) {
+			n_v10 = ", adr_livraison_code_postal = " + new_cp_livraison;
+			init++;
+		}
+		else {
+			n_v10 = " adr_livraison_code_postal = " + new_cp_livraison;
+			init++;
+		}
+	}
+	//changer le nom de la table par la votre 
+	return "UPDATE [projetPOO].[dbo].[Client] SET " + n_v1 + n_v2 + n_v3 + n_v4 + n_v5 + n_v6 + n_v7 + n_v8 + n_v9 + n_v10 + " WHERE num = " + this->id + ";";
 
 }
 
@@ -648,13 +779,15 @@ System::String^ NS_Comp_Mappage::map::getReapprovisionnement(void) { return this
 System::String^ NS_Comp_Mappage::map::getTVA(void) { return this->TVA; }
 
 
-//creer
+// INSERT Catalogue --------------------------------------------------------------------------------------------------------
+
 System::String^ NS_Comp_Mappage::map::InsertCatalogue(void)
 {
 	return "INSERT INTO Catalogue (produit, quantite, prix_ht, stock_min, TVA) VALUES ('" + this->designation + "'," + this->stock + "," + this->prix + "," + this->reapprovisionnement + "," + this->TVA + ");";
 }
 
 
+//SELECT Catalogue -----------------------------------------------------------------------------------------------------------------------------------
 System::String^ NS_Comp_Mappage::map::SelectCatalogue(void)
 {
 	int init = 0;

@@ -62,7 +62,8 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Label^ labelPersoPrenom;
 	private: System::Windows::Forms::TextBox^ textBoxPersoPrenom;
 	private: System::Windows::Forms::Label^ labelDateEmbauche;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateEmbauche;
+	private: System::Windows::Forms::DateTimePicker^ TimePickerDateEmbauche;
+
 
 
 	private: System::Windows::Forms::Label^ labelPersoAdresse;
@@ -94,7 +95,9 @@ namespace Projet2POOCESI {
 
 
 	private: System::Windows::Forms::TextBox^ textBoxNomAfficher;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateAfficher;
+	private: System::Windows::Forms::DateTimePicker^ TimePickerDateEmbaucheAfficher;
+
+
 	private: System::Windows::Forms::TextBox^ textBoxIDAfficher;
 	private: System::Windows::Forms::Label^ labelIDAfficher;
 
@@ -120,7 +123,8 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::TextBox^ textBoxIDSupprimer;
 	private: System::Windows::Forms::Label^ labelIDSupprimer;
 	private: System::Windows::Forms::Label^ labelDateSupprimer;
-	private: System::Windows::Forms::DateTimePicker^ TimePickerDateSupprimer;
+private: System::Windows::Forms::DateTimePicker^ TimePickerDateEmbaucheSupprimer;
+
 
 
 
@@ -130,7 +134,8 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Label^ labelAdresseSupprimer;
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::Label^ labelDateModifier;
-private: System::Windows::Forms::DateTimePicker^ TimePickerDateCritSelectModif;
+private: System::Windows::Forms::DateTimePicker^ TimePickerDateEmbaucheCritSelectModif;
+
 
 
 	private: System::Windows::Forms::Button^ buttonModifier;
@@ -176,7 +181,8 @@ private: System::Windows::Forms::TextBox^ textBoxAdresseNewModif;
 
 
 private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::DateTimePicker^ TimePickerDateNewModif;
+private: System::Windows::Forms::DateTimePicker^ TimePickerDateEmbaucheNewModif;
+
 
 private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::TextBox^ textBoxSuperieurNewModif;
@@ -216,7 +222,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxSuperieur = (gcnew System::Windows::Forms::TextBox());
 			this->buttonEmbaucher = (gcnew System::Windows::Forms::Button());
 			this->labelDateEmbauche = (gcnew System::Windows::Forms::Label());
-			this->dateTimePickerDateEmbauche = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDateEmbauche = (gcnew System::Windows::Forms::DateTimePicker());
 			this->labelPersoAdresse = (gcnew System::Windows::Forms::Label());
 			this->textBoxPersoAdresse = (gcnew System::Windows::Forms::TextBox());
 			this->labelPersoPrenom = (gcnew System::Windows::Forms::Label());
@@ -227,7 +233,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBoxIDAfficher = (gcnew System::Windows::Forms::TextBox());
 			this->labelIDAfficher = (gcnew System::Windows::Forms::Label());
-			this->dateTimePickerDateAfficher = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDateEmbaucheAfficher = (gcnew System::Windows::Forms::DateTimePicker());
 			this->buttonAfficher = (gcnew System::Windows::Forms::Button());
 			this->labelDateAfficher = (gcnew System::Windows::Forms::Label());
 			this->textBoxSuperieurAfficher = (gcnew System::Windows::Forms::TextBox());
@@ -240,7 +246,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxNomAfficher = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->labelDateSupprimer = (gcnew System::Windows::Forms::Label());
-			this->TimePickerDateSupprimer = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDateEmbaucheSupprimer = (gcnew System::Windows::Forms::DateTimePicker());
 			this->buttonSupprimer = (gcnew System::Windows::Forms::Button());
 			this->textBoxAdresseSupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->labelAdresseSupprimer = (gcnew System::Windows::Forms::Label());
@@ -255,7 +261,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBoxCritSelect = (gcnew System::Windows::Forms::GroupBox());
 			this->textBoxIDCritSelectModif = (gcnew System::Windows::Forms::TextBox());
-			this->TimePickerDateCritSelectModif = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDateEmbaucheCritSelectModif = (gcnew System::Windows::Forms::DateTimePicker());
 			this->labelIDModifier = (gcnew System::Windows::Forms::Label());
 			this->labelDateModifier = (gcnew System::Windows::Forms::Label());
 			this->labelNomModifier = (gcnew System::Windows::Forms::Label());
@@ -267,7 +273,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxPrenomCritSelectModif = (gcnew System::Windows::Forms::TextBox());
 			this->labelAdresseModifier = (gcnew System::Windows::Forms::Label());
 			this->groupBoxCritères = (gcnew System::Windows::Forms::GroupBox());
-			this->TimePickerDateNewModif = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDateEmbaucheNewModif = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBoxSuperieurNewModif = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -303,7 +309,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox1->Controls->Add(this->textBoxSuperieur);
 			this->groupBox1->Controls->Add(this->buttonEmbaucher);
 			this->groupBox1->Controls->Add(this->labelDateEmbauche);
-			this->groupBox1->Controls->Add(this->dateTimePickerDateEmbauche);
+			this->groupBox1->Controls->Add(this->TimePickerDateEmbauche);
 			this->groupBox1->Controls->Add(this->labelPersoAdresse);
 			this->groupBox1->Controls->Add(this->textBoxPersoAdresse);
 			this->groupBox1->Controls->Add(this->labelPersoPrenom);
@@ -358,15 +364,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->labelDateEmbauche->TabIndex = 7;
 			this->labelDateEmbauche->Text = L"Date d\'embauche";
 			// 
-			// dateTimePickerDateEmbauche
+			// TimePickerDateEmbauche
 			// 
-			this->dateTimePickerDateEmbauche->Location = System::Drawing::Point(8, 201);
-			this->dateTimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4);
-			this->dateTimePickerDateEmbauche->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePickerDateEmbauche->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->dateTimePickerDateEmbauche->Name = L"dateTimePickerDateEmbauche";
-			this->dateTimePickerDateEmbauche->Size = System::Drawing::Size(291, 22);
-			this->dateTimePickerDateEmbauche->TabIndex = 6;
+			this->TimePickerDateEmbauche->Location = System::Drawing::Point(8, 201);
+			this->TimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateEmbauche->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateEmbauche->Name = L"TimePickerDateEmbauche";
+			this->TimePickerDateEmbauche->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateEmbauche->Value = DateTime(1753, 1, 1);
+			this->TimePickerDateEmbauche->TabIndex = 6;
 			// 
 			// labelPersoAdresse
 			// 
@@ -428,7 +434,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox2->Controls->Add(this->textBoxIDAfficher);
 			this->groupBox2->Controls->Add(this->labelIDAfficher);
 			this->groupBox2->Controls->Add(this->dgv_enr);
-			this->groupBox2->Controls->Add(this->dateTimePickerDateAfficher);
+			this->groupBox2->Controls->Add(this->TimePickerDateEmbaucheAfficher);
 			this->groupBox2->Controls->Add(this->buttonAfficher);
 			this->groupBox2->Controls->Add(this->labelDateAfficher);
 			this->groupBox2->Controls->Add(this->textBoxSuperieurAfficher);
@@ -465,15 +471,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->labelIDAfficher->TabIndex = 12;
 			this->labelIDAfficher->Text = L"ID";
 			// 
-			// dateTimePickerDateAfficher
+			// TimePickerDateEmbaucheAfficher
 			// 
-			this->dateTimePickerDateAfficher->Location = System::Drawing::Point(1065, 71);
-			this->dateTimePickerDateAfficher->Margin = System::Windows::Forms::Padding(4);
-			this->dateTimePickerDateAfficher->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePickerDateAfficher->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->dateTimePickerDateAfficher->Name = L"dateTimePickerDateAfficher";
-			this->dateTimePickerDateAfficher->Size = System::Drawing::Size(291, 22);
-			this->dateTimePickerDateAfficher->TabIndex = 11;
+			this->TimePickerDateEmbaucheAfficher->Location = System::Drawing::Point(1065, 71);
+			this->TimePickerDateEmbaucheAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateEmbaucheAfficher->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateEmbaucheAfficher->Name = L"TimePickerDateEmbaucheAfficher";
+			this->TimePickerDateEmbaucheAfficher->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateEmbaucheAfficher->TabIndex = 11;
+			this->TimePickerDateEmbaucheAfficher->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonAfficher
 			// 
@@ -567,7 +573,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// 
 			this->groupBox3->BackColor = System::Drawing::SystemColors::Window;
 			this->groupBox3->Controls->Add(this->labelDateSupprimer);
-			this->groupBox3->Controls->Add(this->TimePickerDateSupprimer);
+			this->groupBox3->Controls->Add(this->TimePickerDateEmbaucheSupprimer);
 			this->groupBox3->Controls->Add(this->buttonSupprimer);
 			this->groupBox3->Controls->Add(this->textBoxAdresseSupprimer);
 			this->groupBox3->Controls->Add(this->labelAdresseSupprimer);
@@ -595,15 +601,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->labelDateSupprimer->TabIndex = 14;
 			this->labelDateSupprimer->Text = L"Date d\'embauche";
 			// 
-			// TimePickerDateSupprimer
+			// TimePickerDateEmbaucheSupprimer
 			// 
-			this->TimePickerDateSupprimer->Location = System::Drawing::Point(9, 319);
-			this->TimePickerDateSupprimer->Margin = System::Windows::Forms::Padding(4);
-			this->TimePickerDateSupprimer->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->TimePickerDateSupprimer->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->TimePickerDateSupprimer->Name = L"TimePickerDateSupprimer";
-			this->TimePickerDateSupprimer->Size = System::Drawing::Size(291, 22);
-			this->TimePickerDateSupprimer->TabIndex = 14;
+			this->TimePickerDateEmbaucheSupprimer->Location = System::Drawing::Point(9, 319);
+			this->TimePickerDateEmbaucheSupprimer->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateEmbaucheSupprimer->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateEmbaucheSupprimer->Value = DateTime(1753, 1, 1);
+			this->TimePickerDateEmbaucheSupprimer->Name = L"TimePickerDateEmbaucheSupprimer";
+			this->TimePickerDateEmbaucheSupprimer->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateEmbaucheSupprimer->TabIndex = 14;
 			// 
 			// buttonSupprimer
 			// 
@@ -719,7 +725,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// 
 			this->groupBoxCritSelect->BackColor = System::Drawing::SystemColors::MenuBar;
 			this->groupBoxCritSelect->Controls->Add(this->textBoxIDCritSelectModif);
-			this->groupBoxCritSelect->Controls->Add(this->TimePickerDateCritSelectModif);
+			this->groupBoxCritSelect->Controls->Add(this->TimePickerDateEmbaucheCritSelectModif);
 			this->groupBoxCritSelect->Controls->Add(this->labelIDModifier);
 			this->groupBoxCritSelect->Controls->Add(this->labelDateModifier);
 			this->groupBoxCritSelect->Controls->Add(this->labelNomModifier);
@@ -745,15 +751,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxIDCritSelectModif->Size = System::Drawing::Size(55, 22);
 			this->textBoxIDCritSelectModif->TabIndex = 14;
 			// 
-			// TimePickerDateCritSelectModif
+			// TimePickerDateEmbaucheCritSelectModif
 			// 
-			this->TimePickerDateCritSelectModif->Location = System::Drawing::Point(7, 319);
-			this->TimePickerDateCritSelectModif->Margin = System::Windows::Forms::Padding(4);
-			this->TimePickerDateCritSelectModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->TimePickerDateCritSelectModif->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->TimePickerDateCritSelectModif->Name = L"TimePickerDateCritSelectModif";
-			this->TimePickerDateCritSelectModif->Size = System::Drawing::Size(291, 22);
-			this->TimePickerDateCritSelectModif->TabIndex = 14;
+			this->TimePickerDateEmbaucheCritSelectModif->Location = System::Drawing::Point(7, 319);
+			this->TimePickerDateEmbaucheCritSelectModif->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateEmbaucheCritSelectModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateEmbaucheCritSelectModif->Value = DateTime(1753, 1, 1);
+			this->TimePickerDateEmbaucheCritSelectModif->Name = L"TimePickerDateEmbaucheCritSelectModif";
+			this->TimePickerDateEmbaucheCritSelectModif->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateEmbaucheCritSelectModif->TabIndex = 14;
 			// 
 			// labelIDModifier
 			// 
@@ -845,7 +851,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// groupBoxCritères
 			// 
 			this->groupBoxCritères->BackColor = System::Drawing::SystemColors::MenuBar;
-			this->groupBoxCritères->Controls->Add(this->TimePickerDateNewModif);
+			this->groupBoxCritères->Controls->Add(this->TimePickerDateEmbaucheNewModif);
 			this->groupBoxCritères->Controls->Add(this->label6);
 			this->groupBoxCritères->Controls->Add(this->textBoxSuperieurNewModif);
 			this->groupBoxCritères->Controls->Add(this->label5);
@@ -862,15 +868,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBoxCritères->TabStop = false;
 			this->groupBoxCritères->Text = L"Nouvelles valeures";
 			// 
-			// TimePickerDateNewModif
+			// TimePickerDateEmbaucheNewModif
 			// 
-			this->TimePickerDateNewModif->Location = System::Drawing::Point(9, 319);
-			this->TimePickerDateNewModif->Margin = System::Windows::Forms::Padding(4);
-			this->TimePickerDateNewModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->TimePickerDateNewModif->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
-			this->TimePickerDateNewModif->Name = L"TimePickerDateNewModif";
-			this->TimePickerDateNewModif->Size = System::Drawing::Size(291, 22);
-			this->TimePickerDateNewModif->TabIndex = 15;
+			this->TimePickerDateEmbaucheNewModif->Location = System::Drawing::Point(9, 319);
+			this->TimePickerDateEmbaucheNewModif->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDateEmbaucheNewModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDateEmbaucheNewModif->Value = DateTime(1753, 1, 1);
+			this->TimePickerDateEmbaucheNewModif->Name = L"TimePickerDateEmbaucheNewModif";
+			this->TimePickerDateEmbaucheNewModif->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDateEmbaucheNewModif->TabIndex = 15;
 			// 
 			// label6
 			// 
@@ -1002,22 +1008,25 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
-			this->oPers->creerPersonnel(this->textBoxPersoNom->Text, this->textBoxPersoPrenom->Text, this->textBoxSuperieur->Text, this->textBoxPersoAdresse->Text, this->dateTimePickerDateEmbauche->Value);
+			this->oPers->creerPersonnel(this->textBoxPersoNom->Text, this->textBoxPersoPrenom->Text, this->textBoxSuperieur->Text, this->textBoxPersoAdresse->Text, this->TimePickerDateEmbauche->Value);
 			MessageBox::Show("Personnel insérer dans la base de donnée");
 		}
 	}
 
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
-		this->oDs = this->oPers->afficherPersonnel(this->textBoxIDAfficher->Text, this->textBoxNomAfficher->Text, this->textBoxPrenomAfficher->Text, this->textBoxSuperieurAfficher->Text, this->textBoxAdresseAfficher->Text,this->dateTimePickerDateAfficher->Value, "Rsl");
+		MessageBox::Show("voila la date : \n\t" + System::Convert::ToString(this->TimePickerDateEmbaucheAfficher));
+		this->oDs = this->oPers->afficherPersonnel(this->textBoxIDAfficher->Text, this->textBoxNomAfficher->Text, this->textBoxPrenomAfficher->Text, this->textBoxSuperieurAfficher->Text, this->textBoxAdresseAfficher->Text,this->TimePickerDateEmbaucheAfficher->Value, "Rsl");
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "Rsl";
+		this->TimePickerDateEmbaucheAfficher->Value = DateTime(1753, 1, 1);
 	}
 
 
 	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Les données de toute personne correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomSupprimer->Text + "\n\t" + this->textBoxPrenomSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->textBoxSuperieurSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->TimePickerDateSupprimer->Value);
-		this->oPers->supprimerPersonnel(this->textBoxIDSupprimer->Text, this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateSupprimer->Value);
+		MessageBox::Show("Les données de toute personne correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomSupprimer->Text + "\n\t" + this->textBoxPrenomSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->textBoxSuperieurSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->TimePickerDateEmbaucheSupprimer->Value);
+		this->oPers->supprimerPersonnel(this->textBoxIDSupprimer->Text, this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateEmbaucheSupprimer->Value);
+		this->TimePickerDateEmbaucheSupprimer->Value = DateTime(1753, 1, 1);
 	}
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1025,8 +1034,10 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
 		}
 		else {
-			this->oPers->modifierPersonnel(this->textBoxIDCritSelectModif->Text, this->textBoxNomCritSelectModif->Text, this->textBoxPrenomCritSelectModif->Text, this->textBoxSuperieurCritSelectModif->Text, this->textBoxAdresseCritSelectModif->Text, this->TimePickerDateCritSelectModif->Value, this->textBoxNomNewModif->Text, this->textBoxPrenomNewModif->Text, this->textBoxSuperieurNewModif->Text, this->textBoxAdresseNewModif->Text, this->TimePickerDateNewModif->Value);
+			this->oPers->modifierPersonnel(this->textBoxIDCritSelectModif->Text, this->textBoxNomCritSelectModif->Text, this->textBoxPrenomCritSelectModif->Text, this->textBoxSuperieurCritSelectModif->Text, this->textBoxAdresseCritSelectModif->Text, this->TimePickerDateEmbaucheCritSelectModif->Value, this->textBoxNomNewModif->Text, this->textBoxPrenomNewModif->Text, this->textBoxSuperieurNewModif->Text, this->textBoxAdresseNewModif->Text, this->TimePickerDateEmbaucheNewModif->Value);
 			MessageBox::Show("Informations relatives au personnel modifiées");
+			this->TimePickerDateEmbaucheCritSelectModif->Value = DateTime(1753, 1, 1);
+			this->TimePickerDateEmbaucheNewModif->Value = DateTime(1753, 1, 1);
 		}
 	}
 

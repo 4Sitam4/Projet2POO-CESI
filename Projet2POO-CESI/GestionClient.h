@@ -1288,7 +1288,7 @@ private: System::Windows::Forms::Label^ label13;
 	}
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
-		this->oDs = this->oCli->afficherClient(this->textBoxIdAfficherClient->Text, this->textBoxNomAfficherClient->Text, this->textBoxPrenomAfficherClient->Text, this->textBoxAdresseLivreAfficherClient->Text, this->textBoxAdrVilleLivreAfficherClient->Text, this->textBoxAdrCPLivreAfficherClient->Text, this->textBoxAdresseFactureAfficherClient->Text, this->textBoxAdrVilleFactureAfficherClient->Text, this->textBoxAdrCPFactureAfficherClient->Text, this->dateTimePickerAnniversaireAfficherClient->Value, this->dateTimePickerAchatAfficherClient->Value, "Rsl");
+		this->oDs = this->oCli->afficherClient(this->textBoxIdAfficherClient->Text, this->textBoxNomAfficherClient->Text, this->textBoxPrenomAfficherClient->Text, this->textBoxAdresseFactureAfficherClient->Text, this->textBoxAdrVilleFactureAfficherClient->Text, this->textBoxAdrCPFactureAfficherClient->Text, this->textBoxAdresseLivreAfficherClient->Text, this->textBoxAdrVilleLivreAfficherClient->Text, this->textBoxAdrCPLivreAfficherClient->Text, this->dateTimePickerAnniversaireAfficherClient->Value, this->dateTimePickerAchatAfficherClient->Value, "Rsl");
 		this->dgv_enr->DataSource = this->oDs;
 		this->dgv_enr->DataMember = "Rsl";
 		this->dateTimePickerAnniversaireAfficherClient->Value = DateTime(1753, 1, 1);
