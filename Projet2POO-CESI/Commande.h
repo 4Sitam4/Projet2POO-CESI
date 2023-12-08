@@ -1,3 +1,4 @@
+/*
 #pragma once
 #include <vector>
 #include "Article.h"
@@ -52,3 +53,4 @@ namespace NS_Comp_Commande
 	};
 }
 
+*/

@@ -56,7 +56,7 @@ namespace Projet2POOCESI {
 	protected:
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	protected:
-	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
+
 	private: System::Windows::Forms::Label^ labelPersoNom;
 	private: System::Windows::Forms::TextBox^ textBoxPersoNom;
 	private: System::Windows::Forms::Label^ labelPersoPrenom;
@@ -182,6 +182,7 @@ private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::TextBox^ textBoxSuperieurNewModif;
 
 private: System::Windows::Forms::Label^ label5;
+private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 
 
 
@@ -964,6 +965,7 @@ private: System::Windows::Forms::Label^ label5;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(1833, 1013);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox3);

@@ -1,3 +1,5 @@
+/*
+
 #include "Commande.h"
 
 using namespace NS_Comp_Commande;
@@ -54,9 +56,11 @@ void Commande::calcul_prix_HT_total()
     for (int i = 0; i < produits->Count; i++)
     {
 		// Add the price of the current product to the total
-		//total += produits[i]->get_prix();
+        total += produits[i]->get_prix();
 	}
 
 	// Set the total price before tax
 	Prix_Total_HT = total;
 }
+
+*/

@@ -117,6 +117,86 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
+
+System::String^ NS_Comp_Mappage::map::SelectClient(void) {
+
+	int init = 0;
+	System::String^ cdt1 = "";
+	System::String^ cdt2 = "";
+	System::String^ cdt3 = "";
+	System::String^ cdt4 = "";
+	System::String^ cdt5 = "";
+	System::String^ cdt6 = "";
+	System::String^ cdtf = "";
+
+	if (this->id != "") {
+		cdt1 = "WHERE num = '";
+		init++;
+	}
+
+	if (this->nom != "") {
+		if (init > 0) {
+			cdt2 = "' AND nom = '";
+			init++;
+		}
+		else {
+			cdt2 = "WHERE nom = '";
+			init++;
+		}
+	}
+	
+	if (this->prenom != "") {
+		if (init > 0) {
+			cdt3 = "' AND prenom = '";
+			init++;
+		}
+		else {
+			cdt3 = "WHERE prenom = '";
+			init++;
+		}
+	}
+
+	if (this->adresse_facturation != "") {
+		if (init > 0) {
+			cdt4 = "' AND adresse_facturation = '";
+			init++;
+		}
+		else {
+			cdt4 = "WHERE adresse_facturation = '";
+			init++;
+		}
+	}
+
+	if (System::Convert::ToString(this->date_naissance) != "1/1/1753 12:00:00 AM") {
+		if (init > 0) {
+			cdt5 = "' AND date_naissance = '" + this->date_naissance;
+			init++;
+		}
+		else {
+			cdt5 = " WHERE date_naissance = '" + this->date_naissance;
+			init++;
+		}
+	}
+
+	if (System::Convert::ToString(this->date_premier_achat) != "1/1/1753 12:00:00 AM") {
+		if (init > 0) {
+			cdt6 = "' AND date_premier_achat = '" + this->date_premier_achat;
+			init++;
+		}
+		else {
+			cdt6 = " WHERE date_premier_achat = '" + this->date_premier_achat;
+			init++;
+		}
+	}
+
+	if (init > 0) {
+		cdtf = "'";
+	}
+
+
+	return "SELECT [num], [nom], [prenom], [adresse_facturation], [date_naissance], [date_premier_achat] FROM [projetPOO].[dbo].[tableClient] " + cdt1 + this->id + cdt2 + this->nom + cdt3 + this->prenom + cdt4 + this->adresse_facturation + cdt5 + cdt6 + cdtf;
+}
+
 //creer
 System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 {
@@ -399,87 +479,67 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_naissance, System::DateTime^ nouv_date_achat) {
 	
 	int i = 0;
-	System::String^ n_v1;
-	System::String^ n_v2;
-	System::String^ n_v3;
-	System::String^ n_v4;
-	System::String^ n_v5;
-
-	System::String^ n_vf;
+	System::String^ n_v1 = "";
+	System::String^ n_v2 = "";
+	System::String^ n_v3 = "";
+	System::String^ n_v4 = "";
+	System::String^ n_v5 = "";
+	System::String^ n_vf = "";
 
 	if (nouv_nom != "") {
-		n_v1 = " nom = '";
+		n_v1 = "nom = '";
 		i++;
 	}
-	else {
-		n_v1 = "";
-	}
 
-	if (this->prenom != "") {
+	if (nouv_prenom != "") {
 		if (i > 0) {
 			n_v2 = "', prenom = '";
-			i++;
 		}
 		else {
-			n_v2 = " prenom = '";
+			n_v2 = "prenom = '";
 			i++;
 		}
 	}
-	else {
-		n_v2 = "";
-	}
 
-	if (this->adresse_facturation != "") {
+	if (nouv_adresse != "") {
 		if (i > 0) {
 			n_v3 = "', adresse_facturation = '";
-			i++;
 		}
 		else {
-			n_v3 = " adresse_facturation = '";
+			n_v3 = "adresse_facturation = '";
 			i++;
 		}
 	}
-	else {
-		n_v3 = "";
-	}
 
-	if (System::Convert::ToString(this->date_naissance) != "") {
+
+	if (System::Convert::ToString(nouv_naissance) != "1/1/1753 12:00:00 AM") {
 		if (i > 0) {
-			n_v4 = "', date_naissance = '";
-			i++;
+			n_v4 = "', date_naissance = '" + nouv_naissance;
 		}
 		else {
-			n_v4 = " date_naissance = '";
+			n_v4 = "date_naissance = '" + nouv_naissance;
 			i++;
 		}
 	}
-	else {
-		n_v4 = "";
-	}
 
-
-	if (System::Convert::ToString(this->date_premier_achat) != "") {
+	if (System::Convert::ToString(nouv_date_achat) != "1/1/1753 12:00:00 AM") {
 		if (i > 0) {
-			n_v5 = "', date_premier_achat = '";
-			i++;
+			n_v5 = "', date_premier_achat = '" + nouv_date_achat;
 		}
 		else {
-			n_v5 = " date_premier_achat = '";
+			n_v5 = "date_premier_achat = '" + nouv_date_achat;
 			i++;
 		}
-	}
-	else {
-		n_v5 = "";
 	}
 
 	if (i > 0) {
 		n_vf = "'";
 	}
-	else {
-		n_vf = "";
-	}
 
-	return "UPDATE [projetPOO].[dbo].[tableClient] SET" + n_v1 + nouv_nom + n_v2 + nouv_prenom + n_v3 + nouv_adresse + n_v4 + nouv_naissance + n_v5 + nouv_date_achat + n_vf + "WHERE num = " + System::Convert::ToInt32(this->id);
+
+
+
+	return "UPDATE [projetPOO].[dbo].[tableClient] SET " + n_v1 + nouv_nom + n_v2 + nouv_prenom + n_v3 + nouv_adresse + n_v4 + n_v5 + n_vf + " WHERE num = " + System::Convert::ToInt32(this->id);
 
 }
 
