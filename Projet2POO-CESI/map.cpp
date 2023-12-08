@@ -9,7 +9,7 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	System::String^ cdt5;
+	//System::String^ cdt5;
 	System::String^ cdt6;
 	System::String^ cdtf;
 
@@ -559,9 +559,6 @@ void NS_Comp_Mappage::map::setPrenom(System::String^ prenom) {
 	this->prenom = prenom;
 }
 //pour personnel
-void NS_Comp_Mappage::map::setId(System::String^ id) {
-	this->id = id;
-}
 void NS_Comp_Mappage::map::setSuperieur(System::String^ superieur) {
 	this->superieur = superieur;
 }
@@ -589,7 +586,6 @@ System::String^ NS_Comp_Mappage::map::getId(void) { return this->id; }
 System::String^ NS_Comp_Mappage::map::getNom(void) { return this->nom; }
 System::String^ NS_Comp_Mappage::map::getPrenom(void) { return this->prenom; }
 //pour personnel
-System::String^ NS_Comp_Mappage::map::getId(void) { return this->id; }
 System::String^ NS_Comp_Mappage::map::getSuperieur(void) { return this->superieur; }
 System::String^ NS_Comp_Mappage::map::getAdresse(void) { return this->adresse; }
 System::DateTime^ NS_Comp_Mappage::map::getDateEmbauche(void) { return this->date_embauche; }

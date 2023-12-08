@@ -42,7 +42,7 @@ namespace NS_Comp_Mappage
 		
 		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
 		
-		/*
+		
 		System::String^ SelectCatalogue(void);
 		System::String^ InsertCatalogue(void);
 		//System::String^ DeleteCatalogue(void);
@@ -60,7 +60,6 @@ namespace NS_Comp_Mappage
 		void setNom(System::String^);
 		void setPrenom(System::String^);
 		//pour personnel
-		void setId(System::String^);
 		void setSuperieur(System::String^);
 		void setAdresse(System::String^);
 		void setDateEmbauche(System::DateTime^);
@@ -76,7 +75,6 @@ namespace NS_Comp_Mappage
 		System::String^ getNom(void);
 		System::String^ getPrenom(void);
 		//pour personnel
-		System::String^ getId(void);
 		System::String^ getSuperieur(void);
 		System::String^ getAdresse(void);
 		System::DateTime^ getDateEmbauche(void);
