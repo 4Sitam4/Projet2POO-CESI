@@ -9,7 +9,6 @@ namespace NS_Comp_Client
 	private:
 		NS_Comp_Data::cad^ oCad;
 		NS_Comp_Mappage::map^ oMapTB2;
-		NS_Comp_Mappage::map^ oMapTB3;
 
 	public:
 		Client();

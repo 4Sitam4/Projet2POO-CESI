@@ -9,10 +9,11 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	//System::String^ cdt6;
+	System::String^ cdt5;
+	System::String^ cdt6;
 	System::String^ cdtf;
 
-	/*
+	
 	if (this->id != "") {
 		cdt6 = "WHERE id = ";
 		init++;
@@ -20,16 +21,16 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	else {
 		cdt6 = "";
 	}
-	*/
+	
 	if (this->nom != "") {
-		/*if (init > 0) {
+		if (init > 0) {
 			cdt1 = " AND nom = '";
 			init++;
 		}
-		else {*/
+		else {
 		cdt1 = "WHERE nom = '";
 		init++;
-		//}
+		}
 	}
 	else {
 		cdt1 = "";
@@ -37,8 +38,14 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 
 	if (this->prenom != "") {
 		if (init > 0) {
-			cdt2 = "' AND prenom = '";
-			init++;
+			if (this->nom == "" && this->id != "") {
+				cdt2 = " AND prenom = '";
+				init++;
+			}
+			else {
+				cdt2 = "' AND prenom = '";
+				init++;
+			}
 		}
 		else {
 			cdt2 = "WHERE prenom = '";
@@ -50,8 +57,13 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	}
 	if (this->superieur != "") {
 		if (init > 0) {
-			cdt3 = "' AND superieur = '";
-			init++;
+			if (this->nom == "" && this->prenom == "" && this->id != "") {
+				cdt3 = " AND superieur = '";
+				init++;
+			}
+			else {
+				cdt3 = "' AND superieur = '";
+			}
 		}
 		else {
 			cdt3 = "WHERE superieur = '";
@@ -64,8 +76,14 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 
 	if (this->adresse != "") {
 		if (init > 0) {
-			cdt4 = "' AND adresse = '";
-			init++;
+			if (this->nom == "" && this->prenom == "" && this->superieur == "" && this->id != "") {
+				cdt4 = " AND adresse = '";
+				init++;
+			}
+			else {
+				cdt4 = "' AND adresse = '";
+				init++;
+			}
 		}
 		else {
 			cdt4 = "WHERE adresse = '";
@@ -74,9 +92,11 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	}
 	else {
 		cdt4 = "";
+	}/*
+	if (this->date_embauche == "") {
+		cdt5 = "";
 	}
-	/*
-	if (this->date_embauche) {
+	else {
 		if (init > 0) {
 			cdt5 = "' AND date_embauche = '";
 			init++;
@@ -85,11 +105,8 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 			cdt5 = "WHERE date_embauche = '";
 			init++;
 		}
-	}
-	else {
-		cdt5 = "";
 	}*/
-	if (init > 0) {
+	if (this->nom != "" || this->prenom != "" || this->superieur != "") {
 		cdtf = "'";
 	}
 	else {
@@ -97,7 +114,7 @@ System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
 	}
 
 
-	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "SELECT [id], [nom], [prenom], [adresse], [superieur], [date_embauche] FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
 
@@ -200,10 +217,9 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	//System::String^ cdt6;
+	System::String^ cdt6;
 	System::String^ cdtf;
 
-	/*
 	if (this->id != "") {
 		cdt6 = "WHERE id = ";
 		init++;
@@ -211,16 +227,15 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	else {
 		cdt6 = "";
 	}
-	*/
 	if (this->nom != "") {
-		/*if (init > 0) {
+		if (init > 0) {
 			cdt1 = " AND nom = '";
 			init++;
 		}
-		else {*/
+		else {
 		cdt1 = "WHERE nom = '";
 		init++;
-		//}
+		}
 	}
 	else {
 		cdt1 = "";
@@ -228,8 +243,13 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 
 	if (this->prenom != "") {
 		if (init > 0) {
-			cdt2 = "' AND prenom = '";
-			init++;
+			if (this->nom == "") {
+				cdt2 = " AND prenom = '";
+			}
+			else {
+				cdt2 = "' AND prenom = '";
+				init++;
+			}
 		}
 		else {
 			cdt2 = "WHERE prenom = '";
@@ -241,6 +261,10 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	}
 	if (this->superieur != "") {
 		if (init > 0) {
+			if (this->nom == "" && this->prenom == "") {
+				cdt3 = " AND superieur = '";
+				init++;
+			}
 			cdt3 = "' AND superieur = '";
 			init++;
 		}
@@ -255,6 +279,10 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 
 	if (this->adresse != "") {
 		if (init > 0) {
+			if (this->nom == "" && this->prenom == "" && this->superieur == "") {
+				cdt4 = " AND adresse = '";
+				init++;
+			}
 			cdt4 = "' AND adresse = '";
 			init++;
 		}
@@ -266,15 +294,15 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	else {
 		cdt4 = "";
 	}
-	if (init > 0) {
-		cdtf = "'";
-	}
-	else {
+	if (this->nom == "" && this->prenom == "" && this->superieur == "" && this->adresse == "") {
 		cdtf = "";
 	}
+	else {
+		cdtf = "'";
+	}
 
 
-	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
 
@@ -295,10 +323,9 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	//System::String^ cdt6;
+	System::String^ cdt6;
 	System::String^ cdtf;
 
-	/*
 	if (this->id != "") {
 		cdt6 = "WHERE id = ";
 		init++;
@@ -306,16 +333,15 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	else {
 		cdt6 = "";
 	}
-	*/
 	if (this->nom != "") {
-		/*if (init > 0) {
+		if (init > 0) {
 			cdt1 = " AND nom = '";
 			init++;
 		}
-		else {*/
+		else {
 		cdt1 = "WHERE nom = '";
 		init++;
-		//}
+		}
 	}
 	else {
 		cdt1 = "";
@@ -323,8 +349,13 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 
 	if (this->prenom != "") {
 		if (init > 0) {
-			cdt2 = "' AND prenom = '";
-			init++;
+			if (this->nom == "") {
+				cdt2 = " AND prenom = '";
+			}
+			else {
+				cdt2 = "' AND prenom = '";
+				init++;
+			}
 		}
 		else {
 			cdt2 = "WHERE prenom = '";
@@ -336,8 +367,14 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	}
 	if (this->superieur != "") {
 		if (init > 0) {
-			cdt3 = "' AND superieur = '";
-			init++;
+			if (this->nom == "" && this->prenom == "") {
+				cdt3 = " AND superieur = '";
+				init++;
+			}
+			else {
+				cdt3 = "' AND superieur = '";
+				init++;
+			}
 		}
 		else {
 			cdt3 = "WHERE superieur = '";
@@ -350,8 +387,13 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 
 	if (this->adresse != "") {
 		if (init > 0) {
-			cdt4 = "' AND adresse = '";
-			init++;
+			if (this->nom == "" && this->prenom == "" && this->superieur == "") {
+				cdt4 = " AND adresse = '";
+				init++;
+			}
+			else {
+				cdt4 = "' AND adresse = '";
+			}
 		}
 		else {
 			cdt4 = "WHERE adresse = '";
@@ -361,12 +403,13 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	else {
 		cdt4 = "";
 	}
-	if (init > 0) {
-		cdtf = "'";
-	}
-	else {
+	if(this->nom == "" && this->prenom == "" && this->superieur == "" && this->adresse == "") {
 		cdtf = "";
 	}
+	else {
+		cdtf = "'";
+	}
+
 
 	//Nouvelles valeurs 
 	int i = 0;
@@ -383,10 +426,10 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 		n_v1 = "";
 	}
 
-	if (this->prenom != "") {
+	if (new_prenom != "") {
 		if (i > 0) {
 			n_v2 = "', prenom = '";
-			init++;
+			i++;
 		}
 		else {
 			n_v2 = " prenom = '";
@@ -396,7 +439,7 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	else {
 		n_v2 = "";
 	}
-	if (this->superieur != "") {
+	if (new_superieur != "") {
 		if (i > 0) {
 			n_v3 = "', superieur = '";
 			i++;
@@ -410,7 +453,7 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 		n_v3 = "";
 	}
 
-	if (this->adresse != "") {
+	if (new_adresse != "") {
 		if (i > 0) {
 			n_v4 = "', adresse = '";
 			i++;
@@ -430,7 +473,7 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 		n_vf = "";
 	}
 
-	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
 }
 
 System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ id, System::String^ nouv_nom, System::String^ nouv_prenom, System::String^ nouv_adresse, System::DateTime^ nouv_naissance, System::DateTime^ nouv_date_achat) {
@@ -505,32 +548,6 @@ System::String^ NS_Comp_Mappage::map::UpdateClient(System::String^ id, System::S
 
 
 
-
-/*
-System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
-{
-	return "DELETE FROM [prosit6].[dbo].[table_prosit6] WHERE nom = " + this->nom + "AND [prenom] = " + this->prenom + ";";
-}
-System::String^ NS_Comp_Mappage::map::UpdatePersonnel(void)
-{
-
-	return "UPDATE [table_prosit6] SET nom = " + this->nom + ", " + "prenom = " + this->prenom + "WHERE id = " + this->Id + ";";
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //pour personnel et client
 void NS_Comp_Mappage::map::setId(System::String^ Id) {
 	this->id = Id;
@@ -542,6 +559,9 @@ void NS_Comp_Mappage::map::setPrenom(System::String^ prenom) {
 	this->prenom = prenom;
 }
 //pour personnel
+void NS_Comp_Mappage::map::setId(System::String^ id) {
+	this->id = id;
+}
 void NS_Comp_Mappage::map::setSuperieur(System::String^ superieur) {
 	this->superieur = superieur;
 }
@@ -569,6 +589,7 @@ System::String^ NS_Comp_Mappage::map::getId(void) { return this->id; }
 System::String^ NS_Comp_Mappage::map::getNom(void) { return this->nom; }
 System::String^ NS_Comp_Mappage::map::getPrenom(void) { return this->prenom; }
 //pour personnel
+System::String^ NS_Comp_Mappage::map::getId(void) { return this->id; }
 System::String^ NS_Comp_Mappage::map::getSuperieur(void) { return this->superieur; }
 System::String^ NS_Comp_Mappage::map::getAdresse(void) { return this->adresse; }
 System::DateTime^ NS_Comp_Mappage::map::getDateEmbauche(void) { return this->date_embauche; }
@@ -576,4 +597,373 @@ System::DateTime^ NS_Comp_Mappage::map::getDateEmbauche(void) { return this->dat
 System::String^ NS_Comp_Mappage::map::getAdresseFacturation(void) { return this->adresse_facturation; }
 System::DateTime^ NS_Comp_Mappage::map::getDateNaissance(void) { return this->date_naissance; }
 System::DateTime^ NS_Comp_Mappage::map::getDatePremierAchat(void) { return this->date_premier_achat; }
-//Catalogue ...
+
+
+//Catalogue
+void NS_Comp_Mappage::map::setReapproNec(bool reappro_nec) {
+	this->reappro_nec = reappro_nec;
+}
+void NS_Comp_Mappage::map::setPrix(System::String^ prix) {
+	this->prix = prix;
+}
+void NS_Comp_Mappage::map::setRef(System::String^ ref) {
+	this->ref = ref;
+}
+void NS_Comp_Mappage::map::setDesignation(System::String^ designation) {
+	this->designation = designation;
+}
+void NS_Comp_Mappage::map::setStock(System::String^ stock) {
+	this->stock = stock;
+}
+void NS_Comp_Mappage::map::setReapprovisionnement(System::String^ reapprovisionnement) {
+	this->reapprovisionnement = reapprovisionnement;
+}
+void NS_Comp_Mappage::map::setTVA(System::String^ TVA) {
+	this->TVA = TVA;
+}
+
+bool NS_Comp_Mappage::map::getReapproNec(void) { return this->reappro_nec; }
+System::String^ NS_Comp_Mappage::map::getPrix(void) { return this->prix; }
+System::String^ NS_Comp_Mappage::map::getRef(void) { return this->ref; }
+System::String^ NS_Comp_Mappage::map::getDesignation(void) { return this->designation; }
+System::String^ NS_Comp_Mappage::map::getStock(void) { return this->stock; }
+System::String^ NS_Comp_Mappage::map::getReapprovisionnement(void) { return this->reapprovisionnement; }
+System::String^ NS_Comp_Mappage::map::getTVA(void) { return this->TVA; }
+
+
+//creer
+System::String^ NS_Comp_Mappage::map::InsertCatalogue(void)
+{
+	return "INSERT INTO Catalogue (produit, quantite, prix_ht, stock_min, TVA) VALUES ('" + this->designation + "'," + this->stock + "," + this->prix + "," + this->reapprovisionnement + "," + this->TVA + ");";
+}
+
+
+System::String^ NS_Comp_Mappage::map::SelectCatalogue(void)
+{
+	int init = 0;
+	System::String^ cdtb;
+	System::String^ cdtid;
+	System::String^ cdt1;
+	System::String^ cdt2;
+	System::String^ cdt3;
+	System::String^ cdt4;
+	System::String^ cdt5;
+	System::String^ cdtf;
+	
+	
+	if (this->reappro_nec == true) {
+		cdtb = "WHERE stock <= reapprovisionnement";
+		init++;
+	}
+	else {
+		cdtb = "";
+	}
+	
+	if (this->ref != "") {
+		if (init > 0) {
+			cdtid = " AND reference_produit = ";
+			init++;
+		}
+		else {
+			cdtid = "WHERE reference_produit = ";
+			init++;
+		}
+	}
+	else {
+		cdtid = "";
+	}
+	
+	if (this->designation != "") {
+		if (init > 0) {
+			cdt1 = " AND produit = '";
+			init++;
+		}
+		else {
+			cdt1 = "WHERE produit = '";
+			init++;
+		}
+	}
+	else {
+		cdt1 = "";
+	}
+
+	if (this->stock != "") {
+		if (init > 0) {
+			if (this->designation == "") {
+				cdt2 = " AND quantite = ";
+				init++;
+			}
+			cdt2 = "' AND quantite = ";
+		}
+		else {
+			cdt2 = "WHERE quantite = ";
+			init++;
+		}
+	}
+	else {
+		cdt2 = "";
+	}
+	if (this->prix != "") {
+		if (init > 0) {//la
+			if (this->designation != "" && this->stock == "") {
+				cdt3 = "' AND prix_ht = ";
+				init++;
+			}
+			else {
+				cdt3 = " AND prix_ht = ";
+				init++;
+			}
+		}
+		else {
+			cdt3 = "WHERE prix_ht = ";
+			init++;
+		}
+	}
+	else {
+		cdt3 = "";
+	}
+
+	if (this->reapprovisionnement != "") {
+		if (init > 0) {
+			if (this->prix == "" && this->stock == "" && this->designation != "") {
+				cdt4 = "' AND stock_min = ";
+			}
+			else {
+				cdt4 = " AND stock_min = ";
+				init++;
+			}
+		}
+		else {
+			cdt4 = "WHERE stock_min = ";
+			init++;
+		}
+	}
+	else {
+		cdt4 = "";
+	}
+	
+	if (this->TVA != "") {
+		if (init > 0) {
+			if (this->prix == "" && this->stock == "" && this->reapprovisionnement == "" && this->designation != "") {
+				cdt5 = "' AND TVA = ";
+				init++;
+			}
+			else {
+				cdt5 = " AND TVA = ";
+				init++;
+			}
+		}
+		else {
+			cdt5 = "WHERE TVA = ";
+			init++;
+		}
+	}
+	else {
+		cdt5 = "";
+	}
+
+	if (this->TVA == "" && this->reapprovisionnement == "" && this->stock == "" && this->prix == "" && this->designation != "") {
+		cdtf = "'";
+	}
+	else {
+		cdtf = "";
+	}
+
+
+
+	return "SELECT * FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+}
+
+//update 
+/*
+System::String^ NS_Comp_Mappage::map::UpdateCatalogue(void)
+{
+	int init = 0;
+	System::String^ cdtid;
+	System::String^ cdt1;
+	System::String^ cdt2;
+	System::String^ cdt3;
+	System::String^ cdt4;
+	System::String^ cdt5;
+	System::String^ cdtf;
+
+
+
+	if (this->ref != "") {
+		cdtid = "WHERE reference_produit = ";
+		init++;
+	}
+	else {
+		cdtid = "";
+	}
+
+	if (this->designation != "") {
+		if (init > 0) {
+			cdt1 = " AND produit = '";
+			init++;
+		}
+		else {
+			cdt1 = "WHERE produit = '";
+			init++;
+		}
+	}
+	else {
+		cdt1 = "";
+	}
+
+	if (this->stock != "") {
+		if (init > 0) {
+			if (this->designation == "") {
+				cdt2 = " AND quantite = ";
+				init++;
+			}
+			cdt2 = "' AND quantite = ";
+		}
+		else {
+			cdt2 = "WHERE quantite = ";
+			init++;
+		}
+	}
+	else {
+		cdt2 = "";
+	}
+	if (this->prix != "") {
+		if (init > 0) {//la
+			if (this->designation != "" && this->stock == "") {
+				cdt3 = "' AND prix_ht = ";
+				init++;
+			}
+			else {
+				cdt3 = " AND prix_ht = ";
+				init++;
+			}
+		}
+		else {
+			cdt3 = "WHERE prix_ht = ";
+			init++;
+		}
+	}
+	else {
+		cdt3 = "";
+	}
+
+	if (this->reapprovisionnement != "") {
+		if (init > 0) {
+			if (this->prix == "" && this->stock == "" && this->designation != "") {
+				cdt4 = "' AND stock_min = ";
+			}
+			else {
+				cdt4 = " AND stock_min = ";
+				init++;
+			}
+		}
+		else {
+			cdt4 = "WHERE stock_min = ";
+			init++;
+		}
+	}
+	else {
+		cdt4 = "";
+	}
+
+	if (this->TVA != "") {
+		if (init > 0) {
+			if (this->prix == "" && this->stock == "" && this->reapprovisionnement == "" && this->designation != "") {
+				cdt5 = "' AND TVA = ";
+				init++;
+			}
+			else {
+				cdt5 = " AND TVA = ";
+				init++;
+			}
+		}
+		else {
+			cdt5 = "WHERE TVA = ";
+			init++;
+		}
+	}
+	else {
+		cdt5 = "";
+	}
+
+	
+	
+	
+	
+	
+	//Nouvelles valeurs 
+	int i = 0;
+	System::String^ n_v1;
+	System::String^ n_v2;
+	System::String^ n_v3;
+	System::String^ n_v4;
+	System::String^ n_vf;
+	if (new_ != "") {
+		n_v1 = " nom = '";
+		i++;
+	}
+	else {
+		n_v1 = "";
+	}
+
+	if (this->prenom != "") {
+		if (i > 0) {
+			n_v2 = "', prenom = '";
+			init++;
+		}
+		else {
+			n_v2 = " prenom = '";
+			i++;
+		}
+	}
+	else {
+		n_v2 = "";
+	}
+	if (this->superieur != "") {
+		if (i > 0) {
+			n_v3 = "', superieur = '";
+			i++;
+		}
+		else {
+			n_v3 = " superieur = '";
+			i++;
+		}
+	}
+	else {
+		n_v3 = "";
+	}
+
+	if (this->adresse != "") {
+		if (i > 0) {
+			n_v4 = "', adresse = '";
+			i++;
+		}
+		else {
+			n_v4 = " adresse = '";
+			i++;
+		}
+	}
+	else {
+		n_v4 = "";
+	}
+	if (i > 0) {
+		n_vf = "'";
+	}
+	else {
+		n_vf = "";
+	}
+
+
+
+	if (this->TVA == "" && this->reapprovisionnement == "" && this->stock == "" && this->prix == "" && this->designation != "") {
+		cdtf = "'";
+	}
+	else {
+		cdtf = "";
+	}
+
+
+
+	return "UPDATE  FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+	
+}*/
