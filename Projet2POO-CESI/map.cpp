@@ -1048,7 +1048,7 @@ System::String^ NS_Comp_Mappage::map::DeleteCatalogue(void)
 		cdt2 = "";
 	}
 	if (this->prix != "") {
-		if (init > 0) {
+		if (init > 0) {//la
 			if (this->designation != "" && this->stock == "") {
 				cdt3 = "' AND prix_ht = ";
 				init++;
@@ -1106,17 +1106,15 @@ System::String^ NS_Comp_Mappage::map::DeleteCatalogue(void)
 		cdt5 = "";
 	}
 
-	if (this->TVA != "" || this->reapprovisionnement != "" || this->stock != "" || this->prix != "") {
-		cdtf = "";
-	}
-	else if (this->designation == "") {
-		cdtf = "";
-	}
-	else {
+	if (this->TVA == "" && this->reapprovisionnement == "" && this->stock == "" && this->prix == "" && this->designation != "") {
 		cdtf = "'";
 	}
+	else {
+		cdtf = "";
+	}
 
 
 
-	return "DELETE [reference_produit], [produit], [quantite], [prix_ht], [stock_min], [TVA] FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+
+	return "DELETE FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
 }
