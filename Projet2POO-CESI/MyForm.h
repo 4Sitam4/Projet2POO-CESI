@@ -2,6 +2,7 @@
 #include "GestionPersonnel.h"
 #include "GestionClient.h"
 #include "GestionCatalogue.h"
+#include "GestionStatistique.h"
 
 
 namespace Projet2POOCESI {
@@ -134,7 +135,8 @@ namespace Projet2POOCESI {
             this->buttonStatistiques->Text = L"Gestion des Statistiques";
             this->buttonStatistiques->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonStatistiques->UseVisualStyleBackColor = true;
-            this->buttonStatistiques->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+            this->buttonStatistiques->Click += gcnew System::EventHandler(this, &MyForm::buttonStatistiques_Click);
+
             // 
             // MyForm
             // 
@@ -177,6 +179,11 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void buttonStock_Click(System::Object^ sender, System::EventArgs^ e) {
     GestionCatalogue^ gestionCatalogue = gcnew GestionCatalogue();
     gestionCatalogue->ShowDialog();
+}
+
+private: System::Void buttonStatistiques_Click(System::Object^ sender, System::EventArgs^ e) {
+    GestionStatistique^ gestionStatistique = gcnew GestionStatistique();
+    gestionStatistique->ShowDialog();
 }
 };
 }
