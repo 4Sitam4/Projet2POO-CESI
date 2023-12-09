@@ -8,6 +8,7 @@ namespace NS_Comp_Statistique
 	{
 	private:
 		NS_Comp_Data::cad^ oCad;
+		System::String^ mois;
 
 	public:
 		Statistique();
@@ -15,6 +16,10 @@ namespace NS_Comp_Statistique
 		System::Data::DataSet^ calcSeuilReappro(System::String^);
 		
 
+		System::String ^ calcChiffreAffaireMois(System::String^, System::String^);
+
+		void setMois(System::String^);
+		System::String^ getMois(void);
 
 	};
 }

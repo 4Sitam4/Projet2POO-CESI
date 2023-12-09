@@ -1,7 +1,9 @@
 #ifndef CAD_H
 #define CAD_H
 
-
+using namespace System::Data;
+using namespace System::Data::SqlClient;
+using namespace System;
 
 namespace NS_Comp_Data
 {
