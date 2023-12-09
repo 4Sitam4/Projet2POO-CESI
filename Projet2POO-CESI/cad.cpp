@@ -50,3 +50,6 @@ System::String^ NS_Comp_Data::cad::getStats(System::String^ sSql)
 
 	return resultat;
 }
+
+
+
