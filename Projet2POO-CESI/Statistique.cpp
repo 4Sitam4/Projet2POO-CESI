@@ -80,6 +80,28 @@ System::String^ NS_Comp_Statistique::Statistique::calcAchatsClient(System::Strin
 
 
 
+System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcTop10(System::String^ table) {
+	System::String^ sql;
+
+	// 10 pires ventes
+	sql = "SELECT TOP 10 Catalogue.reference_produit, SUM(Ligne_commande.quantite) AS total_quantite FROM Catalogue LEFT JOIN Ligne_commande ON Catalogue.reference_produit = Ligne_commande.reference_produit GROUP BY Catalogue.reference_produit ORDER BY total_quantite DESC;";
+
+
+	return this->oCad->getRows(sql, table);
+}
+
+
+System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcLast10(System::String^ table) {
+	System::String^ sql;
+
+	// TOP 10 ventes
+	sql = "SELECT TOP 10 Catalogue.reference_produit, SUM(Ligne_commande.quantite) AS total_quantite FROM Catalogue LEFT JOIN Ligne_commande ON Catalogue.reference_produit = Ligne_commande.reference_produit GROUP BY Catalogue.reference_produit ORDER BY total_quantite;";
+
+	return this->oCad->getRows(sql, table);
+}
+
+
+
 
 void NS_Comp_Statistique::Statistique::setMois(System::String^ mois) {
 	this->mois = mois;

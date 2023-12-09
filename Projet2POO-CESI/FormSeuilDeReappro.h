@@ -76,7 +76,7 @@ namespace Projet2POOCESI {
 			this->labelSeuilDeReappro->Name = L"labelSeuilDeReappro";
 			this->labelSeuilDeReappro->Size = System::Drawing::Size(323, 20);
 			this->labelSeuilDeReappro->TabIndex = 1;
-			this->labelSeuilDeReappro->Text = L"Produit sous le seuil de réapprovisionnement";
+			this->labelSeuilDeReappro->Text = L"";
 			// 
 			// FormSeuilDeReappro
 			// 
@@ -86,7 +86,7 @@ namespace Projet2POOCESI {
 			this->Controls->Add(this->labelSeuilDeReappro);
 			this->Controls->Add(this->dataGridView1);
 			this->Name = L"FormSeuilDeReappro";
-			this->Text = L"Seuil de réapprovisionnement";
+			this->Text = L"";
 			this->Load += gcnew System::EventHandler(this, &FormSeuilDeReappro::FormSeuilDeReappro_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
@@ -97,11 +97,23 @@ namespace Projet2POOCESI {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void FormSeuilDeReappro_Load(System::Object^ sender, System::EventArgs^ e) {
-		this->oStat = gcnew NS_Comp_Statistique::Statistique();
-		this->oDs = this->oStat->calcSeuilReappro("Resultat reappro");
 
+		this->oStat = gcnew NS_Comp_Statistique::Statistique();
+
+		if (this->Text == "Seuil de réapprovisionnement") {
+			this->labelSeuilDeReappro->Text = L"Produit sous le seuil de réapprovisionnement";
+			this->oDs = this->oStat->calcSeuilReappro("Resultat");
+		}
+		else if (this->Text == "10 meilleures ventes") {
+			this->labelSeuilDeReappro->Text = L"Le top 10 des ventes";
+			this->oDs = this->oStat->calcTop10("Resultat");
+		}
+		else if (this->Text == "10 pires ventes") {
+			this->labelSeuilDeReappro->Text = "Les 10 pires ventes";
+			this->oDs = this->oStat->calcLast10("Resultat");
+		}
 		this->dataGridView1->DataSource = this->oDs;
-		this->dataGridView1->DataMember = "Resultat reappro";
+		this->dataGridView1->DataMember = "Resultat";
 	}
 	};
 }

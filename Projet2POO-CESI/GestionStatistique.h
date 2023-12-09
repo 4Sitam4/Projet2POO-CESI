@@ -59,7 +59,8 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Label^ labelMois;
 	private: System::Windows::Forms::ComboBox^ comboBoxAnnee;
 	private: System::Windows::Forms::GroupBox^ groupBoxSeuilDeReappro;
-	private: System::Windows::Forms::Button^ buttonSeuilDeReappro;
+	private: System::Windows::Forms::Button^ buttonAfficher;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::GroupBox^ groupBoxSommeAchats;
@@ -69,6 +70,7 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Button^ buttonAchatsClient;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBoxClient;
+	private: System::Windows::Forms::ComboBox^ comboBoxCatalogue;
 
 
 
@@ -107,7 +109,8 @@ namespace Projet2POOCESI {
 			this->comboBoxMois = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonCA = (gcnew System::Windows::Forms::Button());
 			this->groupBoxSeuilDeReappro = (gcnew System::Windows::Forms::GroupBox());
-			this->buttonSeuilDeReappro = (gcnew System::Windows::Forms::Button());
+			this->comboBoxCatalogue = (gcnew System::Windows::Forms::ComboBox());
+			this->buttonAfficher = (gcnew System::Windows::Forms::Button());
 			this->groupBoxSommeAchats = (gcnew System::Windows::Forms::GroupBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->textBoxClient = (gcnew System::Windows::Forms::TextBox());
@@ -252,7 +255,8 @@ namespace Projet2POOCESI {
 			// 
 			// groupBoxSeuilDeReappro
 			// 
-			this->groupBoxSeuilDeReappro->Controls->Add(this->buttonSeuilDeReappro);
+			this->groupBoxSeuilDeReappro->Controls->Add(this->comboBoxCatalogue);
+			this->groupBoxSeuilDeReappro->Controls->Add(this->buttonAfficher);
 			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(692, 13);
 			this->groupBoxSeuilDeReappro->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxSeuilDeReappro->Name = L"groupBoxSeuilDeReappro";
@@ -260,19 +264,31 @@ namespace Projet2POOCESI {
 			this->groupBoxSeuilDeReappro->Size = System::Drawing::Size(351, 177);
 			this->groupBoxSeuilDeReappro->TabIndex = 3;
 			this->groupBoxSeuilDeReappro->TabStop = false;
-			this->groupBoxSeuilDeReappro->Text = L"Stock inférieur au seuil réapprovisionnement";
+			this->groupBoxSeuilDeReappro->Text = L"Catalogue";
 			this->groupBoxSeuilDeReappro->Enter += gcnew System::EventHandler(this, &GestionStatistique::groupBox3_Enter);
 			// 
-			// buttonSeuilDeReappro
+			// comboBoxCatalogue
 			// 
-			this->buttonSeuilDeReappro->Location = System::Drawing::Point(89, 110);
-			this->buttonSeuilDeReappro->Margin = System::Windows::Forms::Padding(4);
-			this->buttonSeuilDeReappro->Name = L"buttonSeuilDeReappro";
-			this->buttonSeuilDeReappro->Size = System::Drawing::Size(181, 28);
-			this->buttonSeuilDeReappro->TabIndex = 3;
-			this->buttonSeuilDeReappro->Text = L"Afficher";
-			this->buttonSeuilDeReappro->UseVisualStyleBackColor = true;
-			this->buttonSeuilDeReappro->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonSeuilDeReappro_Click);
+			this->comboBoxCatalogue->FormattingEnabled = true;
+			this->comboBoxCatalogue->Items->AddRange(gcnew cli::array< System::Object^  >(3) {
+				L"Les produits à réapprovisionner", L"Le top 10 des ventes",
+					L"Les 10 pires ventes"
+			});
+			this->comboBoxCatalogue->Location = System::Drawing::Point(67, 58);
+			this->comboBoxCatalogue->Name = L"comboBoxCatalogue";
+			this->comboBoxCatalogue->Size = System::Drawing::Size(222, 24);
+			this->comboBoxCatalogue->TabIndex = 4;
+			// 
+			// buttonAfficher
+			// 
+			this->buttonAfficher->Location = System::Drawing::Point(89, 110);
+			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAfficher->Name = L"buttonAfficher";
+			this->buttonAfficher->Size = System::Drawing::Size(181, 28);
+			this->buttonAfficher->TabIndex = 3;
+			this->buttonAfficher->Text = L"Afficher";
+			this->buttonAfficher->UseVisualStyleBackColor = true;
+			this->buttonAfficher->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonAfficher_Click);
 			// 
 			// groupBoxSommeAchats
 			// 
@@ -388,9 +404,28 @@ private: System::Void buttonCA_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void buttonSeuilDeReappro_Click(System::Object^ sender, System::EventArgs^ e) {
-	FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
-	formSeuilDeReappro->ShowDialog();
+private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->comboBoxCatalogue->SelectedIndex == -1) {
+		MessageBox::Show(" Veuillez entrer ce que vous souhaiter afficher");
+	}
+	else {
+		FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
+
+		if (this->comboBoxCatalogue->SelectedItem == "Les produits à réapprovisionner") {
+			formSeuilDeReappro->Text = L"Seuil de réapprovisionnement";
+			formSeuilDeReappro->ShowDialog();
+		}
+		else if (this->comboBoxCatalogue->SelectedItem == "Le top 10 des ventes") {
+			formSeuilDeReappro->Text = L"10 meilleures ventes";
+			formSeuilDeReappro->ShowDialog();
+		}
+		else if (this->comboBoxCatalogue->SelectedItem == "Les 10 pires ventes") {
+			formSeuilDeReappro->Text = L"10 pires ventes";
+			formSeuilDeReappro->ShowDialog();
+		}
+	}
+
+	
 }
 private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->textBoxClient->Text == "") {
