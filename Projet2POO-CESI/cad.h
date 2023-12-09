@@ -22,10 +22,6 @@ namespace NS_Comp_Data
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
 		System::String^ getStats(System::String^);
-
-		System::Data::SqlClient::SqlCommand^ getSqlCommand() {
-			return oCmd;
-		}
 	};
 }
 
