@@ -71,6 +71,13 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ textBoxClient;
 	private: System::Windows::Forms::ComboBox^ comboBoxCatalogue;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Label^ labelVCS;
+	private: System::Windows::Forms::Label^ labelValeurCommercialeStock;
+
+
+	private: System::Windows::Forms::Button^ buttonValeurCommercialeStock;
+
 
 
 
@@ -117,10 +124,15 @@ namespace Projet2POOCESI {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->labelAchatsClient = (gcnew System::Windows::Forms::Label());
 			this->buttonAchatsClient = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelVCS = (gcnew System::Windows::Forms::Label());
+			this->labelValeurCommercialeStock = (gcnew System::Windows::Forms::Label());
+			this->buttonValeurCommercialeStock = (gcnew System::Windows::Forms::Button());
 			this->groupBoxPanierMoyen->SuspendLayout();
 			this->groupBoxCA->SuspendLayout();
 			this->groupBoxSeuilDeReappro->SuspendLayout();
 			this->groupBoxSommeAchats->SuspendLayout();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBoxPanierMoyen
@@ -349,11 +361,54 @@ namespace Projet2POOCESI {
 			this->buttonAchatsClient->UseVisualStyleBackColor = true;
 			this->buttonAchatsClient->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonAchatsClient_Click);
 			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->labelVCS);
+			this->groupBox1->Controls->Add(this->labelValeurCommercialeStock);
+			this->groupBox1->Controls->Add(this->buttonValeurCommercialeStock);
+			this->groupBox1->Location = System::Drawing::Point(693, 235);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
+			this->groupBox1->Size = System::Drawing::Size(288, 177);
+			this->groupBox1->TabIndex = 4;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Valeur commerciale du stock";
+			// 
+			// labelVCS
+			// 
+			this->labelVCS->AutoSize = true;
+			this->labelVCS->Location = System::Drawing::Point(7, 38);
+			this->labelVCS->Name = L"labelVCS";
+			this->labelVCS->Size = System::Drawing::Size(262, 16);
+			this->labelVCS->TabIndex = 3;
+			this->labelVCS->Text = L"La valeur commerciale du stock actuel est :";
+			// 
+			// labelValeurCommercialeStock
+			// 
+			this->labelValeurCommercialeStock->AutoSize = true;
+			this->labelValeurCommercialeStock->Location = System::Drawing::Point(85, 93);
+			this->labelValeurCommercialeStock->Name = L"labelValeurCommercialeStock";
+			this->labelValeurCommercialeStock->Size = System::Drawing::Size(0, 16);
+			this->labelValeurCommercialeStock->TabIndex = 2;
+			// 
+			// buttonValeurCommercialeStock
+			// 
+			this->buttonValeurCommercialeStock->Location = System::Drawing::Point(55, 124);
+			this->buttonValeurCommercialeStock->Margin = System::Windows::Forms::Padding(4);
+			this->buttonValeurCommercialeStock->Name = L"buttonValeurCommercialeStock";
+			this->buttonValeurCommercialeStock->Size = System::Drawing::Size(154, 28);
+			this->buttonValeurCommercialeStock->TabIndex = 1;
+			this->buttonValeurCommercialeStock->Text = L"Calculer";
+			this->buttonValeurCommercialeStock->UseVisualStyleBackColor = true;
+			this->buttonValeurCommercialeStock->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonValeurCommercialeStock_Click);
+			// 
 			// GestionStatistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1697, 539);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBoxSommeAchats);
 			this->Controls->Add(this->groupBoxSeuilDeReappro);
 			this->Controls->Add(this->groupBoxCA);
@@ -370,6 +425,8 @@ namespace Projet2POOCESI {
 			this->groupBoxSeuilDeReappro->ResumeLayout(false);
 			this->groupBoxSommeAchats->ResumeLayout(false);
 			this->groupBoxSommeAchats->PerformLayout();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -435,6 +492,10 @@ private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::E
 		this->label3->Text = " Montant des achats du client : ";
 		this->labelAchatsClient->Text = this->oStat->calcAchatsClient(this->textBoxClient->Text) + " euros";
 	}
+}
+private: System::Void buttonValeurCommercialeStock_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->labelVCS->Text = "La valeur commerciale du stock actuel est :";
+	this->labelValeurCommercialeStock->Text = this->oStat->calcValComStock() + " euros";
 }
 };
 }

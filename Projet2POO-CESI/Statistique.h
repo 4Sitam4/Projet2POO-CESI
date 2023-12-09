@@ -9,6 +9,7 @@ namespace NS_Comp_Statistique
 	private:
 		NS_Comp_Data::cad^ oCad;
 		System::String^ mois;
+		System::String^ sql;
 
 	public:
 		Statistique();
@@ -19,6 +20,9 @@ namespace NS_Comp_Statistique
 
 		System::Data::DataSet^ calcTop10(System::String^);
 		System::Data::DataSet^ calcLast10(System::String^);
+
+
+		System::String^ calcValComStock();
 
 		void setMois(System::String^);
 		System::String^ getMois(void);

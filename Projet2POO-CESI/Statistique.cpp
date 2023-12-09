@@ -6,24 +6,23 @@ NS_Comp_Statistique::Statistique::Statistique()
 }
 
 System::String^ NS_Comp_Statistique::Statistique::calcPanierMoyen() {
-	System::String^ sql;
+
 
 	// Panier moyen depuis la premiere vente jusqu'à maintenant
-	sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande;";
-	return this->oCad->getStats(sql);
+	this->sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande;";
+	return this->oCad->getStats(this->sql);
 }
 
 System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcSeuilReappro(System::String^ table) {
-	System::String^ sql;
 
 	// Seuil de réapprovisionnement
-	sql = "SELECT * FROM [projetPOO].[dbo].[Catalogue] WHERE [quantite] < [stock_min];";
-	return this->oCad->getRows(sql, table);
+	this->sql = "SELECT * FROM [projetPOO].[dbo].[Catalogue] WHERE [quantite] < [stock_min];";
+	return this->oCad->getRows(this->sql, table);
 }
 
 
 System::String^ NS_Comp_Statistique::Statistique::calcChiffreAffaireMois(System::String^ mois, System::String^ annee) {
-	System::String^ sql;
+
 	if (mois == "Janvier") {
 		this->setMois("1");
 	}
@@ -62,44 +61,48 @@ System::String^ NS_Comp_Statistique::Statistique::calcChiffreAffaireMois(System:
 	}
 	// CA 
 
-	sql = "SELECT SUM(montant_ht) FROM Commande WHERE MONTH(date_emission) = " + this->mois + " AND YEAR(date_emission) = " + annee + ";";
+	this->sql = "SELECT SUM(montant_ht) FROM Commande WHERE MONTH(date_emission) = " + this->mois + " AND YEAR(date_emission) = " + annee + ";";
 
 
 
-	return this->oCad->getStats(sql);
+	return this->oCad->getStats(this->sql);
 }
 
 
 System::String^ NS_Comp_Statistique::Statistique::calcAchatsClient(System::String^ client) {
-	System::String^ sql;
 
 	// Panier moyen depuis la premiere vente jusqu'à maintenant
 	sql = "SELECT ROUND(SUM(montant_ttc),2) FROM Commande WHERE num = " + client + ";";
-	return this->oCad->getStats(sql);
+	return this->oCad->getStats(this->sql);
 }
 
 
 
 System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcTop10(System::String^ table) {
-	System::String^ sql;
 
 	// 10 pires ventes
 	sql = "SELECT TOP 10 Catalogue.reference_produit, SUM(Ligne_commande.quantite) AS total_quantite FROM Catalogue LEFT JOIN Ligne_commande ON Catalogue.reference_produit = Ligne_commande.reference_produit GROUP BY Catalogue.reference_produit ORDER BY total_quantite DESC;";
 
 
-	return this->oCad->getRows(sql, table);
+	return this->oCad->getRows(this->sql, table);
 }
 
 
 System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcLast10(System::String^ table) {
-	System::String^ sql;
 
 	// TOP 10 ventes
 	sql = "SELECT TOP 10 Catalogue.reference_produit, SUM(Ligne_commande.quantite) AS total_quantite FROM Catalogue LEFT JOIN Ligne_commande ON Catalogue.reference_produit = Ligne_commande.reference_produit GROUP BY Catalogue.reference_produit ORDER BY total_quantite;";
 
-	return this->oCad->getRows(sql, table);
+	return this->oCad->getRows(this->sql, table);
 }
 
+
+System::String^ NS_Comp_Statistique::Statistique::calcValComStock() {
+
+	//Valeur actuelle du stock à la vente (HT)
+	this->sql = "SELECT SUM(quantite * prix_ht) AS ValeurStock FROM Catalogue";
+	return this->oCad->getStats(this->sql);
+}
 
 
 
