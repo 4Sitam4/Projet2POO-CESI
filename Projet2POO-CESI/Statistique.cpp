@@ -20,7 +20,7 @@ System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcSeuilReappro(System
 	sql = "SELECT * FROM [projetPOO].[dbo].[Catalogue] WHERE [quantite] < [stock_min];";
 	return this->oCad->getRows(sql, table);
 }
-}
+
 
 System::String^ NS_Comp_Statistique::Statistique::calcChiffreAffaireMois(System::String^ mois, System::String^ annee) {
 	System::String^ sql;
