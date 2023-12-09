@@ -281,92 +281,57 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
-	System::String^ cdt6;
-	System::String^ cdtf;
+	System::String^ cdt5;
 
 	if (this->id != "") {
-		cdt6 = "WHERE id = ";
+		cdt1 = "WHERE id = " + this->id;
 		init++;
 	}
-	else {
-		cdt6 = "";
-	}
+
 	if (this->nom != "") {
 		if (init > 0) {
-			cdt1 = " AND nom = '";
+			cdt2 = " AND nom = '" + this->nom + "'";
 			init++;
 		}
 		else {
-		cdt1 = "WHERE nom = '";
-		init++;
+			cdt2 = "WHERE nom = '" + this->nom + "'";
+			init++;
 		}
-	}
-	else {
-		cdt1 = "";
 	}
 
 	if (this->prenom != "") {
 		if (init > 0) {
-			if (this->nom == "") {
-				cdt2 = " AND prenom = '";
-			}
-			else {
-				cdt2 = "' AND prenom = '";
-				init++;
-			}
+			cdt3 = " AND prenom = '" + this->prenom + "'";
 		}
 		else {
-			cdt2 = "WHERE prenom = '";
+			cdt3 = "WHERE prenom = '" + this->prenom + "'";
 			init++;
 		}
 	}
-	else {
-		cdt2 = "";
-	}
+
 	if (this->superieur != "") {
 		if (init > 0) {
-			if (this->nom == "" && this->prenom == "") {
-				cdt3 = " AND superieur = '";
-				init++;
-			}
-			cdt3 = "' AND superieur = '";
+			cdt4 = " AND superieur = '" + this->superieur + "'";
 			init++;
 		}
 		else {
-			cdt3 = "WHERE superieur = '";
+			cdt4 = "WHERE superieur = '" + this->superieur + "'";
 			init++;
 		}
-	}
-	else {
-		cdt3 = "";
 	}
 
 	if (this->adresse != "") {
 		if (init > 0) {
-			if (this->nom == "" && this->prenom == "" && this->superieur == "") {
-				cdt4 = " AND adresse = '";
-				init++;
-			}
-			cdt4 = "' AND adresse = '";
+			cdt5 = " AND adresse = '" + this->adresse + "'";
 			init++;
 		}
 		else {
-			cdt4 = "WHERE adresse = '";
+			cdt5 = "WHERE adresse = '" + this->adresse + "'";
 			init++;
 		}
 	}
-	else {
-		cdt4 = "";
-	}
-	if (this->nom == "" && this->prenom == "" && this->superieur == "" && this->adresse == "") {
-		cdtf = "";
-	}
-	else {
-		cdtf = "'";
-	}
 
-
-	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + ";";
 }
 
 
@@ -390,157 +355,129 @@ System::String^ NS_Comp_Mappage::map::UpdatePersonnel(System::String^new_nom, Sy
 	System::String^ cdt2;
 	System::String^ cdt3;
 	System::String^ cdt4;
+	System::String^ cdt5;
 	System::String^ cdt6;
-	System::String^ cdtf;
 
 	if (this->id != "") {
-		cdt6 = "WHERE id = ";
+		cdt1 = "WHERE id = " + this->id;
 		init++;
 	}
-	else {
-		cdt6 = "";
-	}
+
 	if (this->nom != "") {
 		if (init > 0) {
-			cdt1 = " AND nom = '";
+			cdt2 = " AND nom = '" + this->nom + "'";
 			init++;
 		}
 		else {
-		cdt1 = "WHERE nom = '";
+		cdt2 = "WHERE nom = '" + this->nom +  "'";
 		init++;
 		}
-	}
-	else {
-		cdt1 = "";
 	}
 
 	if (this->prenom != "") {
 		if (init > 0) {
-			if (this->nom == "") {
-				cdt2 = " AND prenom = '";
-			}
-			else {
-				cdt2 = "' AND prenom = '";
-				init++;
-			}
+			cdt3 = " AND prenom = '" + this->prenom + "'";
+			init++;
 		}
 		else {
-			cdt2 = "WHERE prenom = '";
+			cdt3 = "WHERE prenom = '" + this->prenom + "'";
 			init++;
 		}
 	}
-	else {
-		cdt2 = "";
-	}
+
 	if (this->superieur != "") {
 		if (init > 0) {
-			if (this->nom == "" && this->prenom == "") {
-				cdt3 = " AND superieur = '";
+			cdt4 = " AND superieur = '" + this->superieur + "'";
 				init++;
-			}
-			else {
-				cdt3 = "' AND superieur = '";
-				init++;
-			}
 		}
 		else {
-			cdt3 = "WHERE superieur = '";
+			cdt3 = "WHERE superieur = '" + this->superieur + "'";
 			init++;
 		}
-	}
-	else {
-		cdt3 = "";
 	}
 
 	if (this->adresse != "") {
 		if (init > 0) {
-			if (this->nom == "" && this->prenom == "" && this->superieur == "") {
-				cdt4 = " AND adresse = '";
-				init++;
-			}
-			else {
-				cdt4 = "' AND adresse = '";
-			}
+			cdt5 = " AND adresse = '" + this->adresse + "'";
+			init++;
 		}
 		else {
-			cdt4 = "WHERE adresse = '";
+			cdt5 = "WHERE adresse = '" + this->adresse + "'";
 			init++;
 		}
 	}
-	else {
-		cdt4 = "";
-	}
-	if(this->nom == "" && this->prenom == "" && this->superieur == "" && this->adresse == "") {
-		cdtf = "";
-	}
-	else {
-		cdtf = "'";
+
+	if (this->date_embauche->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			cdt6 = " AND date_embauche = '" + this->date_embauche->ToShortDateString() + "'";
+			init++;
+		}
+		else {
+			cdt6 = "WHERE date_embauche = '" + this->date_embauche->ToShortDateString() + "'";
+			init++;
+		}
 	}
 
 
 	//Nouvelles valeurs 
 	int i = 0;
-	System::String^ n_v1;
-	System::String^ n_v2;
-	System::String^ n_v3;
-	System::String^ n_v4;
-	System::String^ n_vf;
+	System::String^ n_v1 = "";
+	System::String^ n_v2 = "";
+	System::String^ n_v3 = "";
+	System::String^ n_v4 = "";
+	System::String^ n_vf = "";
+	System::String^ n_v5 = "";
 	if (new_nom != "") {
-		n_v1 = " nom = '";
+		n_v1 = " nom = '" + new_nom + "'";
 		i++;
 	}
-	else {
-		n_v1 = "";
-	}
+
 
 	if (new_prenom != "") {
 		if (i > 0) {
-			n_v2 = "', prenom = '";
+			n_v2 = "', prenom = '" + new_prenom + "'";
 			i++;
 		}
 		else {
-			n_v2 = " prenom = '";
+			n_v2 = " prenom = '" + new_prenom + "'";
 			i++;
 		}
 	}
-	else {
-		n_v2 = "";
-	}
+
 	if (new_superieur != "") {
 		if (i > 0) {
-			n_v3 = "', superieur = '";
+			n_v3 = "', superieur = '" + new_superieur + "'";
 			i++;
 		}
 		else {
-			n_v3 = " superieur = '";
+			n_v3 = " superieur = '" + new_superieur + "'";
 			i++;
 		}
-	}
-	else {
-		n_v3 = "";
 	}
 
 	if (new_adresse != "") {
 		if (i > 0) {
-			n_v4 = "', adresse = '";
+			n_v4 = "', adresse = '" + new_adresse + "'";
 			i++;
 		}
 		else {
-			n_v4 = " adresse = '";
+			n_v4 = " adresse = '" + new_adresse + "'";
 			i++;
 		}
 	}
-	else {
-		n_v4 = "";
-	}
-	if (i > 0) {
-		n_vf = "'";
-	}
-	else {
-		n_vf = "";
+
+	if (new_date_embauche->ToShortDateString() != "01/01/1753") {
+		if (i > 0) {
+			n_v5 = "', date_embauche = '" + new_date_embauche->ToShortDateString() + "'";
+			i++;
+		}
+		else {
+			n_v5 = " date_embauche = '" + new_date_embauche->ToShortDateString() + "'";
+			i++;
+		}
 	}
 
-	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + new_nom + n_v2 + new_prenom + n_v3 + new_superieur + n_v4 + new_adresse + n_vf + " " + cdt6 + this->id + cdt1 + this->nom + cdt2 + this->prenom + cdt3 + this->superieur + cdt4 + this->adresse + cdtf + ";";
+	return "UPDATE [projetPOO].[dbo].[Personnel] SET" + n_v1 + n_v2 + n_v3 + n_v4 + n_v5 + " " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + ";";
 }
 
 

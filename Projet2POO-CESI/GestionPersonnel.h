@@ -629,7 +629,6 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxAdresseSupprimer->Name = L"textBoxAdresseSupprimer";
 			this->textBoxAdresseSupprimer->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseSupprimer->TabIndex = 14;
-			this->textBoxAdresseSupprimer->Visible = false;
 			// 
 			// labelAdresseSupprimer
 			// 
@@ -820,7 +819,6 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxAdresseCritSelectModif->Name = L"textBoxAdresseCritSelectModif";
 			this->textBoxAdresseCritSelectModif->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseCritSelectModif->TabIndex = 14;
-			this->textBoxAdresseCritSelectModif->Visible = false;
 			// 
 			// labelSuperieurModifier
 			// 
@@ -911,7 +909,6 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->textBoxAdresseNewModif->Name = L"textBoxAdresseNewModif";
 			this->textBoxAdresseNewModif->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseNewModif->TabIndex = 15;
-			this->textBoxAdresseNewModif->Visible = false;
 			// 
 			// label4
 			// 
@@ -1030,7 +1027,8 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 	}
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->textBoxNomNewModif->Text->Length == 0 && this->textBoxPrenomNewModif->Text->Length == 0 && this->textBoxAdresseNewModif->Text->Length == 0 && this->textBoxSuperieurNewModif->Text->Length == 0) {
+		System::DateTime^ date = this->TimePickerDateEmbaucheNewModif->Value;
+		if (this->textBoxNomNewModif->Text->Length == 0 && this->textBoxPrenomNewModif->Text->Length == 0 && this->textBoxAdresseNewModif->Text->Length == 0 && this->textBoxSuperieurNewModif->Text->Length == 0 && date->ToShortDateString() == "01/01/1753") {
 			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
 		}
 		else {
