@@ -12,3 +12,11 @@ System::String^ NS_Comp_Statistique::Statistique::calcPanierMoyen() {
 	sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande";
 	return this->oCad->getStats(sql);
 }
+
+System::Data::DataSet^ NS_Comp_Statistique::Statistique::calcSeuilReappro(System::String^ table) {
+	System::String^ sql;
+
+	// Seuil de réapprovisionnement
+	sql = "SELECT * FROM [projetPOO].[dbo].[Catalogue] WHERE [quantite] < [stock_min];";
+	return this->oCad->getRows(sql, table);
+}

@@ -1,5 +1,6 @@
 #pragma once
 #include "Statistique.h"
+#include "FormSeuilDeReappro.h"
 
 namespace Projet2POOCESI {
 
@@ -50,6 +51,11 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePickerCA;
 	private: System::Windows::Forms::Button^ buttonCA;
 	private: System::Windows::Forms::Label^ labelPanierMoyen;
+	private: System::Windows::Forms::GroupBox^ groupBoxSeuilDeReappro;
+	private: System::Windows::Forms::Button^ buttonSeuilDeReappro;
+
+
+
 
 
 
@@ -74,8 +80,11 @@ namespace Projet2POOCESI {
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->dateTimePickerCA = (gcnew System::Windows::Forms::DateTimePicker());
 			this->buttonCA = (gcnew System::Windows::Forms::Button());
+			this->groupBoxSeuilDeReappro = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonSeuilDeReappro = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			this->groupBoxSeuilDeReappro->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -83,10 +92,8 @@ namespace Projet2POOCESI {
 			this->groupBox1->Controls->Add(this->labelPanierMoyen);
 			this->groupBox1->Controls->Add(this->buttonPanierMoyenne);
 			this->groupBox1->Location = System::Drawing::Point(0, 0);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(303, 177);
+			this->groupBox1->Size = System::Drawing::Size(227, 144);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L" Panier moyen";
@@ -94,17 +101,17 @@ namespace Projet2POOCESI {
 			// labelPanierMoyen
 			// 
 			this->labelPanierMoyen->AutoSize = true;
-			this->labelPanierMoyen->Location = System::Drawing::Point(70, 58);
+			this->labelPanierMoyen->Location = System::Drawing::Point(52, 47);
+			this->labelPanierMoyen->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelPanierMoyen->Name = L"labelPanierMoyen";
-			this->labelPanierMoyen->Size = System::Drawing::Size(0, 16);
+			this->labelPanierMoyen->Size = System::Drawing::Size(0, 13);
 			this->labelPanierMoyen->TabIndex = 2;
 			// 
 			// buttonPanierMoyenne
 			// 
-			this->buttonPanierMoyenne->Location = System::Drawing::Point(35, 112);
-			this->buttonPanierMoyenne->Margin = System::Windows::Forms::Padding(4);
+			this->buttonPanierMoyenne->Location = System::Drawing::Point(26, 91);
 			this->buttonPanierMoyenne->Name = L"buttonPanierMoyenne";
-			this->buttonPanierMoyenne->Size = System::Drawing::Size(182, 28);
+			this->buttonPanierMoyenne->Size = System::Drawing::Size(136, 23);
 			this->buttonPanierMoyenne->TabIndex = 1;
 			this->buttonPanierMoyenne->Text = L"Calculer";
 			this->buttonPanierMoyenne->UseVisualStyleBackColor = true;
@@ -114,11 +121,9 @@ namespace Projet2POOCESI {
 			// 
 			this->groupBox2->Controls->Add(this->dateTimePickerCA);
 			this->groupBox2->Controls->Add(this->buttonCA);
-			this->groupBox2->Location = System::Drawing::Point(311, 0);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox2->Location = System::Drawing::Point(233, 0);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox2->Size = System::Drawing::Size(303, 177);
+			this->groupBox2->Size = System::Drawing::Size(227, 144);
 			this->groupBox2->TabIndex = 2;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Calc chiffre d\'affaire";
@@ -126,37 +131,57 @@ namespace Projet2POOCESI {
 			// dateTimePickerCA
 			// 
 			this->dateTimePickerCA->CustomFormat = L"";
-			this->dateTimePickerCA->Location = System::Drawing::Point(8, 52);
-			this->dateTimePickerCA->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePickerCA->Location = System::Drawing::Point(6, 42);
 			this->dateTimePickerCA->Name = L"dateTimePickerCA";
-			this->dateTimePickerCA->Size = System::Drawing::Size(277, 22);
+			this->dateTimePickerCA->Size = System::Drawing::Size(209, 20);
 			this->dateTimePickerCA->TabIndex = 2;
 			this->dateTimePickerCA->Value = System::DateTime(2023, 12, 8, 15, 56, 48, 0);
 			// 
 			// buttonCA
 			// 
-			this->buttonCA->Location = System::Drawing::Point(8, 100);
-			this->buttonCA->Margin = System::Windows::Forms::Padding(4);
+			this->buttonCA->Location = System::Drawing::Point(6, 81);
 			this->buttonCA->Name = L"buttonCA";
-			this->buttonCA->Size = System::Drawing::Size(279, 28);
+			this->buttonCA->Size = System::Drawing::Size(209, 23);
 			this->buttonCA->TabIndex = 1;
 			this->buttonCA->Text = L"Calculer";
 			this->buttonCA->UseVisualStyleBackColor = true;
 			// 
+			// groupBoxSeuilDeReappro
+			// 
+			this->groupBoxSeuilDeReappro->Controls->Add(this->buttonSeuilDeReappro);
+			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(466, 0);
+			this->groupBoxSeuilDeReappro->Name = L"groupBoxSeuilDeReappro";
+			this->groupBoxSeuilDeReappro->Size = System::Drawing::Size(227, 144);
+			this->groupBoxSeuilDeReappro->TabIndex = 3;
+			this->groupBoxSeuilDeReappro->TabStop = false;
+			this->groupBoxSeuilDeReappro->Text = L"Seuil de réapprovisionnement";
+			this->groupBoxSeuilDeReappro->Enter += gcnew System::EventHandler(this, &GestionStatistique::groupBox3_Enter);
+			// 
+			// buttonSeuilDeReappro
+			// 
+			this->buttonSeuilDeReappro->Location = System::Drawing::Point(47, 91);
+			this->buttonSeuilDeReappro->Name = L"buttonSeuilDeReappro";
+			this->buttonSeuilDeReappro->Size = System::Drawing::Size(136, 23);
+			this->buttonSeuilDeReappro->TabIndex = 3;
+			this->buttonSeuilDeReappro->Text = L"Calculer";
+			this->buttonSeuilDeReappro->UseVisualStyleBackColor = true;
+			this->buttonSeuilDeReappro->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonSeuilDeReappro_Click);
+			// 
 			// GestionStatistique
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1697, 539);
+			this->ClientSize = System::Drawing::Size(1273, 438);
+			this->Controls->Add(this->groupBoxSeuilDeReappro);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionStatistique";
 			this->Text = L"GestionStatistique";
 			this->Load += gcnew System::EventHandler(this, &GestionStatistique::GestionStatistique_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
+			this->groupBoxSeuilDeReappro->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -173,5 +198,11 @@ private: System::Void buttonPanierMoyenne_Click(System::Object^ sender, System::
 
 }
 
+private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonSeuilDeReappro_Click(System::Object^ sender, System::EventArgs^ e) {
+	FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
+	formSeuilDeReappro->ShowDialog();
+}
 };
 }

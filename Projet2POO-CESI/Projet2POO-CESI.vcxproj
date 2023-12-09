@@ -127,6 +127,7 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Catalogue.cpp" />
+    <ClCompile Include="FormSeuilDeReappro.cpp" />
     <ClCompile Include="GestionCatalogue.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
@@ -144,6 +145,9 @@
     <ClInclude Include="Catalogue.h" />
     <ClInclude Include="Commande.h" />
     <ClInclude Include="Fonctions.h" />
+    <ClInclude Include="FormSeuilDeReappro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionCatalogue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -166,6 +170,9 @@
     <ClInclude Include="Statistique.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormSeuilDeReappro.resx">
+      <DependentUpon>FormSeuilDeReappro.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionCatalogue.resx">
       <DependentUpon>GestionCatalogue.h</DependentUpon>
     </EmbeddedResource>
