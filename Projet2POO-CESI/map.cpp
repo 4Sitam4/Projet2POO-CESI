@@ -706,6 +706,9 @@ void NS_Comp_Mappage::map::setReapprovisionnement(System::String^ reapprovisionn
 void NS_Comp_Mappage::map::setTVA(System::String^ TVA) {
 	this->TVA = TVA;
 }
+void NS_Comp_Mappage::map::setCout(System::String^ cout) {
+	this->cout = cout;
+}
 
 bool NS_Comp_Mappage::map::getReapproNec(void) { return this->reappro_nec; }
 System::String^ NS_Comp_Mappage::map::getPrix(void) { return this->prix; }
@@ -714,13 +717,14 @@ System::String^ NS_Comp_Mappage::map::getDesignation(void) { return this->design
 System::String^ NS_Comp_Mappage::map::getStock(void) { return this->stock; }
 System::String^ NS_Comp_Mappage::map::getReapprovisionnement(void) { return this->reapprovisionnement; }
 System::String^ NS_Comp_Mappage::map::getTVA(void) { return this->TVA; }
+System::String^ NS_Comp_Mappage::map::getCout(void) { return this->cout; }
 
 
 // INSERT Catalogue --------------------------------------------------------------------------------------------------------
 
 System::String^ NS_Comp_Mappage::map::InsertCatalogue(void)
 {
-	return "INSERT INTO Catalogue (produit, quantite, prix_ht, stock_min, TVA) VALUES ('" + this->designation + "'," + this->stock + "," + this->prix + "," + this->reapprovisionnement + "," + this->TVA + ");";
+	return "INSERT INTO Catalogue (produit, quantite, prix_ht, stock_min, TVA, cout) VALUES ('" + this->designation + "'," + this->stock + "," + this->prix + "," + this->reapprovisionnement + "," + this->TVA + "," + this->cout + ");";
 }
 
 
@@ -728,62 +732,48 @@ System::String^ NS_Comp_Mappage::map::InsertCatalogue(void)
 System::String^ NS_Comp_Mappage::map::SelectCatalogue(void)
 {
 	int init = 0;
-	System::String^ cdtb;
-	System::String^ cdtid;
-	System::String^ cdt1;
-	System::String^ cdt2;
-	System::String^ cdt3;
-	System::String^ cdt4;
-	System::String^ cdt5;
-	System::String^ cdtf;
+	System::String^ cdtb = "";
+	System::String^ cdtid = "";
+	System::String^ cdt1 = "";
+	System::String^ cdt2 = "";
+	System::String^ cdt3 = "";
+	System::String^ cdt4 = "";
+	System::String^ cdt5 = "";
+	System::String^ cdt6 = "";
 	
 	
 	if (this->reappro_nec == true) {
 		cdtb = "WHERE stock <= reapprovisionnement";
 		init++;
 	}
-	else {
-		cdtb = "";
-	}
 	
 	if (this->ref != "") {
 		if (init > 0) {
-			cdtid = " AND reference_produit = ";
-			init++;
+			cdtid = " AND reference_produit = " + this->ref;
 		}
 		else {
-			cdtid = "WHERE reference_produit = ";
+			cdtid = "WHERE reference_produit = " + this->ref;
 			init++;
 		}
-	}
-	else {
-		cdtid = "";
 	}
 	
 	if (this->designation != "") {
 		if (init > 0) {
-			cdt1 = " AND produit = '";
+			cdt1 = " AND produit = '" + this->designation + "'";
 			init++;
 		}
 		else {
-			cdt1 = "WHERE produit = '";
+			cdt1 = "WHERE produit = '" + this->designation + "'";
 			init++;
 		}
-	}
-	else {
-		cdt1 = "";
 	}
 
 	if (this->stock != "") {
 		if (init > 0) {
-			if (this->designation == "") {
-				cdt2 = " AND quantite = ";
-				init++;
-			}
-			cdt2 = "' AND quantite = ";
+			cdt2 = " AND quantite = " + this->stock;
 		}
 		else {
-			cdt2 = "WHERE quantite = ";
+			cdt2 = "WHERE quantite = " + this->stock;
 			init++;
 		}
 	}
@@ -791,294 +781,191 @@ System::String^ NS_Comp_Mappage::map::SelectCatalogue(void)
 		cdt2 = "";
 	}
 	if (this->prix != "") {
-		if (init > 0) {//la
-			if (this->designation != "" && this->stock == "") {
-				cdt3 = "' AND prix_ht = ";
-				init++;
-			}
-			else {
-				cdt3 = " AND prix_ht = ";
-				init++;
-			}
+		if (init > 0) {
+			cdt3 = " AND prix_ht = " + this->prix;
 		}
 		else {
-			cdt3 = "WHERE prix_ht = ";
+			cdt3 = "WHERE prix_ht = " + this->prix;
 			init++;
 		}
-	}
-	else {
-		cdt3 = "";
 	}
 
 	if (this->reapprovisionnement != "") {
 		if (init > 0) {
-			if (this->prix == "" && this->stock == "" && this->designation != "") {
-				cdt4 = "' AND stock_min = ";
-			}
-			else {
-				cdt4 = " AND stock_min = ";
-				init++;
-			}
+			cdt4 = " AND stock_min = " + this->reapprovisionnement;	
 		}
 		else {
-			cdt4 = "WHERE stock_min = ";
+			cdt4 = "WHERE stock_min = " + this->reapprovisionnement;
 			init++;
 		}
-	}
-	else {
-		cdt4 = "";
 	}
 	
 	if (this->TVA != "") {
 		if (init > 0) {
-			if (this->prix == "" && this->stock == "" && this->reapprovisionnement == "" && this->designation != "") {
-				cdt5 = "' AND TVA = ";
-				init++;
-			}
-			else {
-				cdt5 = " AND TVA = ";
-				init++;
-			}
+			cdt5 = " AND TVA = " + this->TVA;
 		}
 		else {
-			cdt5 = "WHERE TVA = ";
+			cdt5 = "WHERE TVA = " + this->TVA;
 			init++;
 		}
 	}
-	else {
-		cdt5 = "";
+
+	if (this->cout != "") {
+		if (init > 0) {
+			cdt6 = " AND cout = " + this->cout;
+		}
+		else {
+			cdt6 = "WHERE cout = " + this->cout;
+			init++;
+		}
 	}
 
-	if (this->TVA == "" && this->reapprovisionnement == "" && this->stock == "" && this->prix == "" && this->designation != "") {
-		cdtf = "'";
-	}
-	else {
-		cdtf = "";
-	}
 
-
-
-	return "SELECT * FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+	return "SELECT * FROM [projetPOO].[dbo].[Catalogue] " + cdtid + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + ";";
 }
 
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 //update 
-System::String^ NS_Comp_Mappage::map::UpdateCatalogue(System::String^ new_designation, System::String^ new_stock, System::String^ new_reapprovisionnement, System::String^ new_prix, System::String^ new_TVA)
+System::String^ NS_Comp_Mappage::map::UpdateCatalogue(System::String^ new_designation, System::String^ new_stock, System::String^ new_reapprovisionnement, System::String^ new_prix, System::String^ new_TVA, System::String^ new_cout)
 {
 	int init = 0;
-	System::String^ cdt1;
-	System::String^ cdt2;
-	System::String^ cdt3;
-	System::String^ cdt4;
-	System::String^ cdt5;
-	System::String^ cdt6;
-	System::String^ cdtf;
+	System::String^ cdt1 = "";
+	System::String^ cdt2 = "";
+	System::String^ cdt3 = "";
+	System::String^ cdt4 = "";
+	System::String^ cdt5 = "";
+	System::String^ cdt6 = "";
+	System::String^ cdt7 = "";
 
 	if (this->ref != "") {
-		cdt6 = "WHERE reference_produit = ";
+		cdt1 = "WHERE reference_produit = " + this->ref;
 		init++;
-	}
-	else {
-		cdt6 = "";
 	}
 	if (this->designation != "") {
 		if (init > 0) {
-			cdt1 = " AND produit = '";
-			init++;
+			cdt2 = " AND produit = '" + this->designation + "'";
 		}
 		else {
-			cdt1 = "WHERE produit = '";
+			cdt2 = "WHERE produit = '" + this->designation + "'";
 			init++;
 		}
-	}
-	else {
-		cdt1 = "";
 	}
 
 	if (this->stock != "") {
 		if (init > 0) {
-			if (this->designation == "") {
-				cdt2 = " AND quantite = ";
-			}
-			else {
-				cdt2 = "' AND quantite = ";
-				init++;
-			}
+			cdt3 = " AND quantite = " + this->stock;
 		}
 		else {
-			cdt2 = "WHERE quantite = ";
+			cdt3 = "WHERE quantite = " + this->stock;
 			init++;
 		}
 	}
-	else {
-		cdt2 = "";
-	}
+
 	if (this->prix != "") {
 		if (init > 0) {
-			if (this->stock == "" && this->designation != "") {
-				cdt3 = "' AND prix_ht = ";
-				init++;
-			}
-			else {
-				cdt3 = " AND prix_ht = ";
-				init++;
-			}
+			cdt4 = " AND prix_ht = " + this->prix;
 		}
 		else {
-			cdt3 = "WHERE prix_ht = '";
+			cdt4 = "WHERE prix_ht = " + this->prix;
 			init++;
 		}
-	}
-	else {
-		cdt3 = "";
 	}
 
 	if (this->reapprovisionnement != "") {
 		if (init > 0) {
-			if (this->stock == "" && this->prix == "" && this->designation != "") {
-				cdt4 = "' AND stock_min = ";
-				init++;
-			}
-			else {
-				cdt4 = " AND stock_min = ";
-			}
+			cdt5 = " AND stock_min = " + this->reapprovisionnement;
 		}
 		else {
-			cdt4 = "WHERE stock_min = ";
+			cdt5 = "WHERE stock_min = " + this->reapprovisionnement;
 			init++;
 		}
 	}
-	else {
-		cdt4 = "";
-	}
+
 	if (this->TVA != "") {
 		if (init > 0) {
-			if (this->stock == "" && this->prix == "" && this->reapprovisionnement && this->designation != "") {
-				cdt5 = "' AND TVA = ";
-				init++;
-			}
-			else {
-				cdt5 = " AND TVA = ";
-			}
+			cdt6 = " AND TVA = " + this->TVA;
 		}
 		else {
-			cdt5 = "WHERE TVA = ";
+			cdt6 = "WHERE TVA = " + this->TVA;
 			init++;
 		}
 	}
-	else {
-		cdt5 = "";
-	}
-
-
-
-	if (this->stock == "" && this->prix == "" && this->reapprovisionnement == "" && this->TVA == "" && this->designation != "") {
-		cdtf = "'";
-	}
-	else {
-		cdtf = "";
+	
+	if (this->cout != "") {
+		if (init > 0) {
+			cdt7 = " AND cout = " + this->cout;
+		}
+		else {
+			cdt7 = "WHERE cout = " + this->cout;
+			init++;
+		}
 	}
 
 
 	//Nouvelles valeurs 
 	int i = 0;
-	System::String^ n_v1;
-	System::String^ n_v2;
-	System::String^ n_v3;
-	System::String^ n_v4;
-	System::String^ n_v5;
-	System::String^ n_vf;
+	System::String^ n_v1 = "";
+	System::String^ n_v2 = "";
+	System::String^ n_v3 = "";
+	System::String^ n_v4 = "";
+	System::String^ n_v5 = "";
+	System::String^ n_v6 = "";
 
 	if (new_designation != "") {
-		n_v1 = " produit = '";
+		n_v1 = " produit = '" + new_designation + "'";
 		i++;
-	}
-	else {
-		n_v1 = "";
 	}
 
 	if (new_stock != "") {
 		if (i > 0) {
-			n_v2 = "', quantite = ";
-			i++;
-		}
-		else {
-			n_v2 = " quantite = ";
+			n_v2 = ", quantite = " + new_stock;
 			i++;
 		}
 	}
-	else {
-		n_v2 = "";
-	}
+
 	if (new_prix != "") {
 		if (i > 0) {
-			if (new_stock == "" && new_designation != "") {
-				n_v3 = "', prix_ht = ";
-				i++;
-			}
-			else {
-				n_v3 = ", prix_ht = ";
-				i++;
-			}
+			n_v3 = ", prix_ht = " + new_prix;
 		}
 		else {
 			n_v3 = " prix_ht = ";
 			i++;
 		}
 	}
-	else {
-		n_v3 = "";
-	}
 
 	if (new_reapprovisionnement != "") {
 		if (i > 0) {
-			if (new_stock == "" && new_prix == "" && new_designation != "") {
-				n_v4 = "', stock_min = ";
-				i++;
-			}
-			else {
-				n_v4 = ", stock_min = ";
-				i++;
-			}
+			n_v4 = ", stock_min = " + new_reapprovisionnement;
 		}
 		else {
-			n_v4 = " stock_min = ";
+			n_v4 = " stock_min = " + new_reapprovisionnement;
 			i++;
 		}
 	}
-	else {
-		n_v4 = "";
-	}
+
 	if (new_TVA != "") {
 		if (i > 0) {
-			if (new_stock == "" && new_prix == "" && new_reapprovisionnement == "" && new_designation != "") {
-				n_v5 = "', TVA = ";
-				i++;
-			}
-			else {
-				n_v5 = ", TVA = ";
-				i++;
-			}
+			n_v5 = ", TVA = " + new_TVA;
 		}
 		else {
-			n_v5 = " TVA = ";
+			n_v5 = " TVA = " + new_TVA;
 			i++;
 		}
 	}
-	else {
-		n_v5 = "";
+
+	if (new_cout != "") {
+		if (i > 0) {
+			n_v6 = ", cout = " + new_cout;
+		}
+		else {
+			n_v6 = " cout = " + new_cout;
+			i++;
+		}
 	}
 
-	if (new_stock == "" && new_prix == "" && new_reapprovisionnement == "" && new_TVA == "" && new_designation != "") {
-		n_vf = "'";
-	}
-	else {
-		n_vf = "";
-	}
-
-	return "UPDATE [projetPOO].[dbo].[Catalogue] SET" + n_v1 + new_designation+ n_v2 + new_stock + n_v3 + new_prix + n_v4 + new_reapprovisionnement + n_v5 + new_TVA + n_vf + " " + cdt6 + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+	return "UPDATE [projetPOO].[dbo].[Catalogue] SET" + n_v1 + n_v2 + n_v3 + n_v4 + n_v5 + n_v6 + " " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + cdt7 + ";";
 }
 
 
@@ -1091,121 +978,81 @@ System::String^ NS_Comp_Mappage::map::UpdateCatalogue(System::String^ new_design
 System::String^ NS_Comp_Mappage::map::DeleteCatalogue(void)
 {
 	int init = 0;
-	System::String^ cdtid;
-	System::String^ cdt1;
-	System::String^ cdt2;
-	System::String^ cdt3;
-	System::String^ cdt4;
-	System::String^ cdt5;
-	System::String^ cdtf;
+	System::String^ cdtid = "";
+	System::String^ cdt1 = "";
+	System::String^ cdt2 = "";
+	System::String^ cdt3 = "";
+	System::String^ cdt4 = "";
+	System::String^ cdt5 = "";
+	System::String^ cdt6 = "";
 
 
 	if (this->ref != "") {
-		cdtid = "WHERE reference_produit = ";
-		init++;
-	}
-	else {
-		cdtid = "";
+		cdtid = "WHERE reference_produit = " + this->ref;
 	}
 
 	if (this->designation != "") {
 		if (init > 0) {
-			cdt1 = " AND produit = '";
-			init++;
+			cdt1 = " AND produit = '" + this->designation + "'";
 		}
 		else {
-			cdt1 = "WHERE produit = '";
+			cdt1 = "WHERE produit = '" + this->designation + "'";
 			init++;
 		}
-	}
-	else {
-		cdt1 = "";
 	}
 
 	if (this->stock != "") {
 		if (init > 0) {
-			if (this->designation == "") {
-				cdt2 = " AND quantite = ";
-				init++;
-			}
-			cdt2 = "' AND quantite = ";
+			cdt2 = " AND quantite = " + this->stock;
 		}
 		else {
-			cdt2 = "WHERE quantite = ";
+			cdt2 = "WHERE quantite = " + this->stock;
 			init++;
 		}
 	}
-	else {
-		cdt2 = "";
-	}
+
 	if (this->prix != "") {
-		if (init > 0) {//la
-			if (this->designation != "" && this->stock == "") {
-				cdt3 = "' AND prix_ht = ";
-				init++;
-			}
-			else {
-				cdt3 = " AND prix_ht = ";
-				init++;
-			}
+		if (init > 0) {
+			cdt3 = " AND prix_ht = " + this->prix;	
 		}
 		else {
-			cdt3 = "WHERE prix_ht = ";
+			cdt3 = "WHERE prix_ht = " + this->prix;
 			init++;
 		}
 	}
-	else {
-		cdt3 = "";
-	}
+
 
 	if (this->reapprovisionnement != "") {
 		if (init > 0) {
-			if (this->prix == "" && this->stock == "" && this->designation != "") {
-				cdt4 = "' AND stock_min = ";
-			}
-			else {
-				cdt4 = " AND stock_min = ";
-				init++;
-			}
+			cdt4 = " AND stock_min = " + this->reapprovisionnement;
 		}
 		else {
-			cdt4 = "WHERE stock_min = ";
+			cdt4 = "WHERE stock_min = " + this->reapprovisionnement;
 			init++;
 		}
-	}
-	else {
-		cdt4 = "";
 	}
 
 	if (this->TVA != "") {
 		if (init > 0) {
-			if (this->prix == "" && this->stock == "" && this->reapprovisionnement == "" && this->designation != "") {
-				cdt5 = "' AND TVA = ";
-				init++;
-			}
-			else {
-				cdt5 = " AND TVA = ";
-				init++;
-			}
+			cdt5 = " AND TVA = " + this->TVA;
 		}
 		else {
-			cdt5 = "WHERE TVA = ";
+			cdt5 = "WHERE TVA = " + this->TVA;
 			init++;
 		}
 	}
-	else {
-		cdt5 = "";
+
+	if (this->cout != "") {
+		if (init > 0) {
+			cdt6 = " AND coout = " + this->cout;
+		}
+		else {
+			cdt6 = "WHERE cout = " + this->cout;
+			init++;
+		}
 	}
 
-	if (this->TVA == "" && this->reapprovisionnement == "" && this->stock == "" && this->prix == "" && this->designation != "") {
-		cdtf = "'";
-	}
-	else {
-		cdtf = "";
-	}
 
 
-
-
-	return "DELETE FROM [projetPOO].[dbo].[Catalogue] " + cdtid + this->ref + cdt1 + this->designation + cdt2 + this->stock + cdt3 + this->prix + cdt4 + this->reapprovisionnement + cdt5 + this->TVA + cdtf + ";";
+	return "DELETE FROM [projetPOO].[dbo].[Catalogue] " + cdtid + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + ";";
 }

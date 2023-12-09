@@ -26,12 +26,13 @@ namespace NS_Comp_Mappage
 		System::DateTime^ date_premier_achat;
 		//Catalogue
 		bool reappro_nec;
-		System::String^ prix ="";
-		System::String^ ref;
-		System::String^ designation ="";
-		System::String^ stock ="";
-		System::String^ reapprovisionnement ="";
-		System::String^ TVA ="";
+		System::String^ prix = "";
+		System::String^ ref = "";
+		System::String^ designation = "";
+		System::String^ stock = "";
+		System::String^ reapprovisionnement = "";
+		System::String^ TVA = "";
+		System::String^ cout = "";
 		//...
 
 	public:
@@ -51,7 +52,7 @@ namespace NS_Comp_Mappage
 		System::String^ SelectCatalogue(void);
 		System::String^ InsertCatalogue(void);
 		System::String^ DeleteCatalogue(void);
-		System::String^ UpdateCatalogue(System::String^, System::String^, System::String^, System::String^, System::String^);
+		System::String^ UpdateCatalogue(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 		/*
 		System::String^ SelectCommande(void);
@@ -106,6 +107,7 @@ namespace NS_Comp_Mappage
 		System::String^ getStock(void);
 		System::String^ getReapprovisionnement(void);
 		System::String^ getTVA(void);
+		System::String^ getCout(void);
 		//
 		void setReapproNec(bool);
 		void setPrix(System::String^);
@@ -114,6 +116,7 @@ namespace NS_Comp_Mappage
 		void setStock(System::String^);
 		void setReapprovisionnement(System::String^);
 		void setTVA(System::String^);
+		void setCout(System::String^);
 
 		//...
 	};
