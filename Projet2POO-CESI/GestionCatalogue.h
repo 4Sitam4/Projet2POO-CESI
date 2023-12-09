@@ -968,11 +968,16 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 
 
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
-		bool bouton = checkBox1->Checked;
-		this->dgv_enr->Refresh();
-		this->oDs = this->oCat->afficherProduits(bouton, this->textBoxIDAfficher->Text, this->textBoxNomProduitAfficher->Text, this->textBoxStockAfficher->Text, this->textBoxReapprovisionnementAfficher->Text, this->textBoxPrixAfficher->Text, this->textBoxTVAAfficher->Text, "ResultatCatalogue");
-		this->dgv_enr->DataSource = this->oDs;
-		this->dgv_enr->DataMember = "ResultatCatalogue";
+		if (this->textBoxIDAfficher->Text->Contains(",") || this->textBoxStockAfficher->Text->Contains(",") || this->textBoxReapprovisionnementAfficher->Text->Contains(",") || this->textBoxPrixAfficher->Text->Contains(",") || this->textBoxTVAAfficher->Text->Contains(",")) {
+			MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+		}
+		else {
+			bool bouton = checkBox1->Checked;
+			this->dgv_enr->Refresh();
+			this->oDs = this->oCat->afficherProduits(bouton, this->textBoxIDAfficher->Text, this->textBoxNomProduitAfficher->Text, this->textBoxStockAfficher->Text, this->textBoxReapprovisionnementAfficher->Text, this->textBoxPrixAfficher->Text, this->textBoxTVAAfficher->Text, "ResultatCatalogue");
+			this->dgv_enr->DataSource = this->oDs;
+			this->dgv_enr->DataMember = "ResultatCatalogue";
+		}
 	}
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -980,15 +985,25 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
 		}
 		else {
-			this->oCat->modifierProduit(this->textBoxIDCritSelectModif->Text, this->textBoxNomProduitCritSelectModif->Text, this->textBoxStockCritSelectModif->Text, this->textBoxReapproCritSelectModif->Text, this->textBoxPrixCritSelectModif->Text, this->textBoxTVACritSelectModif->Text, this->textBoxNomProduitNewModif->Text, this->textBoxStockNewModif->Text, this->textBoxReapproNewModif->Text, this->textBoxPrixNewModif->Text, this->textBoxTVANewModif->Text);
-			MessageBox::Show("Informations relatives au personnel modifiées");
+			if (this->textBoxIDCritSelectModif->Text->Contains(",") || this->textBoxStockCritSelectModif->Text->Contains(",") || this->textBoxIDCritSelectModif->Text->Contains(",") || this->textBoxReapproCritSelectModif->Text->Contains(",") || this->textBoxPrixCritSelectModif->Text->Contains(",") || this->textBoxTVACritSelectModif->Text->Contains(",") || this->textBoxStockNewModif->Text->Contains(",") || this->textBoxReapproNewModif->Text->Contains(",") || this->textBoxPrixNewModif->Text->Contains(",") || this->textBoxTVANewModif->Text->Contains(",")) {
+				MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+			}
+			else {
+				this->oCat->modifierProduit(this->textBoxIDCritSelectModif->Text, this->textBoxNomProduitCritSelectModif->Text, this->textBoxStockCritSelectModif->Text, this->textBoxReapproCritSelectModif->Text, this->textBoxPrixCritSelectModif->Text, this->textBoxTVACritSelectModif->Text, this->textBoxNomProduitNewModif->Text, this->textBoxStockNewModif->Text, this->textBoxReapproNewModif->Text, this->textBoxPrixNewModif->Text, this->textBoxTVANewModif->Text);
+				MessageBox::Show("Informations relatives au personnel modifiées");
+			}
 		}
 	}
 
 	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Les données de tout produit correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomProduitSupprimer->Text + "\n\t" + this->textBoxStockSupprimer->Text + "\n\t" + this->textBoxReapprovisionnementSupprimer->Text + "\n\t" + this->textBoxPrixSupprimer->Text + "\n\t" + this->textBoxTVASupprimer->Text + "\n");
-		this->oCat->supprimerProduit(this->textBoxIDSupprimer->Text, this->textBoxNomProduitSupprimer->Text, this->textBoxStockSupprimer->Text, this->textBoxReapprovisionnementSupprimer->Text, this->textBoxPrixSupprimer->Text, this->textBoxTVASupprimer->Text);
-		MessageBox::Show("Le(s) produit(s) supprimer");
+		if (this->textBoxIDSupprimer->Text->Contains(",") || this->textBoxStockSupprimer->Text->Contains(",") || this->textBoxReapprovisionnementSupprimer->Text->Contains(",") || this->textBoxPrixSupprimer->Text->Contains(",") || this->textBoxTVASupprimer->Text->Contains(",")) {
+			MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+		}
+		else {
+			MessageBox::Show("Les données de tout produit correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomProduitSupprimer->Text + "\n\t" + this->textBoxStockSupprimer->Text + "\n\t" + this->textBoxReapprovisionnementSupprimer->Text + "\n\t" + this->textBoxPrixSupprimer->Text + "\n\t" + this->textBoxTVASupprimer->Text + "\n");
+			this->oCat->supprimerProduit(this->textBoxIDSupprimer->Text, this->textBoxNomProduitSupprimer->Text, this->textBoxStockSupprimer->Text, this->textBoxReapprovisionnementSupprimer->Text, this->textBoxPrixSupprimer->Text, this->textBoxTVASupprimer->Text);
+			MessageBox::Show("Le(s) produit(s) supprimer");
+		}
 	}
 
 };

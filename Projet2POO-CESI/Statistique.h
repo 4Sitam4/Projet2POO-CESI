@@ -14,9 +14,9 @@ namespace NS_Comp_Statistique
 		Statistique();
 		System::String^ calcPanierMoyen();
 		System::Data::DataSet^ calcSeuilReappro(System::String^);
-		
-
 		System::String ^ calcChiffreAffaireMois(System::String^, System::String^);
+
+		System::String^ calcAchatsClient(System::String^);
 
 		void setMois(System::String^);
 		System::String^ getMois(void);

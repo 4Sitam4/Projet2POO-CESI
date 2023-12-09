@@ -40,14 +40,16 @@ namespace Projet2POOCESI {
 
 	private: NS_Comp_Statistique::Statistique^ oStat;
 	private: System::String^ res;
+	private: System::Windows::Forms::GroupBox^ groupBoxPanierMoyen;
 
 
-	private: System::Windows::Forms::GroupBox^ groupBox1;
+
 	protected:
 	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 	private: System::Windows::Forms::Button^ buttonPanierMoyenne;
+	private: System::Windows::Forms::GroupBox^ groupBoxCA;
 
-	private: System::Windows::Forms::GroupBox^ groupBox2;
+
 
 	private: System::Windows::Forms::Button^ buttonCA;
 	private: System::Windows::Forms::Label^ labelPanierMoyen;
@@ -58,6 +60,17 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::ComboBox^ comboBoxAnnee;
 	private: System::Windows::Forms::GroupBox^ groupBoxSeuilDeReappro;
 	private: System::Windows::Forms::Button^ buttonSeuilDeReappro;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::GroupBox^ groupBoxSommeAchats;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ labelAchatsClient;
+
+	private: System::Windows::Forms::Button^ buttonAchatsClient;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBoxClient;
+
+
 
 
 
@@ -80,70 +93,138 @@ namespace Projet2POOCESI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBoxPanierMoyen = (gcnew System::Windows::Forms::GroupBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->labelPanierMoyen = (gcnew System::Windows::Forms::Label());
 			this->buttonPanierMoyenne = (gcnew System::Windows::Forms::Button());
 			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
-			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBoxCA = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->labelCA = (gcnew System::Windows::Forms::Label());
+			this->labelAnnee = (gcnew System::Windows::Forms::Label());
+			this->labelMois = (gcnew System::Windows::Forms::Label());
+			this->comboBoxAnnee = (gcnew System::Windows::Forms::ComboBox());
 			this->comboBoxMois = (gcnew System::Windows::Forms::ComboBox());
 			this->buttonCA = (gcnew System::Windows::Forms::Button());
-			this->comboBoxAnnee = (gcnew System::Windows::Forms::ComboBox());
-			this->labelMois = (gcnew System::Windows::Forms::Label());
-			this->labelAnnee = (gcnew System::Windows::Forms::Label());
-			this->labelCA = (gcnew System::Windows::Forms::Label());
 			this->groupBoxSeuilDeReappro = (gcnew System::Windows::Forms::GroupBox());
 			this->buttonSeuilDeReappro = (gcnew System::Windows::Forms::Button());
-			this->groupBox1->SuspendLayout();
-			this->groupBox2->SuspendLayout();
+			this->groupBoxSommeAchats = (gcnew System::Windows::Forms::GroupBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBoxClient = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->labelAchatsClient = (gcnew System::Windows::Forms::Label());
+			this->buttonAchatsClient = (gcnew System::Windows::Forms::Button());
+			this->groupBoxPanierMoyen->SuspendLayout();
+			this->groupBoxCA->SuspendLayout();
 			this->groupBoxSeuilDeReappro->SuspendLayout();
+			this->groupBoxSommeAchats->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// groupBox1
+			// groupBoxPanierMoyen
 			// 
-			this->groupBox1->Controls->Add(this->labelPanierMoyen);
-			this->groupBox1->Controls->Add(this->buttonPanierMoyenne);
-			this->groupBox1->Location = System::Drawing::Point(0, 0);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(227, 144);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L" Panier moyen";
+			this->groupBoxPanierMoyen->Controls->Add(this->label2);
+			this->groupBoxPanierMoyen->Controls->Add(this->labelPanierMoyen);
+			this->groupBoxPanierMoyen->Controls->Add(this->buttonPanierMoyenne);
+			this->groupBoxPanierMoyen->Location = System::Drawing::Point(13, 13);
+			this->groupBoxPanierMoyen->Margin = System::Windows::Forms::Padding(4);
+			this->groupBoxPanierMoyen->Name = L"groupBoxPanierMoyen";
+			this->groupBoxPanierMoyen->Padding = System::Windows::Forms::Padding(4);
+			this->groupBoxPanierMoyen->Size = System::Drawing::Size(269, 177);
+			this->groupBoxPanierMoyen->TabIndex = 0;
+			this->groupBoxPanierMoyen->TabStop = false;
+			this->groupBoxPanierMoyen->Text = L" Panier moyen des clients";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(22, 38);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(0, 16);
+			this->label2->TabIndex = 3;
 			// 
 			// labelPanierMoyen
 			// 
 			this->labelPanierMoyen->AutoSize = true;
-			this->labelPanierMoyen->Location = System::Drawing::Point(52, 47);
-			this->labelPanierMoyen->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelPanierMoyen->Location = System::Drawing::Point(80, 77);
 			this->labelPanierMoyen->Name = L"labelPanierMoyen";
-			this->labelPanierMoyen->Size = System::Drawing::Size(0, 13);
+			this->labelPanierMoyen->Size = System::Drawing::Size(0, 16);
 			this->labelPanierMoyen->TabIndex = 2;
 			// 
 			// buttonPanierMoyenne
 			// 
-			this->buttonPanierMoyenne->Location = System::Drawing::Point(26, 91);
+			this->buttonPanierMoyenne->Location = System::Drawing::Point(45, 122);
+			this->buttonPanierMoyenne->Margin = System::Windows::Forms::Padding(4);
 			this->buttonPanierMoyenne->Name = L"buttonPanierMoyenne";
-			this->buttonPanierMoyenne->Size = System::Drawing::Size(136, 23);
+			this->buttonPanierMoyenne->Size = System::Drawing::Size(154, 28);
 			this->buttonPanierMoyenne->TabIndex = 1;
 			this->buttonPanierMoyenne->Text = L"Calculer";
 			this->buttonPanierMoyenne->UseVisualStyleBackColor = true;
 			this->buttonPanierMoyenne->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonPanierMoyenne_Click);
 			// 
-			// groupBox2
+			// groupBoxCA
 			// 
-			this->groupBox2->Controls->Add(this->labelCA);
-			this->groupBox2->Controls->Add(this->labelAnnee);
-			this->groupBox2->Controls->Add(this->labelMois);
-			this->groupBox2->Controls->Add(this->comboBoxAnnee);
-			this->groupBox2->Controls->Add(this->comboBoxMois);
-			this->groupBox2->Controls->Add(this->buttonCA);
-			this->groupBox2->Location = System::Drawing::Point(233, 0);
-			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox2->Size = System::Drawing::Size(384, 306);
-			this->groupBox2->Size = System::Drawing::Size(227, 144);
-			this->groupBox2->TabIndex = 2;
-			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Calc chiffre d\'affaire";
+			this->groupBoxCA->Controls->Add(this->label1);
+			this->groupBoxCA->Controls->Add(this->labelCA);
+			this->groupBoxCA->Controls->Add(this->labelAnnee);
+			this->groupBoxCA->Controls->Add(this->labelMois);
+			this->groupBoxCA->Controls->Add(this->comboBoxAnnee);
+			this->groupBoxCA->Controls->Add(this->comboBoxMois);
+			this->groupBoxCA->Controls->Add(this->buttonCA);
+			this->groupBoxCA->Location = System::Drawing::Point(311, 13);
+			this->groupBoxCA->Margin = System::Windows::Forms::Padding(4);
+			this->groupBoxCA->Name = L"groupBoxCA";
+			this->groupBoxCA->Padding = System::Windows::Forms::Padding(5);
+			this->groupBoxCA->Size = System::Drawing::Size(345, 276);
+			this->groupBoxCA->TabIndex = 2;
+			this->groupBoxCA->TabStop = false;
+			this->groupBoxCA->Text = L"Chiffre d\'affaires ";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(17, 122);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(0, 16);
+			this->label1->TabIndex = 8;
+			// 
+			// labelCA
+			// 
+			this->labelCA->AutoSize = true;
+			this->labelCA->Location = System::Drawing::Point(130, 161);
+			this->labelCA->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCA->Name = L"labelCA";
+			this->labelCA->Size = System::Drawing::Size(0, 16);
+			this->labelCA->TabIndex = 7;
+			// 
+			// labelAnnee
+			// 
+			this->labelAnnee->AutoSize = true;
+			this->labelAnnee->Location = System::Drawing::Point(201, 38);
+			this->labelAnnee->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelAnnee->Name = L"labelAnnee";
+			this->labelAnnee->Size = System::Drawing::Size(46, 16);
+			this->labelAnnee->TabIndex = 6;
+			this->labelAnnee->Text = L"Année";
+			// 
+			// labelMois
+			// 
+			this->labelMois->AutoSize = true;
+			this->labelMois->Location = System::Drawing::Point(17, 38);
+			this->labelMois->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelMois->Name = L"labelMois";
+			this->labelMois->Size = System::Drawing::Size(36, 16);
+			this->labelMois->TabIndex = 5;
+			this->labelMois->Text = L"Mois";
+			// 
+			// comboBoxAnnee
+			// 
+			this->comboBoxAnnee->FormattingEnabled = true;
+			this->comboBoxAnnee->Location = System::Drawing::Point(204, 58);
+			this->comboBoxAnnee->Margin = System::Windows::Forms::Padding(4);
+			this->comboBoxAnnee->Name = L"comboBoxAnnee";
+			this->comboBoxAnnee->Size = System::Drawing::Size(119, 24);
+			this->comboBoxAnnee->TabIndex = 4;
 			// 
 			// comboBoxMois
 			// 
@@ -152,101 +233,127 @@ namespace Projet2POOCESI {
 				L"Janvier", L"Février", L"Mars", L"Avril", L"Mai",
 					L"Juin", L"Juillet", L"Août", L"Septembre", L"Octobre", L"Novembre", L"Décembre"
 			});
-			this->comboBoxMois->Location = System::Drawing::Point(20, 70);
+			this->comboBoxMois->Location = System::Drawing::Point(20, 60);
+			this->comboBoxMois->Margin = System::Windows::Forms::Padding(4);
 			this->comboBoxMois->Name = L"comboBoxMois";
-			this->comboBoxMois->Size = System::Drawing::Size(121, 24);
+			this->comboBoxMois->Size = System::Drawing::Size(124, 24);
 			this->comboBoxMois->TabIndex = 3;
-			this->dateTimePickerCA->CustomFormat = L"";
-			this->dateTimePickerCA->Location = System::Drawing::Point(6, 42);
-			this->dateTimePickerCA->Name = L"dateTimePickerCA";
-			this->dateTimePickerCA->Size = System::Drawing::Size(209, 20);
-			this->dateTimePickerCA->TabIndex = 2;
-			this->dateTimePickerCA->Value = System::DateTime(2023, 12, 8, 15, 56, 48, 0);
 			// 
 			// buttonCA
 			// 
-			this->buttonCA->Location = System::Drawing::Point(84, 237);
-			this->buttonCA->Margin = System::Windows::Forms::Padding(4);
-			this->buttonCA->Location = System::Drawing::Point(6, 81);
+			this->buttonCA->Location = System::Drawing::Point(72, 222);
+			this->buttonCA->Margin = System::Windows::Forms::Padding(5);
 			this->buttonCA->Name = L"buttonCA";
-			this->buttonCA->Size = System::Drawing::Size(200, 28);
-			this->buttonCA->Size = System::Drawing::Size(209, 23);
+			this->buttonCA->Size = System::Drawing::Size(187, 28);
 			this->buttonCA->TabIndex = 1;
 			this->buttonCA->Text = L"Calculer";
 			this->buttonCA->UseVisualStyleBackColor = true;
 			this->buttonCA->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonCA_Click);
 			// 
-			// comboBoxAnnee
-			// 
-			this->comboBoxAnnee->FormattingEnabled = true;
-			this->comboBoxAnnee->Location = System::Drawing::Point(209, 70);
-			this->comboBoxAnnee->Name = L"comboBoxAnnee";
-			this->comboBoxAnnee->Size = System::Drawing::Size(121, 24);
-			this->comboBoxAnnee->TabIndex = 4;
-			// 
-			// labelMois
-			// 
-			this->labelMois->AutoSize = true;
-			this->labelMois->Location = System::Drawing::Point(20, 48);
-			this->labelMois->Name = L"labelMois";
-			this->labelMois->Size = System::Drawing::Size(36, 16);
-			this->labelMois->TabIndex = 5;
-			this->labelMois->Text = L"Mois";
-			// 
-			// labelAnnee
-			// 
-			this->labelAnnee->AutoSize = true;
-			this->labelAnnee->Location = System::Drawing::Point(206, 51);
-			this->labelAnnee->Name = L"labelAnnee";
-			this->labelAnnee->Size = System::Drawing::Size(46, 16);
-			this->labelAnnee->TabIndex = 6;
-			this->labelAnnee->Text = L"Année";
-			// 
-			// labelCA
-			// 
-			this->labelCA->AutoSize = true;
-			this->labelCA->Location = System::Drawing::Point(151, 161);
-			this->labelCA->Name = L"labelCA";
-			this->labelCA->Size = System::Drawing::Size(0, 16);
-			this->labelCA->TabIndex = 7;
-			// 
 			// groupBoxSeuilDeReappro
 			// 
 			this->groupBoxSeuilDeReappro->Controls->Add(this->buttonSeuilDeReappro);
-			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(466, 0);
+			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(692, 13);
+			this->groupBoxSeuilDeReappro->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxSeuilDeReappro->Name = L"groupBoxSeuilDeReappro";
-			this->groupBoxSeuilDeReappro->Size = System::Drawing::Size(227, 144);
+			this->groupBoxSeuilDeReappro->Padding = System::Windows::Forms::Padding(4);
+			this->groupBoxSeuilDeReappro->Size = System::Drawing::Size(351, 177);
 			this->groupBoxSeuilDeReappro->TabIndex = 3;
 			this->groupBoxSeuilDeReappro->TabStop = false;
-			this->groupBoxSeuilDeReappro->Text = L"Seuil de réapprovisionnement";
+			this->groupBoxSeuilDeReappro->Text = L"Stock inférieur au seuil réapprovisionnement";
 			this->groupBoxSeuilDeReappro->Enter += gcnew System::EventHandler(this, &GestionStatistique::groupBox3_Enter);
 			// 
 			// buttonSeuilDeReappro
 			// 
-			this->buttonSeuilDeReappro->Location = System::Drawing::Point(47, 91);
+			this->buttonSeuilDeReappro->Location = System::Drawing::Point(89, 110);
+			this->buttonSeuilDeReappro->Margin = System::Windows::Forms::Padding(4);
 			this->buttonSeuilDeReappro->Name = L"buttonSeuilDeReappro";
-			this->buttonSeuilDeReappro->Size = System::Drawing::Size(136, 23);
+			this->buttonSeuilDeReappro->Size = System::Drawing::Size(181, 28);
 			this->buttonSeuilDeReappro->TabIndex = 3;
-			this->buttonSeuilDeReappro->Text = L"Calculer";
+			this->buttonSeuilDeReappro->Text = L"Afficher";
 			this->buttonSeuilDeReappro->UseVisualStyleBackColor = true;
 			this->buttonSeuilDeReappro->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonSeuilDeReappro_Click);
 			// 
+			// groupBoxSommeAchats
+			// 
+			this->groupBoxSommeAchats->Controls->Add(this->label5);
+			this->groupBoxSommeAchats->Controls->Add(this->textBoxClient);
+			this->groupBoxSommeAchats->Controls->Add(this->label3);
+			this->groupBoxSommeAchats->Controls->Add(this->labelAchatsClient);
+			this->groupBoxSommeAchats->Controls->Add(this->buttonAchatsClient);
+			this->groupBoxSommeAchats->Location = System::Drawing::Point(13, 219);
+			this->groupBoxSommeAchats->Margin = System::Windows::Forms::Padding(4);
+			this->groupBoxSommeAchats->Name = L"groupBoxSommeAchats";
+			this->groupBoxSommeAchats->Padding = System::Windows::Forms::Padding(4);
+			this->groupBoxSommeAchats->Size = System::Drawing::Size(269, 271);
+			this->groupBoxSommeAchats->TabIndex = 4;
+			this->groupBoxSommeAchats->TabStop = false;
+			this->groupBoxSommeAchats->Text = L"Motant des achats du client";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(22, 52);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(89, 16);
+			this->label5->TabIndex = 5;
+			this->label5->Text = L"Numéro client";
+			// 
+			// textBoxClient
+			// 
+			this->textBoxClient->Location = System::Drawing::Point(25, 71);
+			this->textBoxClient->Name = L"textBoxClient";
+			this->textBoxClient->Size = System::Drawing::Size(49, 22);
+			this->textBoxClient->TabIndex = 4;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(22, 128);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(0, 16);
+			this->label3->TabIndex = 3;
+			// 
+			// labelAchatsClient
+			// 
+			this->labelAchatsClient->AutoSize = true;
+			this->labelAchatsClient->Location = System::Drawing::Point(97, 165);
+			this->labelAchatsClient->Name = L"labelAchatsClient";
+			this->labelAchatsClient->Size = System::Drawing::Size(0, 16);
+			this->labelAchatsClient->TabIndex = 2;
+			// 
+			// buttonAchatsClient
+			// 
+			this->buttonAchatsClient->Location = System::Drawing::Point(45, 218);
+			this->buttonAchatsClient->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAchatsClient->Name = L"buttonAchatsClient";
+			this->buttonAchatsClient->Size = System::Drawing::Size(154, 28);
+			this->buttonAchatsClient->TabIndex = 1;
+			this->buttonAchatsClient->Text = L"Calculer";
+			this->buttonAchatsClient->UseVisualStyleBackColor = true;
+			this->buttonAchatsClient->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonAchatsClient_Click);
+			// 
 			// GestionStatistique
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1273, 438);
+			this->ClientSize = System::Drawing::Size(1697, 539);
+			this->Controls->Add(this->groupBoxSommeAchats);
 			this->Controls->Add(this->groupBoxSeuilDeReappro);
-			this->Controls->Add(this->groupBox2);
-			this->Controls->Add(this->groupBox1);
+			this->Controls->Add(this->groupBoxCA);
+			this->Controls->Add(this->groupBoxPanierMoyen);
+			this->Location = System::Drawing::Point(6, 42);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionStatistique";
 			this->Text = L"GestionStatistique";
 			this->Load += gcnew System::EventHandler(this, &GestionStatistique::GestionStatistique_Load);
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			this->groupBox2->ResumeLayout(false);
-			this->groupBox2->PerformLayout();
+			this->groupBoxPanierMoyen->ResumeLayout(false);
+			this->groupBoxPanierMoyen->PerformLayout();
+			this->groupBoxCA->ResumeLayout(false);
+			this->groupBoxCA->PerformLayout();
 			this->groupBoxSeuilDeReappro->ResumeLayout(false);
+			this->groupBoxSommeAchats->ResumeLayout(false);
+			this->groupBoxSommeAchats->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -263,18 +370,20 @@ namespace Projet2POOCESI {
 
 
 private: System::Void buttonPanierMoyenne_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->labelPanierMoyen->Text = this->oStat->calcPanierMoyen();
+	this->label2->Text = " Prix d'un panier moyen : ";
+	this->labelPanierMoyen->Text = this->oStat->calcPanierMoyen() + " euros";
 
 
 }
 
 
 private: System::Void buttonCA_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->label1->Text = " Chiffre d'affaires : ";
 	if (this->comboBoxMois->SelectedIndex == -1 || this->comboBoxAnnee->SelectedIndex == -1) {
 		MessageBox::Show(" Veuillez entrer un mois et une année!");
 	}
 	else {
-		this->labelCA->Text = this->oStat->calcChiffreAffaireMois(this->comboBoxMois->SelectedItem->ToString(), this->comboBoxAnnee->SelectedItem->ToString());
+		this->labelCA->Text = this->oStat->calcChiffreAffaireMois(this->comboBoxMois->SelectedItem->ToString(), this->comboBoxAnnee->SelectedItem->ToString()) + " euros";
 	}
 }
 private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
@@ -282,6 +391,15 @@ private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^
 private: System::Void buttonSeuilDeReappro_Click(System::Object^ sender, System::EventArgs^ e) {
 	FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
 	formSeuilDeReappro->ShowDialog();
+}
+private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->textBoxClient->Text == "") {
+		MessageBox::Show("Veuillez entrer le numéro client");
+	}
+	else {
+		this->label3->Text = " Montant des achats du client : ";
+		this->labelAchatsClient->Text = this->oStat->calcAchatsClient(this->textBoxClient->Text) + " euros";
+	}
 }
 };
 }

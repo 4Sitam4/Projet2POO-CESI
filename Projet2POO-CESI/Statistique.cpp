@@ -9,7 +9,7 @@ System::String^ NS_Comp_Statistique::Statistique::calcPanierMoyen() {
 	System::String^ sql;
 
 	// Panier moyen depuis la premiere vente jusqu'à maintenant
-	sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande";
+	sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande;";
 	return this->oCad->getStats(sql);
 }
 
@@ -70,7 +70,13 @@ System::String^ NS_Comp_Statistique::Statistique::calcChiffreAffaireMois(System:
 }
 
 
+System::String^ NS_Comp_Statistique::Statistique::calcAchatsClient(System::String^ client) {
+	System::String^ sql;
 
+	// Panier moyen depuis la premiere vente jusqu'à maintenant
+	sql = "SELECT ROUND(SUM(montant_ttc),2) FROM Commande WHERE num = " + client + ";";
+	return this->oCad->getStats(sql);
+}
 
 
 
