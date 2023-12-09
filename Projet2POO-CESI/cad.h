@@ -14,12 +14,12 @@ namespace NS_Comp_Data
 		System::Data::SqlClient::SqlCommand^ oCmd;
 		System::Data::SqlClient::SqlDataAdapter^ oDA;
 		System::Data::DataSet^ oDs;
+		System::String^ resultat;
 	public:
 		cad(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
-		//System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
-
+		System::String^ getStats(System::String^);
 	};
 }
 

@@ -5,7 +5,7 @@
 
 NS_Comp_Data::cad::cad(void)
 {
-	this->sCnx = "Data Source=DESKTOP-5M96SAH;Initial Catalog=projetPOO;Integrated Security=True;Encrypt=False";
+	this->sCnx = "Data Source=LAPTOP-LS53501I;Initial Catalog=projetPOO;Integrated Security=True";
 
 	this->sSql = "Rien";
 
@@ -38,4 +38,15 @@ void NS_Comp_Data::cad::actionRows(System::String^ sSql)
 	this->oCnx->Open();
 	this->oCmd->ExecuteNonQuery();//erreur
 	this->oCnx->Close();
+}
+
+System::String^ NS_Comp_Data::cad::getStats(System::String^ sSql)
+{
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+	this->oCnx->Open();
+	this->resultat = this->oCmd->ExecuteScalar()->ToString();
+	this->oCnx->Close();
+
+	return resultat;
 }

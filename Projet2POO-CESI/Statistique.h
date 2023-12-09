@@ -1,15 +1,15 @@
 #include "cad.h"
-/*
+
 namespace NS_Comp_Statistique
 {
-	ref class Statistique : public NS_Comp_Statistique::Statistique
+	ref class Statistique
 	{
 	private:
 		NS_Comp_Data::cad^ oCad;
 
 	public:
 		Statistique();
-		void calcPanierMoyen();
+		System::String^ calcPanierMoyen();
 		
 
 
@@ -17,4 +17,3 @@ namespace NS_Comp_Statistique
 }
 
 
-*/
