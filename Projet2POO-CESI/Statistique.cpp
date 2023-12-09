@@ -104,7 +104,12 @@ System::String^ NS_Comp_Statistique::Statistique::calcValComStock() {
 	return this->oCad->getStats(this->sql);
 }
 
+System::String^ NS_Comp_Statistique::Statistique::calcValAchStock() {
 
+	//Valeur actuelle du stock à l'achat
+	this->sql = "SELECT SUM(quantite * cout) AS ValeurStock FROM Catalogue";
+	return this->oCad->getStats(this->sql);
+}
 
 void NS_Comp_Statistique::Statistique::setMois(System::String^ mois) {
 	this->mois = mois;

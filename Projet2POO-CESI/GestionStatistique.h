@@ -77,6 +77,12 @@ namespace Projet2POOCESI {
 
 
 	private: System::Windows::Forms::Button^ buttonValeurCommercialeStock;
+	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::Label^ labelVAS;
+	private: System::Windows::Forms::Label^ labelValeurAchatStock;
+
+
+	private: System::Windows::Forms::Button^ buttonAchatStock;
 
 
 
@@ -128,11 +134,16 @@ namespace Projet2POOCESI {
 			this->labelVCS = (gcnew System::Windows::Forms::Label());
 			this->labelValeurCommercialeStock = (gcnew System::Windows::Forms::Label());
 			this->buttonValeurCommercialeStock = (gcnew System::Windows::Forms::Button());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelVAS = (gcnew System::Windows::Forms::Label());
+			this->labelValeurAchatStock = (gcnew System::Windows::Forms::Label());
+			this->buttonAchatStock = (gcnew System::Windows::Forms::Button());
 			this->groupBoxPanierMoyen->SuspendLayout();
 			this->groupBoxCA->SuspendLayout();
 			this->groupBoxSeuilDeReappro->SuspendLayout();
 			this->groupBoxSommeAchats->SuspendLayout();
 			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBoxPanierMoyen
@@ -366,7 +377,7 @@ namespace Projet2POOCESI {
 			this->groupBox1->Controls->Add(this->labelVCS);
 			this->groupBox1->Controls->Add(this->labelValeurCommercialeStock);
 			this->groupBox1->Controls->Add(this->buttonValeurCommercialeStock);
-			this->groupBox1->Location = System::Drawing::Point(693, 235);
+			this->groupBox1->Location = System::Drawing::Point(331, 313);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
@@ -387,9 +398,9 @@ namespace Projet2POOCESI {
 			// labelValeurCommercialeStock
 			// 
 			this->labelValeurCommercialeStock->AutoSize = true;
-			this->labelValeurCommercialeStock->Location = System::Drawing::Point(85, 93);
+			this->labelValeurCommercialeStock->Location = System::Drawing::Point(76, 81);
 			this->labelValeurCommercialeStock->Name = L"labelValeurCommercialeStock";
-			this->labelValeurCommercialeStock->Size = System::Drawing::Size(0, 16);
+			this->labelValeurCommercialeStock->Size = System::Drawing::Size(21, 16);
 			this->labelValeurCommercialeStock->TabIndex = 2;
 			// 
 			// buttonValeurCommercialeStock
@@ -403,11 +414,54 @@ namespace Projet2POOCESI {
 			this->buttonValeurCommercialeStock->UseVisualStyleBackColor = true;
 			this->buttonValeurCommercialeStock->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonValeurCommercialeStock_Click);
 			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->labelVAS);
+			this->groupBox2->Controls->Add(this->labelValeurAchatStock);
+			this->groupBox2->Controls->Add(this->buttonAchatStock);
+			this->groupBox2->Location = System::Drawing::Point(674, 313);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
+			this->groupBox2->Size = System::Drawing::Size(288, 177);
+			this->groupBox2->TabIndex = 5;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Valeur d\'achat du stock";
+			// 
+			// labelVAS
+			// 
+			this->labelVAS->AutoSize = true;
+			this->labelVAS->Location = System::Drawing::Point(7, 38);
+			this->labelVAS->Name = L"labelVAS";
+			this->labelVAS->Size = System::Drawing::Size(228, 16);
+			this->labelVAS->TabIndex = 3;
+			this->labelVAS->Text = L"La valeur d\'achat du stock actuel est :";
+			// 
+			// labelValeurAchatStock
+			// 
+			this->labelValeurAchatStock->AutoSize = true;
+			this->labelValeurAchatStock->Location = System::Drawing::Point(82, 81);
+			this->labelValeurAchatStock->Name = L"labelValeurAchatStock";
+			this->labelValeurAchatStock->Size = System::Drawing::Size(0, 16);
+			this->labelValeurAchatStock->TabIndex = 2;
+			// 
+			// buttonAchatStock
+			// 
+			this->buttonAchatStock->Location = System::Drawing::Point(55, 124);
+			this->buttonAchatStock->Margin = System::Windows::Forms::Padding(4);
+			this->buttonAchatStock->Name = L"buttonAchatStock";
+			this->buttonAchatStock->Size = System::Drawing::Size(154, 28);
+			this->buttonAchatStock->TabIndex = 1;
+			this->buttonAchatStock->Text = L"Calculer";
+			this->buttonAchatStock->UseVisualStyleBackColor = true;
+			this->buttonAchatStock->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonAchatStock_Click);
+			// 
 			// GestionStatistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1697, 539);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBoxSommeAchats);
 			this->Controls->Add(this->groupBoxSeuilDeReappro);
@@ -427,6 +481,8 @@ namespace Projet2POOCESI {
 			this->groupBoxSommeAchats->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -496,6 +552,10 @@ private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::E
 private: System::Void buttonValeurCommercialeStock_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->labelVCS->Text = "La valeur commerciale du stock actuel est :";
 	this->labelValeurCommercialeStock->Text = this->oStat->calcValComStock() + " euros";
+}
+private: System::Void buttonAchatStock_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->labelVCS->Text = "La valeur d'achat du stock actuel est :";
+	this->labelValeurAchatStock->Text = this->oStat->calcValAchStock() + " euros";
 }
 };
 }

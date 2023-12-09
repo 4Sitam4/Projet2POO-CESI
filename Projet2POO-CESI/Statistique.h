@@ -21,8 +21,9 @@ namespace NS_Comp_Statistique
 		System::Data::DataSet^ calcTop10(System::String^);
 		System::Data::DataSet^ calcLast10(System::String^);
 
-
 		System::String^ calcValComStock();
+
+		System::String^ calcValAchStock();
 
 		void setMois(System::String^);
 		System::String^ getMois(void);
