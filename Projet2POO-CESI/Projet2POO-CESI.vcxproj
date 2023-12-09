@@ -130,11 +130,12 @@
     <ClCompile Include="GestionCatalogue.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
+    <ClCompile Include="GestionStatistique.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="NomPrenom.cpp" />
     <ClCompile Include="Personnel.cpp" />
-    <ClCompile Include="Statistiques.cpp" />
+    <ClCompile Include="Statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -152,6 +153,9 @@
     <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionStatistique.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="map.h" />
     <ClInclude Include="PCH.h" />
     <ClInclude Include="MyForm.h">
@@ -159,9 +163,7 @@
     </ClInclude>
     <ClInclude Include="NomPrenom.h" />
     <ClInclude Include="Personnel.h" />
-    <ClInclude Include="Statistiques.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="Statistique.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GestionCatalogue.resx">
@@ -172,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPersonnel.resx">
       <DependentUpon>GestionPersonnel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionStatistique.resx">
+      <DependentUpon>GestionStatistique.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
