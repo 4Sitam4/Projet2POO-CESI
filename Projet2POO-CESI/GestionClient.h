@@ -1262,8 +1262,14 @@ private: System::Windows::Forms::Label^ label13;
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
-			this->oCli->creerClient(this->textBoxClientNom->Text, this->textBoxClientPrenom->Text, this->textBoxAdresseFactureCreer->Text, this->textBoxAdrVilleFactureCreer->Text, this->textBoxAdrCPFactureCreer->Text, this->textBoxAdresseLivreCreer->Text, this->textBoxAdrVilleLivreCreer->Text, this->textBoxAdrCPLivreCreer->Text, this->dateTimePickerDateNaissance->Value, this->dateTimePickerDatePremierAchat->Value);
-			MessageBox::Show("Client insérer dans la base de donnée");
+			//vérification de la saisie 
+			if (this->textBoxAdrVilleFactureCreer->Text == "Paris" || this->textBoxAdrVilleFactureCreer->Text == "Nancy" || this->textBoxAdrVilleFactureCreer->Text == "Brest" || this->textBoxAdrVilleFactureCreer->Text == "Bordeaux" || this->textBoxAdrVilleFactureCreer->Text == "Strasbourg" || this->textBoxAdrVilleFactureCreer->Text == "Lille" || this->textBoxAdrVilleLivreCreer->Text == "Paris" || this->textBoxAdrVilleLivreCreer->Text == "Nancy" || this->textBoxAdrVilleLivreCreer->Text == "Brest" || this->textBoxAdrVilleLivreCreer->Text == "Bordeaux" || this->textBoxAdrVilleLivreCreer->Text == "Strasbourg" || this->textBoxAdrVilleLivreCreer->Text == "Lille"){
+				this->oCli->creerClient(this->textBoxClientNom->Text, this->textBoxClientPrenom->Text, this->textBoxAdresseFactureCreer->Text, this->textBoxAdrVilleFactureCreer->Text, this->textBoxAdrCPFactureCreer->Text, this->textBoxAdresseLivreCreer->Text, this->textBoxAdrVilleLivreCreer->Text, this->textBoxAdrCPLivreCreer->Text, this->dateTimePickerDateNaissance->Value, this->dateTimePickerDatePremierAchat->Value);
+				MessageBox::Show("Client insérer dans la base de donnée");
+			}
+			else {
+				MessageBox::Show("La saisie contient des erreurs de saisie.");
+			}
 		}
 	}
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1271,10 +1277,16 @@ private: System::Windows::Forms::Label^ label13;
 			MessageBox::Show("Entrez un ID de client valide");
 		}
 		else {
-			this->oCli->modifierClient(this->textBoxIdModifClient->Text, this->textBoxNouvNomModifClient->Text, this->textBoxNouvPrenomModifClient->Text, this->textBoxAdrFactureNewModifClient->Text,this->textBoxAdrVilleFactureNewModifClient->Text, this->textBoxAdrCPFactureNewModifClient->Text, this->textBoxAdrLivreNewModifClient->Text, this->textBoxAdrVilleLivreNewModifClient->Text, this->textBoxAdrCPLivreNewModifClient->Text, this->dateTimePickerNouvNaissanceModifClient->Value, this->TimePickerNouvDateNewModif->Value);
-			this->dateTimePickerNouvNaissanceModifClient->Value = DateTime(1753,1,1);
-			this->TimePickerNouvDateNewModif->Value = DateTime(1753,1,1);
-			MessageBox::Show("Informations relatives au client modifiées");
+			if (this->textBoxAdrVilleFactureNewModifClient->Text == "Paris" || this->textBoxAdrVilleFactureNewModifClient->Text == "Nancy" || this->textBoxAdrVilleFactureNewModifClient->Text == "Brest" || this->textBoxAdrVilleFactureNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleFactureNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleFactureNewModifClient->Text == "Lille" || this->textBoxAdrVilleLivreNewModifClient->Text == "Paris" || this->textBoxAdrVilleLivreNewModifClient->Text == "Nancy" || this->textBoxAdrVilleLivreNewModifClient->Text == "Brest" || this->textBoxAdrVilleLivreNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleLivreNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleLivreNewModifClient->Text == "Lille") {
+				this->oCli->modifierClient(this->textBoxIdModifClient->Text, this->textBoxNouvNomModifClient->Text, this->textBoxNouvPrenomModifClient->Text, this->textBoxAdrFactureNewModifClient->Text, this->textBoxAdrVilleFactureNewModifClient->Text, this->textBoxAdrCPFactureNewModifClient->Text, this->textBoxAdrLivreNewModifClient->Text, this->textBoxAdrVilleLivreNewModifClient->Text, this->textBoxAdrCPLivreNewModifClient->Text, this->dateTimePickerNouvNaissanceModifClient->Value, this->TimePickerNouvDateNewModif->Value);
+				this->dateTimePickerNouvNaissanceModifClient->Value = DateTime(1753, 1, 1);
+				this->TimePickerNouvDateNewModif->Value = DateTime(1753, 1, 1);
+				MessageBox::Show("Informations relatives au client modifiées");
+			}
+			else {
+				MessageBox::Show("La saisie contient des erreurs de saisie.");
+
+			}
 		}
 	}
 	private: System::Void buttonSupprimerClient_Click(System::Object^ sender, System::EventArgs^ e) {

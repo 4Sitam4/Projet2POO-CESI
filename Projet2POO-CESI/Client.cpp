@@ -13,6 +13,7 @@ NS_Comp_Client::Client::Client() {
 }
 
 
+
 void NS_Comp_Client::Client::creerClient(System::String^ nom, System::String^ prenom, System::String^ adresse_facturation, System::String^ ville_facturation, System::String^ cp_facturation, System::String^ adresse_livraison, System::String^ ville_livraison, System::String^ cp_livraison, System::DateTime^ date_naissance, System::DateTime^ date_premier_achat) {
     System::String^ sql;
 

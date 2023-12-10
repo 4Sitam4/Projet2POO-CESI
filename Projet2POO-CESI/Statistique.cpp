@@ -139,6 +139,8 @@ System::String^ NS_Comp_Statistique::Statistique::calcSim(float TVA, float marge
 
 
 
+
+
 void NS_Comp_Statistique::Statistique::setMois(System::String^ mois) {
 	this->mois = mois;
 }

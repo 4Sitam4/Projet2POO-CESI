@@ -19,7 +19,6 @@ namespace NS_Comp_Client
 		void supprimerClient(System::String^);
 		System::Data::DataSet^ afficherClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^, System::String^);
 
-
 	};
 }
 
