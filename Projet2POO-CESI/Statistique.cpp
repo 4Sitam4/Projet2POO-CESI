@@ -111,6 +111,34 @@ System::String^ NS_Comp_Statistique::Statistique::calcValAchStock() {
 	return this->oCad->getStats(this->sql);
 }
 
+System::String^ NS_Comp_Statistique::Statistique::calcSim(float TVA, float marge, float remise, float demarque) {
+	float m_TVA = 0;
+	float m_marge = 0;
+	float m_remise = 0;
+	float m_demarque = 0;
+	if (TVA != 0) {
+		m_TVA = TVA / 100;
+	}
+	if (marge != 0) {
+		m_marge = marge / 100;
+	}
+	if (remise != 0) {
+		m_remise = remise / 100;
+	}
+	if (demarque != 0) {
+		m_demarque = demarque / 100;
+	}
+
+	//Simulation valeur du stock
+	System::Globalization::CultureInfo^ invCulture = System::Globalization::CultureInfo::InvariantCulture;
+
+	this->sql = "SELECT SUM(quantite * (cout + (cout * " + Convert::ToString(m_TVA, invCulture) + ") + (cout * " + Convert::ToString(m_marge, invCulture) +  ") - (cout * " + Convert::ToString(m_remise, invCulture) + ") - (cout * " + Convert::ToString(m_demarque, invCulture) + "))) AS cout_total FROM Catalogue WHERE quantite > 0; ";
+	return this->oCad->getStats(this->sql);
+
+}
+
+
+
 void NS_Comp_Statistique::Statistique::setMois(System::String^ mois) {
 	this->mois = mois;
 }

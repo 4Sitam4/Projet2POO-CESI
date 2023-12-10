@@ -1,6 +1,7 @@
 #pragma once
 #include "Statistique.h"
 #include "FormSeuilDeReappro.h"
+#include "Simulation.h"
 
 namespace Projet2POOCESI {
 
@@ -83,6 +84,9 @@ namespace Projet2POOCESI {
 
 
 	private: System::Windows::Forms::Button^ buttonAchatStock;
+	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::Button^ buttonSimulation;
+
 
 
 
@@ -138,12 +142,15 @@ namespace Projet2POOCESI {
 			this->labelVAS = (gcnew System::Windows::Forms::Label());
 			this->labelValeurAchatStock = (gcnew System::Windows::Forms::Label());
 			this->buttonAchatStock = (gcnew System::Windows::Forms::Button());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonSimulation = (gcnew System::Windows::Forms::Button());
 			this->groupBoxPanierMoyen->SuspendLayout();
 			this->groupBoxCA->SuspendLayout();
 			this->groupBoxSeuilDeReappro->SuspendLayout();
 			this->groupBoxSommeAchats->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBoxPanierMoyen
@@ -280,7 +287,7 @@ namespace Projet2POOCESI {
 			// 
 			this->groupBoxSeuilDeReappro->Controls->Add(this->comboBoxCatalogue);
 			this->groupBoxSeuilDeReappro->Controls->Add(this->buttonAfficher);
-			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(692, 13);
+			this->groupBoxSeuilDeReappro->Location = System::Drawing::Point(623, 313);
 			this->groupBoxSeuilDeReappro->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxSeuilDeReappro->Name = L"groupBoxSeuilDeReappro";
 			this->groupBoxSeuilDeReappro->Padding = System::Windows::Forms::Padding(4);
@@ -288,7 +295,6 @@ namespace Projet2POOCESI {
 			this->groupBoxSeuilDeReappro->TabIndex = 3;
 			this->groupBoxSeuilDeReappro->TabStop = false;
 			this->groupBoxSeuilDeReappro->Text = L"Catalogue";
-			this->groupBoxSeuilDeReappro->Enter += gcnew System::EventHandler(this, &GestionStatistique::groupBox3_Enter);
 			// 
 			// comboBoxCatalogue
 			// 
@@ -377,7 +383,7 @@ namespace Projet2POOCESI {
 			this->groupBox1->Controls->Add(this->labelVCS);
 			this->groupBox1->Controls->Add(this->labelValeurCommercialeStock);
 			this->groupBox1->Controls->Add(this->buttonValeurCommercialeStock);
-			this->groupBox1->Location = System::Drawing::Point(331, 313);
+			this->groupBox1->Location = System::Drawing::Point(311, 313);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
@@ -400,7 +406,7 @@ namespace Projet2POOCESI {
 			this->labelValeurCommercialeStock->AutoSize = true;
 			this->labelValeurCommercialeStock->Location = System::Drawing::Point(76, 81);
 			this->labelValeurCommercialeStock->Name = L"labelValeurCommercialeStock";
-			this->labelValeurCommercialeStock->Size = System::Drawing::Size(21, 16);
+			this->labelValeurCommercialeStock->Size = System::Drawing::Size(0, 16);
 			this->labelValeurCommercialeStock->TabIndex = 2;
 			// 
 			// buttonValeurCommercialeStock
@@ -419,7 +425,7 @@ namespace Projet2POOCESI {
 			this->groupBox2->Controls->Add(this->labelVAS);
 			this->groupBox2->Controls->Add(this->labelValeurAchatStock);
 			this->groupBox2->Controls->Add(this->buttonAchatStock);
-			this->groupBox2->Location = System::Drawing::Point(674, 313);
+			this->groupBox2->Location = System::Drawing::Point(686, 13);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
@@ -456,11 +462,32 @@ namespace Projet2POOCESI {
 			this->buttonAchatStock->UseVisualStyleBackColor = true;
 			this->buttonAchatStock->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonAchatStock_Click);
 			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->buttonSimulation);
+			this->groupBox3->Location = System::Drawing::Point(686, 219);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(288, 70);
+			this->groupBox3->TabIndex = 6;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Simulation";
+			// 
+			// buttonSimulation
+			// 
+			this->buttonSimulation->Location = System::Drawing::Point(55, 21);
+			this->buttonSimulation->Name = L"buttonSimulation";
+			this->buttonSimulation->Size = System::Drawing::Size(154, 34);
+			this->buttonSimulation->TabIndex = 0;
+			this->buttonSimulation->Text = L"lancer la simulation";
+			this->buttonSimulation->UseVisualStyleBackColor = true;
+			this->buttonSimulation->Click += gcnew System::EventHandler(this, &GestionStatistique::buttonSimulation_Click);
+			// 
 			// GestionStatistique
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1697, 539);
+			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBoxSommeAchats);
@@ -483,6 +510,7 @@ namespace Projet2POOCESI {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -498,64 +526,67 @@ namespace Projet2POOCESI {
 	}
 
 
-private: System::Void buttonPanierMoyenne_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->label2->Text = " Prix d'un panier moyen : ";
-	this->labelPanierMoyen->Text = this->oStat->calcPanierMoyen() + " euros";
-
-
-}
-
-
-private: System::Void buttonCA_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->label1->Text = " Chiffre d'affaires : ";
-	if (this->comboBoxMois->SelectedIndex == -1 || this->comboBoxAnnee->SelectedIndex == -1) {
-		MessageBox::Show(" Veuillez entrer un mois et une année!");
+	private: System::Void buttonPanierMoyenne_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->label2->Text = " Prix d'un panier moyen : ";
+		this->labelPanierMoyen->Text = this->oStat->calcPanierMoyen() + " euros";
 	}
-	else {
-		this->labelCA->Text = this->oStat->calcChiffreAffaireMois(this->comboBoxMois->SelectedItem->ToString(), this->comboBoxAnnee->SelectedItem->ToString()) + " euros";
-	}
-}
-private: System::Void groupBox3_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->comboBoxCatalogue->SelectedIndex == -1) {
-		MessageBox::Show(" Veuillez entrer ce que vous souhaiter afficher");
-	}
-	else {
-		FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
 
-		if (this->comboBoxCatalogue->SelectedItem == "Les produits à réapprovisionner") {
-			formSeuilDeReappro->Text = L"Seuil de réapprovisionnement";
-			formSeuilDeReappro->ShowDialog();
+
+	private: System::Void buttonCA_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->label1->Text = " Chiffre d'affaires : ";
+		if (this->comboBoxMois->SelectedIndex == -1 || this->comboBoxAnnee->SelectedIndex == -1) {
+			MessageBox::Show(" Veuillez entrer un mois et une année!");
 		}
-		else if (this->comboBoxCatalogue->SelectedItem == "Le top 10 des ventes") {
-			formSeuilDeReappro->Text = L"10 meilleures ventes";
-			formSeuilDeReappro->ShowDialog();
-		}
-		else if (this->comboBoxCatalogue->SelectedItem == "Les 10 pires ventes") {
-			formSeuilDeReappro->Text = L"10 pires ventes";
-			formSeuilDeReappro->ShowDialog();
+		else {
+			this->labelCA->Text = this->oStat->calcChiffreAffaireMois(this->comboBoxMois->SelectedItem->ToString(), this->comboBoxAnnee->SelectedItem->ToString()) + " euros";
 		}
 	}
 
-	
-}
-private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->textBoxClient->Text == "") {
-		MessageBox::Show("Veuillez entrer le numéro client");
+	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->comboBoxCatalogue->SelectedIndex == -1) {
+			MessageBox::Show(" Veuillez entrer ce que vous souhaiter afficher");
+		}
+		else {
+			FormSeuilDeReappro^ formSeuilDeReappro = gcnew FormSeuilDeReappro();
+
+			if (this->comboBoxCatalogue->SelectedItem == "Les produits à réapprovisionner") {
+				formSeuilDeReappro->Text = L"Seuil de réapprovisionnement";
+				formSeuilDeReappro->ShowDialog();
+			}
+			else if (this->comboBoxCatalogue->SelectedItem == "Le top 10 des ventes") {
+				formSeuilDeReappro->Text = L"10 meilleures ventes";
+				formSeuilDeReappro->ShowDialog();
+			}
+			else if (this->comboBoxCatalogue->SelectedItem == "Les 10 pires ventes") {
+				formSeuilDeReappro->Text = L"10 pires ventes";
+				formSeuilDeReappro->ShowDialog();
+			}
+		}
 	}
-	else {
-		this->label3->Text = " Montant des achats du client : ";
-		this->labelAchatsClient->Text = this->oStat->calcAchatsClient(this->textBoxClient->Text) + " euros";
+
+	private: System::Void buttonAchatsClient_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->textBoxClient->Text == "") {
+			MessageBox::Show("Veuillez entrer le numéro client");
+		}
+		else {
+			this->label3->Text = " Montant des achats du client : ";
+			this->labelAchatsClient->Text = this->oStat->calcAchatsClient(this->textBoxClient->Text) + " euros";
+		}
 	}
-}
-private: System::Void buttonValeurCommercialeStock_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->labelVCS->Text = "La valeur commerciale du stock actuel est :";
-	this->labelValeurCommercialeStock->Text = this->oStat->calcValComStock() + " euros";
-}
-private: System::Void buttonAchatStock_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->labelVCS->Text = "La valeur d'achat du stock actuel est :";
-	this->labelValeurAchatStock->Text = this->oStat->calcValAchStock() + " euros";
-}
+
+	private: System::Void buttonValeurCommercialeStock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->labelVCS->Text = "La valeur commerciale du stock actuel est :";
+		this->labelValeurCommercialeStock->Text = this->oStat->calcValComStock() + " euros";
+	}
+
+	private: System::Void buttonAchatStock_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->labelVCS->Text = "La valeur d'achat du stock actuel est :";
+		this->labelValeurAchatStock->Text = this->oStat->calcValAchStock() + " euros";
+	}
+
+	private: System::Void buttonSimulation_Click(System::Object^ sender, System::EventArgs^ e) {
+		Simulation^ sim = gcnew Simulation();
+		sim->ShowDialog();
+	}
 };
 }

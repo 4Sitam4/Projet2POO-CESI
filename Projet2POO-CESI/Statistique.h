@@ -25,6 +25,8 @@ namespace NS_Comp_Statistique
 
 		System::String^ calcValAchStock();
 
+		System::String^ calcSim(float, float, float, float);
+
 		void setMois(System::String^);
 		System::String^ getMois(void);
 
