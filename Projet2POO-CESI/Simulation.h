@@ -402,7 +402,7 @@ namespace Projet2POOCESI {
 	private: System::Void buttonValeur_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	
-		if (this->comboBoxTVA->SelectedIndex == -1 && this->checkBoxTVA->Checked == false || this->comboBoxMarge->SelectedIndex == -1 && this->checkBoxMarge->Checked == false || this->comboBoxRemise->SelectedIndex == -1 && this->checkBoxRemise->Checked == false || this->comboBoxDemarque->SelectedIndex == -1 && this->checkBoxDemarque->Checked == false) {
+		if (this->comboBoxTVA->SelectedIndex == -1 && this->checkBoxTVA->Checked == false && this->checkBoxTVANulle->Checked == false || this->comboBoxMarge->SelectedIndex == -1 && this->checkBoxMarge->Checked == false || this->comboBoxRemise->SelectedIndex == -1 && this->checkBoxRemise->Checked == false || this->comboBoxDemarque->SelectedIndex == -1 && this->checkBoxDemarque->Checked == false) {
 			MessageBox::Show("Veuillez entrer des données pour démarrer la simulation");
 		}
 		else {
@@ -413,7 +413,12 @@ namespace Projet2POOCESI {
 
 			//TVA
 			if (this->checkBoxTVA->Checked == true) {
-				TVA = Convert::ToInt32(this->textBoxTVA->Text);
+				if (this->textBoxTVA->Text == ""){
+					MessageBox::Show("Veuillez entrer une valeur dans la textBox TVA");
+				}
+				else {
+					TVA = Convert::ToInt32(this->textBoxTVA->Text);
+				}
 			}
 			else if (this->checkBoxTVANulle->Checked == true) {
 				TVA = 0;
@@ -432,7 +437,12 @@ namespace Projet2POOCESI {
 
 			//Marge
 			if (this->checkBoxMarge->Checked == true) {
-				TVA = Convert::ToInt32(this->textBoxMarge->Text);
+				if (this->textBoxMarge->Text == "") {
+					MessageBox::Show("Veuillez entrer une valeur dans la textBox marge");
+				}
+				else {
+					marge = Convert::ToInt32(this->textBoxMarge->Text);
+				}
 			}
 			else if (this->checkBoxMargeNulle->Checked == true) {
 				marge = 0;
@@ -451,7 +461,12 @@ namespace Projet2POOCESI {
 
 			//remise 
 			if (this->checkBoxRemise->Checked == true) {
-				remise = Convert::ToInt32(this->textBoxRemise->Text);
+				if (this->textBoxRemise->Text == "") {
+					MessageBox::Show("Veuillez entrer une valeur dans la textBox remise");
+				}
+				else {
+					remise = Convert::ToInt32(this->textBoxRemise->Text);
+				}
 			}
 			else if (this->checkBoxRemiseNulle->Checked == true) {
 				remise = 0;
@@ -467,7 +482,12 @@ namespace Projet2POOCESI {
 
 			//demarque 
 			if (this->checkBoxDemarque->Checked == true) {
-				demarque = Convert::ToInt32(this->textBoxDemarque->Text);
+				if (this->textBoxDemarque->Text == "") {
+					MessageBox::Show("Veuillez entrer une valeur dans la textBox demarquage");
+				}
+				else {
+					demarque = Convert::ToInt32(this->textBoxDemarque->Text);
+				}
 			}
 			else if (this->checkBoxDemarqueNulle->Checked == true) {
 				demarque = 0;
