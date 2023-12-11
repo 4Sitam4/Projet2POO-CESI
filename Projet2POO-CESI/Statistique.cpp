@@ -8,7 +8,7 @@ NS_Comp_Statistique::Statistique::Statistique()
 System::String^ NS_Comp_Statistique::Statistique::calcPanierMoyen() {
 
 
-	// Panier moyen depuis la premiere vente jusqu'à maintenant
+	// Panier moyen depuis la premiere vente jusqu'à maintenant après remise
 	this->sql = "SELECT ROUND(AVG(montant_ttc),2) FROM Commande;";
 	return this->oCad->getStats(this->sql);
 }
