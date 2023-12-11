@@ -148,6 +148,23 @@ private: System::Windows::Forms::TextBox^ textBoxNomProduitSupprimer;
 private: System::Windows::Forms::Label^ labelNomSupprimer;
 private: System::Windows::Forms::TextBox^ textBoxIDSupprimer;
 private: System::Windows::Forms::Label^ labelIDSupprimer;
+private: System::Windows::Forms::Label^ labelCoutAjouter;
+private: System::Windows::Forms::TextBox^ textBoxCoutAjout;
+
+
+private: System::Windows::Forms::TextBox^ textBoxCoutCritSelectModif;
+private: System::Windows::Forms::Label^ labelCoutCritSelectModif;
+private: System::Windows::Forms::Label^ labelCoutNewModif;
+private: System::Windows::Forms::TextBox^ textBoxCoutNewModif;
+private: System::Windows::Forms::TextBox^ textBoxCoutSupprimer;
+private: System::Windows::Forms::Label^ labelCoutSupprimer;
+private: System::Windows::Forms::TextBox^ textBoxCoutAfficher;
+
+private: System::Windows::Forms::Label^ labelCoutAfficher;
+
+
+
+
 
 
 
@@ -168,6 +185,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelCoutAjouter = (gcnew System::Windows::Forms::Label());
+			this->textBoxCoutAjout = (gcnew System::Windows::Forms::TextBox());
 			this->labelPrixAjout = (gcnew System::Windows::Forms::Label());
 			this->textBoxPrixAjout = (gcnew System::Windows::Forms::TextBox());
 			this->labelTVAAjout = (gcnew System::Windows::Forms::Label());
@@ -180,6 +199,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->labelNomProduitAjout = (gcnew System::Windows::Forms::Label());
 			this->textBoxNomProduitAjout = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBoxCoutAfficher = (gcnew System::Windows::Forms::TextBox());
+			this->labelCoutAfficher = (gcnew System::Windows::Forms::Label());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->labelReapprovisionnementAfficher = (gcnew System::Windows::Forms::Label());
 			this->textBoxReapprovisionnementAfficher = (gcnew System::Windows::Forms::TextBox());
@@ -197,6 +218,9 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->textBoxNomProduitAfficher = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBoxCritSelect = (gcnew System::Windows::Forms::GroupBox());
+			this->textBoxCoutCritSelectModif = (gcnew System::Windows::Forms::TextBox());
+			this->labelCoutCritSelectModif = (gcnew System::Windows::Forms::Label());
+			this->textBoxTVACritSelectModif = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxIDCritSelectModif = (gcnew System::Windows::Forms::TextBox());
 			this->labelIDModifier = (gcnew System::Windows::Forms::Label());
 			this->labelDateModifier = (gcnew System::Windows::Forms::Label());
@@ -209,6 +233,9 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->textBoxStockCritSelectModif = (gcnew System::Windows::Forms::TextBox());
 			this->labelAdresseModifier = (gcnew System::Windows::Forms::Label());
 			this->groupBoxCritères = (gcnew System::Windows::Forms::GroupBox());
+			this->textBoxCoutNewModif = (gcnew System::Windows::Forms::TextBox());
+			this->labelCoutNewModif = (gcnew System::Windows::Forms::Label());
+			this->textBoxTVANewModif = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->textBoxPrixNewModif = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -219,9 +246,10 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBoxNomProduitNewModif = (gcnew System::Windows::Forms::TextBox());
 			this->buttonModifier = (gcnew System::Windows::Forms::Button());
-			this->textBoxTVACritSelectModif = (gcnew System::Windows::Forms::TextBox());
-			this->textBoxTVANewModif = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBoxCoutSupprimer = (gcnew System::Windows::Forms::TextBox());
+			this->labelCoutSupprimer = (gcnew System::Windows::Forms::Label());
+			this->textBoxTVASupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->labelDateSupprimer = (gcnew System::Windows::Forms::Label());
 			this->buttonSupprimer = (gcnew System::Windows::Forms::Button());
 			this->textBoxReapprovisionnementSupprimer = (gcnew System::Windows::Forms::TextBox());
@@ -234,7 +262,6 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->labelNomSupprimer = (gcnew System::Windows::Forms::Label());
 			this->textBoxIDSupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->labelIDSupprimer = (gcnew System::Windows::Forms::Label());
-			this->textBoxTVASupprimer = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgv_enr))->BeginInit();
@@ -247,6 +274,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// groupBox1
 			// 
 			this->groupBox1->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->groupBox1->Controls->Add(this->labelCoutAjouter);
+			this->groupBox1->Controls->Add(this->textBoxCoutAjout);
 			this->groupBox1->Controls->Add(this->labelPrixAjout);
 			this->groupBox1->Controls->Add(this->textBoxPrixAjout);
 			this->groupBox1->Controls->Add(this->labelTVAAjout);
@@ -258,14 +287,32 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBox1->Controls->Add(this->textBoxStockAjout);
 			this->groupBox1->Controls->Add(this->labelNomProduitAjout);
 			this->groupBox1->Controls->Add(this->textBoxNomProduitAjout);
-			this->groupBox1->Location = System::Drawing::Point(23, 24);
+			this->groupBox1->Location = System::Drawing::Point(29, 23);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(312, 376);
+			this->groupBox1->Size = System::Drawing::Size(284, 473);
 			this->groupBox1->TabIndex = 1;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Ajout membre d\'un produit";
+			// 
+			// labelCoutAjouter
+			// 
+			this->labelCoutAjouter->AutoSize = true;
+			this->labelCoutAjouter->Location = System::Drawing::Point(89, 322);
+			this->labelCoutAjouter->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCoutAjouter->Name = L"labelCoutAjouter";
+			this->labelCoutAjouter->Size = System::Drawing::Size(79, 16);
+			this->labelCoutAjouter->TabIndex = 14;
+			this->labelCoutAjouter->Text = L"cout d\'achat";
+			// 
+			// textBoxCoutAjout
+			// 
+			this->textBoxCoutAjout->Location = System::Drawing::Point(80, 342);
+			this->textBoxCoutAjout->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCoutAjout->Name = L"textBoxCoutAjout";
+			this->textBoxCoutAjout->Size = System::Drawing::Size(105, 22);
+			this->textBoxCoutAjout->TabIndex = 13;
 			// 
 			// labelPrixAjout
 			// 
@@ -305,7 +352,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// buttonAjouter
 			// 
-			this->buttonAjouter->Location = System::Drawing::Point(83, 309);
+			this->buttonAjouter->Location = System::Drawing::Point(79, 408);
 			this->buttonAjouter->Margin = System::Windows::Forms::Padding(4);
 			this->buttonAjouter->Name = L"buttonAjouter";
 			this->buttonAjouter->Size = System::Drawing::Size(106, 43);
@@ -371,6 +418,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// groupBox2
 			// 
 			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->groupBox2->Controls->Add(this->textBoxCoutAfficher);
+			this->groupBox2->Controls->Add(this->labelCoutAfficher);
 			this->groupBox2->Controls->Add(this->checkBox1);
 			this->groupBox2->Controls->Add(this->labelReapprovisionnementAfficher);
 			this->groupBox2->Controls->Add(this->textBoxReapprovisionnementAfficher);
@@ -386,19 +435,37 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBox2->Controls->Add(this->labelPrixAfficher);
 			this->groupBox2->Controls->Add(this->labelNomProduitAfficher);
 			this->groupBox2->Controls->Add(this->textBoxNomProduitAfficher);
-			this->groupBox2->Location = System::Drawing::Point(66, 580);
+			this->groupBox2->Location = System::Drawing::Point(29, 513);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->groupBox2->Size = System::Drawing::Size(975, 479);
+			this->groupBox2->Size = System::Drawing::Size(1318, 455);
 			this->groupBox2->TabIndex = 6;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher catalogue de produits";
 			// 
+			// textBoxCoutAfficher
+			// 
+			this->textBoxCoutAfficher->Location = System::Drawing::Point(1117, 71);
+			this->textBoxCoutAfficher->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCoutAfficher->Name = L"textBoxCoutAfficher";
+			this->textBoxCoutAfficher->Size = System::Drawing::Size(105, 22);
+			this->textBoxCoutAfficher->TabIndex = 15;
+			// 
+			// labelCoutAfficher
+			// 
+			this->labelCoutAfficher->AutoSize = true;
+			this->labelCoutAfficher->Location = System::Drawing::Point(1114, 51);
+			this->labelCoutAfficher->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCoutAfficher->Name = L"labelCoutAfficher";
+			this->labelCoutAfficher->Size = System::Drawing::Size(79, 16);
+			this->labelCoutAfficher->TabIndex = 15;
+			this->labelCoutAfficher->Text = L"cout d\'achat";
+			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(9, 136);
+			this->checkBox1->Location = System::Drawing::Point(49, 136);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(232, 20);
 			this->checkBox1->TabIndex = 19;
@@ -408,7 +475,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelReapprovisionnementAfficher
 			// 
 			this->labelReapprovisionnementAfficher->AutoSize = true;
-			this->labelReapprovisionnementAfficher->Location = System::Drawing::Point(516, 53);
+			this->labelReapprovisionnementAfficher->Location = System::Drawing::Point(621, 51);
 			this->labelReapprovisionnementAfficher->Name = L"labelReapprovisionnementAfficher";
 			this->labelReapprovisionnementAfficher->Size = System::Drawing::Size(140, 16);
 			this->labelReapprovisionnementAfficher->TabIndex = 18;
@@ -416,7 +483,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxReapprovisionnementAfficher
 			// 
-			this->textBoxReapprovisionnementAfficher->Location = System::Drawing::Point(519, 71);
+			this->textBoxReapprovisionnementAfficher->Location = System::Drawing::Point(624, 69);
 			this->textBoxReapprovisionnementAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxReapprovisionnementAfficher->Name = L"textBoxReapprovisionnementAfficher";
 			this->textBoxReapprovisionnementAfficher->Size = System::Drawing::Size(102, 22);
@@ -425,7 +492,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelStockAfficher
 			// 
 			this->labelStockAfficher->AutoSize = true;
-			this->labelStockAfficher->Location = System::Drawing::Point(366, 53);
+			this->labelStockAfficher->Location = System::Drawing::Point(423, 51);
 			this->labelStockAfficher->Name = L"labelStockAfficher";
 			this->labelStockAfficher->Size = System::Drawing::Size(41, 16);
 			this->labelStockAfficher->TabIndex = 16;
@@ -433,7 +500,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxStockAfficher
 			// 
-			this->textBoxStockAfficher->Location = System::Drawing::Point(369, 71);
+			this->textBoxStockAfficher->Location = System::Drawing::Point(426, 71);
 			this->textBoxStockAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxStockAfficher->Name = L"textBoxStockAfficher";
 			this->textBoxStockAfficher->Size = System::Drawing::Size(102, 22);
@@ -441,7 +508,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxTVAAfficher
 			// 
-			this->textBoxTVAAfficher->Location = System::Drawing::Point(865, 71);
+			this->textBoxTVAAfficher->Location = System::Drawing::Point(967, 69);
 			this->textBoxTVAAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxTVAAfficher->Name = L"textBoxTVAAfficher";
 			this->textBoxTVAAfficher->Size = System::Drawing::Size(74, 22);
@@ -449,16 +516,16 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxIDAfficher
 			// 
-			this->textBoxIDAfficher->Location = System::Drawing::Point(9, 71);
+			this->textBoxIDAfficher->Location = System::Drawing::Point(54, 71);
 			this->textBoxIDAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIDAfficher->Name = L"textBoxIDAfficher";
-			this->textBoxIDAfficher->Size = System::Drawing::Size(133, 22);
+			this->textBoxIDAfficher->Size = System::Drawing::Size(74, 22);
 			this->textBoxIDAfficher->TabIndex = 13;
 			// 
 			// labelIDAfficher
 			// 
 			this->labelIDAfficher->AutoSize = true;
-			this->labelIDAfficher->Location = System::Drawing::Point(6, 53);
+			this->labelIDAfficher->Location = System::Drawing::Point(51, 53);
 			this->labelIDAfficher->Name = L"labelIDAfficher";
 			this->labelIDAfficher->Size = System::Drawing::Size(20, 16);
 			this->labelIDAfficher->TabIndex = 12;
@@ -467,18 +534,18 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// dgv_enr
 			// 
 			this->dgv_enr->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_enr->Location = System::Drawing::Point(57, 184);
+			this->dgv_enr->Location = System::Drawing::Point(54, 184);
 			this->dgv_enr->Name = L"dgv_enr";
 			this->dgv_enr->RowHeadersWidth = 51;
-			this->dgv_enr->Size = System::Drawing::Size(833, 246);
+			this->dgv_enr->Size = System::Drawing::Size(1168, 244);
 			this->dgv_enr->TabIndex = 0;
 			// 
 			// buttonAfficher
 			// 
-			this->buttonAfficher->Location = System::Drawing::Point(369, 127);
+			this->buttonAfficher->Location = System::Drawing::Point(462, 127);
 			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4);
 			this->buttonAfficher->Name = L"buttonAfficher";
-			this->buttonAfficher->Size = System::Drawing::Size(191, 37);
+			this->buttonAfficher->Size = System::Drawing::Size(183, 37);
 			this->buttonAfficher->TabIndex = 11;
 			this->buttonAfficher->Text = L"Afficher";
 			this->buttonAfficher->UseVisualStyleBackColor = true;
@@ -487,7 +554,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelTVAAfficher
 			// 
 			this->labelTVAAfficher->AutoSize = true;
-			this->labelTVAAfficher->Location = System::Drawing::Point(862, 53);
+			this->labelTVAAfficher->Location = System::Drawing::Point(964, 51);
 			this->labelTVAAfficher->Name = L"labelTVAAfficher";
 			this->labelTVAAfficher->Size = System::Drawing::Size(34, 16);
 			this->labelTVAAfficher->TabIndex = 8;
@@ -495,7 +562,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxPrixAfficher
 			// 
-			this->textBoxPrixAfficher->Location = System::Drawing::Point(726, 71);
+			this->textBoxPrixAfficher->Location = System::Drawing::Point(821, 69);
 			this->textBoxPrixAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrixAfficher->Name = L"textBoxPrixAfficher";
 			this->textBoxPrixAfficher->Size = System::Drawing::Size(74, 22);
@@ -504,7 +571,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelPrixAfficher
 			// 
 			this->labelPrixAfficher->AutoSize = true;
-			this->labelPrixAfficher->Location = System::Drawing::Point(728, 53);
+			this->labelPrixAfficher->Location = System::Drawing::Point(818, 51);
 			this->labelPrixAfficher->Name = L"labelPrixAfficher";
 			this->labelPrixAfficher->Size = System::Drawing::Size(29, 16);
 			this->labelPrixAfficher->TabIndex = 4;
@@ -513,7 +580,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelNomProduitAfficher
 			// 
 			this->labelNomProduitAfficher->AutoSize = true;
-			this->labelNomProduitAfficher->Location = System::Drawing::Point(176, 53);
+			this->labelNomProduitAfficher->Location = System::Drawing::Point(210, 51);
 			this->labelNomProduitAfficher->Name = L"labelNomProduitAfficher";
 			this->labelNomProduitAfficher->Size = System::Drawing::Size(36, 16);
 			this->labelNomProduitAfficher->TabIndex = 1;
@@ -521,7 +588,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxNomProduitAfficher
 			// 
-			this->textBoxNomProduitAfficher->Location = System::Drawing::Point(179, 71);
+			this->textBoxNomProduitAfficher->Location = System::Drawing::Point(213, 71);
 			this->textBoxNomProduitAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomProduitAfficher->Name = L"textBoxNomProduitAfficher";
 			this->textBoxNomProduitAfficher->Size = System::Drawing::Size(133, 22);
@@ -533,9 +600,9 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBox4->Controls->Add(this->groupBoxCritSelect);
 			this->groupBox4->Controls->Add(this->groupBoxCritères);
 			this->groupBox4->Controls->Add(this->buttonModifier);
-			this->groupBox4->Location = System::Drawing::Point(403, 32);
+			this->groupBox4->Location = System::Drawing::Point(347, 23);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(800, 493);
+			this->groupBox4->Size = System::Drawing::Size(678, 473);
 			this->groupBox4->TabIndex = 16;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Modifier produit";
@@ -543,6 +610,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// groupBoxCritSelect
 			// 
 			this->groupBoxCritSelect->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->groupBoxCritSelect->Controls->Add(this->textBoxCoutCritSelectModif);
+			this->groupBoxCritSelect->Controls->Add(this->labelCoutCritSelectModif);
 			this->groupBoxCritSelect->Controls->Add(this->textBoxTVACritSelectModif);
 			this->groupBoxCritSelect->Controls->Add(this->textBoxIDCritSelectModif);
 			this->groupBoxCritSelect->Controls->Add(this->labelIDModifier);
@@ -557,10 +626,36 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBoxCritSelect->Controls->Add(this->labelAdresseModifier);
 			this->groupBoxCritSelect->Location = System::Drawing::Point(25, 42);
 			this->groupBoxCritSelect->Name = L"groupBoxCritSelect";
-			this->groupBoxCritSelect->Size = System::Drawing::Size(326, 363);
+			this->groupBoxCritSelect->Size = System::Drawing::Size(273, 363);
 			this->groupBoxCritSelect->TabIndex = 16;
 			this->groupBoxCritSelect->TabStop = false;
 			this->groupBoxCritSelect->Text = L"Critères de sélection";
+			// 
+			// textBoxCoutCritSelectModif
+			// 
+			this->textBoxCoutCritSelectModif->Location = System::Drawing::Point(154, 293);
+			this->textBoxCoutCritSelectModif->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCoutCritSelectModif->Name = L"textBoxCoutCritSelectModif";
+			this->textBoxCoutCritSelectModif->Size = System::Drawing::Size(105, 22);
+			this->textBoxCoutCritSelectModif->TabIndex = 15;
+			// 
+			// labelCoutCritSelectModif
+			// 
+			this->labelCoutCritSelectModif->AutoSize = true;
+			this->labelCoutCritSelectModif->Location = System::Drawing::Point(151, 273);
+			this->labelCoutCritSelectModif->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCoutCritSelectModif->Name = L"labelCoutCritSelectModif";
+			this->labelCoutCritSelectModif->Size = System::Drawing::Size(79, 16);
+			this->labelCoutCritSelectModif->TabIndex = 15;
+			this->labelCoutCritSelectModif->Text = L"cout d\'achat";
+			// 
+			// textBoxTVACritSelectModif
+			// 
+			this->textBoxTVACritSelectModif->Location = System::Drawing::Point(6, 317);
+			this->textBoxTVACritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxTVACritSelectModif->Name = L"textBoxTVACritSelectModif";
+			this->textBoxTVACritSelectModif->Size = System::Drawing::Size(87, 22);
+			this->textBoxTVACritSelectModif->TabIndex = 15;
 			// 
 			// textBoxIDCritSelectModif
 			// 
@@ -619,7 +714,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->textBoxPrixCritSelectModif->Location = System::Drawing::Point(7, 266);
 			this->textBoxPrixCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrixCritSelectModif->Name = L"textBoxPrixCritSelectModif";
-			this->textBoxPrixCritSelectModif->Size = System::Drawing::Size(207, 22);
+			this->textBoxPrixCritSelectModif->Size = System::Drawing::Size(86, 22);
 			this->textBoxPrixCritSelectModif->TabIndex = 14;
 			// 
 			// textBoxReapproCritSelectModif
@@ -660,6 +755,8 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// groupBoxCritères
 			// 
 			this->groupBoxCritères->BackColor = System::Drawing::SystemColors::MenuBar;
+			this->groupBoxCritères->Controls->Add(this->textBoxCoutNewModif);
+			this->groupBoxCritères->Controls->Add(this->labelCoutNewModif);
 			this->groupBoxCritères->Controls->Add(this->textBoxTVANewModif);
 			this->groupBoxCritères->Controls->Add(this->label6);
 			this->groupBoxCritères->Controls->Add(this->textBoxPrixNewModif);
@@ -670,12 +767,38 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBoxCritères->Controls->Add(this->textBoxStockNewModif);
 			this->groupBoxCritères->Controls->Add(this->label2);
 			this->groupBoxCritères->Controls->Add(this->textBoxNomProduitNewModif);
-			this->groupBoxCritères->Location = System::Drawing::Point(425, 42);
+			this->groupBoxCritères->Location = System::Drawing::Point(385, 43);
 			this->groupBoxCritères->Name = L"groupBoxCritères";
-			this->groupBoxCritères->Size = System::Drawing::Size(331, 363);
+			this->groupBoxCritères->Size = System::Drawing::Size(272, 363);
 			this->groupBoxCritères->TabIndex = 15;
 			this->groupBoxCritères->TabStop = false;
 			this->groupBoxCritères->Text = L"Nouvelles valeures";
+			// 
+			// textBoxCoutNewModif
+			// 
+			this->textBoxCoutNewModif->Location = System::Drawing::Point(153, 292);
+			this->textBoxCoutNewModif->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCoutNewModif->Name = L"textBoxCoutNewModif";
+			this->textBoxCoutNewModif->Size = System::Drawing::Size(105, 22);
+			this->textBoxCoutNewModif->TabIndex = 16;
+			// 
+			// labelCoutNewModif
+			// 
+			this->labelCoutNewModif->AutoSize = true;
+			this->labelCoutNewModif->Location = System::Drawing::Point(150, 272);
+			this->labelCoutNewModif->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCoutNewModif->Name = L"labelCoutNewModif";
+			this->labelCoutNewModif->Size = System::Drawing::Size(79, 16);
+			this->labelCoutNewModif->TabIndex = 16;
+			this->labelCoutNewModif->Text = L"cout d\'achat";
+			// 
+			// textBoxTVANewModif
+			// 
+			this->textBoxTVANewModif->Location = System::Drawing::Point(6, 317);
+			this->textBoxTVANewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxTVANewModif->Name = L"textBoxTVANewModif";
+			this->textBoxTVANewModif->Size = System::Drawing::Size(77, 22);
+			this->textBoxTVANewModif->TabIndex = 16;
 			// 
 			// label6
 			// 
@@ -691,7 +814,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->textBoxPrixNewModif->Location = System::Drawing::Point(6, 251);
 			this->textBoxPrixNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrixNewModif->Name = L"textBoxPrixNewModif";
-			this->textBoxPrixNewModif->Size = System::Drawing::Size(207, 22);
+			this->textBoxPrixNewModif->Size = System::Drawing::Size(77, 22);
 			this->textBoxPrixNewModif->TabIndex = 15;
 			// 
 			// label5
@@ -757,7 +880,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// buttonModifier
 			// 
-			this->buttonModifier->Location = System::Drawing::Point(340, 442);
+			this->buttonModifier->Location = System::Drawing::Point(294, 427);
 			this->buttonModifier->Margin = System::Windows::Forms::Padding(4);
 			this->buttonModifier->Name = L"buttonModifier";
 			this->buttonModifier->Size = System::Drawing::Size(105, 28);
@@ -766,25 +889,11 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->buttonModifier->UseVisualStyleBackColor = true;
 			this->buttonModifier->Click += gcnew System::EventHandler(this, &GestionCatalogue::buttonModifier_Click);
 			// 
-			// textBoxTVACritSelectModif
-			// 
-			this->textBoxTVACritSelectModif->Location = System::Drawing::Point(6, 317);
-			this->textBoxTVACritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBoxTVACritSelectModif->Name = L"textBoxTVACritSelectModif";
-			this->textBoxTVACritSelectModif->Size = System::Drawing::Size(207, 22);
-			this->textBoxTVACritSelectModif->TabIndex = 15;
-			// 
-			// textBoxTVANewModif
-			// 
-			this->textBoxTVANewModif->Location = System::Drawing::Point(6, 317);
-			this->textBoxTVANewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBoxTVANewModif->Name = L"textBoxTVANewModif";
-			this->textBoxTVANewModif->Size = System::Drawing::Size(207, 22);
-			this->textBoxTVANewModif->TabIndex = 16;
-			// 
 			// groupBox3
 			// 
 			this->groupBox3->BackColor = System::Drawing::SystemColors::Window;
+			this->groupBox3->Controls->Add(this->textBoxCoutSupprimer);
+			this->groupBox3->Controls->Add(this->labelCoutSupprimer);
 			this->groupBox3->Controls->Add(this->textBoxTVASupprimer);
 			this->groupBox3->Controls->Add(this->labelDateSupprimer);
 			this->groupBox3->Controls->Add(this->buttonSupprimer);
@@ -798,17 +907,43 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			this->groupBox3->Controls->Add(this->labelNomSupprimer);
 			this->groupBox3->Controls->Add(this->textBoxIDSupprimer);
 			this->groupBox3->Controls->Add(this->labelIDSupprimer);
-			this->groupBox3->Location = System::Drawing::Point(1376, 32);
+			this->groupBox3->Location = System::Drawing::Point(1070, 23);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(311, 447);
+			this->groupBox3->Size = System::Drawing::Size(277, 473);
 			this->groupBox3->TabIndex = 17;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Supprimer produit(s) du catalogue";
 			// 
+			// textBoxCoutSupprimer
+			// 
+			this->textBoxCoutSupprimer->Location = System::Drawing::Point(76, 342);
+			this->textBoxCoutSupprimer->Margin = System::Windows::Forms::Padding(4);
+			this->textBoxCoutSupprimer->Name = L"textBoxCoutSupprimer";
+			this->textBoxCoutSupprimer->Size = System::Drawing::Size(105, 22);
+			this->textBoxCoutSupprimer->TabIndex = 17;
+			// 
+			// labelCoutSupprimer
+			// 
+			this->labelCoutSupprimer->AutoSize = true;
+			this->labelCoutSupprimer->Location = System::Drawing::Point(82, 322);
+			this->labelCoutSupprimer->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->labelCoutSupprimer->Name = L"labelCoutSupprimer";
+			this->labelCoutSupprimer->Size = System::Drawing::Size(79, 16);
+			this->labelCoutSupprimer->TabIndex = 17;
+			this->labelCoutSupprimer->Text = L"cout d\'achat";
+			// 
+			// textBoxTVASupprimer
+			// 
+			this->textBoxTVASupprimer->Location = System::Drawing::Point(166, 273);
+			this->textBoxTVASupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->textBoxTVASupprimer->Name = L"textBoxTVASupprimer";
+			this->textBoxTVASupprimer->Size = System::Drawing::Size(92, 22);
+			this->textBoxTVASupprimer->TabIndex = 17;
+			// 
 			// labelDateSupprimer
 			// 
 			this->labelDateSupprimer->AutoSize = true;
-			this->labelDateSupprimer->Location = System::Drawing::Point(6, 299);
+			this->labelDateSupprimer->Location = System::Drawing::Point(163, 254);
 			this->labelDateSupprimer->Name = L"labelDateSupprimer";
 			this->labelDateSupprimer->Size = System::Drawing::Size(34, 16);
 			this->labelDateSupprimer->TabIndex = 14;
@@ -816,10 +951,10 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// buttonSupprimer
 			// 
-			this->buttonSupprimer->Location = System::Drawing::Point(101, 377);
+			this->buttonSupprimer->Location = System::Drawing::Point(85, 415);
 			this->buttonSupprimer->Margin = System::Windows::Forms::Padding(4);
 			this->buttonSupprimer->Name = L"buttonSupprimer";
-			this->buttonSupprimer->Size = System::Drawing::Size(96, 28);
+			this->buttonSupprimer->Size = System::Drawing::Size(86, 28);
 			this->buttonSupprimer->TabIndex = 14;
 			this->buttonSupprimer->Text = L"Supprimer";
 			this->buttonSupprimer->UseVisualStyleBackColor = true;
@@ -845,16 +980,16 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxPrixSupprimer
 			// 
-			this->textBoxPrixSupprimer->Location = System::Drawing::Point(6, 258);
+			this->textBoxPrixSupprimer->Location = System::Drawing::Point(6, 273);
 			this->textBoxPrixSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrixSupprimer->Name = L"textBoxPrixSupprimer";
-			this->textBoxPrixSupprimer->Size = System::Drawing::Size(207, 22);
+			this->textBoxPrixSupprimer->Size = System::Drawing::Size(87, 22);
 			this->textBoxPrixSupprimer->TabIndex = 14;
 			// 
 			// labelSuperieurSupprimer
 			// 
 			this->labelSuperieurSupprimer->AutoSize = true;
-			this->labelSuperieurSupprimer->Location = System::Drawing::Point(6, 240);
+			this->labelSuperieurSupprimer->Location = System::Drawing::Point(6, 254);
 			this->labelSuperieurSupprimer->Name = L"labelSuperieurSupprimer";
 			this->labelSuperieurSupprimer->Size = System::Drawing::Size(29, 16);
 			this->labelSuperieurSupprimer->TabIndex = 14;
@@ -862,7 +997,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxStockSupprimer
 			// 
-			this->textBoxStockSupprimer->Location = System::Drawing::Point(6, 142);
+			this->textBoxStockSupprimer->Location = System::Drawing::Point(6, 131);
 			this->textBoxStockSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxStockSupprimer->Name = L"textBoxStockSupprimer";
 			this->textBoxStockSupprimer->Size = System::Drawing::Size(132, 22);
@@ -871,7 +1006,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelPrenomSupprimer
 			// 
 			this->labelPrenomSupprimer->AutoSize = true;
-			this->labelPrenomSupprimer->Location = System::Drawing::Point(6, 122);
+			this->labelPrenomSupprimer->Location = System::Drawing::Point(6, 111);
 			this->labelPrenomSupprimer->Name = L"labelPrenomSupprimer";
 			this->labelPrenomSupprimer->Size = System::Drawing::Size(41, 16);
 			this->labelPrenomSupprimer->TabIndex = 14;
@@ -879,7 +1014,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxNomProduitSupprimer
 			// 
-			this->textBoxNomProduitSupprimer->Location = System::Drawing::Point(6, 92);
+			this->textBoxNomProduitSupprimer->Location = System::Drawing::Point(125, 63);
 			this->textBoxNomProduitSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomProduitSupprimer->Name = L"textBoxNomProduitSupprimer";
 			this->textBoxNomProduitSupprimer->Size = System::Drawing::Size(133, 22);
@@ -888,7 +1023,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelNomSupprimer
 			// 
 			this->labelNomSupprimer->AutoSize = true;
-			this->labelNomSupprimer->Location = System::Drawing::Point(6, 73);
+			this->labelNomSupprimer->Location = System::Drawing::Point(122, 42);
 			this->labelNomSupprimer->Name = L"labelNomSupprimer";
 			this->labelNomSupprimer->Size = System::Drawing::Size(49, 16);
 			this->labelNomSupprimer->TabIndex = 14;
@@ -896,7 +1031,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// 
 			// textBoxIDSupprimer
 			// 
-			this->textBoxIDSupprimer->Location = System::Drawing::Point(6, 42);
+			this->textBoxIDSupprimer->Location = System::Drawing::Point(9, 63);
 			this->textBoxIDSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIDSupprimer->Name = L"textBoxIDSupprimer";
 			this->textBoxIDSupprimer->Size = System::Drawing::Size(55, 22);
@@ -905,24 +1040,17 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			// labelIDSupprimer
 			// 
 			this->labelIDSupprimer->AutoSize = true;
-			this->labelIDSupprimer->Location = System::Drawing::Point(6, 22);
+			this->labelIDSupprimer->Location = System::Drawing::Point(6, 42);
 			this->labelIDSupprimer->Name = L"labelIDSupprimer";
 			this->labelIDSupprimer->Size = System::Drawing::Size(64, 16);
 			this->labelIDSupprimer->TabIndex = 14;
 			this->labelIDSupprimer->Text = L"référence";
 			// 
-			// textBoxTVASupprimer
-			// 
-			this->textBoxTVASupprimer->Location = System::Drawing::Point(9, 322);
-			this->textBoxTVASupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->textBoxTVASupprimer->Name = L"textBoxTVASupprimer";
-			this->textBoxTVASupprimer->Size = System::Drawing::Size(207, 22);
-			this->textBoxTVASupprimer->TabIndex = 17;
-			// 
 			// GestionCatalogue
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->ClientSize = System::Drawing::Size(1924, 1055);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox4);
@@ -957,7 +1085,7 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
-			this->oCat->creerProduit(this->textBoxNomProduitAjout->Text, this->textBoxStockAjout->Text, this->textBoxReapproAjout->Text, this->textBoxPrixAjout->Text, this->textBoxTVAAjout->Text);
+			this->oCat->creerProduit(this->textBoxNomProduitAjout->Text, this->textBoxStockAjout->Text, this->textBoxReapproAjout->Text, this->textBoxPrixAjout->Text, this->textBoxTVAAjout->Text, this->textBoxCoutAjout->Text);
 			MessageBox::Show("Le produit est à présent disponible dans le catalogue.");
 		}
 	}
@@ -968,11 +1096,16 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 
 
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
-		bool bouton = checkBox1->Checked;
-		this->dgv_enr->Refresh();
-		this->oDs = this->oCat->afficherProduits(bouton, this->textBoxIDAfficher->Text, this->textBoxNomProduitAfficher->Text, this->textBoxStockAfficher->Text, this->textBoxReapprovisionnementAfficher->Text, this->textBoxPrixAfficher->Text, this->textBoxTVAAfficher->Text, "ResultatCatalogue");
-		this->dgv_enr->DataSource = this->oDs;
-		this->dgv_enr->DataMember = "ResultatCatalogue";
+		if (this->textBoxIDAfficher->Text->Contains(",") || this->textBoxStockAfficher->Text->Contains(",") || this->textBoxReapprovisionnementAfficher->Text->Contains(",") || this->textBoxPrixAfficher->Text->Contains(",") || this->textBoxTVAAfficher->Text->Contains(",")) {
+			MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+		}
+		else {
+			bool bouton = checkBox1->Checked;
+			this->dgv_enr->Refresh();
+			this->oDs = this->oCat->afficherProduits(bouton, this->textBoxIDAfficher->Text, this->textBoxNomProduitAfficher->Text, this->textBoxStockAfficher->Text, this->textBoxReapprovisionnementAfficher->Text, this->textBoxPrixAfficher->Text, this->textBoxTVAAfficher->Text, this->textBoxCoutAfficher->Text, "ResultatCatalogue");
+			this->dgv_enr->DataSource = this->oDs;
+			this->dgv_enr->DataMember = "ResultatCatalogue";
+		}
 	}
 
 	private: System::Void buttonModifier_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -980,15 +1113,25 @@ private: System::Windows::Forms::Label^ labelIDSupprimer;
 			MessageBox::Show("Aucune nouvelle valeur n'a été rentrée.\n Veuillez entrer au moins une nouvelle valeur pour effectuer l'opération.");
 		}
 		else {
-			this->oCat->modifierProduit(this->textBoxIDCritSelectModif->Text, this->textBoxNomProduitCritSelectModif->Text, this->textBoxStockCritSelectModif->Text, this->textBoxReapproCritSelectModif->Text, this->textBoxPrixCritSelectModif->Text, this->textBoxTVACritSelectModif->Text, this->textBoxNomProduitNewModif->Text, this->textBoxStockNewModif->Text, this->textBoxReapproNewModif->Text, this->textBoxPrixNewModif->Text, this->textBoxTVANewModif->Text);
-			MessageBox::Show("Informations relatives au personnel modifiées");
+			if (this->textBoxIDCritSelectModif->Text->Contains(",") || this->textBoxStockCritSelectModif->Text->Contains(",") || this->textBoxIDCritSelectModif->Text->Contains(",") || this->textBoxReapproCritSelectModif->Text->Contains(",") || this->textBoxPrixCritSelectModif->Text->Contains(",") || this->textBoxTVACritSelectModif->Text->Contains(",") || this->textBoxStockNewModif->Text->Contains(",") || this->textBoxReapproNewModif->Text->Contains(",") || this->textBoxPrixNewModif->Text->Contains(",") || this->textBoxTVANewModif->Text->Contains(",")) {
+				MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+			}
+			else {
+				this->oCat->modifierProduit(this->textBoxIDCritSelectModif->Text, this->textBoxNomProduitCritSelectModif->Text, this->textBoxStockCritSelectModif->Text, this->textBoxReapproCritSelectModif->Text, this->textBoxPrixCritSelectModif->Text, this->textBoxTVACritSelectModif->Text, this->textBoxCoutCritSelectModif->Text, this->textBoxNomProduitNewModif->Text, this->textBoxStockNewModif->Text, this->textBoxReapproNewModif->Text, this->textBoxPrixNewModif->Text, this->textBoxTVANewModif->Text, this->textBoxCoutNewModif->Text);
+				MessageBox::Show("Informations relatives au personnel modifiées");
+			}
 		}
 	}
 
 	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Les données de tout produit correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomProduitSupprimer->Text + "\n\t" + this->textBoxStockSupprimer->Text + "\n\t" + this->textBoxReapprovisionnementSupprimer->Text + "\n\t" + this->textBoxPrixSupprimer->Text + "\n\t" + this->textBoxTVASupprimer->Text + "\n");
-		this->oCat->supprimerProduit(this->textBoxIDSupprimer->Text, this->textBoxNomProduitSupprimer->Text, this->textBoxStockSupprimer->Text, this->textBoxReapprovisionnementSupprimer->Text, this->textBoxPrixSupprimer->Text, this->textBoxTVASupprimer->Text);
-		MessageBox::Show("Le(s) produit(s) supprimer");
+		if (this->textBoxIDSupprimer->Text->Contains(",") || this->textBoxStockSupprimer->Text->Contains(",") || this->textBoxReapprovisionnementSupprimer->Text->Contains(",") || this->textBoxPrixSupprimer->Text->Contains(",") || this->textBoxTVASupprimer->Text->Contains(",")) {
+			MessageBox::Show("Vous ne pouvez pas enter de virgule. Vous devez utiliser des points pour les décimales");
+		}
+		else {
+			MessageBox::Show("Les données de tout produit correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomProduitSupprimer->Text + "\n\t" + this->textBoxStockSupprimer->Text + "\n\t" + this->textBoxReapprovisionnementSupprimer->Text + "\n\t" + this->textBoxPrixSupprimer->Text + "\n\t" + this->textBoxTVASupprimer->Text + "\n");
+			this->oCat->supprimerProduit(this->textBoxIDSupprimer->Text, this->textBoxNomProduitSupprimer->Text, this->textBoxStockSupprimer->Text, this->textBoxReapprovisionnementSupprimer->Text, this->textBoxPrixSupprimer->Text, this->textBoxTVASupprimer->Text, this->textBoxCoutSupprimer->Text);
+			MessageBox::Show("Le(s) produit(s) supprimer");
+		}
 	}
 
 };

@@ -1,7 +1,9 @@
 #ifndef CAD_H
 #define CAD_H
 
-
+using namespace System::Data;
+using namespace System::Data::SqlClient;
+using namespace System;
 
 namespace NS_Comp_Data
 {
@@ -16,6 +18,7 @@ namespace NS_Comp_Data
 		System::Data::SqlClient::SqlCommand^ oCmd;
 		System::Data::SqlClient::SqlDataAdapter^ oDA;
 		System::Data::DataSet^ oDs;
+		System::String^ resultat;
 		System::Data::DataSet^ dsArticles;
 		System::Data::DataSet^ dsClients;
 		System::String^ result;
@@ -29,7 +32,7 @@ namespace NS_Comp_Data
 		System::String^ getRequete(System::String^);
 
 		void actionRows(System::String^);
-
+		System::String^ getStats(System::String^);
 	};
 }
 

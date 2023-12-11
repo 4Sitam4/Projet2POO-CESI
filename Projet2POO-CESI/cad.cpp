@@ -69,6 +69,20 @@ void NS_Comp_Data::cad::actionRows(System::String^ sSql)
 	this->oCnx->Close();
 }
 
+System::String^ NS_Comp_Data::cad::getStats(System::String^ sSql)
+{
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+	this->oCnx->Open();
+	this->resultat = this->oCmd->ExecuteScalar()->ToString();
+	this->oCnx->Close();
+
+	return resultat;
+}
+
+
+
+
 System::String^ NS_Comp_Data::cad::getRequete(System::String^ sSql) {
 	this->sSql = sSql;
 	this->oCmd->CommandText = this->sSql;

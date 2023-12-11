@@ -19,6 +19,11 @@ namespace NS_Comp_Mappage
 		System::DateTime^ date_embauche;
 		//pour client
 		System::String^ adresse_facturation;
+		System::String^ ville_facturation;
+		System::String^ cp_facturation;
+		System::String^ adresse_livraison;
+		System::String^ ville_livraison;
+		System::String^ cp_livraison;
 		System::DateTime^ date_naissance;
 		System::DateTime^ date_premier_achat;
 		//Catalogue
@@ -42,6 +47,14 @@ namespace NS_Comp_Mappage
 		System::DateTime^ date_emission;
 		System::DateTime^ date_livraison;
 
+		System::String^ prix = "";
+		System::String^ ref = "";
+		System::String^ designation = "";
+		System::String^ stock = "";
+		System::String^ reapprovisionnement = "";
+		System::String^ TVA = "";
+		System::String^ cout = "";
+		//...
 
 	public:
 		System::String^ SelectPersonnel(void);
@@ -52,7 +65,6 @@ namespace NS_Comp_Mappage
 		System::String^ SelectClient(void);
 		System::String^ InsertClient(void);
 		System::String^ DeleteClient(System::String^);
-		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
 		
 		System::String^ SelectArticle(void);
 		System::String^ SelectClientCommande(void);
@@ -61,10 +73,13 @@ namespace NS_Comp_Mappage
 		System::String^ InsertArticle(void);
 		//System::String^ SelectClientCommande(void);
 
+		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
+		
+		
 		System::String^ SelectCatalogue(void);
 		System::String^ InsertCatalogue(void);
 		System::String^ DeleteCatalogue(void);
-		System::String^ UpdateCatalogue(System::String^, System::String^, System::String^, System::String^, System::String^);
+		System::String^ UpdateCatalogue(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 
 		
 		System::String^ SelectCommande(void);
@@ -83,6 +98,11 @@ namespace NS_Comp_Mappage
 		void setDateEmbauche(System::DateTime^);
 		//pour client
 		void setAdresseFacturation(System::String^);
+		void setVilleFacturation(System::String^);
+		void setCPFacturation(System::String^);
+		void setAdresseLivraison(System::String^);
+		void setVilleLivraison(System::String^);
+		void setCPLivraison(System::String^);
 		void setDateNaissance(System::DateTime^);
 		void setDatePremierAchat(System::DateTime^);
 		//Catalogue ...
@@ -98,6 +118,11 @@ namespace NS_Comp_Mappage
 		System::DateTime^ getDateEmbauche(void);
 		//pour client
 		System::String^ getAdresseFacturation(void);
+		System::String^ getVilleFacturation(void);
+		System::String^ getCPFacturation(void);
+		System::String^ getAdresseLivraison(void);
+		System::String^ getVilleLivraison(void);
+		System::String^ getCPLivraison(void);
 		System::DateTime^ getDateNaissance(void);
 		System::DateTime^ getDatePremierAchat(void);
 		
@@ -109,6 +134,7 @@ namespace NS_Comp_Mappage
 		System::String^ getStock(void);
 		System::String^ getReapprovisionnement(void);
 		System::String^ getTVA(void);
+		System::String^ getCout(void);
 		//
 		void setReapproNec(bool);
 		void setPrix(System::String^);
@@ -117,6 +143,7 @@ namespace NS_Comp_Mappage
 		void setStock(System::String^);
 		void setReapprovisionnement(System::String^);
 		void setTVA(System::String^);
+		void setCout(System::String^);
 
 		//Commande article
 		void setIdCommande(System::String^);

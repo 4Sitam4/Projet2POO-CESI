@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -127,14 +127,18 @@
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Commande.cpp" />
     <ClCompile Include="Catalogue.cpp" />
+    <ClCompile Include="FormSeuilDeReappro.cpp" />
     <ClCompile Include="GestionCatalogue.cpp" />
     <ClCompile Include="GestionClient.cpp" />
     <ClCompile Include="GestionCommande.cpp" />
     <ClCompile Include="GestionPersonnel.cpp" />
+    <ClCompile Include="GestionStatistique.cpp" />
     <ClCompile Include="map.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="NomPrenom.cpp" />
     <ClCompile Include="Personnel.cpp" />
+    <ClCompile Include="Simulation.cpp" />
+    <ClCompile Include="Statistique.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />
@@ -142,7 +146,9 @@
     <ClInclude Include="cad.h" />
     <ClInclude Include="Catalogue.h" />
     <ClInclude Include="Commande.h" />
-    <ClInclude Include="Fonctions.h" />
+    <ClInclude Include="FormSeuilDeReappro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="GestionCatalogue.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,6 +161,9 @@
     <ClInclude Include="GestionPersonnel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionStatistique.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="map.h" />
     <ClInclude Include="PCH.h" />
     <ClInclude Include="MyForm.h">
@@ -162,8 +171,15 @@
     </ClInclude>
     <ClInclude Include="NomPrenom.h" />
     <ClInclude Include="Personnel.h" />
+    <ClInclude Include="Simulation.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Statistique.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormSeuilDeReappro.resx">
+      <DependentUpon>FormSeuilDeReappro.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionCatalogue.resx">
       <DependentUpon>GestionCatalogue.h</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +192,14 @@
     <EmbeddedResource Include="GestionPersonnel.resx">
       <DependentUpon>GestionPersonnel.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionStatistique.resx">
+      <DependentUpon>GestionStatistique.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Simulation.resx">
+      <DependentUpon>Simulation.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
