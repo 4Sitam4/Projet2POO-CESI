@@ -282,6 +282,7 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 	System::String^ cdt3;
 	System::String^ cdt4;
 	System::String^ cdt5;
+	System::String^ cdt6;
 
 	if (this->id != "") {
 		cdt1 = "WHERE id = " + this->id;
@@ -331,7 +332,23 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 		}
 	}
 
-	return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + ";";
+
+	if (this->date_embauche->ToShortDateString() != "01/01/1753") {
+		if (init > 0) {
+			cdt6 = " AND date_embauche = '" + this->date_embauche->ToShortDateString() + "'";
+			init++;
+		}
+		else {
+			cdt6 = " WHERE date_embauche = '" + this->date_embauche->ToShortDateString() + "'";
+			init++;
+		}
+	}
+	if (cdt1 == "" && cdt2 == "" && cdt3 == "" && cdt4 == "" && cdt5 == "" && cdt6 == "") {
+		return "";
+	}
+	else {
+		return "DELETE FROM [projetPOO].[dbo].[Personnel] " + cdt1 + cdt2 + cdt3 + cdt4 + cdt5 + cdt6 + ";";
+	}
 }
 
 

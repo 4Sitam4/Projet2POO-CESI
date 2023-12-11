@@ -41,7 +41,7 @@ namespace Projet2POOCESI {
 		/// 
 		/// </summary>
 	private: NS_Comp_Personnel::Personnel^ oPers;
-		   //private: System::Data::DataSet^ oDs;
+		  
 	private: System::Data::DataSet^ oDs;
 
 
@@ -467,6 +467,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->TimePickerDateEmbaucheAfficher->Name = L"TimePickerDateEmbaucheAfficher";
 			this->TimePickerDateEmbaucheAfficher->Size = System::Drawing::Size(219, 20);
 			this->TimePickerDateEmbaucheAfficher->TabIndex = 11;
+			this->TimePickerDateEmbaucheAfficher->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonAfficher
 			// 
@@ -602,6 +603,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->TimePickerDateEmbaucheSupprimer->Name = L"TimePickerDateEmbaucheSupprimer";
 			this->TimePickerDateEmbaucheSupprimer->Size = System::Drawing::Size(219, 20);
 			this->TimePickerDateEmbaucheSupprimer->TabIndex = 14;
+			this->TimePickerDateEmbaucheSupprimer->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonSupprimer
 			// 
@@ -757,6 +759,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->TimePickerDateEmbaucheCritSelectModif->Name = L"TimePickerDateEmbaucheCritSelectModif";
 			this->TimePickerDateEmbaucheCritSelectModif->Size = System::Drawing::Size(219, 20);
 			this->TimePickerDateEmbaucheCritSelectModif->TabIndex = 14;
+			this->TimePickerDateEmbaucheCritSelectModif->Value = DateTime(1753, 1, 1);
 			// 
 			// labelIDModifier
 			// 
@@ -879,6 +882,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->TimePickerDateEmbaucheNewModif->Name = L"TimePickerDateEmbaucheNewModif";
 			this->TimePickerDateEmbaucheNewModif->Size = System::Drawing::Size(219, 20);
 			this->TimePickerDateEmbaucheNewModif->TabIndex = 15;
+			this->TimePickerDateEmbaucheNewModif->Value = DateTime(1753, 1, 1);
 			// 
 			// label6
 			// 
@@ -1008,7 +1012,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 
 	private: System::Void buttonEmbaucher_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0 || this->textBoxSuperieur->Text->Length == 0) {
+		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0) {
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
