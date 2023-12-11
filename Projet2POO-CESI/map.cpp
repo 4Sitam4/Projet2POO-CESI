@@ -399,7 +399,7 @@ System::String^ NS_Comp_Mappage::map::SelectCommande(void) {
 
 
 System::String^ NS_Comp_Mappage::map::SelectLigneCommande(void) {
-	return "SELECT * FROM [projetPOO].[dbo].[Ligne_commande] WHERE id_commande = " + this->id_commande;
+	return "SELECT Ligne_commande.reference_produit, Catalogue.produit, Catalogue.quantite FROM [projetPOO].[dbo].[Ligne_commande] Ligne_commande INNER JOIN [projetPOO].[dbo].[Catalogue] Catalogue ON Ligne_commande.reference_produit = Catalogue.reference_produit WHERE Ligne_commande.id_commande = " + this->id_commande;
 }
 
 

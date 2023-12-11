@@ -116,6 +116,7 @@ namespace Projet2POOCESI {
 	private: System::Windows::Forms::TextBox^ textBoxFiltreNumClient;
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::TextBox^ textBoxFiltreMontantHt;
+private: System::ComponentModel::BackgroundWorker^ backgroundWorker3;
 
 
 
@@ -187,6 +188,7 @@ namespace Projet2POOCESI {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->buttonSupprimer = (gcnew System::Windows::Forms::Button());
 			this->textBoxIdCommande = (gcnew System::Windows::Forms::TextBox());
+			this->backgroundWorker3 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewClientCommande))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewArticles))->BeginInit();
