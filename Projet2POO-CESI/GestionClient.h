@@ -71,8 +71,10 @@ namespace Projet2POOCESI {
 
 
 	private: System::Windows::Forms::GroupBox^ groupBoxCritères;
-	private: System::Windows::Forms::DateTimePicker^ dateTimePickerNouvNaissanceModifClient;
-	private: System::Windows::Forms::DateTimePicker^ TimePickerNouvDateNewModif;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePickerDateNaissanceNewModifClient;
+	private: System::Windows::Forms::DateTimePicker^ TimePickerDatePremierAchatNewModifClient;
+
+
 
 
 	private: System::Windows::Forms::Label^ label6;
@@ -242,8 +244,8 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelVilleFacturation = (gcnew System::Windows::Forms::Label());
 			this->labelFacturation = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrFactureNewModifClient = (gcnew System::Windows::Forms::TextBox());
-			this->dateTimePickerNouvNaissanceModifClient = (gcnew System::Windows::Forms::DateTimePicker());
-			this->TimePickerNouvDateNewModif = (gcnew System::Windows::Forms::DateTimePicker());
+			this->dateTimePickerDateNaissanceNewModifClient = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TimePickerDatePremierAchatNewModifClient = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -491,7 +493,6 @@ private: System::Windows::Forms::Label^ label13;
 			this->dateTimePickerDatePremierAchat->Location = System::Drawing::Point(337, 365);
 			this->dateTimePickerDatePremierAchat->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePickerDatePremierAchat->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePickerDatePremierAchat->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
 			this->dateTimePickerDatePremierAchat->Name = L"dateTimePickerDatePremierAchat";
 			this->dateTimePickerDatePremierAchat->Size = System::Drawing::Size(242, 22);
 			this->dateTimePickerDatePremierAchat->TabIndex = 9;
@@ -525,7 +526,6 @@ private: System::Windows::Forms::Label^ label13;
 			this->dateTimePickerDateNaissance->Location = System::Drawing::Point(45, 365);
 			this->dateTimePickerDateNaissance->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePickerDateNaissance->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePickerDateNaissance->MinDate = System::DateTime(1900, 1, 1, 0, 0, 0, 0);
 			this->dateTimePickerDateNaissance->Name = L"dateTimePickerDateNaissance";
 			this->dateTimePickerDateNaissance->Size = System::Drawing::Size(231, 22);
 			this->dateTimePickerDateNaissance->TabIndex = 6;
@@ -632,8 +632,8 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBoxCritères->Controls->Add(this->labelVilleFacturation);
 			this->groupBoxCritères->Controls->Add(this->labelFacturation);
 			this->groupBoxCritères->Controls->Add(this->textBoxAdrFactureNewModifClient);
-			this->groupBoxCritères->Controls->Add(this->dateTimePickerNouvNaissanceModifClient);
-			this->groupBoxCritères->Controls->Add(this->TimePickerNouvDateNewModif);
+			this->groupBoxCritères->Controls->Add(this->dateTimePickerDateNaissanceNewModifClient);
+			this->groupBoxCritères->Controls->Add(this->TimePickerDatePremierAchatNewModifClient);
 			this->groupBoxCritères->Controls->Add(this->label6);
 			this->groupBoxCritères->Controls->Add(this->label5);
 			this->groupBoxCritères->Controls->Add(this->label4);
@@ -771,27 +771,27 @@ private: System::Windows::Forms::Label^ label13;
 			this->textBoxAdrFactureNewModifClient->Size = System::Drawing::Size(164, 22);
 			this->textBoxAdrFactureNewModifClient->TabIndex = 13;
 			// 
-			// dateTimePickerNouvNaissanceModifClient
+			// dateTimePickerDateNaissanceNewModifClient
 			// 
-			this->dateTimePickerNouvNaissanceModifClient->CustomFormat = L"";
-			this->dateTimePickerNouvNaissanceModifClient->Location = System::Drawing::Point(27, 343);
-			this->dateTimePickerNouvNaissanceModifClient->Margin = System::Windows::Forms::Padding(4);
-			this->dateTimePickerNouvNaissanceModifClient->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->dateTimePickerNouvNaissanceModifClient->Name = L"dateTimePickerNouvNaissanceModifClient";
-			this->dateTimePickerNouvNaissanceModifClient->Size = System::Drawing::Size(291, 22);
-			this->dateTimePickerNouvNaissanceModifClient->TabIndex = 16;
-			this->dateTimePickerNouvNaissanceModifClient->Value = System::DateTime(1753, 1, 1, 0, 0, 0, 0);
+			this->dateTimePickerDateNaissanceNewModifClient->CustomFormat = L"";
+			this->dateTimePickerDateNaissanceNewModifClient->Location = System::Drawing::Point(27, 343);
+			this->dateTimePickerDateNaissanceNewModifClient->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePickerDateNaissanceNewModifClient->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->dateTimePickerDateNaissanceNewModifClient->Name = L"dateTimePickerDateNaissanceNewModifClient";
+			this->dateTimePickerDateNaissanceNewModifClient->Size = System::Drawing::Size(291, 22);
+			this->dateTimePickerDateNaissanceNewModifClient->TabIndex = 16;
+			this->dateTimePickerDateNaissanceNewModifClient->Value = System::DateTime(1753, 1, 1, 0, 0, 0, 0);
 			// 
-			// TimePickerNouvDateNewModif
+			// TimePickerDatePremierAchatNewModifClient
 			// 
-			this->TimePickerNouvDateNewModif->CustomFormat = L"";
-			this->TimePickerNouvDateNewModif->Location = System::Drawing::Point(386, 343);
-			this->TimePickerNouvDateNewModif->Margin = System::Windows::Forms::Padding(4);
-			this->TimePickerNouvDateNewModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
-			this->TimePickerNouvDateNewModif->Name = L"TimePickerNouvDateNewModif";
-			this->TimePickerNouvDateNewModif->Size = System::Drawing::Size(291, 22);
-			this->TimePickerNouvDateNewModif->TabIndex = 15;
-			this->TimePickerNouvDateNewModif->Value = System::DateTime(1753, 1, 1, 0, 0, 0, 0);
+			this->TimePickerDatePremierAchatNewModifClient->CustomFormat = L"";
+			this->TimePickerDatePremierAchatNewModifClient->Location = System::Drawing::Point(386, 343);
+			this->TimePickerDatePremierAchatNewModifClient->Margin = System::Windows::Forms::Padding(4);
+			this->TimePickerDatePremierAchatNewModifClient->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
+			this->TimePickerDatePremierAchatNewModifClient->Name = L"TimePickerDatePremierAchatNewModifClient";
+			this->TimePickerDatePremierAchatNewModifClient->Size = System::Drawing::Size(291, 22);
+			this->TimePickerDatePremierAchatNewModifClient->TabIndex = 15;
+			this->TimePickerDatePremierAchatNewModifClient->Value = System::DateTime(1753, 1, 1, 0, 0, 0, 0);
 			// 
 			// label6
 			// 
@@ -1258,7 +1258,8 @@ private: System::Windows::Forms::Label^ label13;
 	}
 
 	private: System::Void buttonCreerClient_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->textBoxClientNom->Text->Length == 0 || this->textBoxClientPrenom->Text->Length == 0 || this->textBoxAdresseFactureCreer->Text->Length == 0 || this->textBoxAdrVilleFactureCreer->Text->Length == 0 || this->textBoxAdrCPFactureCreer->Text->Length == 0 || this->textBoxAdresseLivreCreer->Text->Length == 0 || this->textBoxAdrVilleLivreCreer->Text->Length == 0 || this->textBoxAdrCPLivreCreer->Text->Length == 0) {
+		DateTime datemin = DateTime(1753, 1, 1);
+		if (this->textBoxClientNom->Text->Length == 0 || this->textBoxClientPrenom->Text->Length == 0 || this->textBoxAdresseFactureCreer->Text->Length == 0 || this->textBoxAdrVilleFactureCreer->Text->Length == 0 || this->textBoxAdrCPFactureCreer->Text->Length == 0 || this->textBoxAdresseLivreCreer->Text->Length == 0 || this->textBoxAdrVilleLivreCreer->Text->Length == 0 || this->textBoxAdrCPLivreCreer->Text->Length == 0 || this->dateTimePickerDateNaissance->Value == datemin ||this->dateTimePickerDatePremierAchat->Value == datemin) {
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
@@ -1277,15 +1278,20 @@ private: System::Windows::Forms::Label^ label13;
 			MessageBox::Show("Entrez un ID de client valide");
 		}
 		else {
-			if (this->textBoxAdrVilleFactureNewModifClient->Text == "Paris" || this->textBoxAdrVilleFactureNewModifClient->Text == "Nancy" || this->textBoxAdrVilleFactureNewModifClient->Text == "Brest" || this->textBoxAdrVilleFactureNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleFactureNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleFactureNewModifClient->Text == "Lille" || this->textBoxAdrVilleLivreNewModifClient->Text == "Paris" || this->textBoxAdrVilleLivreNewModifClient->Text == "Nancy" || this->textBoxAdrVilleLivreNewModifClient->Text == "Brest" || this->textBoxAdrVilleLivreNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleLivreNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleLivreNewModifClient->Text == "Lille") {
-				this->oCli->modifierClient(this->textBoxIdModifClient->Text, this->textBoxNouvNomModifClient->Text, this->textBoxNouvPrenomModifClient->Text, this->textBoxAdrFactureNewModifClient->Text, this->textBoxAdrVilleFactureNewModifClient->Text, this->textBoxAdrCPFactureNewModifClient->Text, this->textBoxAdrLivreNewModifClient->Text, this->textBoxAdrVilleLivreNewModifClient->Text, this->textBoxAdrCPLivreNewModifClient->Text, this->dateTimePickerNouvNaissanceModifClient->Value, this->TimePickerNouvDateNewModif->Value);
-				this->dateTimePickerNouvNaissanceModifClient->Value = DateTime(1753, 1, 1);
-				this->TimePickerNouvDateNewModif->Value = DateTime(1753, 1, 1);
-				MessageBox::Show("Informations relatives au client modifiées");
-			}
+			DateTime datemin = DateTime(1753, 1, 1);
+			if (this->textBoxNouvNomModifClient->Text->Length == 0 && this->textBoxNouvPrenomModifClient->Text->Length == 0 && this->textBoxAdrFactureNewModifClient->Text->Length == 0 && this->textBoxAdrVilleFactureNewModifClient->Text->Length == 0 && this->textBoxAdrCPFactureNewModifClient->Text->Length == 0 && this->textBoxAdrLivreNewModifClient->Text->Length == 0 && this->textBoxAdrVilleLivreNewModifClient->Text->Length == 0 && this->textBoxAdrCPLivreNewModifClient->Text->Length == 0 && this->dateTimePickerDateNaissanceNewModifClient->Value == datemin && this->TimePickerDatePremierAchatNewModifClient->Value == datemin){
+					MessageBox::Show("Veuillez entrer au moins une nouvelle valeur.");
+				}
 			else {
-				MessageBox::Show("La saisie contient des erreurs de saisie.");
-
+				if (this->textBoxAdrVilleFactureNewModifClient->Text == "Paris" || this->textBoxAdrVilleFactureNewModifClient->Text == "Nancy" || this->textBoxAdrVilleFactureNewModifClient->Text == "Brest" || this->textBoxAdrVilleFactureNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleFactureNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleFactureNewModifClient->Text == "Lille" || this->textBoxAdrVilleLivreNewModifClient->Text == "Paris" || this->textBoxAdrVilleLivreNewModifClient->Text == "Nancy" || this->textBoxAdrVilleLivreNewModifClient->Text == "Brest" || this->textBoxAdrVilleLivreNewModifClient->Text == "Bordeaux" || this->textBoxAdrVilleLivreNewModifClient->Text == "Strasbourg" || this->textBoxAdrVilleLivreNewModifClient->Text == "Lille") {
+					this->oCli->modifierClient(this->textBoxIdModifClient->Text, this->textBoxNouvNomModifClient->Text, this->textBoxNouvPrenomModifClient->Text, this->textBoxAdrFactureNewModifClient->Text, this->textBoxAdrVilleFactureNewModifClient->Text, this->textBoxAdrCPFactureNewModifClient->Text, this->textBoxAdrLivreNewModifClient->Text, this->textBoxAdrVilleLivreNewModifClient->Text, this->textBoxAdrCPLivreNewModifClient->Text, this->dateTimePickerDateNaissanceNewModifClient->Value, this->TimePickerDatePremierAchatNewModifClient->Value);
+					this->dateTimePickerDateNaissanceNewModifClient->Value = DateTime(1753, 1, 1);
+					this->TimePickerDatePremierAchatNewModifClient->Value = DateTime(1753, 1, 1);
+					MessageBox::Show("Informations relatives au client modifiées");
+				}
+				else {
+					MessageBox::Show("La saisie contient des erreurs de saisie.");
+				}
 			}
 		}
 	}
