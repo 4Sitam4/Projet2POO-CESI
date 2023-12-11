@@ -296,8 +296,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			// groupBoxCreerClient
 			// 
-			this->groupBoxCreerClient->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->groupBoxCreerClient->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBoxCreerClient.BackgroundImage")));
+			this->groupBoxCreerClient->BackColor = System::Drawing::Color::White;
 			this->groupBoxCreerClient->Controls->Add(this->labelCPLivreCreer);
 			this->groupBoxCreerClient->Controls->Add(this->textBoxAdrCPLivreCreer);
 			this->groupBoxCreerClient->Controls->Add(this->labelVilleLivreCreer);
@@ -309,7 +308,6 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBoxCreerClient->Controls->Add(this->textBoxAdrVilleFactureCreer);
 			this->groupBoxCreerClient->Controls->Add(this->labelVilleFactureCreer);
 			this->groupBoxCreerClient->Controls->Add(this->label8);
-			this->groupBoxCreerClient->BackColor = System::Drawing::Color::White;
 			this->groupBoxCreerClient->Controls->Add(this->labelAdressseFacturation);
 			this->groupBoxCreerClient->Controls->Add(this->textBoxAdresseFactureCreer);
 			this->groupBoxCreerClient->Controls->Add(this->labelLivraison);
@@ -336,7 +334,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelCPLivreCreer->AutoSize = true;
 			this->labelCPLivreCreer->BackColor = System::Drawing::Color::Transparent;
-			this->labelCPLivreCreer->ForeColor = System::Drawing::Color::White;
+			this->labelCPLivreCreer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelCPLivreCreer->Location = System::Drawing::Point(480, 250);
 			this->labelCPLivreCreer->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelCPLivreCreer->Name = L"labelCPLivreCreer";
@@ -356,7 +354,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelVilleLivreCreer->AutoSize = true;
 			this->labelVilleLivreCreer->BackColor = System::Drawing::Color::Transparent;
-			this->labelVilleLivreCreer->ForeColor = System::Drawing::Color::White;
+			this->labelVilleLivreCreer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelVilleLivreCreer->Location = System::Drawing::Point(294, 250);
 			this->labelVilleLivreCreer->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelVilleLivreCreer->Name = L"labelVilleLivreCreer";
@@ -376,7 +374,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->label11->AutoSize = true;
 			this->label11->BackColor = System::Drawing::Color::Transparent;
-			this->label11->ForeColor = System::Drawing::Color::White;
+			this->label11->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label11->Location = System::Drawing::Point(42, 250);
 			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label11->Name = L"label11";
@@ -396,7 +394,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->label9->AutoSize = true;
 			this->label9->BackColor = System::Drawing::Color::Transparent;
-			this->label9->ForeColor = System::Drawing::Color::White;
+			this->label9->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label9->Location = System::Drawing::Point(480, 138);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
@@ -424,7 +422,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelVilleFactureCreer->AutoSize = true;
 			this->labelVilleFactureCreer->BackColor = System::Drawing::Color::Transparent;
-			this->labelVilleFactureCreer->ForeColor = System::Drawing::Color::White;
+			this->labelVilleFactureCreer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelVilleFactureCreer->Location = System::Drawing::Point(294, 138);
 			this->labelVilleFactureCreer->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelVilleFactureCreer->Name = L"labelVilleFactureCreer";
@@ -448,7 +446,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelAdressseFacturation->AutoSize = true;
 			this->labelAdressseFacturation->BackColor = System::Drawing::Color::Transparent;
-			this->labelAdressseFacturation->ForeColor = System::Drawing::Color::White;
+			this->labelAdressseFacturation->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelAdressseFacturation->Location = System::Drawing::Point(42, 138);
 			this->labelAdressseFacturation->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelAdressseFacturation->Name = L"labelAdressseFacturation";
@@ -480,7 +478,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->label1->AutoSize = true;
 			this->label1->BackColor = System::Drawing::Color::Transparent;
-			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label1->Location = System::Drawing::Point(334, 345);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
@@ -513,7 +511,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelDateNaissance->AutoSize = true;
 			this->labelDateNaissance->BackColor = System::Drawing::Color::Transparent;
-			this->labelDateNaissance->ForeColor = System::Drawing::Color::White;
+			this->labelDateNaissance->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelDateNaissance->Location = System::Drawing::Point(42, 345);
 			this->labelDateNaissance->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelDateNaissance->Name = L"labelDateNaissance";
@@ -534,7 +532,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelPersoPrenom->AutoSize = true;
 			this->labelPersoPrenom->BackColor = System::Drawing::Color::Transparent;
-			this->labelPersoPrenom->ForeColor = System::Drawing::Color::White;
+			this->labelPersoPrenom->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelPersoPrenom->Location = System::Drawing::Point(386, 36);
 			this->labelPersoPrenom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPersoPrenom->Name = L"labelPersoPrenom";
@@ -554,7 +552,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelPersoNom->AutoSize = true;
 			this->labelPersoNom->BackColor = System::Drawing::Color::Transparent;
-			this->labelPersoNom->ForeColor = System::Drawing::Color::White;
+			this->labelPersoNom->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelPersoNom->Location = System::Drawing::Point(87, 36);
 			this->labelPersoNom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPersoNom->Name = L"labelPersoNom";
@@ -577,9 +575,9 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBox4->Controls->Add(this->groupBoxCritères);
 			this->groupBox4->Controls->Add(this->buttonModifier);
 			this->groupBox4->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->groupBox4->Location = System::Drawing::Point(364, 28);
+			this->groupBox4->Location = System::Drawing::Point(692, 28);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(1144, 493);
+			this->groupBox4->Size = System::Drawing::Size(1018, 445);
 			this->groupBox4->TabIndex = 16;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Modifier un client";
@@ -590,7 +588,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBoxCritSelect->Controls->Add(this->textBoxIdModifClient);
 			this->groupBoxCritSelect->Controls->Add(this->labelIDModifier);
 			this->groupBoxCritSelect->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->groupBoxCritSelect->Location = System::Drawing::Point(25, 42);
+			this->groupBoxCritSelect->Location = System::Drawing::Point(27, 42);
 			this->groupBoxCritSelect->Name = L"groupBoxCritSelect";
 			this->groupBoxCritSelect->Size = System::Drawing::Size(236, 126);
 			this->groupBoxCritSelect->TabIndex = 16;
@@ -617,7 +615,6 @@ private: System::Windows::Forms::Label^ label13;
 			// groupBoxCritères
 			// 
 			this->groupBoxCritères->BackColor = System::Drawing::Color::White;
-			this->groupBoxCritères->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBoxCritères.BackgroundImage")));
 			this->groupBoxCritères->Controls->Add(this->label10);
 			this->groupBoxCritères->Controls->Add(this->textBoxAdrCPLivreNewModifClient);
 			this->groupBoxCritères->Controls->Add(this->labelCodePostalLivraison);
@@ -641,7 +638,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBoxCritères->Controls->Add(this->label2);
 			this->groupBoxCritères->Controls->Add(this->textBoxNouvNomModifClient);
 			this->groupBoxCritères->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->groupBoxCritères->Location = System::Drawing::Point(425, 42);
+			this->groupBoxCritères->Location = System::Drawing::Point(291, 42);
 			this->groupBoxCritères->Name = L"groupBoxCritères";
 			this->groupBoxCritères->Size = System::Drawing::Size(718, 399);
 			this->groupBoxCritères->TabIndex = 15;
@@ -862,7 +859,7 @@ private: System::Windows::Forms::Label^ label13;
 			// buttonModifier
 			// 
 			this->buttonModifier->ForeColor = System::Drawing::Color::Black;
-			this->buttonModifier->Location = System::Drawing::Point(59, 291);
+			this->buttonModifier->Location = System::Drawing::Point(76, 245);
 			this->buttonModifier->Margin = System::Windows::Forms::Padding(4);
 			this->buttonModifier->Name = L"buttonModifier";
 			this->buttonModifier->Size = System::Drawing::Size(123, 48);
@@ -878,7 +875,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBox3->Controls->Add(this->textBoxIdClientSupprimer);
 			this->groupBox3->Controls->Add(this->labelIDSupprimer);
 			this->groupBox3->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->groupBox3->Location = System::Drawing::Point(1204, 28);
+			this->groupBox3->Location = System::Drawing::Point(1390, 522);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(255, 167);
 			this->groupBox3->TabIndex = 17;
@@ -909,7 +906,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelIDSupprimer->AutoSize = true;
 			this->labelIDSupprimer->BackColor = System::Drawing::Color::Transparent;
-			this->labelIDSupprimer->ForeColor = System::Drawing::Color::White;
+			this->labelIDSupprimer->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelIDSupprimer->Location = System::Drawing::Point(23, 36);
 			this->labelIDSupprimer->Name = L"labelIDSupprimer";
 			this->labelIDSupprimer->Size = System::Drawing::Size(56, 16);
@@ -918,8 +915,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->groupBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox2.BackgroundImage")));
+			this->groupBox2->BackColor = System::Drawing::Color::White;
 			this->groupBox2->Controls->Add(this->labelVilleLivreAfficher);
 			this->groupBox2->Controls->Add(this->labelCPLivreAfficher);
 			this->groupBox2->Controls->Add(this->textBoxAdrCPLivreAfficherClient);
@@ -930,7 +926,6 @@ private: System::Windows::Forms::Label^ label13;
 			this->groupBox2->Controls->Add(this->labelCPFactureAfficher);
 			this->groupBox2->Controls->Add(this->textBoxAdrCPFactureAfficherClient);
 			this->groupBox2->Controls->Add(this->textBoxAdrVilleFactureAfficherClient);
-			this->groupBox2->BackColor = System::Drawing::Color::White;
 			this->groupBox2->Controls->Add(this->dateTimePickerAnniversaireAfficherClient);
 			this->groupBox2->Controls->Add(this->textBoxIdAfficherClient);
 			this->groupBox2->Controls->Add(this->labelIDAfficher);
@@ -961,7 +956,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelVilleLivreAfficher->AutoSize = true;
 			this->labelVilleLivreAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelVilleLivreAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelVilleLivreAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelVilleLivreAfficher->Location = System::Drawing::Point(250, 361);
 			this->labelVilleLivreAfficher->Name = L"labelVilleLivreAfficher";
 			this->labelVilleLivreAfficher->Size = System::Drawing::Size(33, 16);
@@ -972,7 +967,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelCPLivreAfficher->AutoSize = true;
 			this->labelCPLivreAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelCPLivreAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelCPLivreAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelCPLivreAfficher->Location = System::Drawing::Point(477, 361);
 			this->labelCPLivreAfficher->Name = L"labelCPLivreAfficher";
 			this->labelCPLivreAfficher->Size = System::Drawing::Size(80, 16);
@@ -999,7 +994,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelAdresseLivreAfficher->AutoSize = true;
 			this->labelAdresseLivreAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelAdresseLivreAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelAdresseLivreAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelAdresseLivreAfficher->Location = System::Drawing::Point(16, 361);
 			this->labelAdresseLivreAfficher->Name = L"labelAdresseLivreAfficher";
 			this->labelAdresseLivreAfficher->Size = System::Drawing::Size(58, 16);
@@ -1018,7 +1013,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelVilleFactureAfficher->AutoSize = true;
 			this->labelVilleFactureAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelVilleFactureAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelVilleFactureAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelVilleFactureAfficher->Location = System::Drawing::Point(250, 226);
 			this->labelVilleFactureAfficher->Name = L"labelVilleFactureAfficher";
 			this->labelVilleFactureAfficher->Size = System::Drawing::Size(33, 16);
@@ -1029,7 +1024,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelCPFactureAfficher->AutoSize = true;
 			this->labelCPFactureAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelCPFactureAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelCPFactureAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelCPFactureAfficher->Location = System::Drawing::Point(477, 226);
 			this->labelCPFactureAfficher->Name = L"labelCPFactureAfficher";
 			this->labelCPFactureAfficher->Size = System::Drawing::Size(80, 16);
@@ -1067,7 +1062,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->textBoxIdAfficherClient->Location = System::Drawing::Point(19, 57);
 			this->textBoxIdAfficherClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIdAfficherClient->Name = L"textBoxIdAfficherClient";
-			this->textBoxIdAfficherClient->Size = System::Drawing::Size(133, 22);
+			this->textBoxIdAfficherClient->Size = System::Drawing::Size(90, 22);
 			this->textBoxIdAfficherClient->TabIndex = 13;
 			// 
 			// labelIDAfficher
@@ -1075,7 +1070,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelIDAfficher->AutoSize = true;
 			this->labelIDAfficher->BackColor = System::Drawing::Color::Transparent;
 			this->labelIDAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->labelIDAfficher->Location = System::Drawing::Point(6, 53);
+			this->labelIDAfficher->Location = System::Drawing::Point(16, 39);
 			this->labelIDAfficher->Name = L"labelIDAfficher";
 			this->labelIDAfficher->Size = System::Drawing::Size(20, 16);
 			this->labelIDAfficher->TabIndex = 12;
@@ -1105,7 +1100,7 @@ private: System::Windows::Forms::Label^ label13;
 			// buttonAfficher
 			// 
 			this->buttonAfficher->ForeColor = System::Drawing::Color::Black;
-			this->buttonAfficher->Location = System::Drawing::Point(954, 73);
+			this->buttonAfficher->Location = System::Drawing::Point(905, 107);
 			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4);
 			this->buttonAfficher->Name = L"buttonAfficher";
 			this->buttonAfficher->Size = System::Drawing::Size(221, 49);
@@ -1119,7 +1114,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelDateAfficher->AutoSize = true;
 			this->labelDateAfficher->BackColor = System::Drawing::Color::Transparent;
 			this->labelDateAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->labelDateAfficher->Location = System::Drawing::Point(1062, 53);
+			this->labelDateAfficher->Location = System::Drawing::Point(334, 114);
 			this->labelDateAfficher->Name = L"labelDateAfficher";
 			this->labelDateAfficher->Size = System::Drawing::Size(139, 16);
 			this->labelDateAfficher->TabIndex = 8;
@@ -1137,7 +1132,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			this->labelAdresseFactureAfficher->AutoSize = true;
 			this->labelAdresseFactureAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelAdresseFactureAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelAdresseFactureAfficher->ForeColor = System::Drawing::Color::Black;
 			this->labelAdresseFactureAfficher->Location = System::Drawing::Point(16, 226);
 			this->labelAdresseFactureAfficher->Name = L"labelAdresseFactureAfficher";
 			this->labelAdresseFactureAfficher->Size = System::Drawing::Size(58, 16);
@@ -1149,7 +1144,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelAdresseAfficher->AutoSize = true;
 			this->labelAdresseAfficher->BackColor = System::Drawing::Color::Transparent;
 			this->labelAdresseAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->labelAdresseAfficher->Location = System::Drawing::Point(772, 53);
+			this->labelAdresseAfficher->Location = System::Drawing::Point(16, 114);
 			this->labelAdresseAfficher->Name = L"labelAdresseAfficher";
 			this->labelAdresseAfficher->Size = System::Drawing::Size(114, 16);
 			this->labelAdresseAfficher->TabIndex = 4;
@@ -1160,7 +1155,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelPrenomAfficher->AutoSize = true;
 			this->labelPrenomAfficher->BackColor = System::Drawing::Color::Transparent;
 			this->labelPrenomAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->labelPrenomAfficher->Location = System::Drawing::Point(350, 53);
+			this->labelPrenomAfficher->Location = System::Drawing::Point(386, 39);
 			this->labelPrenomAfficher->Name = L"labelPrenomAfficher";
 			this->labelPrenomAfficher->Size = System::Drawing::Size(54, 16);
 			this->labelPrenomAfficher->TabIndex = 3;
@@ -1168,7 +1163,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			// textBoxPrenomAfficherClient
 			// 
-			this->textBoxPrenomAfficherClient->Location = System::Drawing::Point(425, 57);
+			this->textBoxPrenomAfficherClient->Location = System::Drawing::Point(389, 57);
 			this->textBoxPrenomAfficherClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomAfficherClient->Name = L"textBoxPrenomAfficherClient";
 			this->textBoxPrenomAfficherClient->Size = System::Drawing::Size(154, 22);
@@ -1179,7 +1174,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->labelNomAfficher->AutoSize = true;
 			this->labelNomAfficher->BackColor = System::Drawing::Color::Transparent;
 			this->labelNomAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->labelNomAfficher->Location = System::Drawing::Point(176, 53);
+			this->labelNomAfficher->Location = System::Drawing::Point(176, 39);
 			this->labelNomAfficher->Name = L"labelNomAfficher";
 			this->labelNomAfficher->Size = System::Drawing::Size(36, 16);
 			this->labelNomAfficher->TabIndex = 1;
@@ -1187,7 +1182,7 @@ private: System::Windows::Forms::Label^ label13;
 			// 
 			// textBoxNomAfficherClient
 			// 
-			this->textBoxNomAfficherClient->Location = System::Drawing::Point(214, 57);
+			this->textBoxNomAfficherClient->Location = System::Drawing::Point(179, 57);
 			this->textBoxNomAfficherClient->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomAfficherClient->Name = L"textBoxNomAfficherClient";
 			this->textBoxNomAfficherClient->Size = System::Drawing::Size(133, 22);
@@ -1198,7 +1193,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->label12->AutoSize = true;
 			this->label12->BackColor = System::Drawing::Color::Transparent;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Arial", 10));
-			this->label12->ForeColor = System::Drawing::Color::Transparent;
+			this->label12->ForeColor = System::Drawing::Color::Black;
 			this->label12->Location = System::Drawing::Point(-4, 187);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(879, 19);
@@ -1211,7 +1206,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->label13->AutoSize = true;
 			this->label13->BackColor = System::Drawing::Color::Transparent;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Arial", 10));
-			this->label13->ForeColor = System::Drawing::Color::Transparent;
+			this->label13->ForeColor = System::Drawing::Color::Black;
 			this->label13->Location = System::Drawing::Point(0, 319);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(835, 19);
@@ -1226,8 +1221,8 @@ private: System::Windows::Forms::Label^ label13;
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(1567, 1055);
-			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox3);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBoxCreerClient);
 			this->Name = L"GestionClient";

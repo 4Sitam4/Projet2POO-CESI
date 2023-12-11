@@ -5,10 +5,10 @@
 
 NS_Comp_Data::cad::cad(void)
 {
-	this->sCnx = "Data Source=VIVOBOOK-QUENTI\\MSSQLSERVER01;Initial Catalog=projetPOO;Integrated Security=True";
+	this->sCnx = "Data Source=LAPTOP-LS53501I;Initial Catalog=projetPOO;Integrated Security=True";
 
 	this->sSql = "Rien";
-	this->sSqlClients = "SELECT [num], [nom], [prenom] FROM [projetPOO].[dbo].[tableClient]";
+	this->sSqlClients = "SELECT [num], [nom], [prenom] FROM [projetPOO].[dbo].[Client]";
 	this->sSqlArticles = "SELECT [reference_produit], [produit], [prix_ht] FROM [projetPOO].[dbo].[Catalogue]";
 
 	this->oCnx = gcnew System::Data::SqlClient::SqlConnection(this->sCnx);

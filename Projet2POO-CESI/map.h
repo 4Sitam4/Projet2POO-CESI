@@ -34,6 +34,7 @@ namespace NS_Comp_Mappage
 		System::String^ stock ="";
 		System::String^ reapprovisionnement ="";
 		System::String^ TVA ="";
+		System::String^ cout = "";
 		//Commande Article
 		System::String^ id_commande = "";
 		System::String^ quantite = "";
@@ -47,13 +48,6 @@ namespace NS_Comp_Mappage
 		System::DateTime^ date_emission;
 		System::DateTime^ date_livraison;
 
-		System::String^ prix = "";
-		System::String^ ref = "";
-		System::String^ designation = "";
-		System::String^ stock = "";
-		System::String^ reapprovisionnement = "";
-		System::String^ TVA = "";
-		System::String^ cout = "";
 		//...
 
 	public:

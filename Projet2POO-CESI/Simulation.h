@@ -168,7 +168,7 @@ namespace Projet2POOCESI {
 			this->groupBox1->Size = System::Drawing::Size(922, 535);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"groupBox1";
+			this->groupBox1->Text = L"Simulation de la valeur ajouté du stock";
 			// 
 			// checkBoxDemarqueNulle
 			// 
@@ -229,9 +229,8 @@ namespace Projet2POOCESI {
 			this->labelResultat->Font = (gcnew System::Drawing::Font(L"Arial Black", 14));
 			this->labelResultat->Location = System::Drawing::Point(549, 354);
 			this->labelResultat->Name = L"labelResultat";
-			this->labelResultat->Size = System::Drawing::Size(95, 33);
+			this->labelResultat->Size = System::Drawing::Size(0, 33);
 			this->labelResultat->TabIndex = 17;
-			this->labelResultat->Text = L"";
 			// 
 			// buttonValeur
 			// 

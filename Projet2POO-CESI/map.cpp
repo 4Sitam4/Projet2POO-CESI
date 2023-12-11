@@ -266,7 +266,7 @@ System::String^ NS_Comp_Mappage::map::SelectArticle(void) {
 }
 
 System::String^ NS_Comp_Mappage::map::SelectClientCommande(void) {
-	return "SELECT [num], [nom], [prenom] FROM [projetPOO].[dbo].[tableClient]";
+	return "SELECT [num], [nom], [prenom] FROM [projetPOO].[dbo].[Client]";
 }
 
 
@@ -287,9 +287,9 @@ System::String^ NS_Comp_Mappage::map::InsertArticle(void) {
 	System::String^ sql1 = "SELECT TOP 1 id FROM Commande ORDER BY id DESC; ";
 	this->oCad->getRequete(sql1);
 	int IdCommande = System::Convert::ToInt32(this->oCad->getRequete(sql1)) + 1;
-	System::Windows::Forms::MessageBox::Show("INSERT INTO Ligne_commande (reference_produit, id_commande, quantite) VALUES (" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")"
+	System::Windows::Forms::MessageBox::Show("INSERT INTO Ligne_Commande (reference_produit, id_commande, quantite) VALUES (" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")"
 	);
-	return "INSERT INTO Ligne_commande(reference_produit, id_commande, quantite) VALUES(" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")";
+	return "INSERT INTO Ligne_Commande(reference_produit, id_commande, quantite) VALUES(" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")";
 }
 
 System::String^ NS_Comp_Mappage::map::InsertCommande(void) {
@@ -326,7 +326,7 @@ System::String^ NS_Comp_Mappage::map::SelectCommande(void) {
 		}
 	}
 
-	if (System::Convert::ToString(this->date_emission) != "1/1/1753 12:00:00 AM") {
+	if (this->date_emission->ToShortDateString() != "01/01/1753") {
 		if (init > 0) {
 			cdt3 = "' AND date_emission = '" + this->date_emission;
 			init++;
@@ -347,7 +347,7 @@ System::String^ NS_Comp_Mappage::map::SelectCommande(void) {
 		}
 	}
 
-	if (System::Convert::ToString(this->date_livraison) != "1/1/1753 12:00:00 AM") {
+	if (this->date_livraison->ToShortDateString() != "01/01/1753") {
 		if (init > 0) {
 			cdt5 = "' AND date_livraison = '" + this->date_livraison;
 			init++;
