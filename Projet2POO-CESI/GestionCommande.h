@@ -138,6 +138,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker3;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCommande::typeid));
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBoxVilleLivraison = (gcnew System::Windows::Forms::TextBox());
 			this->buttonCreerCommande = (gcnew System::Windows::Forms::Button());
@@ -698,6 +699,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker3;
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GestionCommande";
 			this->Text = L"GestionCommande";
 			this->groupBox1->ResumeLayout(false);

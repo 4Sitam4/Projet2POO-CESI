@@ -112,6 +112,7 @@ namespace Projet2POOCESI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionStatistique::typeid));
 			this->groupBoxPanierMoyen = (gcnew System::Windows::Forms::GroupBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->labelPanierMoyen = (gcnew System::Windows::Forms::Label());
@@ -492,6 +493,7 @@ namespace Projet2POOCESI {
 			this->Controls->Add(this->groupBoxSeuilDeReappro);
 			this->Controls->Add(this->groupBoxCA);
 			this->Controls->Add(this->groupBoxPanierMoyen);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Location = System::Drawing::Point(6, 42);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionStatistique";

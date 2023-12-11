@@ -72,6 +72,7 @@ namespace Projet2POOCESI {
         /// </summary>
         void InitializeComponent(void)
         {
+            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
             this->buttonPersonnel = (gcnew System::Windows::Forms::Button());
             this->buttonClients = (gcnew System::Windows::Forms::Button());
             this->buttonCommandes = (gcnew System::Windows::Forms::Button());
@@ -138,7 +139,6 @@ namespace Projet2POOCESI {
             this->buttonStatistiques->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonStatistiques->UseVisualStyleBackColor = true;
             this->buttonStatistiques->Click += gcnew System::EventHandler(this, &MyForm::buttonStatistiques_Click);
-
             // 
             // MyForm
             // 
@@ -150,6 +150,7 @@ namespace Projet2POOCESI {
             this->Controls->Add(this->buttonCommandes);
             this->Controls->Add(this->buttonClients);
             this->Controls->Add(this->buttonPersonnel);
+            this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
             this->Margin = System::Windows::Forms::Padding(4);
             this->Name = L"MyForm";
             this->Text = L"Accueil";

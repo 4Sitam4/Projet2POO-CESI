@@ -184,6 +184,7 @@ private: System::Windows::Forms::Label^ labelCoutAfficher;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionCatalogue::typeid));
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->labelCoutAjouter = (gcnew System::Windows::Forms::Label());
 			this->textBoxCoutAjout = (gcnew System::Windows::Forms::TextBox());
@@ -1056,6 +1057,7 @@ private: System::Windows::Forms::Label^ labelCoutAfficher;
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GestionCatalogue";
 			this->Text = L"GestionCatalogue";
 			this->Load += gcnew System::EventHandler(this, &GestionCatalogue::GestionCatalogue_Load);

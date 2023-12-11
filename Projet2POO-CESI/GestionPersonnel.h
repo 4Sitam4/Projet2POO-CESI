@@ -216,6 +216,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionPersonnel::typeid));
 			this->dgv_enr = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->labelSuperieur = (gcnew System::Windows::Forms::Label());
@@ -319,9 +320,9 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox1->Controls->Add(this->labelPersoNom);
 			this->groupBox1->Controls->Add(this->textBoxPersoNom);
 			this->groupBox1->Location = System::Drawing::Point(16, 15);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(312, 494);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
@@ -340,7 +341,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// textBoxSuperieur
 			// 
 			this->textBoxSuperieur->Location = System::Drawing::Point(7, 308);
-			this->textBoxSuperieur->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxSuperieur->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxSuperieur->Name = L"textBoxSuperieur";
 			this->textBoxSuperieur->Size = System::Drawing::Size(182, 22);
 			this->textBoxSuperieur->TabIndex = 9;
@@ -348,7 +349,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// buttonEmbaucher
 			// 
 			this->buttonEmbaucher->Location = System::Drawing::Point(89, 442);
-			this->buttonEmbaucher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonEmbaucher->Margin = System::Windows::Forms::Padding(4);
 			this->buttonEmbaucher->Name = L"buttonEmbaucher";
 			this->buttonEmbaucher->Size = System::Drawing::Size(100, 28);
 			this->buttonEmbaucher->TabIndex = 8;
@@ -369,12 +370,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// TimePickerDateEmbauche
 			// 
 			this->TimePickerDateEmbauche->Location = System::Drawing::Point(8, 383);
-			this->TimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4);
 			this->TimePickerDateEmbauche->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbauche->Name = L"TimePickerDateEmbauche";
 			this->TimePickerDateEmbauche->Size = System::Drawing::Size(235, 22);
 			this->TimePickerDateEmbauche->TabIndex = 6;
-			this->TimePickerDateEmbauche->Value = DateTime(1753, 1, 1);
 			// 
 			// labelPersoAdresse
 			// 
@@ -389,7 +389,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// textBoxPersoAdresse
 			// 
 			this->textBoxPersoAdresse->Location = System::Drawing::Point(7, 229);
-			this->textBoxPersoAdresse->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoAdresse->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoAdresse->Name = L"textBoxPersoAdresse";
 			this->textBoxPersoAdresse->Size = System::Drawing::Size(182, 22);
 			this->textBoxPersoAdresse->TabIndex = 4;
@@ -407,7 +407,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// textBoxPersoPrenom
 			// 
 			this->textBoxPersoPrenom->Location = System::Drawing::Point(7, 145);
-			this->textBoxPersoPrenom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoPrenom->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoPrenom->Name = L"textBoxPersoPrenom";
 			this->textBoxPersoPrenom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoPrenom->TabIndex = 2;
@@ -425,7 +425,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// textBoxPersoNom
 			// 
 			this->textBoxPersoNom->Location = System::Drawing::Point(7, 68);
-			this->textBoxPersoNom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxPersoNom->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxPersoNom->Name = L"textBoxPersoNom";
 			this->textBoxPersoNom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoNom->TabIndex = 0;
@@ -476,17 +476,16 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// TimePickerDateEmbaucheAfficher
 			// 
 			this->TimePickerDateEmbaucheAfficher->Location = System::Drawing::Point(1154, 73);
-			this->TimePickerDateEmbaucheAfficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TimePickerDateEmbaucheAfficher->Margin = System::Windows::Forms::Padding(4);
 			this->TimePickerDateEmbaucheAfficher->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheAfficher->Name = L"TimePickerDateEmbaucheAfficher";
 			this->TimePickerDateEmbaucheAfficher->Size = System::Drawing::Size(236, 22);
 			this->TimePickerDateEmbaucheAfficher->TabIndex = 11;
-			this->TimePickerDateEmbaucheAfficher->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonAfficher
 			// 
 			this->buttonAfficher->Location = System::Drawing::Point(596, 122);
-			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4);
 			this->buttonAfficher->Name = L"buttonAfficher";
 			this->buttonAfficher->Size = System::Drawing::Size(177, 44);
 			this->buttonAfficher->TabIndex = 11;
@@ -608,17 +607,16 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// TimePickerDateEmbaucheSupprimer
 			// 
 			this->TimePickerDateEmbaucheSupprimer->Location = System::Drawing::Point(21, 383);
-			this->TimePickerDateEmbaucheSupprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TimePickerDateEmbaucheSupprimer->Margin = System::Windows::Forms::Padding(4);
 			this->TimePickerDateEmbaucheSupprimer->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheSupprimer->Name = L"TimePickerDateEmbaucheSupprimer";
 			this->TimePickerDateEmbaucheSupprimer->Size = System::Drawing::Size(250, 22);
 			this->TimePickerDateEmbaucheSupprimer->TabIndex = 14;
-			this->TimePickerDateEmbaucheSupprimer->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonSupprimer
 			// 
 			this->buttonSupprimer->Location = System::Drawing::Point(90, 442);
-			this->buttonSupprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonSupprimer->Margin = System::Windows::Forms::Padding(4);
 			this->buttonSupprimer->Name = L"buttonSupprimer";
 			this->buttonSupprimer->Size = System::Drawing::Size(96, 28);
 			this->buttonSupprimer->TabIndex = 14;
@@ -761,12 +759,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// TimePickerDateEmbaucheCritSelectModif
 			// 
 			this->TimePickerDateEmbaucheCritSelectModif->Location = System::Drawing::Point(7, 319);
-			this->TimePickerDateEmbaucheCritSelectModif->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TimePickerDateEmbaucheCritSelectModif->Margin = System::Windows::Forms::Padding(4);
 			this->TimePickerDateEmbaucheCritSelectModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheCritSelectModif->Name = L"TimePickerDateEmbaucheCritSelectModif";
 			this->TimePickerDateEmbaucheCritSelectModif->Size = System::Drawing::Size(291, 22);
 			this->TimePickerDateEmbaucheCritSelectModif->TabIndex = 14;
-			this->TimePickerDateEmbaucheCritSelectModif->Value = DateTime(1753, 1, 1);
 			// 
 			// labelIDModifier
 			// 
@@ -879,12 +876,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// TimePickerDateEmbaucheNewModif
 			// 
 			this->TimePickerDateEmbaucheNewModif->Location = System::Drawing::Point(9, 319);
-			this->TimePickerDateEmbaucheNewModif->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->TimePickerDateEmbaucheNewModif->Margin = System::Windows::Forms::Padding(4);
 			this->TimePickerDateEmbaucheNewModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheNewModif->Name = L"TimePickerDateEmbaucheNewModif";
 			this->TimePickerDateEmbaucheNewModif->Size = System::Drawing::Size(291, 22);
 			this->TimePickerDateEmbaucheNewModif->TabIndex = 15;
-			this->TimePickerDateEmbaucheNewModif->Value = DateTime(1753, 1, 1);
 			// 
 			// label6
 			// 
@@ -966,7 +962,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// buttonModifier
 			// 
 			this->buttonModifier->Location = System::Drawing::Point(340, 442);
-			this->buttonModifier->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonModifier->Margin = System::Windows::Forms::Padding(4);
 			this->buttonModifier->Name = L"buttonModifier";
 			this->buttonModifier->Size = System::Drawing::Size(105, 28);
 			this->buttonModifier->TabIndex = 14;
@@ -984,7 +980,8 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"Gestion du Personnel";
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);

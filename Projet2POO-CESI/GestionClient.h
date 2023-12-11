@@ -201,6 +201,7 @@ private: System::Windows::Forms::Label^ label13;
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionClient::typeid));
 			this->groupBoxCreerClient = (gcnew System::Windows::Forms::GroupBox());
 			this->labelCPLivreCreer = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrCPLivreCreer = (gcnew System::Windows::Forms::TextBox());
@@ -1225,6 +1226,7 @@ private: System::Windows::Forms::Label^ label13;
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBoxCreerClient);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"GestionClient";
 			this->Text = L"GestionClient";
 			this->Load += gcnew System::EventHandler(this, &GestionClient::GestionClient_Load);

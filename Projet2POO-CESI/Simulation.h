@@ -93,6 +93,7 @@ namespace Projet2POOCESI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Simulation::typeid));
 			this->comboBoxTVA = (gcnew System::Windows::Forms::ComboBox());
 			this->labelTVA = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -384,6 +385,7 @@ namespace Projet2POOCESI {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(928, 541);
 			this->Controls->Add(this->groupBox1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Simulation";
 			this->Text = L"Simulation";
 			this->Load += gcnew System::EventHandler(this, &Simulation::Simulation_Load);
