@@ -296,11 +296,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// dgv_enr
 			// 
 			this->dgv_enr->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dgv_enr->Location = System::Drawing::Point(185, 159);
-			this->dgv_enr->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dgv_enr->Location = System::Drawing::Point(104, 185);
+			this->dgv_enr->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dgv_enr->Name = L"dgv_enr";
 			this->dgv_enr->RowHeadersWidth = 51;
-			this->dgv_enr->Size = System::Drawing::Size(638, 200);
+			this->dgv_enr->Size = System::Drawing::Size(1209, 246);
 			this->dgv_enr->TabIndex = 0;
 			this->dgv_enr->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &GestionPersonnel::dgv_enr_CellContentClick);
 			// 
@@ -318,9 +318,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox1->Controls->Add(this->textBoxPersoPrenom);
 			this->groupBox1->Controls->Add(this->labelPersoNom);
 			this->groupBox1->Controls->Add(this->textBoxPersoNom);
-			this->groupBox1->Location = System::Drawing::Point(12, 12);
+			this->groupBox1->Location = System::Drawing::Point(16, 15);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(234, 224);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Size = System::Drawing::Size(312, 494);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Ajout membre du personnel";
@@ -328,24 +330,27 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// labelSuperieur
 			// 
 			this->labelSuperieur->AutoSize = true;
-			this->labelSuperieur->Location = System::Drawing::Point(6, 99);
+			this->labelSuperieur->Location = System::Drawing::Point(5, 288);
+			this->labelSuperieur->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelSuperieur->Name = L"labelSuperieur";
-			this->labelSuperieur->Size = System::Drawing::Size(52, 13);
+			this->labelSuperieur->Size = System::Drawing::Size(65, 16);
 			this->labelSuperieur->TabIndex = 10;
 			this->labelSuperieur->Text = L"Supérieur";
 			// 
 			// textBoxSuperieur
 			// 
-			this->textBoxSuperieur->Location = System::Drawing::Point(6, 115);
+			this->textBoxSuperieur->Location = System::Drawing::Point(7, 308);
+			this->textBoxSuperieur->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxSuperieur->Name = L"textBoxSuperieur";
-			this->textBoxSuperieur->Size = System::Drawing::Size(219, 20);
+			this->textBoxSuperieur->Size = System::Drawing::Size(182, 22);
 			this->textBoxSuperieur->TabIndex = 9;
 			// 
 			// buttonEmbaucher
 			// 
-			this->buttonEmbaucher->Location = System::Drawing::Point(74, 195);
+			this->buttonEmbaucher->Location = System::Drawing::Point(89, 442);
+			this->buttonEmbaucher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->buttonEmbaucher->Name = L"buttonEmbaucher";
-			this->buttonEmbaucher->Size = System::Drawing::Size(75, 23);
+			this->buttonEmbaucher->Size = System::Drawing::Size(100, 28);
 			this->buttonEmbaucher->TabIndex = 8;
 			this->buttonEmbaucher->Text = L"Embaucher";
 			this->buttonEmbaucher->UseVisualStyleBackColor = true;
@@ -354,66 +359,75 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// labelDateEmbauche
 			// 
 			this->labelDateEmbauche->AutoSize = true;
-			this->labelDateEmbauche->Location = System::Drawing::Point(6, 147);
+			this->labelDateEmbauche->Location = System::Drawing::Point(5, 363);
+			this->labelDateEmbauche->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelDateEmbauche->Name = L"labelDateEmbauche";
-			this->labelDateEmbauche->Size = System::Drawing::Size(91, 13);
+			this->labelDateEmbauche->Size = System::Drawing::Size(114, 16);
 			this->labelDateEmbauche->TabIndex = 7;
 			this->labelDateEmbauche->Text = L"Date d\'embauche";
 			// 
 			// TimePickerDateEmbauche
 			// 
-			this->TimePickerDateEmbauche->Location = System::Drawing::Point(6, 163);
+			this->TimePickerDateEmbauche->Location = System::Drawing::Point(8, 383);
+			this->TimePickerDateEmbauche->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TimePickerDateEmbauche->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbauche->Name = L"TimePickerDateEmbauche";
-			this->TimePickerDateEmbauche->Size = System::Drawing::Size(219, 20);
+			this->TimePickerDateEmbauche->Size = System::Drawing::Size(235, 22);
 			this->TimePickerDateEmbauche->TabIndex = 6;
+			this->TimePickerDateEmbauche->Value = DateTime(1753, 1, 1);
 			// 
 			// labelPersoAdresse
 			// 
 			this->labelPersoAdresse->AutoSize = true;
-			this->labelPersoAdresse->Location = System::Drawing::Point(3, 59);
+			this->labelPersoAdresse->Location = System::Drawing::Point(5, 209);
+			this->labelPersoAdresse->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPersoAdresse->Name = L"labelPersoAdresse";
-			this->labelPersoAdresse->Size = System::Drawing::Size(45, 13);
+			this->labelPersoAdresse->Size = System::Drawing::Size(58, 16);
 			this->labelPersoAdresse->TabIndex = 5;
 			this->labelPersoAdresse->Text = L"Adresse";
 			// 
 			// textBoxPersoAdresse
 			// 
-			this->textBoxPersoAdresse->Location = System::Drawing::Point(6, 75);
+			this->textBoxPersoAdresse->Location = System::Drawing::Point(7, 229);
+			this->textBoxPersoAdresse->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxPersoAdresse->Name = L"textBoxPersoAdresse";
-			this->textBoxPersoAdresse->Size = System::Drawing::Size(219, 20);
+			this->textBoxPersoAdresse->Size = System::Drawing::Size(182, 22);
 			this->textBoxPersoAdresse->TabIndex = 4;
 			// 
 			// labelPersoPrenom
 			// 
 			this->labelPersoPrenom->AutoSize = true;
-			this->labelPersoPrenom->Location = System::Drawing::Point(122, 18);
+			this->labelPersoPrenom->Location = System::Drawing::Point(4, 125);
+			this->labelPersoPrenom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPersoPrenom->Name = L"labelPersoPrenom";
-			this->labelPersoPrenom->Size = System::Drawing::Size(43, 13);
+			this->labelPersoPrenom->Size = System::Drawing::Size(54, 16);
 			this->labelPersoPrenom->TabIndex = 3;
 			this->labelPersoPrenom->Text = L"Prénom";
 			// 
 			// textBoxPersoPrenom
 			// 
-			this->textBoxPersoPrenom->Location = System::Drawing::Point(125, 34);
+			this->textBoxPersoPrenom->Location = System::Drawing::Point(7, 145);
+			this->textBoxPersoPrenom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxPersoPrenom->Name = L"textBoxPersoPrenom";
-			this->textBoxPersoPrenom->Size = System::Drawing::Size(100, 20);
+			this->textBoxPersoPrenom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoPrenom->TabIndex = 2;
 			// 
 			// labelPersoNom
 			// 
 			this->labelPersoNom->AutoSize = true;
-			this->labelPersoNom->Location = System::Drawing::Point(3, 18);
+			this->labelPersoNom->Location = System::Drawing::Point(4, 48);
+			this->labelPersoNom->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->labelPersoNom->Name = L"labelPersoNom";
-			this->labelPersoNom->Size = System::Drawing::Size(29, 13);
+			this->labelPersoNom->Size = System::Drawing::Size(36, 16);
 			this->labelPersoNom->TabIndex = 1;
 			this->labelPersoNom->Text = L"Nom";
 			// 
 			// textBoxPersoNom
 			// 
-			this->textBoxPersoNom->Location = System::Drawing::Point(6, 34);
+			this->textBoxPersoNom->Location = System::Drawing::Point(7, 68);
+			this->textBoxPersoNom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxPersoNom->Name = L"textBoxPersoNom";
-			this->textBoxPersoNom->Size = System::Drawing::Size(100, 20);
+			this->textBoxPersoNom->Size = System::Drawing::Size(132, 22);
 			this->textBoxPersoNom->TabIndex = 0;
 			// 
 			// groupBox2
@@ -433,47 +447,48 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox2->Controls->Add(this->textBoxPrenomAfficher);
 			this->groupBox2->Controls->Add(this->labelNomAfficher);
 			this->groupBox2->Controls->Add(this->textBoxNomAfficher);
-			this->groupBox2->Location = System::Drawing::Point(47, 425);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Location = System::Drawing::Point(16, 523);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBox2->Size = System::Drawing::Size(1031, 389);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox2->Size = System::Drawing::Size(1492, 479);
 			this->groupBox2->TabIndex = 5;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher membre du personnel";
 			// 
 			// textBoxIDAfficher
 			// 
-			this->textBoxIDAfficher->Location = System::Drawing::Point(7, 58);
-			this->textBoxIDAfficher->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxIDAfficher->Location = System::Drawing::Point(55, 71);
+			this->textBoxIDAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIDAfficher->Name = L"textBoxIDAfficher";
-			this->textBoxIDAfficher->Size = System::Drawing::Size(101, 20);
+			this->textBoxIDAfficher->Size = System::Drawing::Size(84, 22);
 			this->textBoxIDAfficher->TabIndex = 13;
 			// 
 			// labelIDAfficher
 			// 
 			this->labelIDAfficher->AutoSize = true;
-			this->labelIDAfficher->Location = System::Drawing::Point(4, 43);
-			this->labelIDAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelIDAfficher->Location = System::Drawing::Point(52, 53);
 			this->labelIDAfficher->Name = L"labelIDAfficher";
-			this->labelIDAfficher->Size = System::Drawing::Size(18, 13);
+			this->labelIDAfficher->Size = System::Drawing::Size(20, 16);
 			this->labelIDAfficher->TabIndex = 12;
 			this->labelIDAfficher->Text = L"ID";
 			// 
 			// TimePickerDateEmbaucheAfficher
 			// 
-			this->TimePickerDateEmbaucheAfficher->Location = System::Drawing::Point(799, 58);
+			this->TimePickerDateEmbaucheAfficher->Location = System::Drawing::Point(1154, 73);
+			this->TimePickerDateEmbaucheAfficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TimePickerDateEmbaucheAfficher->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheAfficher->Name = L"TimePickerDateEmbaucheAfficher";
-			this->TimePickerDateEmbaucheAfficher->Size = System::Drawing::Size(219, 20);
+			this->TimePickerDateEmbaucheAfficher->Size = System::Drawing::Size(236, 22);
 			this->TimePickerDateEmbaucheAfficher->TabIndex = 11;
 			this->TimePickerDateEmbaucheAfficher->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonAfficher
 			// 
-			this->buttonAfficher->Location = System::Drawing::Point(407, 106);
+			this->buttonAfficher->Location = System::Drawing::Point(596, 122);
+			this->buttonAfficher->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->buttonAfficher->Name = L"buttonAfficher";
-			this->buttonAfficher->Size = System::Drawing::Size(166, 40);
+			this->buttonAfficher->Size = System::Drawing::Size(177, 44);
 			this->buttonAfficher->TabIndex = 11;
 			this->buttonAfficher->Text = L"Afficher";
 			this->buttonAfficher->UseVisualStyleBackColor = true;
@@ -482,83 +497,78 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// labelDateAfficher
 			// 
 			this->labelDateAfficher->AutoSize = true;
-			this->labelDateAfficher->Location = System::Drawing::Point(796, 43);
-			this->labelDateAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelDateAfficher->Location = System::Drawing::Point(1151, 53);
 			this->labelDateAfficher->Name = L"labelDateAfficher";
-			this->labelDateAfficher->Size = System::Drawing::Size(91, 13);
+			this->labelDateAfficher->Size = System::Drawing::Size(114, 16);
 			this->labelDateAfficher->TabIndex = 8;
 			this->labelDateAfficher->Text = L"Date d\'embauche";
 			// 
 			// textBoxSuperieurAfficher
 			// 
-			this->textBoxSuperieurAfficher->Location = System::Drawing::Point(395, 58);
-			this->textBoxSuperieurAfficher->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxSuperieurAfficher->Location = System::Drawing::Point(596, 71);
+			this->textBoxSuperieurAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxSuperieurAfficher->Name = L"textBoxSuperieurAfficher";
-			this->textBoxSuperieurAfficher->Size = System::Drawing::Size(156, 20);
+			this->textBoxSuperieurAfficher->Size = System::Drawing::Size(194, 22);
 			this->textBoxSuperieurAfficher->TabIndex = 7;
 			// 
 			// labelSuperieurAfficher
 			// 
 			this->labelSuperieurAfficher->AutoSize = true;
-			this->labelSuperieurAfficher->Location = System::Drawing::Point(393, 43);
-			this->labelSuperieurAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelSuperieurAfficher->Location = System::Drawing::Point(593, 53);
 			this->labelSuperieurAfficher->Name = L"labelSuperieurAfficher";
-			this->labelSuperieurAfficher->Size = System::Drawing::Size(52, 13);
+			this->labelSuperieurAfficher->Size = System::Drawing::Size(65, 16);
 			this->labelSuperieurAfficher->TabIndex = 6;
 			this->labelSuperieurAfficher->Text = L"Supérieur";
 			// 
 			// textBoxAdresseAfficher
 			// 
-			this->textBoxAdresseAfficher->Location = System::Drawing::Point(581, 58);
-			this->textBoxAdresseAfficher->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxAdresseAfficher->Location = System::Drawing::Point(870, 71);
+			this->textBoxAdresseAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAdresseAfficher->Name = L"textBoxAdresseAfficher";
-			this->textBoxAdresseAfficher->Size = System::Drawing::Size(190, 20);
+			this->textBoxAdresseAfficher->Size = System::Drawing::Size(205, 22);
 			this->textBoxAdresseAfficher->TabIndex = 5;
 			// 
 			// labelAdresseAfficher
 			// 
 			this->labelAdresseAfficher->AutoSize = true;
-			this->labelAdresseAfficher->Location = System::Drawing::Point(579, 43);
-			this->labelAdresseAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelAdresseAfficher->Location = System::Drawing::Point(867, 53);
 			this->labelAdresseAfficher->Name = L"labelAdresseAfficher";
-			this->labelAdresseAfficher->Size = System::Drawing::Size(45, 13);
+			this->labelAdresseAfficher->Size = System::Drawing::Size(58, 16);
 			this->labelAdresseAfficher->TabIndex = 4;
 			this->labelAdresseAfficher->Text = L"Adresse";
 			// 
 			// labelPrenomAfficher
 			// 
 			this->labelPrenomAfficher->AutoSize = true;
-			this->labelPrenomAfficher->Location = System::Drawing::Point(262, 43);
-			this->labelPrenomAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelPrenomAfficher->Location = System::Drawing::Point(387, 53);
 			this->labelPrenomAfficher->Name = L"labelPrenomAfficher";
-			this->labelPrenomAfficher->Size = System::Drawing::Size(43, 13);
+			this->labelPrenomAfficher->Size = System::Drawing::Size(54, 16);
 			this->labelPrenomAfficher->TabIndex = 3;
 			this->labelPrenomAfficher->Text = L"Prenom";
 			// 
 			// textBoxPrenomAfficher
 			// 
-			this->textBoxPrenomAfficher->Location = System::Drawing::Point(265, 58);
-			this->textBoxPrenomAfficher->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxPrenomAfficher->Location = System::Drawing::Point(390, 71);
+			this->textBoxPrenomAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomAfficher->Name = L"textBoxPrenomAfficher";
-			this->textBoxPrenomAfficher->Size = System::Drawing::Size(100, 20);
+			this->textBoxPrenomAfficher->Size = System::Drawing::Size(132, 22);
 			this->textBoxPrenomAfficher->TabIndex = 2;
 			// 
 			// labelNomAfficher
 			// 
 			this->labelNomAfficher->AutoSize = true;
-			this->labelNomAfficher->Location = System::Drawing::Point(132, 43);
-			this->labelNomAfficher->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelNomAfficher->Location = System::Drawing::Point(193, 53);
 			this->labelNomAfficher->Name = L"labelNomAfficher";
-			this->labelNomAfficher->Size = System::Drawing::Size(29, 13);
+			this->labelNomAfficher->Size = System::Drawing::Size(36, 16);
 			this->labelNomAfficher->TabIndex = 1;
 			this->labelNomAfficher->Text = L"Nom";
 			// 
 			// textBoxNomAfficher
 			// 
-			this->textBoxNomAfficher->Location = System::Drawing::Point(134, 58);
-			this->textBoxNomAfficher->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxNomAfficher->Location = System::Drawing::Point(196, 71);
+			this->textBoxNomAfficher->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomAfficher->Name = L"textBoxNomAfficher";
-			this->textBoxNomAfficher->Size = System::Drawing::Size(101, 20);
+			this->textBoxNomAfficher->Size = System::Drawing::Size(133, 22);
 			this->textBoxNomAfficher->TabIndex = 0;
 			// 
 			// groupBox3
@@ -577,11 +587,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox3->Controls->Add(this->labelNomSupprimer);
 			this->groupBox3->Controls->Add(this->textBoxIDSupprimer);
 			this->groupBox3->Controls->Add(this->labelIDSupprimer);
-			this->groupBox3->Location = System::Drawing::Point(1044, 12);
-			this->groupBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox3->Location = System::Drawing::Point(1197, 15);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBox3->Size = System::Drawing::Size(233, 363);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox3->Size = System::Drawing::Size(311, 494);
 			this->groupBox3->TabIndex = 6;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Supprimer membre du personnel";
@@ -589,27 +599,28 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// labelDateSupprimer
 			// 
 			this->labelDateSupprimer->AutoSize = true;
-			this->labelDateSupprimer->Location = System::Drawing::Point(4, 243);
-			this->labelDateSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelDateSupprimer->Location = System::Drawing::Point(18, 361);
 			this->labelDateSupprimer->Name = L"labelDateSupprimer";
-			this->labelDateSupprimer->Size = System::Drawing::Size(91, 13);
+			this->labelDateSupprimer->Size = System::Drawing::Size(114, 16);
 			this->labelDateSupprimer->TabIndex = 14;
 			this->labelDateSupprimer->Text = L"Date d\'embauche";
 			// 
 			// TimePickerDateEmbaucheSupprimer
 			// 
-			this->TimePickerDateEmbaucheSupprimer->Location = System::Drawing::Point(7, 259);
+			this->TimePickerDateEmbaucheSupprimer->Location = System::Drawing::Point(21, 383);
+			this->TimePickerDateEmbaucheSupprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TimePickerDateEmbaucheSupprimer->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheSupprimer->Name = L"TimePickerDateEmbaucheSupprimer";
-			this->TimePickerDateEmbaucheSupprimer->Size = System::Drawing::Size(219, 20);
+			this->TimePickerDateEmbaucheSupprimer->Size = System::Drawing::Size(250, 22);
 			this->TimePickerDateEmbaucheSupprimer->TabIndex = 14;
 			this->TimePickerDateEmbaucheSupprimer->Value = DateTime(1753, 1, 1);
 			// 
 			// buttonSupprimer
 			// 
-			this->buttonSupprimer->Location = System::Drawing::Point(76, 306);
+			this->buttonSupprimer->Location = System::Drawing::Point(90, 442);
+			this->buttonSupprimer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->buttonSupprimer->Name = L"buttonSupprimer";
-			this->buttonSupprimer->Size = System::Drawing::Size(72, 23);
+			this->buttonSupprimer->Size = System::Drawing::Size(96, 28);
 			this->buttonSupprimer->TabIndex = 14;
 			this->buttonSupprimer->Text = L"Supprimer";
 			this->buttonSupprimer->UseVisualStyleBackColor = true;
@@ -617,91 +628,86 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// 
 			// textBoxAdresseSupprimer
 			// 
-			this->textBoxAdresseSupprimer->Location = System::Drawing::Point(4, 165);
-			this->textBoxAdresseSupprimer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxAdresseSupprimer->Location = System::Drawing::Point(15, 248);
+			this->textBoxAdresseSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAdresseSupprimer->Name = L"textBoxAdresseSupprimer";
-			this->textBoxAdresseSupprimer->Size = System::Drawing::Size(190, 20);
+			this->textBoxAdresseSupprimer->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseSupprimer->TabIndex = 14;
 			// 
 			// labelAdresseSupprimer
 			// 
 			this->labelAdresseSupprimer->AutoSize = true;
-			this->labelAdresseSupprimer->Location = System::Drawing::Point(4, 147);
-			this->labelAdresseSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelAdresseSupprimer->Location = System::Drawing::Point(16, 230);
 			this->labelAdresseSupprimer->Name = L"labelAdresseSupprimer";
-			this->labelAdresseSupprimer->Size = System::Drawing::Size(45, 13);
+			this->labelAdresseSupprimer->Size = System::Drawing::Size(58, 16);
 			this->labelAdresseSupprimer->TabIndex = 14;
 			this->labelAdresseSupprimer->Text = L"Adresse";
 			// 
 			// textBoxSuperieurSupprimer
 			// 
-			this->textBoxSuperieurSupprimer->Location = System::Drawing::Point(4, 210);
-			this->textBoxSuperieurSupprimer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxSuperieurSupprimer->Location = System::Drawing::Point(19, 314);
+			this->textBoxSuperieurSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxSuperieurSupprimer->Name = L"textBoxSuperieurSupprimer";
-			this->textBoxSuperieurSupprimer->Size = System::Drawing::Size(156, 20);
+			this->textBoxSuperieurSupprimer->Size = System::Drawing::Size(207, 22);
 			this->textBoxSuperieurSupprimer->TabIndex = 14;
 			// 
 			// labelSuperieurSupprimer
 			// 
 			this->labelSuperieurSupprimer->AutoSize = true;
-			this->labelSuperieurSupprimer->Location = System::Drawing::Point(4, 195);
-			this->labelSuperieurSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelSuperieurSupprimer->Location = System::Drawing::Point(18, 296);
 			this->labelSuperieurSupprimer->Name = L"labelSuperieurSupprimer";
-			this->labelSuperieurSupprimer->Size = System::Drawing::Size(52, 13);
+			this->labelSuperieurSupprimer->Size = System::Drawing::Size(65, 16);
 			this->labelSuperieurSupprimer->TabIndex = 14;
 			this->labelSuperieurSupprimer->Text = L"Supérieur";
 			// 
 			// textBoxPrenomSupprimer
 			// 
-			this->textBoxPrenomSupprimer->Location = System::Drawing::Point(4, 115);
-			this->textBoxPrenomSupprimer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxPrenomSupprimer->Location = System::Drawing::Point(15, 187);
+			this->textBoxPrenomSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomSupprimer->Name = L"textBoxPrenomSupprimer";
-			this->textBoxPrenomSupprimer->Size = System::Drawing::Size(100, 20);
+			this->textBoxPrenomSupprimer->Size = System::Drawing::Size(132, 22);
 			this->textBoxPrenomSupprimer->TabIndex = 14;
 			// 
 			// labelPrenomSupprimer
 			// 
 			this->labelPrenomSupprimer->AutoSize = true;
-			this->labelPrenomSupprimer->Location = System::Drawing::Point(4, 99);
-			this->labelPrenomSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelPrenomSupprimer->Location = System::Drawing::Point(12, 169);
 			this->labelPrenomSupprimer->Name = L"labelPrenomSupprimer";
-			this->labelPrenomSupprimer->Size = System::Drawing::Size(43, 13);
+			this->labelPrenomSupprimer->Size = System::Drawing::Size(54, 16);
 			this->labelPrenomSupprimer->TabIndex = 14;
 			this->labelPrenomSupprimer->Text = L"Prenom";
 			// 
 			// textBoxNomSupprimer
 			// 
-			this->textBoxNomSupprimer->Location = System::Drawing::Point(4, 75);
-			this->textBoxNomSupprimer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxNomSupprimer->Location = System::Drawing::Point(15, 124);
+			this->textBoxNomSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomSupprimer->Name = L"textBoxNomSupprimer";
-			this->textBoxNomSupprimer->Size = System::Drawing::Size(101, 20);
+			this->textBoxNomSupprimer->Size = System::Drawing::Size(133, 22);
 			this->textBoxNomSupprimer->TabIndex = 14;
 			// 
 			// labelNomSupprimer
 			// 
 			this->labelNomSupprimer->AutoSize = true;
-			this->labelNomSupprimer->Location = System::Drawing::Point(4, 59);
-			this->labelNomSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelNomSupprimer->Location = System::Drawing::Point(12, 106);
 			this->labelNomSupprimer->Name = L"labelNomSupprimer";
-			this->labelNomSupprimer->Size = System::Drawing::Size(29, 13);
+			this->labelNomSupprimer->Size = System::Drawing::Size(36, 16);
 			this->labelNomSupprimer->TabIndex = 14;
 			this->labelNomSupprimer->Text = L"Nom";
 			// 
 			// textBoxIDSupprimer
 			// 
-			this->textBoxIDSupprimer->Location = System::Drawing::Point(4, 34);
-			this->textBoxIDSupprimer->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxIDSupprimer->Location = System::Drawing::Point(15, 55);
+			this->textBoxIDSupprimer->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIDSupprimer->Name = L"textBoxIDSupprimer";
-			this->textBoxIDSupprimer->Size = System::Drawing::Size(42, 20);
+			this->textBoxIDSupprimer->Size = System::Drawing::Size(55, 22);
 			this->textBoxIDSupprimer->TabIndex = 14;
 			// 
 			// labelIDSupprimer
 			// 
 			this->labelIDSupprimer->AutoSize = true;
-			this->labelIDSupprimer->Location = System::Drawing::Point(4, 18);
-			this->labelIDSupprimer->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelIDSupprimer->Location = System::Drawing::Point(12, 37);
 			this->labelIDSupprimer->Name = L"labelIDSupprimer";
-			this->labelIDSupprimer->Size = System::Drawing::Size(18, 13);
+			this->labelIDSupprimer->Size = System::Drawing::Size(20, 16);
 			this->labelIDSupprimer->TabIndex = 14;
 			this->labelIDSupprimer->Text = L"ID";
 			// 
@@ -711,11 +717,11 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBox4->Controls->Add(this->groupBoxCritSelect);
 			this->groupBox4->Controls->Add(this->groupBoxCritères);
 			this->groupBox4->Controls->Add(this->buttonModifier);
-			this->groupBox4->Location = System::Drawing::Point(343, 12);
-			this->groupBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox4->Location = System::Drawing::Point(361, 15);
+			this->groupBox4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBox4->Size = System::Drawing::Size(600, 401);
+			this->groupBox4->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBox4->Size = System::Drawing::Size(800, 494);
 			this->groupBox4->TabIndex = 15;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Modifier membre du personnel";
@@ -735,121 +741,116 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBoxCritSelect->Controls->Add(this->labelSuperieurModifier);
 			this->groupBoxCritSelect->Controls->Add(this->textBoxPrenomCritSelectModif);
 			this->groupBoxCritSelect->Controls->Add(this->labelAdresseModifier);
-			this->groupBoxCritSelect->Location = System::Drawing::Point(19, 34);
-			this->groupBoxCritSelect->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBoxCritSelect->Location = System::Drawing::Point(25, 42);
+			this->groupBoxCritSelect->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBoxCritSelect->Name = L"groupBoxCritSelect";
-			this->groupBoxCritSelect->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBoxCritSelect->Size = System::Drawing::Size(244, 295);
+			this->groupBoxCritSelect->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBoxCritSelect->Size = System::Drawing::Size(325, 363);
 			this->groupBoxCritSelect->TabIndex = 16;
 			this->groupBoxCritSelect->TabStop = false;
 			this->groupBoxCritSelect->Text = L"Critères de sélection";
 			// 
 			// textBoxIDCritSelectModif
 			// 
-			this->textBoxIDCritSelectModif->Location = System::Drawing::Point(5, 41);
-			this->textBoxIDCritSelectModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxIDCritSelectModif->Location = System::Drawing::Point(7, 50);
+			this->textBoxIDCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxIDCritSelectModif->Name = L"textBoxIDCritSelectModif";
-			this->textBoxIDCritSelectModif->Size = System::Drawing::Size(42, 20);
+			this->textBoxIDCritSelectModif->Size = System::Drawing::Size(55, 22);
 			this->textBoxIDCritSelectModif->TabIndex = 14;
 			// 
 			// TimePickerDateEmbaucheCritSelectModif
 			// 
-			this->TimePickerDateEmbaucheCritSelectModif->Location = System::Drawing::Point(5, 259);
+			this->TimePickerDateEmbaucheCritSelectModif->Location = System::Drawing::Point(7, 319);
+			this->TimePickerDateEmbaucheCritSelectModif->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TimePickerDateEmbaucheCritSelectModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheCritSelectModif->Name = L"TimePickerDateEmbaucheCritSelectModif";
-			this->TimePickerDateEmbaucheCritSelectModif->Size = System::Drawing::Size(219, 20);
+			this->TimePickerDateEmbaucheCritSelectModif->Size = System::Drawing::Size(291, 22);
 			this->TimePickerDateEmbaucheCritSelectModif->TabIndex = 14;
 			this->TimePickerDateEmbaucheCritSelectModif->Value = DateTime(1753, 1, 1);
 			// 
 			// labelIDModifier
 			// 
 			this->labelIDModifier->AutoSize = true;
-			this->labelIDModifier->Location = System::Drawing::Point(3, 26);
-			this->labelIDModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelIDModifier->Location = System::Drawing::Point(4, 32);
 			this->labelIDModifier->Name = L"labelIDModifier";
-			this->labelIDModifier->Size = System::Drawing::Size(18, 13);
+			this->labelIDModifier->Size = System::Drawing::Size(20, 16);
 			this->labelIDModifier->TabIndex = 14;
 			this->labelIDModifier->Text = L"ID";
 			// 
 			// labelDateModifier
 			// 
 			this->labelDateModifier->AutoSize = true;
-			this->labelDateModifier->Location = System::Drawing::Point(4, 243);
-			this->labelDateModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelDateModifier->Location = System::Drawing::Point(5, 299);
 			this->labelDateModifier->Name = L"labelDateModifier";
-			this->labelDateModifier->Size = System::Drawing::Size(91, 13);
+			this->labelDateModifier->Size = System::Drawing::Size(114, 16);
 			this->labelDateModifier->TabIndex = 14;
 			this->labelDateModifier->Text = L"Date d\'embauche";
 			// 
 			// labelNomModifier
 			// 
 			this->labelNomModifier->AutoSize = true;
-			this->labelNomModifier->Location = System::Drawing::Point(4, 67);
-			this->labelNomModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelNomModifier->Location = System::Drawing::Point(5, 82);
 			this->labelNomModifier->Name = L"labelNomModifier";
-			this->labelNomModifier->Size = System::Drawing::Size(29, 13);
+			this->labelNomModifier->Size = System::Drawing::Size(36, 16);
 			this->labelNomModifier->TabIndex = 14;
 			this->labelNomModifier->Text = L"Nom";
 			// 
 			// textBoxNomCritSelectModif
 			// 
-			this->textBoxNomCritSelectModif->Location = System::Drawing::Point(5, 81);
-			this->textBoxNomCritSelectModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxNomCritSelectModif->Location = System::Drawing::Point(7, 100);
+			this->textBoxNomCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomCritSelectModif->Name = L"textBoxNomCritSelectModif";
-			this->textBoxNomCritSelectModif->Size = System::Drawing::Size(101, 20);
+			this->textBoxNomCritSelectModif->Size = System::Drawing::Size(133, 22);
 			this->textBoxNomCritSelectModif->TabIndex = 14;
 			// 
 			// labelPrenomModifier
 			// 
 			this->labelPrenomModifier->AutoSize = true;
-			this->labelPrenomModifier->Location = System::Drawing::Point(4, 113);
-			this->labelPrenomModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelPrenomModifier->Location = System::Drawing::Point(5, 139);
 			this->labelPrenomModifier->Name = L"labelPrenomModifier";
-			this->labelPrenomModifier->Size = System::Drawing::Size(43, 13);
+			this->labelPrenomModifier->Size = System::Drawing::Size(54, 16);
 			this->labelPrenomModifier->TabIndex = 14;
 			this->labelPrenomModifier->Text = L"Prenom";
 			// 
 			// textBoxSuperieurCritSelectModif
 			// 
-			this->textBoxSuperieurCritSelectModif->Location = System::Drawing::Point(5, 216);
-			this->textBoxSuperieurCritSelectModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxSuperieurCritSelectModif->Location = System::Drawing::Point(7, 266);
+			this->textBoxSuperieurCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxSuperieurCritSelectModif->Name = L"textBoxSuperieurCritSelectModif";
-			this->textBoxSuperieurCritSelectModif->Size = System::Drawing::Size(156, 20);
+			this->textBoxSuperieurCritSelectModif->Size = System::Drawing::Size(207, 22);
 			this->textBoxSuperieurCritSelectModif->TabIndex = 14;
 			// 
 			// textBoxAdresseCritSelectModif
 			// 
-			this->textBoxAdresseCritSelectModif->Location = System::Drawing::Point(5, 172);
-			this->textBoxAdresseCritSelectModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxAdresseCritSelectModif->Location = System::Drawing::Point(7, 212);
+			this->textBoxAdresseCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAdresseCritSelectModif->Name = L"textBoxAdresseCritSelectModif";
-			this->textBoxAdresseCritSelectModif->Size = System::Drawing::Size(190, 20);
+			this->textBoxAdresseCritSelectModif->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseCritSelectModif->TabIndex = 14;
 			// 
 			// labelSuperieurModifier
 			// 
 			this->labelSuperieurModifier->AutoSize = true;
-			this->labelSuperieurModifier->Location = System::Drawing::Point(4, 202);
-			this->labelSuperieurModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelSuperieurModifier->Location = System::Drawing::Point(5, 249);
 			this->labelSuperieurModifier->Name = L"labelSuperieurModifier";
-			this->labelSuperieurModifier->Size = System::Drawing::Size(52, 13);
+			this->labelSuperieurModifier->Size = System::Drawing::Size(65, 16);
 			this->labelSuperieurModifier->TabIndex = 14;
 			this->labelSuperieurModifier->Text = L"Supérieur";
 			// 
 			// textBoxPrenomCritSelectModif
 			// 
-			this->textBoxPrenomCritSelectModif->Location = System::Drawing::Point(7, 131);
-			this->textBoxPrenomCritSelectModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxPrenomCritSelectModif->Location = System::Drawing::Point(9, 161);
+			this->textBoxPrenomCritSelectModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomCritSelectModif->Name = L"textBoxPrenomCritSelectModif";
-			this->textBoxPrenomCritSelectModif->Size = System::Drawing::Size(100, 20);
+			this->textBoxPrenomCritSelectModif->Size = System::Drawing::Size(132, 22);
 			this->textBoxPrenomCritSelectModif->TabIndex = 14;
 			// 
 			// labelAdresseModifier
 			// 
 			this->labelAdresseModifier->AutoSize = true;
-			this->labelAdresseModifier->Location = System::Drawing::Point(6, 158);
-			this->labelAdresseModifier->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->labelAdresseModifier->Location = System::Drawing::Point(8, 194);
 			this->labelAdresseModifier->Name = L"labelAdresseModifier";
-			this->labelAdresseModifier->Size = System::Drawing::Size(45, 13);
+			this->labelAdresseModifier->Size = System::Drawing::Size(58, 16);
 			this->labelAdresseModifier->TabIndex = 14;
 			this->labelAdresseModifier->Text = L"Adresse";
 			// 
@@ -866,111 +867,108 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			this->groupBoxCritères->Controls->Add(this->textBoxPrenomNewModif);
 			this->groupBoxCritères->Controls->Add(this->label2);
 			this->groupBoxCritères->Controls->Add(this->textBoxNomNewModif);
-			this->groupBoxCritères->Location = System::Drawing::Point(319, 34);
-			this->groupBoxCritères->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBoxCritères->Location = System::Drawing::Point(425, 42);
+			this->groupBoxCritères->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBoxCritères->Name = L"groupBoxCritères";
-			this->groupBoxCritères->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->groupBoxCritères->Size = System::Drawing::Size(248, 295);
+			this->groupBoxCritères->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->groupBoxCritères->Size = System::Drawing::Size(331, 363);
 			this->groupBoxCritères->TabIndex = 15;
 			this->groupBoxCritères->TabStop = false;
 			this->groupBoxCritères->Text = L"Nouvelles valeures";
 			// 
 			// TimePickerDateEmbaucheNewModif
 			// 
-			this->TimePickerDateEmbaucheNewModif->Location = System::Drawing::Point(7, 259);
+			this->TimePickerDateEmbaucheNewModif->Location = System::Drawing::Point(9, 319);
+			this->TimePickerDateEmbaucheNewModif->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->TimePickerDateEmbaucheNewModif->MaxDate = System::DateTime(2999, 12, 31, 0, 0, 0, 0);
 			this->TimePickerDateEmbaucheNewModif->Name = L"TimePickerDateEmbaucheNewModif";
-			this->TimePickerDateEmbaucheNewModif->Size = System::Drawing::Size(219, 20);
+			this->TimePickerDateEmbaucheNewModif->Size = System::Drawing::Size(291, 22);
 			this->TimePickerDateEmbaucheNewModif->TabIndex = 15;
 			this->TimePickerDateEmbaucheNewModif->Value = DateTime(1753, 1, 1);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(4, 243);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label6->Location = System::Drawing::Point(5, 299);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(91, 13);
+			this->label6->Size = System::Drawing::Size(114, 16);
 			this->label6->TabIndex = 15;
 			this->label6->Text = L"Date d\'embauche";
 			// 
 			// textBoxSuperieurNewModif
 			// 
-			this->textBoxSuperieurNewModif->Location = System::Drawing::Point(4, 204);
-			this->textBoxSuperieurNewModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxSuperieurNewModif->Location = System::Drawing::Point(5, 251);
+			this->textBoxSuperieurNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxSuperieurNewModif->Name = L"textBoxSuperieurNewModif";
-			this->textBoxSuperieurNewModif->Size = System::Drawing::Size(156, 20);
+			this->textBoxSuperieurNewModif->Size = System::Drawing::Size(207, 22);
 			this->textBoxSuperieurNewModif->TabIndex = 15;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(4, 189);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label5->Location = System::Drawing::Point(5, 233);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(52, 13);
+			this->label5->Size = System::Drawing::Size(65, 16);
 			this->label5->TabIndex = 15;
 			this->label5->Text = L"Supérieur";
 			// 
 			// textBoxAdresseNewModif
 			// 
-			this->textBoxAdresseNewModif->Location = System::Drawing::Point(4, 150);
-			this->textBoxAdresseNewModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxAdresseNewModif->Location = System::Drawing::Point(5, 185);
+			this->textBoxAdresseNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxAdresseNewModif->Name = L"textBoxAdresseNewModif";
-			this->textBoxAdresseNewModif->Size = System::Drawing::Size(190, 20);
+			this->textBoxAdresseNewModif->Size = System::Drawing::Size(252, 22);
 			this->textBoxAdresseNewModif->TabIndex = 15;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(4, 136);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label4->Location = System::Drawing::Point(5, 167);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(45, 13);
+			this->label4->Size = System::Drawing::Size(58, 16);
 			this->label4->TabIndex = 15;
 			this->label4->Text = L"Adresse";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(4, 84);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(5, 103);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(43, 13);
+			this->label3->Size = System::Drawing::Size(54, 16);
 			this->label3->TabIndex = 15;
 			this->label3->Text = L"Prenom";
 			// 
 			// textBoxPrenomNewModif
 			// 
-			this->textBoxPrenomNewModif->Location = System::Drawing::Point(7, 98);
-			this->textBoxPrenomNewModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxPrenomNewModif->Location = System::Drawing::Point(9, 121);
+			this->textBoxPrenomNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxPrenomNewModif->Name = L"textBoxPrenomNewModif";
-			this->textBoxPrenomNewModif->Size = System::Drawing::Size(100, 20);
+			this->textBoxPrenomNewModif->Size = System::Drawing::Size(132, 22);
 			this->textBoxPrenomNewModif->TabIndex = 15;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(4, 26);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(5, 32);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(29, 13);
+			this->label2->Size = System::Drawing::Size(36, 16);
 			this->label2->TabIndex = 15;
 			this->label2->Text = L"Nom";
 			// 
 			// textBoxNomNewModif
 			// 
-			this->textBoxNomNewModif->Location = System::Drawing::Point(7, 41);
-			this->textBoxNomNewModif->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBoxNomNewModif->Location = System::Drawing::Point(9, 50);
+			this->textBoxNomNewModif->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBoxNomNewModif->Name = L"textBoxNomNewModif";
-			this->textBoxNomNewModif->Size = System::Drawing::Size(101, 20);
+			this->textBoxNomNewModif->Size = System::Drawing::Size(133, 22);
 			this->textBoxNomNewModif->TabIndex = 15;
 			// 
 			// buttonModifier
 			// 
-			this->buttonModifier->Location = System::Drawing::Point(255, 359);
+			this->buttonModifier->Location = System::Drawing::Point(340, 442);
+			this->buttonModifier->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->buttonModifier->Name = L"buttonModifier";
-			this->buttonModifier->Size = System::Drawing::Size(79, 23);
+			this->buttonModifier->Size = System::Drawing::Size(105, 28);
 			this->buttonModifier->TabIndex = 14;
 			this->buttonModifier->Text = L"Modifier";
 			this->buttonModifier->UseVisualStyleBackColor = true;
@@ -978,14 +976,15 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 			// 
 			// GestionPersonnel
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->ClientSize = System::Drawing::Size(1375, 823);
+			this->ClientSize = System::Drawing::Size(1833, 1013);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox3);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->groupBox2);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"GestionPersonnel";
 			this->Text = L"Gestion du Personnel";
 			this->Load += gcnew System::EventHandler(this, &GestionPersonnel::GestionPersonnel_Load);
@@ -1011,8 +1010,8 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 	}
 
 	private: System::Void buttonEmbaucher_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0) {
+		DateTime datemin = DateTime(1753, 1, 1);
+		if (this->textBoxPersoNom->Text->Length == 0 || this->textBoxPersoPrenom->Text->Length == 0 || this->textBoxPersoAdresse->Text->Length == 0 || this->TimePickerDateEmbauche->Value == datemin) {
 			MessageBox::Show("Une des données est vide, merci d'entrer toutes les données.");
 		}
 		else {
