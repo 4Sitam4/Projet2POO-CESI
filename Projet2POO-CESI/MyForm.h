@@ -2,6 +2,7 @@
 #include "GestionPersonnel.h"
 #include "GestionClient.h"
 #include "GestionCatalogue.h"
+#include "GestionCommande.h"
 
 
 namespace Projet2POOCESI {
@@ -111,6 +112,7 @@ namespace Projet2POOCESI {
             this->buttonCommandes->Text = L"Gestion des Commandes";
             this->buttonCommandes->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
             this->buttonCommandes->UseVisualStyleBackColor = true;
+            this->buttonCommandes->Click += gcnew System::EventHandler(this, &MyForm::buttonCommandes_Click);
             // 
             // buttonStock
             // 
@@ -178,5 +180,9 @@ private: System::Void buttonStock_Click(System::Object^ sender, System::EventArg
     GestionCatalogue^ gestionCatalogue = gcnew GestionCatalogue();
     gestionCatalogue->ShowDialog();
 }
+    private: System::Void buttonCommandes_Click(System::Object^ sender, System::EventArgs^ e) {
+        GestionCommande^ gestionCommande = gcnew GestionCommande();
+        gestionCommande->ShowDialog();
+    }
 };
 }

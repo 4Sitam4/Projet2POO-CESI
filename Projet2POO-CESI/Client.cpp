@@ -67,7 +67,7 @@ System::Data::DataSet^ NS_Comp_Client::Client::afficherClient(System::String^ id
     this->oMapTB2->setDatePremierAchat(date_premier_achat);
     sql = this->oMapTB2->SelectClient();
 
-    System::Windows::Forms::MessageBox::Show(sql);
+    //System::Windows::Forms::MessageBox::Show(sql);
 
     return this->oCad->getRows(sql, dataTableName);
 }

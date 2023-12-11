@@ -1016,6 +1016,7 @@ private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 
 
 	private: System::Void buttonSupprimer_Click(System::Object^ sender, System::EventArgs^ e) {
+
 		MessageBox::Show("Les données de toute personne correspondant à ses critères vont être supprimer : \n\t" + this->textBoxIDSupprimer->Text + "\n\t" + this->textBoxNomSupprimer->Text + "\n\t" + this->textBoxPrenomSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->textBoxSuperieurSupprimer->Text + "\n\t" + this->textBoxAdresseSupprimer->Text + "\n\t" + this->TimePickerDateSupprimer->Value);
 		this->oPers->supprimerPersonnel(this->textBoxIDSupprimer->Text, this->textBoxNomSupprimer->Text, this->textBoxPrenomSupprimer->Text, this->textBoxSuperieurSupprimer->Text, this->textBoxAdresseSupprimer->Text, this->TimePickerDateSupprimer->Value);
 	}

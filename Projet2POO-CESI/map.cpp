@@ -1,5 +1,6 @@
 #include "PCH.h"
 #include "map.h"
+#include "cad.h"
 
 //afficher
 System::String^ NS_Comp_Mappage::map::SelectPersonnel(void)
@@ -197,6 +198,16 @@ System::String^ NS_Comp_Mappage::map::SelectClient(void) {
 	return "SELECT [num], [nom], [prenom], [adresse_facturation], [date_naissance], [date_premier_achat] FROM [projetPOO].[dbo].[tableClient] " + cdt1 + this->id + cdt2 + this->nom + cdt3 + this->prenom + cdt4 + this->adresse_facturation + cdt5 + cdt6 + cdtf;
 }
 
+System::String^ NS_Comp_Mappage::map::SelectArticle(void) {
+	return "SELECT [reference_produit], [produit], [prix_ht] FROM [projetPOO].[dbo].[Catalogue]";
+}
+
+System::String^ NS_Comp_Mappage::map::SelectClientCommande(void) {
+	return "SELECT [num], [nom], [prenom] FROM [projetPOO].[dbo].[tableClient]";
+}
+
+
+
 //creer
 System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 {
@@ -206,6 +217,128 @@ System::String^ NS_Comp_Mappage::map::InsertPersonnel(void)
 System::String^ NS_Comp_Mappage::map::InsertClient(void) {
 	return "INSERT INTO tableClient (nom, prenom, adresse_facturation, date_naissance, date_premier_achat) VALUES ('" + this->nom + "','" + this->prenom + "','" + this->adresse_facturation + "','" + this->date_naissance + "','" + this->date_premier_achat + "')";
 }
+
+System::String^ NS_Comp_Mappage::map::InsertArticle(void) {
+	oCad = gcnew NS_Comp_Data::cad();
+
+	System::String^ sql1 = "SELECT TOP 1 id FROM Commande ORDER BY id DESC; ";
+	this->oCad->getRequete(sql1);
+	int IdCommande = System::Convert::ToInt32(this->oCad->getRequete(sql1)) + 1;
+	System::Windows::Forms::MessageBox::Show("INSERT INTO Ligne_commande (reference_produit, id_commande, quantite) VALUES (" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")"
+	);
+	return "INSERT INTO Ligne_commande(reference_produit, id_commande, quantite) VALUES(" + System::Convert::ToInt32(this->ref_produit) + ", " + IdCommande + ", " + System::Convert::ToInt32(this->quantite) + ")";
+}
+
+System::String^ NS_Comp_Mappage::map::InsertCommande(void) {
+
+	return "INSERT INTO Commande (reference, date_emission, moyen_paiement, date_livraison, remise, montant_ht, num_client) VALUES ('" + this->ref_commande + System::Convert::ToString(this->id) + "','" + this->date_emission + "','" + this->moyen_paiement + "','" + this->date_livraison + "'," + System::Convert::ToInt32(this->remise) + "," + System::Convert::ToSingle(this->montant_ht) + "," + System::Convert::ToInt32(this->num_client) + ")";
+}
+
+System::String^ NS_Comp_Mappage::map::SelectCommande(void) {
+	int init = 0;
+	System::String^ cdt1 = "";
+	System::String^ cdt2 = "";
+	System::String^ cdt3 = "";
+	System::String^ cdt4 = "";
+	System::String^ cdt5 = "";
+	System::String^ cdt6 = "";
+	System::String^ cdt7 = "";
+	System::String^ cdt8 = "";
+	System::String^ cdtf = "";
+
+
+	if (this->id_commande != "") {
+		cdt1 = "WHERE id = '";
+		init++;
+	}
+
+	if (this->ref_commande != "") {
+		if (init > 0) {
+			cdt2 = "' AND reference = '";
+			init++;
+		}
+		else {
+			cdt2 = "WHERE reference = '";
+			init++;
+		}
+	}
+
+	if (System::Convert::ToString(this->date_emission) != "1/1/1753 12:00:00 AM") {
+		if (init > 0) {
+			cdt3 = "' AND date_emission = '" + this->date_emission;
+			init++;
+		}
+		else {
+			cdt3 = "WHERE date_emission = '" + this->date_emission;
+			init++;
+		}
+	}
+
+	if (this->moyen_paiement != "") {
+		if (init > 0) {
+			cdt4 = "' AND moyen_paiement = '";
+		}
+		else {
+			cdt4 = "WHERE moyen_paiement = '";
+			init++;
+		}
+	}
+
+	if (System::Convert::ToString(this->date_livraison) != "1/1/1753 12:00:00 AM") {
+		if (init > 0) {
+			cdt5 = "' AND date_livraison = '" + this->date_livraison;
+			init++;
+		}
+		else {
+			cdt5 = "WHERE date_livraison = '" + this->date_livraison;
+			init++;
+		}
+	}
+
+	if (this->remise != "") {
+		if (init > 0) {
+			cdt6 = "' AND remise = '";
+		}
+		else {
+			cdt6 = "WHERE remise = '";
+			init++;
+		}
+	}
+
+	if (this->montant_ht != "") {
+		if (init > 0) {
+			cdt7 = "' AND montant_ht = '";
+		}
+		else {
+			cdt7 = "WHERE montant_ht = '";
+			init++;
+		}
+	}
+
+	if (this->num_client != "") {
+		if (init > 0) {
+			cdt8 = "' AND num_client = '";
+		}
+		else {
+			cdt8 = "WHERE num_client = '";
+			init++;
+		}
+	}
+
+	if (init>0) {
+		cdtf = "'";
+	}
+
+
+	return "SELECT * FROM [projetPOO].[dbo].[Commande] " + cdt1 + this->id_commande + cdt2 + this->ref_commande + cdt3 + cdt4 + this->moyen_paiement + cdt5 + cdt6 + this->remise + cdt7 + this->montant_ht + cdt8 + this->num_client+ cdtf + ";";
+
+}
+
+
+System::String^ NS_Comp_Mappage::map::SelectLigneCommande(void) {
+	return "SELECT * FROM [projetPOO].[dbo].[Ligne_commande] WHERE id_commande = " + this->id_commande;
+}
+
 
 
 
@@ -308,6 +441,10 @@ System::String^ NS_Comp_Mappage::map::DeletePersonnel(void)
 
 System::String^ NS_Comp_Mappage::map::DeleteClient(System::String^ id) {
 	return "DELETE FROM [projetPOO].[dbo].[tableClient] WHERE num = "+ System::Convert::ToInt32(this->getId()) + ";";
+}
+
+System::String^ NS_Comp_Mappage::map::DeleteCommande() {
+	return "DELETE FROM [projetPOO].[dbo].[Commande] WHERE id = " + System::Convert::ToInt32(this->getIdCommande()) + ";";
 }
 
 
@@ -593,6 +730,33 @@ System::DateTime^ NS_Comp_Mappage::map::getDateEmbauche(void) { return this->dat
 System::String^ NS_Comp_Mappage::map::getAdresseFacturation(void) { return this->adresse_facturation; }
 System::DateTime^ NS_Comp_Mappage::map::getDateNaissance(void) { return this->date_naissance; }
 System::DateTime^ NS_Comp_Mappage::map::getDatePremierAchat(void) { return this->date_premier_achat; }
+
+//Commande article
+
+void NS_Comp_Mappage::map::setIdCommandeArticle(System::String^ idCommande) { this->id_commande = idCommande; }
+void NS_Comp_Mappage::map::setQuantite(System::String^ quantiteProduit) { this->quantite = quantiteProduit; }
+void NS_Comp_Mappage::map::setRefProduit(System::String^ refProduit) { this->ref_produit = refProduit; }
+
+void NS_Comp_Mappage::map::setRefCommande(System::String^ refCommande) { this->ref_commande = refCommande; }
+void NS_Comp_Mappage::map::setDateEmission(System::DateTime^ dateEmission) { this->date_emission = dateEmission; }
+void NS_Comp_Mappage::map::setMoyenPaiement(System::String^ moyenPaiement) { this->moyen_paiement = moyenPaiement; }
+void NS_Comp_Mappage::map::setDateLivraison(System::DateTime^ dateLivraison) { this->date_livraison = dateLivraison; }
+void NS_Comp_Mappage::map::setRemise(System::String^ Remise) { this->remise = Remise; }
+void NS_Comp_Mappage::map::setMontantHT(System::String^ montantHT) { this->montant_ht = montantHT; }
+void NS_Comp_Mappage::map::setNumClient(System::String^ numClient) { this->num_client = numClient; }
+void NS_Comp_Mappage::map::setIdCommande(System::String^ idCommande) { this->id_commande = idCommande; }
+
+
+
+
+
+
+
+
+System::String^ NS_Comp_Mappage::map::getIdCommande(void) { return this->id_commande;  }
+System::String^ NS_Comp_Mappage::map::getIdCommandeArticle(void) { return this->id_commande; }
+System::String^ NS_Comp_Mappage::map::getQuantiteProduit(void) { return this->quantite; }
+System::String^ NS_Comp_Mappage::map::getRefProduit(void) { return this->ref_produit; }
 
 
 //Catalogue

@@ -1,11 +1,13 @@
 #ifndef MAP_H
 #define MAP_H
+#include "cad.h"
 
 namespace NS_Comp_Mappage
 {
 	ref class map {
 	private:
 		System::String^ sSql;
+		NS_Comp_Data::cad^ oCad;
 
 		//pour personnel et client
 		System::String^ nom ="";
@@ -27,7 +29,19 @@ namespace NS_Comp_Mappage
 		System::String^ stock ="";
 		System::String^ reapprovisionnement ="";
 		System::String^ TVA ="";
-		//...
+		//Commande Article
+		System::String^ id_commande = "";
+		System::String^ quantite = "";
+		System::String^ ref_produit = "";
+
+		System::String^ ref_commande = "";
+		System::String^ moyen_paiement = "";
+		System::String^ remise = "";
+		System::String^ montant_ht = "";
+		System::String^ num_client = "";
+		System::DateTime^ date_emission;
+		System::DateTime^ date_livraison;
+
 
 	public:
 		System::String^ SelectPersonnel(void);
@@ -37,23 +51,27 @@ namespace NS_Comp_Mappage
 		
 		System::String^ SelectClient(void);
 		System::String^ InsertClient(void);
-		
 		System::String^ DeleteClient(System::String^);
-		
 		System::String^ UpdateClient(System::String^, System::String^, System::String^, System::String^, System::DateTime^, System::DateTime^);
 		
-		
+		System::String^ SelectArticle(void);
+		System::String^ SelectClientCommande(void);
+		System::String^ SelectLigneCommande(void);
+
+		System::String^ InsertArticle(void);
+		//System::String^ SelectClientCommande(void);
+
 		System::String^ SelectCatalogue(void);
 		System::String^ InsertCatalogue(void);
 		System::String^ DeleteCatalogue(void);
 		System::String^ UpdateCatalogue(System::String^, System::String^, System::String^, System::String^, System::String^);
 
-		/*
+		
 		System::String^ SelectCommande(void);
 		System::String^ InsertCommande(void);
 		System::String^ DeleteCommande(void);
-		System::String^ UpdateCommande(void);
-		*/
+		//System::String^ UpdateCommande(void);
+		
 
 		//pour personnel et client
 		void setId(System::String^);
@@ -100,7 +118,24 @@ namespace NS_Comp_Mappage
 		void setReapprovisionnement(System::String^);
 		void setTVA(System::String^);
 
-		//...
+		//Commande article
+		void setIdCommande(System::String^);
+		void setQuantite(System::String^);
+		void setRefProduit(System::String^);
+		void setIdCommandeArticle(System::String^);
+		void setRefCommande(System::String^);
+		void setDateEmission(System::DateTime^);
+		void setMoyenPaiement(System::String^);
+		void setDateLivraison(System::DateTime^);
+		void setRemise(System::String^);
+		void setMontantHT(System::String^);
+		void setNumClient(System::String^);
+
+
+		System::String^ getIdCommande(void);
+		System::String^ getIdCommandeArticle(void);
+		System::String^ getQuantiteProduit(void);
+		System::String^ getRefProduit(void);
 	};
 }
 

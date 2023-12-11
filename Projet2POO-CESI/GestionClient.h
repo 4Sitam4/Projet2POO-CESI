@@ -140,7 +140,6 @@ namespace Projet2POOCESI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(GestionClient::typeid));
 			this->groupBoxCreerClient = (gcnew System::Windows::Forms::GroupBox());
 			this->labelAdressseFacturation = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdresseFacturation = (gcnew System::Windows::Forms::TextBox());
@@ -200,8 +199,7 @@ namespace Projet2POOCESI {
 			// 
 			// groupBoxCreerClient
 			// 
-			this->groupBoxCreerClient->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->groupBoxCreerClient->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBoxCreerClient.BackgroundImage")));
+			this->groupBoxCreerClient->BackColor = System::Drawing::Color::White;
 			this->groupBoxCreerClient->Controls->Add(this->labelAdressseFacturation);
 			this->groupBoxCreerClient->Controls->Add(this->textBoxAdresseFacturation);
 			this->groupBoxCreerClient->Controls->Add(this->label1);
@@ -213,7 +211,7 @@ namespace Projet2POOCESI {
 			this->groupBoxCreerClient->Controls->Add(this->textBoxClientPrenom);
 			this->groupBoxCreerClient->Controls->Add(this->labelPersoNom);
 			this->groupBoxCreerClient->Controls->Add(this->textBoxClientNom);
-			this->groupBoxCreerClient->ForeColor = System::Drawing::Color::White;
+			this->groupBoxCreerClient->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBoxCreerClient->Location = System::Drawing::Point(22, 28);
 			this->groupBoxCreerClient->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxCreerClient->Name = L"groupBoxCreerClient";
@@ -345,7 +343,7 @@ namespace Projet2POOCESI {
 			this->groupBox4->Controls->Add(this->groupBoxCritSelect);
 			this->groupBox4->Controls->Add(this->groupBoxCritères);
 			this->groupBox4->Controls->Add(this->buttonModifier);
-			this->groupBox4->ForeColor = System::Drawing::Color::White;
+			this->groupBox4->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBox4->Location = System::Drawing::Point(364, 28);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Size = System::Drawing::Size(800, 493);
@@ -355,11 +353,10 @@ namespace Projet2POOCESI {
 			// 
 			// groupBoxCritSelect
 			// 
-			this->groupBoxCritSelect->BackColor = System::Drawing::Color::Transparent;
-			this->groupBoxCritSelect->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBoxCritSelect.BackgroundImage")));
+			this->groupBoxCritSelect->BackColor = System::Drawing::Color::White;
 			this->groupBoxCritSelect->Controls->Add(this->textBoxIdModifClient);
 			this->groupBoxCritSelect->Controls->Add(this->labelIDModifier);
-			this->groupBoxCritSelect->ForeColor = System::Drawing::Color::White;
+			this->groupBoxCritSelect->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBoxCritSelect->Location = System::Drawing::Point(25, 42);
 			this->groupBoxCritSelect->Name = L"groupBoxCritSelect";
 			this->groupBoxCritSelect->Size = System::Drawing::Size(236, 126);
@@ -387,7 +384,6 @@ namespace Projet2POOCESI {
 			// groupBoxCritères
 			// 
 			this->groupBoxCritères->BackColor = System::Drawing::Color::White;
-			this->groupBoxCritères->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBoxCritères.BackgroundImage")));
 			this->groupBoxCritères->Controls->Add(this->textBoxNouvAdresseModifClient);
 			this->groupBoxCritères->Controls->Add(this->dateTimePickerNouvNaissanceModifClient);
 			this->groupBoxCritères->Controls->Add(this->TimePickerNouvDateNewModif);
@@ -398,7 +394,7 @@ namespace Projet2POOCESI {
 			this->groupBoxCritères->Controls->Add(this->textBoxNouvPrenomModifClient);
 			this->groupBoxCritères->Controls->Add(this->label2);
 			this->groupBoxCritères->Controls->Add(this->textBoxNouvNomModifClient);
-			this->groupBoxCritères->ForeColor = System::Drawing::Color::White;
+			this->groupBoxCritères->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBoxCritères->Location = System::Drawing::Point(425, 42);
 			this->groupBoxCritères->Name = L"groupBoxCritères";
 			this->groupBoxCritères->Size = System::Drawing::Size(331, 363);
@@ -488,7 +484,7 @@ namespace Projet2POOCESI {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->ForeColor = System::Drawing::Color::White;
+			this->label2->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->label2->Location = System::Drawing::Point(3, 53);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(36, 16);
@@ -517,12 +513,11 @@ namespace Projet2POOCESI {
 			// 
 			// groupBox3
 			// 
-			this->groupBox3->BackColor = System::Drawing::SystemColors::Window;
-			this->groupBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox3.BackgroundImage")));
+			this->groupBox3->BackColor = System::Drawing::Color::White;
 			this->groupBox3->Controls->Add(this->buttonSupprimerClient);
 			this->groupBox3->Controls->Add(this->textBoxIdClientSupprimer);
 			this->groupBox3->Controls->Add(this->labelIDSupprimer);
-			this->groupBox3->ForeColor = System::Drawing::Color::White;
+			this->groupBox3->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBox3->Location = System::Drawing::Point(1204, 28);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(311, 135);
@@ -563,8 +558,7 @@ namespace Projet2POOCESI {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->groupBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"groupBox2.BackgroundImage")));
+			this->groupBox2->BackColor = System::Drawing::Color::White;
 			this->groupBox2->Controls->Add(this->dateTimePickerAnniversaireAfficherClient);
 			this->groupBox2->Controls->Add(this->textBoxIdAfficherClient);
 			this->groupBox2->Controls->Add(this->labelIDAfficher);
@@ -579,7 +573,7 @@ namespace Projet2POOCESI {
 			this->groupBox2->Controls->Add(this->textBoxPrenomAfficherClient);
 			this->groupBox2->Controls->Add(this->labelNomAfficher);
 			this->groupBox2->Controls->Add(this->textBoxNomAfficherClient);
-			this->groupBox2->ForeColor = System::Drawing::Color::Gray;
+			this->groupBox2->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->groupBox2->Location = System::Drawing::Point(43, 554);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->groupBox2->Name = L"groupBox2";
@@ -611,7 +605,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelIDAfficher->AutoSize = true;
 			this->labelIDAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelIDAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelIDAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelIDAfficher->Location = System::Drawing::Point(6, 53);
 			this->labelIDAfficher->Name = L"labelIDAfficher";
 			this->labelIDAfficher->Size = System::Drawing::Size(20, 16);
@@ -655,7 +649,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelDateAfficher->AutoSize = true;
 			this->labelDateAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelDateAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelDateAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelDateAfficher->Location = System::Drawing::Point(1062, 53);
 			this->labelDateAfficher->Name = L"labelDateAfficher";
 			this->labelDateAfficher->Size = System::Drawing::Size(139, 16);
@@ -674,7 +668,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelSuperieurAfficher->AutoSize = true;
 			this->labelSuperieurAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelSuperieurAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelSuperieurAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelSuperieurAfficher->Location = System::Drawing::Point(524, 53);
 			this->labelSuperieurAfficher->Name = L"labelSuperieurAfficher";
 			this->labelSuperieurAfficher->Size = System::Drawing::Size(58, 16);
@@ -685,7 +679,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelAdresseAfficher->AutoSize = true;
 			this->labelAdresseAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelAdresseAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelAdresseAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelAdresseAfficher->Location = System::Drawing::Point(772, 53);
 			this->labelAdresseAfficher->Name = L"labelAdresseAfficher";
 			this->labelAdresseAfficher->Size = System::Drawing::Size(114, 16);
@@ -696,7 +690,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelPrenomAfficher->AutoSize = true;
 			this->labelPrenomAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelPrenomAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelPrenomAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelPrenomAfficher->Location = System::Drawing::Point(350, 53);
 			this->labelPrenomAfficher->Name = L"labelPrenomAfficher";
 			this->labelPrenomAfficher->Size = System::Drawing::Size(54, 16);
@@ -715,7 +709,7 @@ namespace Projet2POOCESI {
 			// 
 			this->labelNomAfficher->AutoSize = true;
 			this->labelNomAfficher->BackColor = System::Drawing::Color::Transparent;
-			this->labelNomAfficher->ForeColor = System::Drawing::Color::White;
+			this->labelNomAfficher->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->labelNomAfficher->Location = System::Drawing::Point(176, 53);
 			this->labelNomAfficher->Name = L"labelNomAfficher";
 			this->labelNomAfficher->Size = System::Drawing::Size(36, 16);
@@ -735,8 +729,7 @@ namespace Projet2POOCESI {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
-			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
-				static_cast<System::Int32>(static_cast<System::Byte>(50)));
+			this->BackColor = System::Drawing::SystemColors::Control;
 			this->ClientSize = System::Drawing::Size(1567, 1055);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox3);
@@ -792,9 +785,33 @@ namespace Projet2POOCESI {
 			MessageBox::Show("Entrez un ID de client valide");
 		}
 		else {
-			this->oCli->supprimerClient(this->textBoxIdClientSupprimer->Text);
-			MessageBox::Show("Client supprimé");
+
+			System::Windows::Forms::DialogResult resultat = System::Windows::Forms::MessageBox::Show(
+				"Voulez-vous vraiment supprimer ce client?",
+				"Confirmation de suppression",
+				System::Windows::Forms::MessageBoxButtons::YesNo,
+				System::Windows::Forms::MessageBoxIcon::Exclamation
+			);
+
+			if (resultat == System::Windows::Forms::DialogResult::Yes) {
+				this->oCli->supprimerClient(this->textBoxIdClientSupprimer->Text);
+				MessageBox::Show("Client supprimé");
+			}
+			else {
+				MessageBox::Show("Suppression annulée");
+			}
+
+			
 		}
+		
+		
+		
+
+		// Vérifiez le résultat de la boîte de dialogue
+		
+		
+		
+		
 	}
 	private: System::Void buttonAfficher_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->dgv_enr->Refresh();
