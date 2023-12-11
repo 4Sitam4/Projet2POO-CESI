@@ -402,7 +402,7 @@ namespace Projet2POOCESI {
 	private: System::Void buttonValeur_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	
-		if (this->comboBoxTVA->SelectedIndex == -1 && this->checkBoxTVA->Checked == false && this->checkBoxTVANulle->Checked == false || this->comboBoxMarge->SelectedIndex == -1 && this->checkBoxMarge->Checked == false || this->comboBoxRemise->SelectedIndex == -1 && this->checkBoxRemise->Checked == false || this->comboBoxDemarque->SelectedIndex == -1 && this->checkBoxDemarque->Checked == false) {
+		if (this->comboBoxTVA->SelectedIndex == -1 && this->checkBoxTVA->Checked == false && this->checkBoxTVANulle->Checked == false || this->comboBoxMarge->SelectedIndex == -1 && this->checkBoxMarge->Checked == false && this->checkBoxMargeNulle->Checked == false || this->comboBoxRemise->SelectedIndex == -1 && this->checkBoxRemise->Checked == false && this->checkBoxRemiseNulle->Checked == false || this->comboBoxDemarque->SelectedIndex == -1 && this->checkBoxDemarque->Checked == false && this->checkBoxDemarqueNulle->Checked == false) {
 			MessageBox::Show("Veuillez entrer des données pour démarrer la simulation");
 		}
 		else {

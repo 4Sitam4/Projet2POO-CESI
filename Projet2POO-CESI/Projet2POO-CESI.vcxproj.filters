@@ -80,9 +80,6 @@
     <ClInclude Include="Personnel.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Fonctions.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Catalogue.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
